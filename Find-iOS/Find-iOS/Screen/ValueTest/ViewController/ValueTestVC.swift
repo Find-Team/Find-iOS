@@ -39,6 +39,14 @@ class ValueTestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        questionChoiceCV.dataSource = self
+        questionChoiceCV.delegate = self
+        
+        setQuestionView()
+        RelationshipSelected()
+        setPreviousBtnActivated()
+        setNextBtnActivated()
+        
     }
     
     //MARL: - IBActions
@@ -140,5 +148,11 @@ extension ValueTestVC: UICollectionViewDataSource {
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension ValueTestVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
 }
