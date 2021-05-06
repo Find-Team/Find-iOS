@@ -24,6 +24,10 @@ class ValueTestVC: UIViewController {
     @IBOutlet var questionSegueTitleLabel: UILabel!
     @IBOutlet var questionContentLabel: UILabel!
     
+    @IBOutlet var previousBtn: UIButton!
+    @IBOutlet var nextBtn: UIButton!
+    
+    
     
     //MARK: - Lifecylcle Methods
     
@@ -40,6 +44,7 @@ extension ValueTestVC {
     
     //MARK: - Style
     
+    /// 질문뷰 스타일
     func setQuestionView() {
         view.layoutIfNeeded()
         
@@ -50,9 +55,7 @@ extension ValueTestVC {
         questionView.makeRounded(cornerRadius: questionView.frame.height / 2)
     }
     
-    
-    //MARK: - Functions
-    
+    /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
         segueIndicator[0].backgroundColor = .purple
         segueIndicator[1].backgroundColor = .gray
@@ -60,17 +63,55 @@ extension ValueTestVC {
         
     }
     
+    /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
         segueIndicator[0].backgroundColor = .gray
         segueIndicator[1].backgroundColor = .purple
         segueIndicator[2].backgroundColor = .gray
     }
     
+    /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
         segueIndicator[0].backgroundColor = .gray
         segueIndicator[1].backgroundColor = .gray
         segueIndicator[2].backgroundColor = .purple
     }
+    
+    /// 이전 버튼 활성화 됐을 때
+    func setPreviousBtnActivated() {
+        previousBtn.setTitle("이전", for: .normal)
+        previousBtn.titleLabel?.textColor = .black
+        previousBtn.makeRounded(cornerRadius: 10)
+        previousBtn.backgroundColor = .white
+    }
+    
+    /// 이전 버튼 비활성화 됐을 때
+    func setPreviousBtnDeactivated() {
+        previousBtn.setTitle("이전", for: .normal)
+        previousBtn.titleLabel?.textColor = .white
+        previousBtn.makeRounded(cornerRadius: 10)
+        previousBtn.backgroundColor = .lightGray
+    }
+    
+    /// 다음 버튼 활성화 됐을 때
+    func setNextBtnActivated() {
+        nextBtn.setTitle("다음", for: .normal)
+        nextBtn.titleLabel?.textColor = .black
+        nextBtn.makeRounded(cornerRadius: 10)
+        nextBtn.backgroundColor = .white
+    }
+    
+    /// 다음 버튼 비활성화 됐을 때
+    func setNextBtnDeactivated() {
+        nextBtn.setTitle("다음", for: .normal)
+        nextBtn.titleLabel?.textColor = .white
+        nextBtn.makeRounded(cornerRadius: 10)
+        nextBtn.backgroundColor = .lightGray
+    }
+    
+    //MARK: - Functions
+    
+
     
     
 }
