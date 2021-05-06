@@ -9,6 +9,11 @@ import UIKit
 
 class ValueTestVC: UIViewController {
     
+    //MARK: - Custom Variables
+    
+    var questionIdx = 1
+    
+    
     //MARK: - IBOutlets
     
     @IBOutlet var viewTitleLabel: UILabel!
@@ -27,7 +32,7 @@ class ValueTestVC: UIViewController {
     //    @IBOutlet var questionChoiceLabel: [UIView]!
     @IBOutlet var questionChoiceCV: UICollectionView!
     
-    
+    @IBOutlet var countLabel: UILabel!
     
     @IBOutlet var previousBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
@@ -49,7 +54,26 @@ class ValueTestVC: UIViewController {
         
     }
     
-    //MARL: - IBActions
+    //MARK: - IBActions
+    
+    /// 뒤로가기 버튼 클릭
+    @IBAction func backBtnDidTap(_ sender: Any) {
+        
+    }
+    
+    /// 이전 버튼 클릭
+    @IBAction func previousBtnDidTap(_ sender: Any) {
+        if questionIdx != 1 {
+            questionIdx -= 1
+        }
+    }
+    
+    /// 다음 버튼 클릭
+    @IBAction func nextBtnDidTap(_ sender: Any) {
+        if questionIdx != 30 {
+            questionIdx += 1
+        }
+    }
 }
 
 
@@ -88,6 +112,11 @@ extension ValueTestVC {
         segueIndicator[0].backgroundColor = .gray
         segueIndicator[1].backgroundColor = .gray
         segueIndicator[2].backgroundColor = .purple
+    }
+    
+    /// 질문 번호 라벨 세팅
+    func setCountLabel() {
+        countLabel.text = "\(questionIdx) / 30"
     }
     
     /// 이전 버튼 활성화 됐을 때

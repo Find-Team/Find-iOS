@@ -26,6 +26,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-7f-KDp">
                                 <rect key="frame" x="15" y="83" width="15.5" height="22"/>
                                 <state key="normal" image="restart" catalog="system"/>
+                                <connections>
+                                    <action selector="backBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="xeG-QW-r59"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wdr-xk-gvG">
                                 <rect key="frame" x="0.0" y="130.5" width="414" height="28"/>
@@ -264,11 +267,23 @@
                                     <constraint firstAttribute="width" secondItem="398-ZF-jl3" secondAttribute="height" multiplier="123:40" id="foc-RC-kah"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="ey1-cm-iqP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fD-3W-0gm">
                                 <rect key="frame" x="55.5" y="678" width="135.5" height="44"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="previousBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="JXb-hS-qB6"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf0-K7-aGg">
+                                <rect key="frame" x="186.5" y="643" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Pm-56-Hmj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -280,6 +295,7 @@
                             <constraint firstItem="wdr-xk-gvG" firstAttribute="top" secondItem="WOL-NR-agS" secondAttribute="bottom" constant="26" id="FIE-VE-qN6"/>
                             <constraint firstItem="8Pm-56-Hmj" firstAttribute="trailing" secondItem="wdr-xk-gvG" secondAttribute="trailing" id="Gug-yr-TJ8"/>
                             <constraint firstItem="wdr-xk-gvG" firstAttribute="leading" secondItem="8Pm-56-Hmj" secondAttribute="leading" id="U47-xr-CzZ"/>
+                            <constraint firstItem="yf0-K7-aGg" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="W5G-Bd-dTe"/>
                             <constraint firstItem="YXu-7K-z8d" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="aQM-Ok-veb"/>
                             <constraint firstItem="4fD-3W-0gm" firstAttribute="centerY" secondItem="398-ZF-jl3" secondAttribute="centerY" id="cfi-Ep-83L"/>
                             <constraint firstItem="gp6-km-VVw" firstAttribute="top" secondItem="wdr-xk-gvG" secondAttribute="bottom" constant="40" id="cvo-Z3-QqG"/>
@@ -291,11 +307,13 @@
                             <constraint firstItem="gp6-km-VVw" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="l8f-Y2-jzu"/>
                             <constraint firstItem="WOL-NR-agS" firstAttribute="top" secondItem="8Pm-56-Hmj" secondAttribute="top" constant="39" id="lob-OG-nLz"/>
                             <constraint firstItem="A1c-7f-KDp" firstAttribute="leading" secondItem="8Pm-56-Hmj" secondAttribute="leading" constant="15" id="qN1-dn-PdV"/>
+                            <constraint firstItem="yf0-K7-aGg" firstAttribute="top" secondItem="gp6-km-VVw" secondAttribute="bottom" constant="25" id="tAg-xO-TGp"/>
                             <constraint firstItem="WOL-NR-agS" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="uo8-sb-NwU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="A1c-7f-KDp" id="sDJ-tW-p8L"/>
+                        <outlet property="countLabel" destination="yf0-K7-aGg" id="Ndg-MX-I50"/>
                         <outlet property="nextBtn" destination="398-ZF-jl3" id="aAV-fk-1Pn"/>
                         <outlet property="previousBtn" destination="4fD-3W-0gm" id="sAO-BB-3kt"/>
                         <outlet property="questionChoiceCV" destination="qLG-Hi-xcI" id="1BV-Wn-om6"/>
