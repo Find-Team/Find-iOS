@@ -116,20 +116,50 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp6-km-VVw">
                                 <rect key="frame" x="30.5" y="198.5" width="353" height="419.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50w-j3-lOV">
+                                        <rect key="frame" x="151.5" y="24" width="50" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mu0-7E-P4q">
+                                                <rect key="frame" x="4.5" y="4" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="mu0-7E-P4q" firstAttribute="centerX" secondItem="50w-j3-lOV" secondAttribute="centerX" id="8sd-Q3-TnR"/>
+                                            <constraint firstItem="mu0-7E-P4q" firstAttribute="centerY" secondItem="50w-j3-lOV" secondAttribute="centerY" id="Yoj-1M-eIE"/>
+                                            <constraint firstAttribute="height" constant="28" id="zOa-bI-sJ2"/>
+                                            <constraint firstAttribute="width" constant="50" id="zsp-yy-ESg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                 <constraints>
+                                    <constraint firstItem="50w-j3-lOV" firstAttribute="top" secondItem="gp6-km-VVw" secondAttribute="top" constant="24" id="91Z-AI-bKF"/>
+                                    <constraint firstItem="50w-j3-lOV" firstAttribute="centerX" secondItem="gp6-km-VVw" secondAttribute="centerX" id="jFF-hY-JgV"/>
                                     <constraint firstAttribute="width" secondItem="gp6-km-VVw" secondAttribute="height" multiplier="320:380" id="t8P-m5-q3G"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-7K-z8d">
+                                <rect key="frame" x="186.5" y="275.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Pm-56-Hmj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gp6-km-VVw" firstAttribute="width" secondItem="nMV-Bp-Sda" secondAttribute="width" multiplier="320:375" id="0kg-EW-V2i"/>
+                            <constraint firstItem="YXu-7K-z8d" firstAttribute="top" secondItem="50w-j3-lOV" secondAttribute="bottom" constant="25" id="DZE-wK-zax"/>
                             <constraint firstItem="wdr-xk-gvG" firstAttribute="top" secondItem="WOL-NR-agS" secondAttribute="bottom" constant="26" id="FIE-VE-qN6"/>
                             <constraint firstItem="8Pm-56-Hmj" firstAttribute="trailing" secondItem="wdr-xk-gvG" secondAttribute="trailing" id="Gug-yr-TJ8"/>
                             <constraint firstItem="wdr-xk-gvG" firstAttribute="leading" secondItem="8Pm-56-Hmj" secondAttribute="leading" id="U47-xr-CzZ"/>
+                            <constraint firstItem="YXu-7K-z8d" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="aQM-Ok-veb"/>
                             <constraint firstItem="gp6-km-VVw" firstAttribute="top" secondItem="wdr-xk-gvG" secondAttribute="bottom" constant="40" id="cvo-Z3-QqG"/>
                             <constraint firstItem="A1c-7f-KDp" firstAttribute="centerY" secondItem="WOL-NR-agS" secondAttribute="centerY" id="eeZ-cx-eNx"/>
                             <constraint firstItem="gp6-km-VVw" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="l8f-Y2-jzu"/>
@@ -140,6 +170,9 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="A1c-7f-KDp" id="sDJ-tW-p8L"/>
+                        <outlet property="questionContentLabel" destination="YXu-7K-z8d" id="fMy-JS-HuK"/>
+                        <outlet property="questionSegueTitleLabel" destination="mu0-7E-P4q" id="Ts9-25-fG0"/>
+                        <outlet property="questionSegueTitleView" destination="50w-j3-lOV" id="0r2-1C-nrW"/>
                         <outlet property="questionView" destination="gp6-km-VVw" id="zth-dw-dgm"/>
                         <outlet property="segueCareerLabel" destination="5kj-eU-44b" id="kac-QX-p7r"/>
                         <outlet property="segueFamilyLabel" destination="GeK-Kx-bjs" id="Bha-4i-F8P"/>

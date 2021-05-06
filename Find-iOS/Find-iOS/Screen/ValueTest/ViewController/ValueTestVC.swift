@@ -20,6 +20,9 @@ class ValueTestVC: UIViewController {
     @IBOutlet var segueCareerLabel: UILabel!
     
     @IBOutlet var questionView: UIView!
+    @IBOutlet var questionSegueTitleView: UIView!
+    @IBOutlet var questionSegueTitleLabel: UILabel!
+    @IBOutlet var questionContentLabel: UILabel!
     
     
     //MARK: - Lifecylcle Methods
@@ -38,8 +41,13 @@ extension ValueTestVC {
     //MARK: - Style
     
     func setQuestionView() {
+        view.layoutIfNeeded()
+        
         questionView.makeRounded(cornerRadius: 10)
 //        questionView.backgroundColor =
+        
+//        questionSegueTitleView.backgroundColor =
+        questionView.makeRounded(cornerRadius: questionView.frame.height / 2)
     }
     
     
