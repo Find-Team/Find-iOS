@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
+		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
+		542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF726442F8B00E69A4D /* ViewController.swift */; };
+		542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 542A1DF926442F8B00E69A4D /* Main.storyboard */; };
+		542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 542A1DFC26442F8E00E69A4D /* Assets.xcassets */; };
+		542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 542A1DFE26442F8E00E69A4D /* LaunchScreen.storyboard */; };
+		542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E0D2644315200E69A4D /* UIColor+Additions.swift */; };
+		542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E102644317300E69A4D /* UIView+Extension.swift */; };
+		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
+		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		542A1DF526442F8B00E69A4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		542A1DF726442F8B00E69A4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		542A1DFA26442F8B00E69A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		542A1DFC26442F8E00E69A4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		542A1DFF26442F8E00E69A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		542A1E0126442F8E00E69A4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		542A1E0D2644315200E69A4D /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		542A1E102644317300E69A4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		542A1DED26442F8B00E69A4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1300E85C098F8AD59BD73442 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36E83A4E692BC8F7BD8CBEA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */,
+				959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		542A1DE726442F8B00E69A4D = {
+			isa = PBXGroup;
+			children = (
+				542A1DF226442F8B00E69A4D /* Find-iOS */,
+				542A1DF126442F8B00E69A4D /* Products */,
+				36E83A4E692BC8F7BD8CBEA7 /* Pods */,
+				1300E85C098F8AD59BD73442 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		542A1DF126442F8B00E69A4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				542A1DF026442F8B00E69A4D /* Find-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		542A1DF226442F8B00E69A4D /* Find-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				542A1E0B2644311F00E69A4D /* Screen */,
+				542A1E092644310000E69A4D /* Global */,
+				542A1E08264430D700E69A4D /* Support */,
+			);
+			path = "Find-iOS";
+			sourceTree = "<group>";
+		};
+		542A1E08264430D700E69A4D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				542A1DF326442F8B00E69A4D /* AppDelegate.swift */,
+				542A1DF526442F8B00E69A4D /* SceneDelegate.swift */,
+				542A1DFC26442F8E00E69A4D /* Assets.xcassets */,
+				542A1DFE26442F8E00E69A4D /* LaunchScreen.storyboard */,
+				542A1E0126442F8E00E69A4D /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		542A1E092644310000E69A4D /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				542A1E0A2644310900E69A4D /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		542A1E0A2644310900E69A4D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				542A1E0D2644315200E69A4D /* UIColor+Additions.swift */,
+				542A1E102644317300E69A4D /* UIView+Extension.swift */,
+				542A1E13264431DE00E69A4D /* UIButton+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		542A1E0B2644311F00E69A4D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				542A1DF726442F8B00E69A4D /* ViewController.swift */,
+				542A1DF926442F8B00E69A4D /* Main.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		542A1DEF26442F8B00E69A4D /* Find-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 542A1E0426442F8E00E69A4D /* Build configuration list for PBXNativeTarget "Find-iOS" */;
+			buildPhases = (
+				9250E9B6245FD848AA775E86 /* [CP] Check Pods Manifest.lock */,
+				542A1DEC26442F8B00E69A4D /* Sources */,
+				542A1DED26442F8B00E69A4D /* Frameworks */,
+				542A1DEE26442F8B00E69A4D /* Resources */,
+				C1CE7B1BC64D45E5036EB7F5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Find-iOS";
+			productName = "Find-iOS";
+			productReference = 542A1DF026442F8B00E69A4D /* Find-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		542A1DE826442F8B00E69A4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					542A1DEF26442F8B00E69A4D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 542A1DEB26442F8B00E69A4D /* Build configuration list for PBXProject "Find-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 542A1DE726442F8B00E69A4D;
+			productRefGroup = 542A1DF126442F8B00E69A4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				542A1DEF26442F8B00E69A4D /* Find-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		542A1DEE26442F8B00E69A4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
+				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
+				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9250E9B6245FD848AA775E86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1CE7B1BC64D45E5036EB7F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Find-iOS/Pods-Find-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Find-iOS/Pods-Find-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Find-iOS/Pods-Find-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		542A1DEC26442F8B00E69A4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */,
+				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
+				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
+				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
+				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
+				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		542A1DF926442F8B00E69A4D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				542A1DFA26442F8B00E69A4D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		542A1DFE26442F8E00E69A4D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				542A1DFF26442F8E00E69A4D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		542A1E0226442F8E00E69A4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		542A1E0326442F8E00E69A4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		542A1E0526442F8E00E69A4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
+				INFOPLIST_FILE = "Find-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		542A1E0626442F8E00E69A4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
+				INFOPLIST_FILE = "Find-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		542A1DEB26442F8B00E69A4D /* Build configuration list for PBXProject "Find-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				542A1E0226442F8E00E69A4D /* Debug */,
+				542A1E0326442F8E00E69A4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		542A1E0426442F8E00E69A4D /* Build configuration list for PBXNativeTarget "Find-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				542A1E0526442F8E00E69A4D /* Debug */,
+				542A1E0626442F8E00E69A4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 542A1DE826442F8B00E69A4D /* Project object */;
+}
