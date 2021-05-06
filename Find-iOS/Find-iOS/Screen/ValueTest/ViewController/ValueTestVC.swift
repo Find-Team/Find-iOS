@@ -23,6 +23,8 @@ class ValueTestVC: UIViewController {
     @IBOutlet var questionSegueTitleView: UIView!
     @IBOutlet var questionSegueTitleLabel: UILabel!
     @IBOutlet var questionContentLabel: UILabel!
+    @IBOutlet var questionChoiceView: UIView!
+    @IBOutlet var questionChoiceLabel: [UIView]!
     
     @IBOutlet var previousBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
