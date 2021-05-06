@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -135,6 +136,43 @@
                                             <constraint firstAttribute="width" constant="50" id="zsp-yy-ESg"/>
                                         </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qLG-Hi-xcI">
+                                        <rect key="frame" x="24" y="239.5" width="329" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="trv-ae-KYV"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f4e-iM-O93">
+                                            <size key="itemSize" width="72" height="39"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ValueTestQuestionCVC" id="Kqx-4v-0sW" customClass="ValueTestQuestionCVC" customModule="Find_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yx7-Aq-Hpn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-MY-dKz">
+                                                            <rect key="frame" x="15" y="9.5" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="3sE-MY-dKz" firstAttribute="centerY" secondItem="Yx7-Aq-Hpn" secondAttribute="centerY" id="3o5-hu-wiL"/>
+                                                        <constraint firstItem="3sE-MY-dKz" firstAttribute="leading" secondItem="Yx7-Aq-Hpn" secondAttribute="leading" constant="15" id="8ye-HX-1pN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3sE-MY-dKz" secondAttribute="trailing" constant="15" id="KCU-1N-Lw0"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="72" height="39"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                     <stackView opaque="NO" contentMode="left" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-6x-yvS">
                                         <rect key="frame" x="24" y="229.5" width="329" height="150"/>
                                         <subviews>
@@ -200,11 +238,19 @@
                                 <constraints>
                                     <constraint firstItem="50w-j3-lOV" firstAttribute="top" secondItem="gp6-km-VVw" secondAttribute="top" constant="24" id="91Z-AI-bKF"/>
                                     <constraint firstAttribute="bottom" secondItem="sJn-6x-yvS" secondAttribute="bottom" constant="40" id="Buk-wm-rMF"/>
+                                    <constraint firstItem="qLG-Hi-xcI" firstAttribute="leading" secondItem="gp6-km-VVw" secondAttribute="leading" constant="24" id="EPh-yM-rOc"/>
+                                    <constraint firstAttribute="trailing" secondItem="qLG-Hi-xcI" secondAttribute="trailing" id="P8c-nB-CaP"/>
                                     <constraint firstAttribute="trailing" secondItem="sJn-6x-yvS" secondAttribute="trailing" id="Y1m-nc-WUK"/>
+                                    <constraint firstAttribute="bottom" secondItem="qLG-Hi-xcI" secondAttribute="bottom" constant="30" id="g48-RE-W1L"/>
                                     <constraint firstItem="sJn-6x-yvS" firstAttribute="leading" secondItem="gp6-km-VVw" secondAttribute="leading" constant="24" id="hyM-b0-ehA"/>
                                     <constraint firstItem="50w-j3-lOV" firstAttribute="centerX" secondItem="gp6-km-VVw" secondAttribute="centerX" id="jFF-hY-JgV"/>
                                     <constraint firstAttribute="width" secondItem="gp6-km-VVw" secondAttribute="height" multiplier="320:380" id="t8P-m5-q3G"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="sJn-6x-yvS"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-7K-z8d">
                                 <rect key="frame" x="186.5" y="275.5" width="41.5" height="20.5"/>
@@ -252,6 +298,7 @@
                         <outlet property="backBtn" destination="A1c-7f-KDp" id="sDJ-tW-p8L"/>
                         <outlet property="nextBtn" destination="398-ZF-jl3" id="aAV-fk-1Pn"/>
                         <outlet property="previousBtn" destination="4fD-3W-0gm" id="sAO-BB-3kt"/>
+                        <outlet property="questionChoiceCV" destination="qLG-Hi-xcI" id="1BV-Wn-om6"/>
                         <outlet property="questionChoiceView" destination="9KP-ZF-0pE" id="0Zn-eq-WcV"/>
                         <outlet property="questionContentLabel" destination="YXu-7K-z8d" id="fMy-JS-HuK"/>
                         <outlet property="questionSegueTitleLabel" destination="mu0-7E-P4q" id="Ts9-25-fG0"/>

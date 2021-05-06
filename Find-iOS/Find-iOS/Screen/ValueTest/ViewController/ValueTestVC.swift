@@ -23,8 +23,11 @@ class ValueTestVC: UIViewController {
     @IBOutlet var questionSegueTitleView: UIView!
     @IBOutlet var questionSegueTitleLabel: UILabel!
     @IBOutlet var questionContentLabel: UILabel!
-    @IBOutlet var questionChoiceView: UIView!
-    @IBOutlet var questionChoiceLabel: [UIView]!
+    //    @IBOutlet var questionChoiceView: UIView!
+    //    @IBOutlet var questionChoiceLabel: [UIView]!
+    @IBOutlet var questionChoiceCV: UICollectionView!
+    
+    
     
     @IBOutlet var previousBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
@@ -35,7 +38,7 @@ class ValueTestVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     //MARL: - IBActions
@@ -51,9 +54,9 @@ extension ValueTestVC {
         view.layoutIfNeeded()
         
         questionView.makeRounded(cornerRadius: 10)
-//        questionView.backgroundColor =
+        //        questionView.backgroundColor =
         
-//        questionSegueTitleView.backgroundColor =
+        //        questionSegueTitleView.backgroundColor =
         questionView.makeRounded(cornerRadius: questionView.frame.height / 2)
     }
     
@@ -113,7 +116,29 @@ extension ValueTestVC {
     
     //MARK: - Functions
     
-
     
+    
+    
+}
+
+
+//MARK: - UICollectionViewDataSource
+extension ValueTestVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ValueTestQuestionCVC.identifier, for: indexPath) as? ValueTestQuestionCVC
+        else {
+            return UICollectionViewCell()
+        }
+        
+        return cell
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension ValueTestVC: UICollectionViewDelegateFlowLayout {
     
 }
