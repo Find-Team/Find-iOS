@@ -11,6 +11,7 @@ class ValueTestQuestionCVC: UICollectionViewCell {
     
     static let identifier = "ValueTestQuestionCVC"
     
+    @IBOutlet var choiceLabel: UILabel!
     
     
 }

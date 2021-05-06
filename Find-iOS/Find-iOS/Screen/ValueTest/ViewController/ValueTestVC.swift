@@ -151,6 +151,20 @@ extension ValueTestVC {
         nextBtn.backgroundColor = .lightGray
     }
     
+    func choiceSelected(cell: ValueTestQuestionCVC) {
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.purple.cgColor
+        cell.layer.cornerRadius = 10
+        cell.choiceLabel.textColor = .purple
+    }
+    
+    func choiceUnselected(cell: ValueTestQuestionCVC) {
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.cornerRadius = 10
+        cell.choiceLabel.textColor = .gray
+    }
+    
     //MARK: - Functions
     
     
@@ -171,10 +185,30 @@ extension ValueTestVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        cell.choiceLabel.text = valueQuestions[questionIdx-1].choice[indexPath.item].choiceContent
+        
+        /// 유저초이스가 무엇 하나라도 선택이 되었을 때
+        if valueQuestions[questionIdx-1].userChoice != 0 {
+            if valueQuestions[questionIdx-1].userChoice == indexPath.item {
+                choiceSelected(cell: cell)
+            } else {
+                choiceUnselected(cell: cell)
+            }
+        } else {
+            choiceUnselected(cell: cell)
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        collectionView.deselectItem(at: indexPath, animated: false)
+        
+        /// 해당 문제 유저초이스에 선택된 값을 저장
+        valueQuestions[questionIdx].userChoice = indexPath.item + 1
+        
+        self.questionChoiceCV.reloadData()
         
     }
 }

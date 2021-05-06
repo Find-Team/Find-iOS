@@ -173,6 +173,9 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="72" height="39"/>
+                                                <connections>
+                                                    <outlet property="choiceLabel" destination="3sE-MY-dKz" id="aVH-Af-Khb"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
