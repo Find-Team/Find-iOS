@@ -65,6 +65,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		377C27722644462B003FF385 /* ValueTest */ = {
+			isa = PBXGroup;
+			children = (
+				377C277326444636003FF385 /* Storyboard */,
+				377C277426444640003FF385 /* ViewController */,
+				377C277526444658003FF385 /* Cell */,
+			);
+			path = ValueTest;
+			sourceTree = "<group>";
+		};
+		377C277326444636003FF385 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		377C277426444640003FF385 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		377C277526444658003FF385 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		542A1DE726442F8B00E69A4D = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +157,7 @@
 		542A1E0B2644311F00E69A4D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				377C27722644462B003FF385 /* ValueTest */,
 				542A1DF726442F8B00E69A4D /* ViewController.swift */,
 				542A1DF926442F8B00E69A4D /* Main.storyboard */,
 			);
