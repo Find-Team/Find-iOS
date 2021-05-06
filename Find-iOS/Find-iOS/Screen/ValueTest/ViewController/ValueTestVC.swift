@@ -173,10 +173,23 @@ extension ValueTestVC: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
 extension ValueTestVC: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let cellWidth : CGFloat =
+//        let cellHeight : CGFloat = collectionView.frame.height
+//
+//        return CGSize(width: cellWidth, height: cellHeight)
+//
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
