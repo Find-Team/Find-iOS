@@ -105,6 +105,8 @@ extension ValueTestVC {
         //        questionSegueTitleView.backgroundColor =
         questionSegueTitleView.makeRounded(cornerRadius: questionSegueTitleView.frame.height / 2)
         
+        questionChoiceTableView.backgroundColor = .white
+        
         questionContentLabel.numberOfLines = 0
         questionContentLabel.textAlignment = .center
     }
@@ -172,6 +174,7 @@ extension ValueTestVC {
         cell.choiceCell.layer.borderWidth = 1
         cell.choiceCell.layer.borderColor = UIColor.purple.cgColor
         cell.choiceCell.layer.cornerRadius = 10
+        cell.choiceCell.backgroundColor = .white
         cell.choiceLabel.textColor = .purple
     }
     
@@ -179,6 +182,7 @@ extension ValueTestVC {
         cell.choiceCell.layer.borderWidth = 1
         cell.choiceCell.layer.borderColor = UIColor.gray.cgColor
         cell.choiceCell.layer.cornerRadius = 10
+        cell.choiceCell.backgroundColor = .white
         cell.choiceLabel.textColor = .gray
     }
     
@@ -221,17 +225,17 @@ extension ValueTestVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ValueTestQuestionTVC") as? ValueTestQuestionTVC
 
         else {
-//            print(">>> something went wrong")
             return UITableViewCell()
         }
         
-        cell.choiceLabel.text = valueQuestions[questionIdx-1].choice[indexPath.item].choiceContent
+        /// 셀에 문항 내용을 넣는다
+        cell.choiceLabel.text = valueQuestions[questionIdx-1].choice[indexPath.row].choiceContent
         
         cell.layoutIfNeeded()
-        
+        print(valueQuestions[questionIdx-1].userChoice, indexPath.row)
         /// 유저초이스가 무엇 하나라도 선택이 되었을 때
         if valueQuestions[questionIdx-1].userChoice != 0 {
-            if valueQuestions[questionIdx-1].userChoice == indexPath.item {
+            if valueQuestions[questionIdx-1].userChoice - 1 == indexPath.row {
                 choiceSelected(cell: cell)
             } else {
                 choiceUnselected(cell: cell)
@@ -243,8 +247,18 @@ extension ValueTestVC: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        /// 선택된 문항을 유저초이스에 저장
+        valueQuestions[questionIdx-1].userChoice = indexPath.row + 1
+        
+        self.questionChoiceTableView.reloadData()
+    }
+    
     
 }
 
 extension ValueTestVC: UITableViewDelegate {
+    
 }
