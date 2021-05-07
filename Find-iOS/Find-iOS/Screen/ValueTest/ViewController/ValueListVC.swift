@@ -122,8 +122,8 @@ extension ValueListVC {
     func answerFilled(cell: ValueListTVC, indexPath: Int) {
         cell.answerView.makeRounded(cornerRadius: 4)
         cell.answerView.backgroundColor = .white
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.blue.cgColor
+        cell.answerView.layer.borderWidth = 1
+        cell.answerView.layer.borderColor = UIColor.blue.cgColor
         
         cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
         cell.answerLabel.textColor = .blue
@@ -132,8 +132,11 @@ extension ValueListVC {
     func answerUnfilled(cell: ValueListTVC) {
         cell.answerView.makeRounded(cornerRadius: 4)
         cell.answerView.backgroundColor = .lightGray
+        cell.answerView.layer.borderWidth = 0
         
         cell.answerLabel.text = "아직 답변 전입니다."
+        cell.answerLabel.textColor = .black
+        
     }
     
     //MARK: - functions
@@ -166,7 +169,6 @@ extension ValueListVC: UITableViewDataSource {
         if valueQuestions[indexPath.row].userChoice != 0 {
             answerFilled(cell: cell, indexPath: indexPath.row)
         } else {
-            
             answerUnfilled(cell: cell)
         }
         

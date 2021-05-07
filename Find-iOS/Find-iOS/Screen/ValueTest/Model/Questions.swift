@@ -19,9 +19,9 @@ struct QuestionChoice {
 }
 
 var valueQuestions: [Question] = [
-    Question(id: 1, question: "연인관계를 주변에 알리는 것에 대해\n어떻게 생각하세요?", choice: [QuestionChoice(choiceContent: "관계가 깊어지기 전까지는 금물"), QuestionChoice(choiceContent: "가까운 사람에게만"), QuestionChoice(choiceContent: "당당하게 행동")]),
+    Question(id: 1, question: "연인관계를 주변에 알리는 것에 대해\n어떻게 생각하세요?", choice: [QuestionChoice(choiceContent: "관계가 깊어지기 전까지는 금물"), QuestionChoice(choiceContent: "가까운 사람에게만"), QuestionChoice(choiceContent: "당당하게 행동")], userChoice: 2),
     Question(id: 2, question: "연인과의 사생활 공유", choice: [QuestionChoice(choiceContent: "모든걸 공유"), QuestionChoice(choiceContent: "합의한 부분들에 대해서만 공유"), QuestionChoice(choiceContent: "사생활이나 비밀을 지켜주기")]),
-    Question(id: 3, question: "이상적인 연애비용분담", choice: [QuestionChoice(choiceContent: "칼 더치페이 (5:5)"), QuestionChoice(choiceContent: "적당히 번갈아가며 (6:4)"), QuestionChoice(choiceContent: "여유 있는쪽이 더 부담 (7:3)")]),
+    Question(id: 3, question: "이상적인 연애비용분담", choice: [QuestionChoice(choiceContent: "칼 더치페이 (5:5)"), QuestionChoice(choiceContent: "적당히 번갈아가며 (6:4)"), QuestionChoice(choiceContent: "여유 있는쪽이 더 부담 (7:3)")], userChoice: 1),
     Question(id: 4, question: "주말에 필요한 개인적인 시간", choice: [QuestionChoice(choiceContent: "딱히 생각해본적 없어요"), QuestionChoice(choiceContent: "가능하면 연인과 함께"), QuestionChoice(choiceContent: "하루 정도는 각자의 시간갖기")]),
     Question(id: 5, question: "애인이 다른 이성친구와 단둘이 만난다면", choice: [QuestionChoice(choiceContent: "친한 친구라면 술, 영화까지 가능"), QuestionChoice(choiceContent: "식사, 커피 외에는 불가"), QuestionChoice(choiceContent: "왜 단둘이 만나?")]),
     Question(id: 6, question: "연인과 얼마나 자주 연락하는게 좋나요?", choice: [QuestionChoice(choiceContent: "빠쁘더라도 최대한 자주"), QuestionChoice(choiceContent: "시간 여유가 있고 생각이 날 때 연락")]),
