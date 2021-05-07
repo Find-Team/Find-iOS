@@ -228,11 +228,14 @@ extension ValueTestVC: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        /// 셀 선택될 때 색 변하는 것 제거
+        cell.selectionStyle = .none
+        
         /// 셀에 문항 내용을 넣는다
         cell.choiceLabel.text = valueQuestions[questionIdx-1].choice[indexPath.row].choiceContent
         
         cell.layoutIfNeeded()
-        print(valueQuestions[questionIdx-1].userChoice, indexPath.row)
+
         /// 유저초이스가 무엇 하나라도 선택이 되었을 때
         if valueQuestions[questionIdx-1].userChoice != 0 {
             if valueQuestions[questionIdx-1].userChoice - 1 == indexPath.row {
