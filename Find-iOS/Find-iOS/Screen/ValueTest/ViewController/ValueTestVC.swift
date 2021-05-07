@@ -33,6 +33,10 @@ class ValueTestVC: UIViewController {
 
     @IBOutlet var questionChoiceTableView: UITableView!
     
+    @IBOutlet var questionFinishView: UIView!
+    @IBOutlet var questionFinishLabel: UILabel!
+    @IBOutlet var questionFinishBtn: UIButton!
+    
     @IBOutlet var countLabel: UILabel!
     
     @IBOutlet var previousBtn: UIButton!
@@ -53,6 +57,8 @@ class ValueTestVC: UIViewController {
         RelationshipSelected()
         setPreviousBtnActivated()
         setNextBtnActivated()
+        
+        questionFinishView.isHidden = true
         
         changeQuestion()
         
@@ -155,12 +161,24 @@ extension ValueTestVC {
         questionContentLabel.textAlignment = .center
     }
     
+    func setQuestionFinishViewStyle() {
+        questionFinishView.makeRounded(cornerRadius: 10)
+        
+        questionFinishLabel.text = "가치관 문답 완료 !\n완료 버튼을 눌러\n가치관 필터를 설정하세요"
+        questionFinishLabel.numberOfLines = 3
+        questionFinishLabel.textColor = .purple
+        
+        questionFinishBtn.makeRounded(cornerRadius: questionFinishBtn.frame.height/2)
+        questionFinishBtn.backgroundColor = .purple
+        questionFinishBtn.setTitle("가치관 필터 설정하기", for: .normal)
+        questionFinishBtn.setTitleColor(.white, for: .normal)
+    }
+    
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
         segueIndicator[0].backgroundColor = .purple
         segueIndicator[1].backgroundColor = .gray
         segueIndicator[2].backgroundColor = .gray
-        
     }
     
     /// 가족 카테고리 선택됐을 때
