@@ -59,17 +59,17 @@ class ValueListVC: UIViewController {
     }
     
     @IBAction func relationshipBtnDidTap(_ sender: Any) {
-        currentCategory = .relationship
+        RelationshipSelected()
         valueListTableView.reloadData()
     }
     
     @IBAction func familyBtnDidTap(_ sender: Any) {
-        currentCategory = .family
+        FamilySelected()
         valueListTableView.reloadData()
     }
     
     @IBAction func careerBtnDidTap(_ sender: Any) {
-        currentCategory = .career
+        CareerSelected()
         valueListTableView.reloadData()
     }
 }
@@ -103,6 +103,8 @@ extension ValueListVC {
     
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
+        currentCategory = .relationship
+        
         segueIndicator[0].backgroundColor = .purple
         segueIndicator[1].backgroundColor = .gray
         segueIndicator[2].backgroundColor = .gray
@@ -110,6 +112,8 @@ extension ValueListVC {
     
     /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
+        currentCategory = .family
+        
         segueIndicator[0].backgroundColor = .gray
         segueIndicator[1].backgroundColor = .purple
         segueIndicator[2].backgroundColor = .gray
@@ -117,6 +121,8 @@ extension ValueListVC {
     
     /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
+        currentCategory = .career
+        
         segueIndicator[0].backgroundColor = .gray
         segueIndicator[1].backgroundColor = .gray
         segueIndicator[2].backgroundColor = .purple
