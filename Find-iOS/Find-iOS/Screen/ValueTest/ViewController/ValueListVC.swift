@@ -179,6 +179,7 @@ extension ValueListVC: UITableViewDataSource {
         cell.questionView.backgroundColor = .purple
         cell.questionLabel.textColor = .white
         
+        /// 선택 카테고리에 따른 질문
         var currIndexPath: Int = 0
         
         switch currentCategory {
