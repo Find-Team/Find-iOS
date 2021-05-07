@@ -103,6 +103,9 @@ extension ValueTestVC {
         
         //        questionSegueTitleView.backgroundColor =
         questionSegueTitleView.makeRounded(cornerRadius: questionSegueTitleView.frame.height / 2)
+        
+        questionContentLabel.numberOfLines = 0
+        questionContentLabel.textAlignment = .center
     }
     
     /// 관계 카테고리 선택됐을 때
@@ -181,6 +184,7 @@ extension ValueTestVC {
     //MARK: - Functions
     
     func changeQuestion() {
+        
         /// 문제 번호에 따라 카테고리 활성화
         if getQuestionCategory(questionIndex: questionIdx) == "관계" {
             RelationshipSelected()
@@ -192,6 +196,13 @@ extension ValueTestVC {
             CareerSelected()
         }
         
+        /// 질문 박스 안 질문 카테고리 이름 최신화
+        questionSegueTitleLabel.text = getQuestionCategory(questionIndex: questionIdx)
+        
+        /// 질문 가져오기
+        questionContentLabel.text = valueQuestions[questionIdx-1].question
+        
+        /// 카운트 라벨 최신화
         countLabel.text = "\(questionIdx % 10 != 0 ? questionIdx % 10 : 10) / 10"
     }
     
