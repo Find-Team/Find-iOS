@@ -165,7 +165,7 @@ extension ValueTestVC {
     /// 이전 버튼 활성화 됐을 때
     func setPreviousBtnActivated() {
         previousBtn.setTitle("이전", for: .normal)
-        previousBtn.titleLabel?.textColor = .black
+        previousBtn.setTitleColor(.black, for: .normal)
         previousBtn.makeRounded(cornerRadius: 10)
         previousBtn.backgroundColor = .white
     }
@@ -173,7 +173,7 @@ extension ValueTestVC {
     /// 이전 버튼 비활성화 됐을 때
     func setPreviousBtnDeactivated() {
         previousBtn.setTitle("이전", for: .normal)
-        previousBtn.titleLabel?.textColor = .white
+        previousBtn.setTitleColor(.white, for: .normal)
         previousBtn.makeRounded(cornerRadius: 10)
         previousBtn.backgroundColor = .lightGray
     }
@@ -181,7 +181,7 @@ extension ValueTestVC {
     /// 다음 버튼 활성화 됐을 때
     func setNextBtnActivated() {
         nextBtn.setTitle("다음", for: .normal)
-        nextBtn.titleLabel?.textColor = .black
+        nextBtn.setTitleColor(.black, for: .normal)
         nextBtn.makeRounded(cornerRadius: 10)
         nextBtn.backgroundColor = .white
     }
@@ -189,7 +189,7 @@ extension ValueTestVC {
     /// 다음 버튼 비활성화 됐을 때
     func setNextBtnDeactivated() {
         nextBtn.setTitle("다음", for: .normal)
-        nextBtn.titleLabel?.textColor = .white
+        nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.makeRounded(cornerRadius: 10)
         nextBtn.backgroundColor = .lightGray
     }
