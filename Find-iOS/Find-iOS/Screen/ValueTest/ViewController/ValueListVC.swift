@@ -28,11 +28,17 @@ class ValueListVC: UIViewController {
     @IBOutlet var segueFamilyBtn: UIButton!
     @IBOutlet var segueCareerBtn: UIButton!
     
+    
+    @IBOutlet var valueListTableView: UITableView!
+    
 
     //MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        valueListTableView.dataSource = self
+        valueListTableView.delegate = self
         
         setSegueStyle()
         RelationshipSelected()
@@ -112,4 +118,69 @@ extension ValueListVC {
         segueIndicator[1].backgroundColor = .gray
         segueIndicator[2].backgroundColor = .purple
     }
+    
+    func answerFilled(cell: ValueListTVC, indexPath: Int) {
+        cell.answerView.makeRounded(cornerRadius: 4)
+        cell.answerView.backgroundColor = .white
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.blue.cgColor
+        
+        cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
+        cell.answerLabel.textColor = .blue
+    }
+    
+    func answerUnfilled(cell: ValueListTVC) {
+        cell.answerView.makeRounded(cornerRadius: 4)
+        cell.answerView.backgroundColor = .lightGray
+        
+        cell.answerLabel.text = "아직 답변 전입니다."
+    }
+    
+    //MARK: - functions
+    
+    
+}
+
+extension ValueListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ValueListTVC") as? ValueListTVC
+
+        else {
+            return UITableViewCell()
+        }
+        
+        /// 질문 뷰 스타일
+        cell.questionView.makeRounded(cornerRadius: 4)
+        cell.questionView.backgroundColor = .purple
+        cell.questionLabel.textColor = .white
+        cell.questionLabel.text = valueQuestions[indexPath.row].question
+        
+        cell.layoutIfNeeded()
+        
+        /// 답변이 있을 때 / 없을 때 분기처리
+        if valueQuestions[indexPath.row].userChoice != 0 {
+            answerFilled(cell: cell, indexPath: indexPath.row)
+        } else {
+            
+            answerUnfilled(cell: cell)
+        }
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        
+    }
+}
+
+extension ValueListVC: UITableViewDelegate {
+    
 }

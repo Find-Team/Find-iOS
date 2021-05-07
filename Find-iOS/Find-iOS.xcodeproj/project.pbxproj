@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */; };
 		3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */; };
+		377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */; };
 		377C2777264446FD003FF385 /* ValueTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377C2776264446FD003FF385 /* ValueTest.storyboard */; };
 		377C277A2644470C003FF385 /* ValueList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377C27792644470C003FF385 /* ValueList.storyboard */; };
 		377C277D26444750003FF385 /* ValueTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C277C26444750003FF385 /* ValueTestVC.swift */; };
@@ -30,6 +31,7 @@
 		30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuestionCategory.swift; sourceTree = "<group>"; };
 		3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestQuestionTVC.swift; sourceTree = "<group>"; };
+		3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListTVC.swift; sourceTree = "<group>"; };
 		377C2776264446FD003FF385 /* ValueTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ValueTest.storyboard; sourceTree = "<group>"; };
 		377C27792644470C003FF385 /* ValueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ValueList.storyboard; sourceTree = "<group>"; };
 		377C277C26444750003FF385 /* ValueTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestVC.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */,
+				3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				377C278026444761003FF385 /* ValueListVC.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
 				3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */,
+				377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
