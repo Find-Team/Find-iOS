@@ -32,6 +32,7 @@ class ValueTestVC: UIViewController {
     //    @IBOutlet var questionChoiceView: UIView!
     //    @IBOutlet var questionChoiceLabel: [UIView]!
     @IBOutlet var questionChoiceCV: UICollectionView!
+    @IBOutlet var questionChoiceTableView: UITableView!
     
     @IBOutlet var countLabel: UILabel!
     
@@ -45,8 +46,8 @@ class ValueTestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questionChoiceCV.dataSource = self
-        questionChoiceCV.delegate = self
+        questionChoiceTableView.dataSource = self
+        questionChoiceTableView.delegate = self
         
         setQuestionView()
         RelationshipSelected()
@@ -167,17 +168,17 @@ extension ValueTestVC {
         nextBtn.backgroundColor = .lightGray
     }
     
-    func choiceSelected(cell: ValueTestQuestionCVC) {
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.purple.cgColor
-        cell.layer.cornerRadius = 10
+    func choiceSelected(cell: ValueTestQuestionTVC) {
+        cell.choiceCell.layer.borderWidth = 1
+        cell.choiceCell.layer.borderColor = UIColor.purple.cgColor
+        cell.choiceCell.layer.cornerRadius = 10
         cell.choiceLabel.textColor = .purple
     }
     
-    func choiceUnselected(cell: ValueTestQuestionCVC) {
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.cornerRadius = 10
+    func choiceUnselected(cell: ValueTestQuestionTVC) {
+        cell.choiceCell.layer.borderWidth = 1
+        cell.choiceCell.layer.borderColor = UIColor.gray.cgColor
+        cell.choiceCell.layer.cornerRadius = 10
         cell.choiceLabel.textColor = .gray
     }
     
@@ -204,25 +205,29 @@ extension ValueTestVC {
         
         /// 카운트 라벨 최신화
         countLabel.text = "\(questionIdx % 10 != 0 ? questionIdx % 10 : 10) / 10"
+        
+        /// 답변 문항 최신화
+        questionChoiceTableView.reloadData()
     }
-    
     
 }
 
-
-//MARK: - UICollectionViewDataSource
-extension ValueTestVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ValueTestVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return valueQuestions[questionIdx-1].choice.count /// 2개일 수도 있고 3개일 수도 있고
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ValueTestQuestionCVC.identifier, for: indexPath) as? ValueTestQuestionCVC
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ValueTestQuestionTVC") as? ValueTestQuestionTVC
+
         else {
-            return UICollectionViewCell()
+//            print(">>> something went wrong")
+            return UITableViewCell()
         }
         
         cell.choiceLabel.text = valueQuestions[questionIdx-1].choice[indexPath.item].choiceContent
+        
+        cell.layoutIfNeeded()
         
         /// 유저초이스가 무엇 하나라도 선택이 되었을 때
         if valueQuestions[questionIdx-1].userChoice != 0 {
@@ -238,34 +243,8 @@ extension ValueTestVC: UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        collectionView.deselectItem(at: indexPath, animated: false)
-        
-        /// 해당 문제 유저초이스에 선택된 값을 저장
-        valueQuestions[questionIdx-1].userChoice = indexPath.row + 1
-        
-        self.questionChoiceCV.reloadData()
-        
-    }
+    
 }
 
-//MARK: - UICollectionViewDelegateFlowLayout
-extension ValueTestVC: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let cellWidth : CGFloat =
-//        let cellHeight : CGFloat = collectionView.frame.height
-//
-//        return CGSize(width: cellWidth, height: cellHeight)
-//
-//    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
-    }
+extension ValueTestVC: UITableViewDelegate {
 }
