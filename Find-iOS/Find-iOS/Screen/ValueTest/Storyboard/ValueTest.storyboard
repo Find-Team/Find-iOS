@@ -29,6 +29,13 @@
                                     <action selector="backBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="xeG-QW-r59"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXo-DE-t2p">
+                                <rect key="frame" x="352" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="finishBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="pks-8e-Ozj"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wdr-xk-gvG">
                                 <rect key="frame" x="0.0" y="120.5" width="414" height="40"/>
                                 <subviews>
@@ -257,13 +264,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXo-DE-t2p">
-                                <rect key="frame" x="352" y="79" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="finishBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="pks-8e-Ozj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Pm-56-Hmj"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
