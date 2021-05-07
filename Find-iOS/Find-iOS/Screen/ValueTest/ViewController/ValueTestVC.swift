@@ -84,6 +84,7 @@ class ValueTestVC: UIViewController {
     
     /// 이전 버튼 클릭
     @IBAction func previousBtnDidTap(_ sender: Any) {
+        /// 문항이 관계-1번일 때는 액션 없음
         if questionIdx != 1 {
             questionIdx -= 1
         }
@@ -168,6 +169,7 @@ extension ValueTestVC {
     
     /// 이전 버튼 활성화 됐을 때
     func setPreviousBtnActivated() {
+        previousBtn.isUserInteractionEnabled = true
         previousBtn.setTitle("이전", for: .normal)
         previousBtn.setTitleColor(.black, for: .normal)
         previousBtn.makeRounded(cornerRadius: 10)
@@ -176,6 +178,7 @@ extension ValueTestVC {
     
     /// 이전 버튼 비활성화 됐을 때
     func setPreviousBtnDeactivated() {
+        previousBtn.isUserInteractionEnabled = false
         previousBtn.setTitle("이전", for: .normal)
         previousBtn.setTitleColor(.white, for: .normal)
         previousBtn.makeRounded(cornerRadius: 10)
@@ -184,6 +187,7 @@ extension ValueTestVC {
     
     /// 다음 버튼 활성화 됐을 때
     func setNextBtnActivated() {
+        nextBtn.isUserInteractionEnabled = true
         nextBtn.setTitle("다음", for: .normal)
         nextBtn.setTitleColor(.black, for: .normal)
         nextBtn.makeRounded(cornerRadius: 10)
@@ -192,6 +196,7 @@ extension ValueTestVC {
     
     /// 다음 버튼 비활성화 됐을 때
     func setNextBtnDeactivated() {
+        nextBtn.isUserInteractionEnabled = false
         nextBtn.setTitle("다음", for: .normal)
         nextBtn.setTitleColor(.white, for: .normal)
         nextBtn.makeRounded(cornerRadius: 10)
@@ -240,6 +245,15 @@ extension ValueTestVC {
         
         /// 답변 문항 최신화
         questionChoiceTableView.reloadData()
+        
+        if questionIdx == 1 { /// 첫번째 질문이면
+            setPreviousBtnDeactivated()
+        } else if questionIdx == 30 && answerCnt < 5 { /// 마지막 질문인데 최소 5개를 답하지 않았으면
+            setNextBtnDeactivated()
+        } else {
+            setPreviousBtnActivated()
+            setNextBtnActivated()
+        }
     }
     
 }
