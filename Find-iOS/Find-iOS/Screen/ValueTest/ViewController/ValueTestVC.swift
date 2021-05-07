@@ -103,7 +103,7 @@ class ValueTestVC: UIViewController {
     /// 다음 버튼 클릭
     @IBAction func nextBtnDidTap(_ sender: Any) {
         /// 다음 버튼 클릭 시 문제 번호 하나씩 증가
-        if questionIdx != 30 {
+        if questionIdx != 30 { /// 단 30번째 문제 빼고
             questionIdx += 1
         } else {
             if answerCnt >= 5 { /// 30번 문항에서 다음 뷰를 띄울지 검사
