@@ -53,7 +53,7 @@ class ValueTestVC: UIViewController {
         setPreviousBtnActivated()
         setNextBtnActivated()
         
-        movingQuestion()
+        changeQuestion()
         
     }
     
@@ -70,7 +70,7 @@ class ValueTestVC: UIViewController {
             questionIdx -= 1
         }
         
-        movingQuestion()
+        changeQuestion()
     }
     
     /// 다음 버튼 클릭
@@ -80,7 +80,7 @@ class ValueTestVC: UIViewController {
             questionIdx += 1
         }
         
-        movingQuestion()
+        changeQuestion()
     }
     
     
@@ -180,7 +180,7 @@ extension ValueTestVC {
     
     //MARK: - Functions
     
-    func movingQuestion() {
+    func changeQuestion() {
         /// 문제 번호에 따라 카테고리 활성화
         if getQuestionCategory(questionIndex: questionIdx) == "관계" {
             RelationshipSelected()
