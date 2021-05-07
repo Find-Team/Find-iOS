@@ -13,7 +13,6 @@
 		377C277A2644470C003FF385 /* ValueList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377C27792644470C003FF385 /* ValueList.storyboard */; };
 		377C277D26444750003FF385 /* ValueTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C277C26444750003FF385 /* ValueTestVC.swift */; };
 		377C278026444761003FF385 /* ValueListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C277F26444761003FF385 /* ValueListVC.swift */; };
-		377C2783264458A7003FF385 /* ValueTestQuestionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C2782264458A7003FF385 /* ValueTestQuestionCVC.swift */; };
 		377C278826445D84003FF385 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C278726445D84003FF385 /* Questions.swift */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
@@ -35,7 +34,6 @@
 		377C27792644470C003FF385 /* ValueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ValueList.storyboard; sourceTree = "<group>"; };
 		377C277C26444750003FF385 /* ValueTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestVC.swift; sourceTree = "<group>"; };
 		377C277F26444761003FF385 /* ValueListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListVC.swift; sourceTree = "<group>"; };
-		377C2782264458A7003FF385 /* ValueTestQuestionCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestQuestionCVC.swift; sourceTree = "<group>"; };
 		377C278726445D84003FF385 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		377C277526444658003FF385 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				377C2782264458A7003FF385 /* ValueTestQuestionCVC.swift */,
 				3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */,
 			);
 			path = Cell;
@@ -318,7 +315,6 @@
 				377C278826445D84003FF385 /* Questions.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
 				377C277D26444750003FF385 /* ValueTestVC.swift in Sources */,
-				377C2783264458A7003FF385 /* ValueTestQuestionCVC.swift in Sources */,
 				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				377C278026444761003FF385 /* ValueListVC.swift in Sources */,
