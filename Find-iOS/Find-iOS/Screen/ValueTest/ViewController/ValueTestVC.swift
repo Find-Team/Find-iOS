@@ -19,6 +19,7 @@ class ValueTestVC: UIViewController {
     
     @IBOutlet var viewTitleLabel: UILabel!
     @IBOutlet var backBtn: UIButton!
+    @IBOutlet var finishBtn: UIButton!
     
     @IBOutlet var segueIndicator: [UIView]!
     @IBOutlet var segueRelationshipBtn: UIButton!
@@ -29,9 +30,7 @@ class ValueTestVC: UIViewController {
     @IBOutlet var questionSegueTitleView: UIView!
     @IBOutlet var questionSegueTitleLabel: UILabel!
     @IBOutlet var questionContentLabel: UILabel!
-    //    @IBOutlet var questionChoiceView: UIView!
-    //    @IBOutlet var questionChoiceLabel: [UIView]!
-    @IBOutlet var questionChoiceCV: UICollectionView!
+
     @IBOutlet var questionChoiceTableView: UITableView!
     
     @IBOutlet var countLabel: UILabel!
@@ -50,7 +49,7 @@ class ValueTestVC: UIViewController {
         questionChoiceTableView.delegate = self
         
         setSegueStyle()
-        setQuestionView()
+        setQuestionViewStyle()
         RelationshipSelected()
         setPreviousBtnActivated()
         setNextBtnActivated()
@@ -63,6 +62,10 @@ class ValueTestVC: UIViewController {
     
     /// 뒤로가기 버튼 클릭
     @IBAction func backBtnDidTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func finishBtnDidTap(_ sender: Any) {
         
     }
     
@@ -113,6 +116,18 @@ extension ValueTestVC {
     
     //MARK: - Style
     
+    func finishBtnActivated() {
+        finishBtn.isUserInteractionEnabled = true
+        finishBtn.setTitle("완료", for: .normal)
+        finishBtn.setTitleColor(.black, for: .normal)
+    }
+    
+    func finishBtnDeactivated() {
+        finishBtn.isUserInteractionEnabled = false
+        finishBtn.setTitle("완료", for: .normal)
+        finishBtn.setTitleColor(.gray, for: .normal)
+    }
+    
     func setSegueStyle() {
         segueRelationshipBtn.setTitle("관계", for: .normal)
         segueRelationshipBtn.setTitleColor(.black, for: .normal)
@@ -125,7 +140,7 @@ extension ValueTestVC {
     }
     
     /// 질문뷰 스타일
-    func setQuestionView() {
+    func setQuestionViewStyle() {
         view.layoutIfNeeded()
         
         questionView.makeRounded(cornerRadius: 10)
@@ -223,6 +238,12 @@ extension ValueTestVC {
     
     func changeQuestion() {
         
+        if answerCnt >= 5 { /// 5개 이상 답했으면
+            finishBtnActivated() /// 완료 버튼 활성화
+        } else { /// 5개를 답하지 않았으면
+            finishBtnDeactivated() /// 완료 버튼 비활성화
+        }
+        
         /// 문제 번호에 따라 카테고리 활성화
         if getQuestionCategory(questionIndex: questionIdx) == "관계" {
             RelationshipSelected()
@@ -297,6 +318,12 @@ extension ValueTestVC: UITableViewDataSource {
         
         /// 선택된 문항을 유저초이스에 저장
         valueQuestions[questionIdx-1].userChoice = indexPath.row + 1
+        answerCnt += 1
+        
+        /// 다음 버튼을 클릭하지 않았어도 5번째 답을 선택하면 완료 버튼 활성화
+        if answerCnt == 5 {
+            finishBtnActivated()
+        }
         
         self.questionChoiceTableView.reloadData()
     }

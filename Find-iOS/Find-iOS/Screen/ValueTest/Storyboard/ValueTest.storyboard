@@ -235,6 +235,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXo-DE-t2p">
+                                <rect key="frame" x="352" y="79" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="finishBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="pks-8e-Ozj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Pm-56-Hmj"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -246,12 +253,14 @@
                             <constraint firstItem="wdr-xk-gvG" firstAttribute="top" secondItem="WOL-NR-agS" secondAttribute="bottom" constant="16" id="FIE-VE-qN6"/>
                             <constraint firstItem="8Pm-56-Hmj" firstAttribute="trailing" secondItem="wdr-xk-gvG" secondAttribute="trailing" id="Gug-yr-TJ8"/>
                             <constraint firstItem="wdr-xk-gvG" firstAttribute="leading" secondItem="8Pm-56-Hmj" secondAttribute="leading" id="U47-xr-CzZ"/>
+                            <constraint firstItem="8Pm-56-Hmj" firstAttribute="trailing" secondItem="FXo-DE-t2p" secondAttribute="trailing" constant="16" id="UMn-dn-Mmr"/>
                             <constraint firstItem="yf0-K7-aGg" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="W5G-Bd-dTe"/>
                             <constraint firstItem="YXu-7K-z8d" firstAttribute="centerX" secondItem="nMV-Bp-Sda" secondAttribute="centerX" id="aQM-Ok-veb"/>
                             <constraint firstItem="4fD-3W-0gm" firstAttribute="centerY" secondItem="398-ZF-jl3" secondAttribute="centerY" id="cfi-Ep-83L"/>
                             <constraint firstItem="gp6-km-VVw" firstAttribute="top" secondItem="wdr-xk-gvG" secondAttribute="bottom" constant="40" id="cvo-Z3-QqG"/>
                             <constraint firstItem="4fD-3W-0gm" firstAttribute="leading" secondItem="gp6-km-VVw" secondAttribute="leading" constant="25" id="dIr-fu-1Pc"/>
                             <constraint firstItem="A1c-7f-KDp" firstAttribute="centerY" secondItem="WOL-NR-agS" secondAttribute="centerY" id="eeZ-cx-eNx"/>
+                            <constraint firstItem="FXo-DE-t2p" firstAttribute="centerY" secondItem="WOL-NR-agS" secondAttribute="centerY" id="fm6-JT-4GV"/>
                             <constraint firstItem="398-ZF-jl3" firstAttribute="top" secondItem="gp6-km-VVw" secondAttribute="bottom" constant="60" id="fqa-yf-YPA"/>
                             <constraint firstItem="4fD-3W-0gm" firstAttribute="height" secondItem="398-ZF-jl3" secondAttribute="height" id="ga5-Tw-A9v"/>
                             <constraint firstItem="4fD-3W-0gm" firstAttribute="width" secondItem="398-ZF-jl3" secondAttribute="width" id="iND-Ii-ObD"/>
@@ -265,6 +274,7 @@
                     <connections>
                         <outlet property="backBtn" destination="A1c-7f-KDp" id="sDJ-tW-p8L"/>
                         <outlet property="countLabel" destination="yf0-K7-aGg" id="Ndg-MX-I50"/>
+                        <outlet property="finishBtn" destination="FXo-DE-t2p" id="ejG-bY-mvd"/>
                         <outlet property="nextBtn" destination="398-ZF-jl3" id="aAV-fk-1Pn"/>
                         <outlet property="previousBtn" destination="4fD-3W-0gm" id="sAO-BB-3kt"/>
                         <outlet property="questionChoiceTableView" destination="hC8-hh-dYe" id="pCl-PP-UhG"/>
