@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="19P-Vc-vJJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -160,8 +160,8 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-MY-dKz">
-                                                            <rect key="frame" x="15" y="9.5" width="42" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="15" y="11" width="42" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -320,7 +320,6 @@
                         <outlet property="nextBtn" destination="398-ZF-jl3" id="aAV-fk-1Pn"/>
                         <outlet property="previousBtn" destination="4fD-3W-0gm" id="sAO-BB-3kt"/>
                         <outlet property="questionChoiceCV" destination="qLG-Hi-xcI" id="1BV-Wn-om6"/>
-                        <outlet property="questionChoiceView" destination="9KP-ZF-0pE" id="0Zn-eq-WcV"/>
                         <outlet property="questionContentLabel" destination="YXu-7K-z8d" id="fMy-JS-HuK"/>
                         <outlet property="questionSegueTitleLabel" destination="mu0-7E-P4q" id="Ts9-25-fG0"/>
                         <outlet property="questionSegueTitleView" destination="50w-j3-lOV" id="0r2-1C-nrW"/>
@@ -332,10 +331,6 @@
                         <outletCollection property="segueIndicator" destination="cVY-JC-xCg" collectionClass="NSMutableArray" id="mUz-gf-1L2"/>
                         <outletCollection property="segueIndicator" destination="yIx-Te-Uie" collectionClass="NSMutableArray" id="DqV-uV-u0s"/>
                         <outletCollection property="segueIndicator" destination="io8-i0-fWr" collectionClass="NSMutableArray" id="4IR-2V-qTj"/>
-                        <outletCollection property="questionChoiceLabel" destination="9KP-ZF-0pE" collectionClass="NSMutableArray" id="q9m-JV-Y7s"/>
-                        <outletCollection property="questionChoiceLabel" destination="XCC-UO-2w9" collectionClass="NSMutableArray" id="eOO-3O-AFh"/>
-                        <outletCollection property="questionChoiceLabel" destination="fes-84-ttf" collectionClass="NSMutableArray" id="gDd-ir-lfq"/>
-                        <outletCollection property="questionChoiceLabel" destination="rvN-cT-IYr" collectionClass="NSMutableArray" id="3J7-z1-O9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1a-v2-B7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

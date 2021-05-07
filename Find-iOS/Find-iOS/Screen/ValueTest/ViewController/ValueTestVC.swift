@@ -11,7 +11,8 @@ class ValueTestVC: UIViewController {
     
     //MARK: - Custom Variables
     
-    var questionIdx = 1
+    var questionIdx: Int = 1 /// 현재 문제 번호 (1-30)
+    var answerCnt: Int = 0 /// 답변한 문제 개수 (0-30)
     
     
     //MARK: - IBOutlets
@@ -52,6 +53,8 @@ class ValueTestVC: UIViewController {
         setPreviousBtnActivated()
         setNextBtnActivated()
         
+        movingQuestion()
+        
     }
     
     //MARK: - IBActions
@@ -66,14 +69,24 @@ class ValueTestVC: UIViewController {
         if questionIdx != 1 {
             questionIdx -= 1
         }
+        
+        movingQuestion()
     }
     
     /// 다음 버튼 클릭
     @IBAction func nextBtnDidTap(_ sender: Any) {
+        /// 다음 버튼 클릭 시 문제 번호 하나씩 증가
         if questionIdx != 30 {
             questionIdx += 1
         }
+        
+        movingQuestion()
     }
+    
+    
+    //MARK: - @objc
+    
+    
 }
 
 
@@ -89,7 +102,7 @@ extension ValueTestVC {
         //        questionView.backgroundColor =
         
         //        questionSegueTitleView.backgroundColor =
-        questionView.makeRounded(cornerRadius: questionView.frame.height / 2)
+        questionSegueTitleView.makeRounded(cornerRadius: questionSegueTitleView.frame.height / 2)
     }
     
     /// 관계 카테고리 선택됐을 때
@@ -167,7 +180,20 @@ extension ValueTestVC {
     
     //MARK: - Functions
     
-    
+    func movingQuestion() {
+        /// 문제 번호에 따라 카테고리 활성화
+        if getQuestionCategory(questionIndex: questionIdx) == "관계" {
+            RelationshipSelected()
+        }
+        else if getQuestionCategory(questionIndex: questionIdx) == "가족" {
+            FamilySelected()
+        }
+        else if getQuestionCategory(questionIndex: questionIdx) == "커리어" {
+            CareerSelected()
+        }
+        
+        countLabel.text = "\(questionIdx % 10 != 0 ? questionIdx % 10 : 10) / 10"
+    }
     
     
 }
@@ -206,7 +232,7 @@ extension ValueTestVC: UICollectionViewDataSource {
         collectionView.deselectItem(at: indexPath, animated: false)
         
         /// 해당 문제 유저초이스에 선택된 값을 저장
-        valueQuestions[questionIdx].userChoice = indexPath.item + 1
+        valueQuestions[questionIdx-1].userChoice = indexPath.row + 1
         
         self.questionChoiceCV.reloadData()
         
