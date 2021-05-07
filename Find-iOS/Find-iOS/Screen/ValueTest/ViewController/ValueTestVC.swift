@@ -21,9 +21,9 @@ class ValueTestVC: UIViewController {
     @IBOutlet var backBtn: UIButton!
     
     @IBOutlet var segueIndicator: [UIView]!
-    @IBOutlet var segueRelationshipLabel: UILabel!
-    @IBOutlet var segueFamilyLabel: UILabel!
-    @IBOutlet var segueCareerLabel: UILabel!
+    @IBOutlet var segueRelationshipBtn: UIButton!
+    @IBOutlet var segueFamilyBtn: UIButton!
+    @IBOutlet var segueCareerBtn: UIButton!
     
     @IBOutlet var questionView: UIView!
     @IBOutlet var questionSegueTitleView: UIView!
@@ -49,6 +49,7 @@ class ValueTestVC: UIViewController {
         questionChoiceTableView.dataSource = self
         questionChoiceTableView.delegate = self
         
+        setSegueStyle()
         setQuestionView()
         RelationshipSelected()
         setPreviousBtnActivated()
@@ -64,6 +65,18 @@ class ValueTestVC: UIViewController {
     @IBAction func backBtnDidTap(_ sender: Any) {
         
     }
+    
+    @IBAction func relationshipBtnDidTap(_ sender: Any) {
+    }
+    
+    @IBAction func familyBtnDidTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func careerBtnDidTap(_ sender: Any) {
+        
+    }
+    
     
     /// 이전 버튼 클릭
     @IBAction func previousBtnDidTap(_ sender: Any) {
@@ -94,6 +107,17 @@ class ValueTestVC: UIViewController {
 extension ValueTestVC {
     
     //MARK: - Style
+    
+    func setSegueStyle() {
+        segueRelationshipBtn.setTitle("관계", for: .normal)
+        segueRelationshipBtn.setTitleColor(.black, for: .normal)
+        
+        segueFamilyBtn.setTitle("가족", for: .normal)
+        segueFamilyBtn.setTitleColor(.black, for: .normal)
+        
+        segueCareerBtn.setTitle("커리어", for: .normal)
+        segueCareerBtn.setTitleColor(.black, for: .normal)
+    }
     
     /// 질문뷰 스타일
     func setQuestionView() {
