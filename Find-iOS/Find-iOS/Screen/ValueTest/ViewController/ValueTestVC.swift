@@ -67,14 +67,18 @@ class ValueTestVC: UIViewController {
     }
     
     @IBAction func relationshipBtnDidTap(_ sender: Any) {
+        questionIdx = 1
+        changeQuestion()
     }
     
     @IBAction func familyBtnDidTap(_ sender: Any) {
-        
+        questionIdx = 11
+        changeQuestion()
     }
     
     @IBAction func careerBtnDidTap(_ sender: Any) {
-        
+        questionIdx = 21
+        changeQuestion()
     }
     
     
