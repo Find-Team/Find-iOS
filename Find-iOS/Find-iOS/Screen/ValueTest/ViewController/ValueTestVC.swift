@@ -213,7 +213,7 @@ extension ValueTestVC {
 //MARK: - UICollectionViewDataSource
 extension ValueTestVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return valueQuestions[questionIdx-1].choice.count /// 2개일 수도 있고 3개일 수도 있고
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
