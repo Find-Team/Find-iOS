@@ -57,8 +57,7 @@ class ValueTestVC: UIViewController {
         RelationshipSelected()
         setPreviousBtnActivated()
         setNextBtnActivated()
-        
-        questionFinishView.isHidden = true
+        answerNotDone()
         
         changeQuestion()
         
@@ -106,6 +105,12 @@ class ValueTestVC: UIViewController {
         /// 다음 버튼 클릭 시 문제 번호 하나씩 증가
         if questionIdx != 30 {
             questionIdx += 1
+        } else {
+            if answerCnt >= 5 { /// 30번 문항에서 다음 뷰를 띄울지 검사
+                answerDone()
+            } else {
+                answerNotDone()
+            }
         }
         
         changeQuestion()
@@ -250,6 +255,18 @@ extension ValueTestVC {
         cell.choiceCell.layer.cornerRadius = 10
         cell.choiceCell.backgroundColor = .white
         cell.choiceLabel.textColor = .gray
+    }
+    
+    func answerDone() {
+        questionFinishView.isHidden = false
+        previousBtn.isHidden = true
+        nextBtn.isHidden = true
+    }
+    
+    func answerNotDone() {
+        questionFinishView.isHidden = true
+        previousBtn.isHidden = false
+        nextBtn.isHidden = false
     }
     
     //MARK: - Functions
