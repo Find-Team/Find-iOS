@@ -32,5 +32,22 @@ var valueQuestions: [Question] = [
     Question(id: 11, question: "나중에 아이가 있었으면 하나요?", choice: [QuestionChoice(choiceContent: "지금은 원치 않아요"), QuestionChoice(choiceContent: "1~2 명의 아이"), QuestionChoice(choiceContent: "아니요")]),
     Question(id: 12, question: "미래에 부모님을 모실 수 있나요?", choice: [QuestionChoice(choiceContent: "상황에 따라 가능"), QuestionChoice(choiceContent: "모시기는 힘들고 다른 방법을 강구")]),
     Question(id: 13, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
-    Question(id: 14, question: "장거리 연애, 주말 부부", choice: [QuestionChoice(choiceContent: "사랑한다면 가능"), QuestionChoice(choiceContent: "장기적으로는 분명 어려움")])
+    Question(id: 14, question: "장거리 연애, 주말 부부", choice: [QuestionChoice(choiceContent: "사랑한다면 가능"), QuestionChoice(choiceContent: "장기적으로는 분명 어려움")]),
+    Question(id: 15, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 16, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 17, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 18, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 19, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 20, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 21, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 22, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 23, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 24, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 25, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 26, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 27, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 28, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 29, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    Question(id: 30, question: "사랑하는 사람이 생긴다면 결혼은?", choice: [QuestionChoice(choiceContent: "1~2 년 이내라도 고려"), QuestionChoice(choiceContent: "아직 결혼생각은 이름"), QuestionChoice(choiceContent: "비혼주의")]),
+    
 ]

@@ -60,14 +60,17 @@ class ValueListVC: UIViewController {
     
     @IBAction func relationshipBtnDidTap(_ sender: Any) {
         currentCategory = .relationship
+        valueListTableView.reloadData()
     }
     
     @IBAction func familyBtnDidTap(_ sender: Any) {
         currentCategory = .family
+        valueListTableView.reloadData()
     }
     
     @IBAction func careerBtnDidTap(_ sender: Any) {
         currentCategory = .career
+        valueListTableView.reloadData()
     }
 }
 
@@ -125,8 +128,16 @@ extension ValueListVC {
         cell.answerView.layer.borderWidth = 1
         cell.answerView.layer.borderColor = UIColor.blue.cgColor
         
-        cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
         cell.answerLabel.textColor = .blue
+        
+        switch currentCategory {
+        case .relationship:
+            cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
+        case .family:
+            cell.answerLabel.text = valueQuestions[indexPath + 10].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
+        case .career:
+            cell.answerLabel.text = valueQuestions[indexPath + 20].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
+        }
     }
     
     func answerUnfilled(cell: ValueListTVC) {
@@ -161,13 +172,24 @@ extension ValueListVC: UITableViewDataSource {
         cell.questionView.makeRounded(cornerRadius: 4)
         cell.questionView.backgroundColor = .purple
         cell.questionLabel.textColor = .white
-        cell.questionLabel.text = valueQuestions[indexPath.row].question
         
-        cell.layoutIfNeeded()
+        var currIndexPath: Int = 0
+        
+        switch currentCategory {
+        case .relationship:
+            currIndexPath = indexPath.row
+            cell.questionLabel.text = valueQuestions[currIndexPath].question
+        case .family:
+            currIndexPath = indexPath.row + 10
+            cell.questionLabel.text = valueQuestions[currIndexPath].question
+        case .career:
+            currIndexPath = indexPath.row + 20
+            cell.questionLabel.text = valueQuestions[currIndexPath].question
+        }
         
         /// 답변이 있을 때 / 없을 때 분기처리
-        if valueQuestions[indexPath.row].userChoice != 0 {
-            answerFilled(cell: cell, indexPath: indexPath.row)
+        if valueQuestions[currIndexPath].userChoice != 0 {
+            answerFilled(cell: cell, indexPath: currIndexPath)
         } else {
             answerUnfilled(cell: cell)
         }
