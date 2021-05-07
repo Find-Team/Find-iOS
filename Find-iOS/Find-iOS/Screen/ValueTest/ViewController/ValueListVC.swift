@@ -11,6 +11,11 @@ class ValueListVC: UIViewController {
     
     //MARK: - Custom Variables
     
+    enum Category {
+        case relationship, family, career
+    }
+    
+    var currentCategory: Category = .relationship
     
     //MARK: - IBOutlets
     
@@ -38,7 +43,26 @@ class ValueListVC: UIViewController {
     
 
     //MARK: - IBActions
-
+    
+    @IBAction func backBtnDidTap(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func finishBtnDidTap(_ sender: Any) {
+        
+    }
+    
+    @IBAction func relationshipBtnDidTap(_ sender: Any) {
+        currentCategory = .relationship
+    }
+    
+    @IBAction func familyBtnDidTap(_ sender: Any) {
+        currentCategory = .family
+    }
+    
+    @IBAction func careerBtnDidTap(_ sender: Any) {
+        currentCategory = .career
+    }
 }
 
 extension ValueListVC {

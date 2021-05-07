@@ -39,6 +39,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="relationshipBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="L2s-Mn-MFv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,6 +62,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="familyBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="FyX-Qf-Akd"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-yh-Kag">
                                                 <rect key="frame" x="0.0" y="38" width="138" height="2"/>
@@ -93,6 +99,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="careerBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="eV4-v0-IgG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -114,10 +123,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rso-xS-JID">
                                 <rect key="frame" x="15" y="83" width="15.5" height="22"/>
                                 <state key="normal" image="restart" catalog="system"/>
+                                <connections>
+                                    <action selector="backBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="NCz-L6-CvA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkp-2q-9ZQ">
                                 <rect key="frame" x="352" y="79" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="finishBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="eDS-Zd-GCh"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7RU-sa-9Wy">
                                 <rect key="frame" x="0.0" y="160.5" width="354" height="701.5"/>
