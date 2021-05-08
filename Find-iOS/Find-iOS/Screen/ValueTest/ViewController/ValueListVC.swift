@@ -230,7 +230,7 @@ extension ValueListVC: UITableViewDataSource {
 
 extension ValueListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectAction = UIContextualAction(style: .normal, title:  "선택", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        let selectAction = UIContextualAction(style: .normal, title:  valueQuestions[indexPath.row].isChosen ? "취소" : "선택", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             
             // Call edit action
             
@@ -253,9 +253,7 @@ extension ValueListVC: UITableViewDelegate {
                 print(self.chosenQuestions)
             } else {
                 self.selectedCount -= 1
-                print(self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id))
                 self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
-                print(self.chosenQuestions)
             }
             
             
