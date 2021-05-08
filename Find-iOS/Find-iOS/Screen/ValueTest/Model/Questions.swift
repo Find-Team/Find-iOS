@@ -12,6 +12,7 @@ struct Question {
     let question : String
     let choice : [QuestionChoice]
     var userChoice : Int = 0
+    var isChosen : Bool = false
 }
 
 struct QuestionChoice {

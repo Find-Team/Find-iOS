@@ -31,7 +31,7 @@ class ValueListVC: UIViewController {
     
     @IBOutlet var valueListTableView: UITableView!
     
-
+    
     //MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
@@ -43,11 +43,11 @@ class ValueListVC: UIViewController {
         setSegueStyle()
         RelationshipSelected()
         finishBtnDeactivated()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     //MARK: - IBActions
     
     @IBAction func backBtnDidTap(_ sender: Any) {
@@ -169,7 +169,7 @@ extension ValueListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ValueListTVC") as? ValueListTVC
-
+        
         else {
             return UITableViewCell()
         }
@@ -213,5 +213,26 @@ extension ValueListVC: UITableViewDataSource {
 }
 
 extension ValueListVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let selectAction = UIContextualAction(style: .normal, title:  "선택", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            
+            // Call edit action
+            
+            switch self.currentCategory {
+            case .relationship:
+                valueQuestions[indexPath.row].isChosen = true
+            case .family:
+                valueQuestions[indexPath.row + 10].isChosen = true
+            case .career:
+                valueQuestions[indexPath.row + 20].isChosen = true
+            }
+            
+            // Reset state
+            
+            success(true)
+            
+        })
+        
+        return UISwipeActionsConfiguration(actions: [selectAction])
+    }
 }

@@ -23,7 +23,7 @@ class ValueListTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        dividerView.backgroundColor = .lightGray
+        dividerView.backgroundColor = .systemGray6
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
