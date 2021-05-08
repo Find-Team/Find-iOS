@@ -17,6 +17,10 @@ class ValueListVC: UIViewController {
     
     var currentCategory: Category = .relationship
     
+    var selectedCount: Int = 0
+    
+    var chosenQuestions: [Int] = []
+    
     //MARK: - IBOutlets
     
     @IBOutlet var viewTitleLabel: UILabel!
@@ -201,6 +205,18 @@ extension ValueListVC: UITableViewDataSource {
             answerUnfilled(cell: cell)
         }
         
+        /// 선택이 된 답변 / 안 된 답변 분기처리
+        if valueQuestions[currIndexPath].isChosen {
+            cell.selectedBtn.isHidden = false
+            cell.selectedBtn.isUserInteractionEnabled = true
+            cell.selectedBtn.setTitle("\((chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id) ?? 0) + 1 ) / 5", for: .normal)
+            cell.selectedBtn.setTitleColor(.white, for: .normal)
+            cell.selectedBtn.backgroundColor = .purple
+        } else {
+            cell.selectedBtn.isHidden = true
+            cell.selectedBtn.isUserInteractionEnabled = false
+        }
+        
         
         return cell
     }
@@ -218,18 +234,35 @@ extension ValueListVC: UITableViewDelegate {
             
             // Call edit action
             
+            var currIndexPath = 0
+            
             switch self.currentCategory {
             case .relationship:
-                valueQuestions[indexPath.row].isChosen = true
+                currIndexPath = indexPath.row
             case .family:
-                valueQuestions[indexPath.row + 10].isChosen = true
+                currIndexPath = indexPath.row + 10
             case .career:
-                valueQuestions[indexPath.row + 20].isChosen = true
+                currIndexPath = indexPath.row + 20
             }
+            
+            valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
+            
+            if valueQuestions[currIndexPath].isChosen {
+                self.selectedCount += 1
+                self.chosenQuestions.append(valueQuestions[currIndexPath].id)
+                print(self.chosenQuestions)
+            } else {
+                self.selectedCount -= 1
+                print(self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id))
+                self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
+                print(self.chosenQuestions)
+            }
+            
             
             // Reset state
             
             success(true)
+            tableView.reloadData()
             
         })
         

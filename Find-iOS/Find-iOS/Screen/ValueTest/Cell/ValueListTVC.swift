@@ -17,6 +17,8 @@ class ValueListTVC: UITableViewCell {
     @IBOutlet var answerView: UIView!
     @IBOutlet var answerLabel: UILabel!
     
+    @IBOutlet var selectedBtn: UIButton!
+    
     @IBOutlet var dividerView: UIView!
     
     

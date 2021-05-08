@@ -189,15 +189,25 @@
                                                         <constraint firstItem="X52-Su-BZU" firstAttribute="leading" secondItem="kac-HO-OKg" secondAttribute="leading" constant="13" id="hC0-IX-Il6"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21t-yl-bpB">
+                                                    <rect key="frame" x="354" y="0.0" width="60" height="104"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="we2-7h-yVr"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kac-HO-OKg" firstAttribute="leading" secondItem="4uf-mg-RnD" secondAttribute="leading" constant="20" symbolic="YES" id="6xG-rm-47l"/>
                                                 <constraint firstAttribute="bottom" secondItem="7xp-Bs-B2p" secondAttribute="bottom" constant="16" id="BAA-xd-f0X"/>
+                                                <constraint firstAttribute="trailing" secondItem="21t-yl-bpB" secondAttribute="trailing" id="Bfd-K7-aCE"/>
                                                 <constraint firstItem="kac-HO-OKg" firstAttribute="top" secondItem="4uf-mg-RnD" secondAttribute="top" constant="16" id="Ezd-ai-F1F"/>
                                                 <constraint firstItem="7xp-Bs-B2p" firstAttribute="top" secondItem="kac-HO-OKg" secondAttribute="bottom" constant="12" id="Gvw-fd-Qcb"/>
+                                                <constraint firstAttribute="bottom" secondItem="21t-yl-bpB" secondAttribute="bottom" id="KbW-rJ-FNW"/>
                                                 <constraint firstAttribute="trailing" secondItem="iqR-9l-fBt" secondAttribute="trailing" id="PJf-bx-M7V"/>
                                                 <constraint firstAttribute="bottom" secondItem="iqR-9l-fBt" secondAttribute="bottom" id="gI8-Cs-TiS"/>
                                                 <constraint firstItem="7xp-Bs-B2p" firstAttribute="leading" secondItem="kac-HO-OKg" secondAttribute="leading" id="grB-xA-6HC"/>
+                                                <constraint firstItem="21t-yl-bpB" firstAttribute="top" secondItem="4uf-mg-RnD" secondAttribute="top" id="uvx-Wy-79f"/>
                                                 <constraint firstItem="iqR-9l-fBt" firstAttribute="leading" secondItem="4uf-mg-RnD" secondAttribute="leading" id="vP9-XQ-u0L"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -207,6 +217,7 @@
                                             <outlet property="dividerView" destination="iqR-9l-fBt" id="wj6-Yw-Bud"/>
                                             <outlet property="questionLabel" destination="X52-Su-BZU" id="mXj-qB-HTG"/>
                                             <outlet property="questionView" destination="kac-HO-OKg" id="69G-QI-Yos"/>
+                                            <outlet property="selectedBtn" destination="21t-yl-bpB" id="60C-pc-hbz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
