@@ -20,6 +20,14 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+    // UIView 부분적으로 둥글게 적용
+    // 왼상단:layerMinXMinYCorner, 오른상단: layerMaxXMinYCorner, 왼하단: layerMinXMaxYCorner, 오른하단: layerMaxXMaxYCorner
+    func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
+            clipsToBounds = true
+            layer.cornerRadius = cornerRadius
+            layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
+    }
+    
     // Set UIView's Shadow
     func dropShadow(color: UIColor, offSet: CGSize, opacity: Float, radius: CGFloat) {
         
