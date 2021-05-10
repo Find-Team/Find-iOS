@@ -8,22 +8,43 @@
 import UIKit
 
 class ProfileWritingVC: UIViewController {
+    
+    // MARK:- Variable Part
+    
+    @IBOutlet var backBtn: UIButton!
+    @IBOutlet var profileWriting: UILabel!
+    @IBOutlet var completeBtn: UIButton!
+    
+    @IBOutlet var profilePicture: UILabel!
+    @IBOutlet var pictureExplain: UILabel!
+    @IBOutlet var pictureGuide: UIButton!
+    
+    
+    // MARK:- IBAction
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ProfileWritingVC {
+    
+    func setView() {
+        profileWriting.text = "프로필 작성"
+        
+        
     }
-    */
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
