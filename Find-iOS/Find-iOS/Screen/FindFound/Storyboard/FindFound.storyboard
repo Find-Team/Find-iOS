@@ -18,10 +18,28 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5qj-Ny-Ark"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="100"/>
+            <point key="canvasLocation" x="934.78260869565224" y="99.776785714285708"/>
+        </scene>
+        <!--Find FoundNC-->
+        <scene sceneID="xaR-6m-sqx">
+            <objects>
+                <navigationController storyboardIdentifier="FindFoundNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dQD-7C-SVA" customClass="FindFoundNC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NL2-hH-FSO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="aeY-Gh-hFs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8K-UP-gaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.637681159420293" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
