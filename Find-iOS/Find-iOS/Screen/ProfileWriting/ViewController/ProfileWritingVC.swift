@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileWritingVC: UIViewController {
-    
+    static let identifier = "ProfileWritingVC"
     // MARK:- Variable Part
     
     @IBOutlet var backBtn: UIButton!
@@ -24,27 +24,17 @@ class ProfileWritingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
-
-    }
+        setHeader()
     
 
 }
+    
+}
 
 extension ProfileWritingVC {
-    
-    func setView() {
+    func setHeader() {
         profileWriting.text = "프로필 작성"
-        
-        
+        //profileWriting.font = UIFont.spoqaMedium(size: 18)
+        profileWriting.textColor = UIColor.subGray3
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
