@@ -14,6 +14,7 @@ class MyProfileVC: UIViewController {
     @IBOutlet weak var previewBtn: UIButton!
     @IBOutlet weak var preferBtn: UIButton!
     @IBOutlet weak var wholeBackView: UIView!
+    
     @IBOutlet weak var editProfileView: UIView!
     @IBOutlet weak var interviewView: UIView!
     @IBOutlet weak var connectedView: UIView!
@@ -22,6 +23,7 @@ class MyProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
+        setGesture()
     }
     
     func setLayout(){
@@ -45,5 +47,36 @@ class MyProfileVC: UIViewController {
         mannerView.dropShadow(color: .mannerBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
     }
     
+    func setGesture(){
+        let tapProfileEdit = UITapGestureRecognizer(target: self, action: #selector(self.goProfileEdit(_ :)))
+        self.editProfileView.addGestureRecognizer(tapProfileEdit)
+        
+        let tapInterview = UITapGestureRecognizer(target: self, action: #selector(self.goInterview(_ :)))
+        self.interviewView.addGestureRecognizer(tapInterview)
+    }
     
+    @objc private func goProfileEdit(_ gesture:UIGestureRecognizer)
+    {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "YourProfile", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "YourProfileVC") as? InterviewVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc private func goInterview(_ gesture:UIGestureRecognizer)
+    {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Interview", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "InterviewVC") as? InterviewVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+            print("hi")
+        }else{
+            print("뷰컨 없음")
+        }
+    }
+    @IBAction func previewProfile(_ sender: Any) {
+        print("프로필 미리보기")
+    }
+    @IBAction func preferDay(_ sender: Any) {
+        print("선호 일정")
+    }
 }

@@ -24,14 +24,14 @@ class FindTabBarController: UITabBarController {
         
         // 마이페이지탭
         let MyPage = UIStoryboard.init(name: "MyProfile", bundle: nil)
-        guard let firstTab = MyPage.instantiateViewController(identifier: "MyProfileVC") as? MyProfileVC  else { return }
+        guard let firstTab = MyPage.instantiateViewController(identifier: "MyProfileNC") as? MyProfileNC  else { return }
         firstTab.tabBarItem.image = UIImage(named: "ic1Tab")?.withAlignmentRectInsets(UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0))
         firstTab.tabBarItem.selectedImage = UIImage(named: "icTab1Selected")?.withAlignmentRectInsets(UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0))
         
         
         // 상대찾기 탭
         let ShowMore = UIStoryboard.init(name: "FindFound", bundle: nil)
-        guard let secondTab = ShowMore.instantiateViewController(identifier: "FindFoundVC") as? FindFoundVC  else { return }
+        guard let secondTab = ShowMore.instantiateViewController(identifier: "FindFoundNC") as? FindFoundNC  else { return }
         secondTab.tabBarItem.image = UIImage(named: "ic2Tab")?.withAlignmentRectInsets(UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0))
         secondTab.tabBarItem.selectedImage = UIImage(named: "icTab2Selected")?.withAlignmentRectInsets(UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0))
         

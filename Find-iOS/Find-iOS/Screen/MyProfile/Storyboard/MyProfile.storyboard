@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="88.392857142857139"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My ProfileNC-->
         <scene sceneID="ne0-k9-eIM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fjK-hg-efS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MyProfileNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fjK-hg-efS" customClass="MyProfileNC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rJ2-9G-irF">
                         <autoresizingMask key="autoresizingMask"/>

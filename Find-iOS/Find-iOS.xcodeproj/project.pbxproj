@@ -41,6 +41,8 @@
 		54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666C2649250B0028F1BF /* FindTabBarController.swift */; };
 		54B96670264986CE0028F1BF /* MyProfileCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666F264986CE0028F1BF /* MyProfileCVCell.swift */; };
 		54B96672264986DC0028F1BF /* MyProfileCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B96671264986DC0028F1BF /* MyProfileCVCell.xib */; };
+		54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA1F264A84550076C306 /* MyProfileNC.swift */; };
+		54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA21264A84AB0076C306 /* FindFoundNC.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		54B9666C2649250B0028F1BF /* FindTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTabBarController.swift; sourceTree = "<group>"; };
 		54B9666F264986CE0028F1BF /* MyProfileCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCVCell.swift; sourceTree = "<group>"; };
 		54B96671264986DC0028F1BF /* MyProfileCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileCVCell.xib; sourceTree = "<group>"; };
+		54E1BA1F264A84550076C306 /* MyProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileNC.swift; sourceTree = "<group>"; };
+		54E1BA21264A84AB0076C306 /* FindFoundNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundNC.swift; sourceTree = "<group>"; };
 		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -268,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				54B966522649048A0028F1BF /* FindFoundVC.swift */,
+				54E1BA21264A84AB0076C306 /* FindFoundNC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				54B9664E264904780028F1BF /* MyProfileVC.swift */,
+				54E1BA1F264A84550076C306 /* MyProfileNC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
+				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
 				54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */,
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
@@ -519,6 +526,7 @@
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
+				54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */,
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
