@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
 		542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF726442F8B00E69A4D /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		542A1DF526442F8B00E69A4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				542A1E102644317300E69A4D /* UIView+Extension.swift */,
 				542A1E13264431DE00E69A4D /* UIButton+Extension.swift */,
 				54B9665D264909510028F1BF /* UILabel+Extension.swift */,
+				36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */,
+				36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */,
