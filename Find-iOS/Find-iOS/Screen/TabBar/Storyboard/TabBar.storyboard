@@ -9,9 +9,10 @@
         <!--Find Tab Bar Controller-->
         <scene sceneID="tvp-xT-nCn">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Lw5-Un-4zj" customClass="FindTabBarController" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="FindTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Lw5-Un-4zj" customClass="FindTabBarController" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MGo-LS-Oj2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
