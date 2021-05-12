@@ -55,16 +55,14 @@ class MyProfileVC: UIViewController {
         self.interviewView.addGestureRecognizer(tapInterview)
     }
     
-    @objc private func goProfileEdit(_ gesture:UIGestureRecognizer)
-    {
+    @objc private func goProfileEdit(_ gesture:UIGestureRecognizer){
         let storyBoard: UIStoryboard = UIStoryboard(name: "YourProfile", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "YourProfileVC") as? InterviewVC {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    @objc private func goInterview(_ gesture:UIGestureRecognizer)
-    {
+    @objc private func goInterview(_ gesture:UIGestureRecognizer){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Interview", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "InterviewVC") as? InterviewVC {
             self.navigationController?.pushViewController(vc, animated: true)
@@ -73,6 +71,7 @@ class MyProfileVC: UIViewController {
             print("뷰컨 없음")
         }
     }
+    
     @IBAction func previewProfile(_ sender: Any) {
         print("프로필 미리보기")
     }

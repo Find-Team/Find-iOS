@@ -39,8 +39,6 @@
 		54B9666726490D510028F1BF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666626490D510028F1BF /* NetworkResult.swift */; };
 		54B9666926490D950028F1BF /* PlainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666826490D950028F1BF /* PlainData.swift */; };
 		54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666C2649250B0028F1BF /* FindTabBarController.swift */; };
-		54B96670264986CE0028F1BF /* MyProfileCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666F264986CE0028F1BF /* MyProfileCVCell.swift */; };
-		54B96672264986DC0028F1BF /* MyProfileCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B96671264986DC0028F1BF /* MyProfileCVCell.xib */; };
 		54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA1F264A84550076C306 /* MyProfileNC.swift */; };
 		54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA21264A84AB0076C306 /* FindFoundNC.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
@@ -82,8 +80,6 @@
 		54B9666626490D510028F1BF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		54B9666826490D950028F1BF /* PlainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainData.swift; sourceTree = "<group>"; };
 		54B9666C2649250B0028F1BF /* FindTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTabBarController.swift; sourceTree = "<group>"; };
-		54B9666F264986CE0028F1BF /* MyProfileCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileCVCell.swift; sourceTree = "<group>"; };
-		54B96671264986DC0028F1BF /* MyProfileCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileCVCell.xib; sourceTree = "<group>"; };
 		54E1BA1F264A84550076C306 /* MyProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileNC.swift; sourceTree = "<group>"; };
 		54E1BA21264A84AB0076C306 /* FindFoundNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundNC.swift; sourceTree = "<group>"; };
 		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,7 +214,6 @@
 		54B96626264902AF0028F1BF /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
-				54B9666E264986A50028F1BF /* Cell */,
 				54B966332649037C0028F1BF /* ViewController */,
 				54B96634264903800028F1BF /* Storyboard */,
 			);
@@ -380,15 +375,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		54B9666E264986A50028F1BF /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				54B9666F264986CE0028F1BF /* MyProfileCVCell.swift */,
-				54B96671264986DC0028F1BF /* MyProfileCVCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,7 +436,6 @@
 			files = (
 				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
 				54B96649264904500028F1BF /* TabBar.storyboard in Resources */,
-				54B96672264986DC0028F1BF /* MyProfileCVCell.xib in Resources */,
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */,
 				54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */,
@@ -534,7 +519,6 @@
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
-				54B96670264986CE0028F1BF /* MyProfileCVCell.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

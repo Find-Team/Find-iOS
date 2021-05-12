@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "icSetting.png",
-      "idiom" : "universal"
+      "filename" : "icInterview.png"
     },
     {
+      "filename" : "icInterview@2x.png",
       "scale" : "2x",
-      "filename" : "icSetting@2x.png",
       "idiom" : "universal"
     },
     {
       "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "icSetting@3x.png"
+      "filename" : "icInterview@3x.png"
     }
   ],
   "info" : {
