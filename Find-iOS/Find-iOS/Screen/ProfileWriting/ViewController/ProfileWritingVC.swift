@@ -11,6 +11,8 @@ class ProfileWritingVC: UIViewController {
     static let identifier = "ProfileWritingVC"
     // MARK:- Variable Part
     
+    var numberOfCell: Int = 3
+    
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var profileWriting: UILabel!
     @IBOutlet var completeBtn: UIButton!
@@ -19,15 +21,23 @@ class ProfileWritingVC: UIViewController {
     @IBOutlet var pictureExplain: UILabel!
     @IBOutlet var pictureGuide: UIButton!
     
+    @IBOutlet var profileCollectionView: UICollectionView!
+    
     
     // MARK:- IBAction
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setHeader()
-    
-
-}
+        setView()
+        self.profileCollectionView.delegate = self
+        self.profileCollectionView.dataSource = self
+        
+        let nibName = UINib(nibName: "ProfileCollectionViewCell", bundle: nil)
+        profileCollectionView.register(nibName, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        
+        
+    }
     
 }
 
@@ -37,4 +47,57 @@ extension ProfileWritingVC {
         //profileWriting.font = UIFont.spoqaMedium(size: 18)
         profileWriting.textColor = UIColor.subGray3
     }
+    
+    func setView() {
+        profilePicture.text = "프로필 사진"
+        //profilePicture.font = UIFont.spoqaMedium(size: 18)
+        profilePicture.textColor = UIColor.subGray3
+        
+        pictureExplain.text = "프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)"
+        //pictureExplain.font = UIFont.spoqaMedium(size: 18)
+        pictureExplain.textColor = UIColor.find_Purple
+        
+    }
 }
+
+extension ProfileWritingVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.numberOfCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as! ProfileCollectionViewCell
+        
+        return cell
+    }
+    
+    //동적으로 셀의 갯수를 늘림. (언제? didSelectItem)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        numberOfCell += 1
+        collectionView.reloadData()
+    }
+    
+    
+}
+
+
+
+
+extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+                            UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 70, height: 70)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func
+    collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0) }
+    }
