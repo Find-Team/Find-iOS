@@ -17,6 +17,7 @@
 		542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E0D2644315200E69A4D /* UIColor+Additions.swift */; };
 		542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E102644317300E69A4D /* UIView+Extension.swift */; };
 		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
+		54A0385E264CDFA700EDF78F /* UIDevice+ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */; };
 		54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9663C264904020028F1BF /* YourProfileVC.swift */; };
 		54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B9663E2649040F0028F1BF /* YourProfile.storyboard */; };
 		54B966412649042F0028F1BF /* FindFound.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B966402649042F0028F1BF /* FindFound.storyboard */; };
@@ -58,6 +59,7 @@
 		542A1E0D2644315200E69A4D /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		542A1E102644317300E69A4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenSize.swift"; sourceTree = "<group>"; };
 		54B9663C264904020028F1BF /* YourProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProfileVC.swift; sourceTree = "<group>"; };
 		54B9663E2649040F0028F1BF /* YourProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourProfile.storyboard; sourceTree = "<group>"; };
 		54B966402649042F0028F1BF /* FindFound.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindFound.storyboard; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				542A1E13264431DE00E69A4D /* UIButton+Extension.swift */,
 				54B9665D264909510028F1BF /* UILabel+Extension.swift */,
 				36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */,
+				54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
 				54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */,
+				54A0385E264CDFA700EDF78F /* UIDevice+ScreenSize.swift in Sources */,
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,

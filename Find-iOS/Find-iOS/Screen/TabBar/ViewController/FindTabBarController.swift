@@ -53,6 +53,7 @@ class FindTabBarController: UITabBarController {
         tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         tabBar.barTintColor = .white
         tabBarItem.imageInsets = UIEdgeInsets(top: 13, left: 0, bottom: -13, right: 0)
+        self.title = nil;
         self.setViewControllers(tabs, animated: false)
     }
 }

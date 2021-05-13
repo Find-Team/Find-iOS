@@ -11,9 +11,14 @@ class MyProfileVC: UIViewController {
     
     @IBOutlet weak var imageBackView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var wholeBackView: UIView!
     @IBOutlet weak var previewBtn: UIButton!
     @IBOutlet weak var preferBtn: UIButton!
-    @IBOutlet weak var wholeBackView: UIView!
+    
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var authCheckImage: UIImageView!
+    @IBOutlet weak var firstInfoLabel: UILabel!
+    @IBOutlet weak var secInfoLabel: UILabel!
     
     @IBOutlet weak var editProfileView: UIView!
     @IBOutlet weak var interviewView: UIView!
@@ -26,7 +31,7 @@ class MyProfileVC: UIViewController {
         setGesture()
     }
     
-    func setLayout(){
+    func setLayout() {
         imageBackView.makeRounded(cornerRadius: imageBackView.frame.height/2)
         profileImageView.makeRounded(cornerRadius: profileImageView.frame.height/2)
         previewBtn.makeRounded(cornerRadius: previewBtn.frame.height/2)
@@ -34,6 +39,7 @@ class MyProfileVC: UIViewController {
         
         // 버튼 4개
         editProfileView.backgroundColor = .white
+        print("넓이 \(editProfileView.frame.width)", "높이 \(editProfileView.frame.height)")
         editProfileView.makeRounded(cornerRadius: editProfileView.frame.height/2)
         editProfileView.dropShadow(color: .profileBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
         interviewView.backgroundColor = .white
@@ -47,7 +53,7 @@ class MyProfileVC: UIViewController {
         mannerView.dropShadow(color: .mannerBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
     }
     
-    func setGesture(){
+    func setGesture() {
         let tapProfileEdit = UITapGestureRecognizer(target: self, action: #selector(self.goProfileEdit(_ :)))
         self.editProfileView.addGestureRecognizer(tapProfileEdit)
         
@@ -55,14 +61,14 @@ class MyProfileVC: UIViewController {
         self.interviewView.addGestureRecognizer(tapInterview)
     }
     
-    @objc private func goProfileEdit(_ gesture:UIGestureRecognizer){
+    @objc private func goProfileEdit(_ gesture:UIGestureRecognizer) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "YourProfile", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "YourProfileVC") as? InterviewVC {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    @objc private func goInterview(_ gesture:UIGestureRecognizer){
+    @objc private func goInterview(_ gesture:UIGestureRecognizer) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Interview", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "InterviewVC") as? InterviewVC {
             self.navigationController?.pushViewController(vc, animated: true)
