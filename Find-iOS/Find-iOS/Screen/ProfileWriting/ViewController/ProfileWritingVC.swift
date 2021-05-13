@@ -101,17 +101,17 @@ class ProfileWritingVC: UIViewController {
 extension ProfileWritingVC {
     func setHeader() {
         profileWriting.text = "프로필 작성"
-        //profileWriting.font = UIFont.spoqaMedium(size: 18)
+        profileWriting.font = UIFont.spoqaMedium(size: 18)
         profileWriting.textColor = UIColor.subGray3
     }
     
     func setView() {
         profilePicture.text = "프로필 사진"
-        //profilePicture.font = UIFont.spoqaMedium(size: 18)
+        profilePicture.font = UIFont.spoqaMedium(size: 18)
         profilePicture.textColor = UIColor.subGray3
         
         pictureExplain.text = "프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)"
-        //pictureExplain.font = UIFont.spoqaMedium(size: 18)
+        pictureExplain.font = UIFont.spoqaMedium(size: 18)
         pictureExplain.textColor = UIColor.find_Purple
         
         identityVerify.text = ""
