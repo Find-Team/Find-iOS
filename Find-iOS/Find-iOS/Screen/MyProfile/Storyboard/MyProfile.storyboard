@@ -52,9 +52,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-Pb-n7F">
                                                 <rect key="frame" x="0.0" y="0.0" width="131" height="37"/>
                                                 <color key="backgroundColor" name="find_Mint"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="JoE-Pb-n7F" secondAttribute="height" multiplier="131:37" id="ykk-pt-aVJ"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                 <state key="normal" title="프로필 미리보기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
