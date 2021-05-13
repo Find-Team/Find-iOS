@@ -18,6 +18,10 @@
 		542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E102644317300E69A4D /* UIView+Extension.swift */; };
 		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
 		54A0385E264CDFA700EDF78F /* UIDevice+ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */; };
+		54A0386C264D68CE00EDF78F /* InterviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0386B264D68CE00EDF78F /* InterviewTVCell.swift */; };
+		54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0386E264D6A0100EDF78F /* InterviewData.swift */; };
+		54A03871264D6BA100EDF78F /* GetInterviewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A03870264D6BA100EDF78F /* GetInterviewCategory.swift */; };
+		54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A03872264D73CC00EDF78F /* UITextField+Extension.swift */; };
 		54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9663C264904020028F1BF /* YourProfileVC.swift */; };
 		54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B9663E2649040F0028F1BF /* YourProfile.storyboard */; };
 		54B966412649042F0028F1BF /* FindFound.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B966402649042F0028F1BF /* FindFound.storyboard */; };
@@ -60,6 +64,10 @@
 		542A1E102644317300E69A4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenSize.swift"; sourceTree = "<group>"; };
+		54A0386B264D68CE00EDF78F /* InterviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewTVCell.swift; sourceTree = "<group>"; };
+		54A0386E264D6A0100EDF78F /* InterviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewData.swift; sourceTree = "<group>"; };
+		54A03870264D6BA100EDF78F /* GetInterviewCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInterviewCategory.swift; sourceTree = "<group>"; };
+		54A03872264D73CC00EDF78F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		54B9663C264904020028F1BF /* YourProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProfileVC.swift; sourceTree = "<group>"; };
 		54B9663E2649040F0028F1BF /* YourProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourProfile.storyboard; sourceTree = "<group>"; };
 		54B966402649042F0028F1BF /* FindFound.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindFound.storyboard; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 				54B9665D264909510028F1BF /* UILabel+Extension.swift */,
 				36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */,
 				54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */,
+				54A03872264D73CC00EDF78F /* UITextField+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -194,6 +203,23 @@
 				542A1DF926442F8B00E69A4D /* Main.storyboard */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		54A03862264D20A600EDF78F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				54A0386B264D68CE00EDF78F /* InterviewTVCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		54A0386D264D69F700EDF78F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54A0386E264D6A0100EDF78F /* InterviewData.swift */,
+				54A03870264D6BA100EDF78F /* GetInterviewCategory.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		54B966242649028E0028F1BF /* TabBar */ = {
@@ -226,6 +252,8 @@
 		54B96627264902B80028F1BF /* Interview */ = {
 			isa = PBXGroup;
 			children = (
+				54A0386D264D69F700EDF78F /* Model */,
+				54A03862264D20A600EDF78F /* Cell */,
 				54B96630264903530028F1BF /* ViewController */,
 				54B96631264903580028F1BF /* Storyboard */,
 			);
@@ -504,6 +532,8 @@
 			files = (
 				542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */,
 				36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */,
+				54A03871264D6BA100EDF78F /* GetInterviewCategory.swift in Sources */,
+				54A0386C264D68CE00EDF78F /* InterviewTVCell.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
@@ -522,6 +552,8 @@
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
+				54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */,
+				54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
 			);
