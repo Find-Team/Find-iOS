@@ -159,15 +159,15 @@ extension ValueTestVC {
     func setSegueStyle() {
         segueRelationshipBtn.setTitle("관계", for: .normal)
         segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
-        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
         segueFamilyBtn.setTitle("가족", for: .normal)
         segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
-        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
         segueCareerBtn.setTitle("커리어", for: .normal)
         segueCareerBtn.setTitleColor(.subGray2, for: .normal)
-        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
     }
     
     /// 질문뷰 스타일
@@ -214,7 +214,10 @@ extension ValueTestVC {
         
         segueRelationshipBtn.setTitle("관계", for: .normal)
         segueRelationshipBtn.setTitleColor(.find_DarkPurple, for: .normal)
-        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
+        segueCareerBtn.setTitleColor(.subGray2, for: .normal)
     }
     
     /// 가족 카테고리 선택됐을 때
@@ -225,7 +228,10 @@ extension ValueTestVC {
         
         segueFamilyBtn.setTitle("가족", for: .normal)
         segueFamilyBtn.setTitleColor(.find_DarkPurple, for: .normal)
-        segueFamilyBtn.titleLabel?.font = .spoqaMedium(size: 14)
+        segueFamilyBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
+        segueCareerBtn.setTitleColor(.subGray2, for: .normal)
     }
     
     /// 커리어 카테고리 선택됐을 때
@@ -236,7 +242,10 @@ extension ValueTestVC {
         
         segueCareerBtn.setTitle("커리어", for: .normal)
         segueCareerBtn.setTitleColor(.find_DarkPurple, for: .normal)
-        segueCareerBtn.titleLabel?.font = .spoqaMedium(size: 14)
+        segueCareerBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
+        segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
     }
     
     /// 질문 번호 라벨 세팅
@@ -327,7 +336,6 @@ extension ValueTestVC {
         }
         
         /// 문제 번호에 따라 카테고리 활성화
-        setSegueStyle()
         if getQuestionCategory(questionIndex: questionIdx) == "관계" {
             RelationshipSelected()
         }
