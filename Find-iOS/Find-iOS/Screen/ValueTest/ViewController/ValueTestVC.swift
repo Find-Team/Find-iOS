@@ -52,6 +52,7 @@ class ValueTestVC: UIViewController {
         questionChoiceTableView.dataSource = self
         questionChoiceTableView.delegate = self
         
+        setUpperBar()
         setSegueStyle()
         setQuestionViewStyle()
         RelationshipSelected()
@@ -106,11 +107,12 @@ class ValueTestVC: UIViewController {
         if questionIdx != 30 { /// 단 30번째 문제 빼고
             questionIdx += 1
         } else {
-            if answerCnt >= 5 { /// 30번 문항에서 다음 뷰를 띄울지 검사
-                answerDone()
-            } else {
-                answerNotDone()
-            }
+//            if answerCnt >= 5 { /// 30번 문항에서 다음 뷰를 띄울지 검사
+//                answerDone()
+//            } else {
+//                answerNotDone()
+//            }
+            answerNotDone()
         }
         
         changeQuestion()
@@ -131,23 +133,41 @@ extension ValueTestVC {
         finishBtn.isUserInteractionEnabled = true
         finishBtn.setTitle("완료", for: .normal)
         finishBtn.setTitleColor(.black, for: .normal)
+        finishBtn.titleLabel?.font = .spoqaMedium(size: 18)
     }
     
     func finishBtnDeactivated() {
         finishBtn.isUserInteractionEnabled = false
         finishBtn.setTitle("완료", for: .normal)
         finishBtn.setTitleColor(.gray, for: .normal)
+        finishBtn.titleLabel?.font = .spoqaMedium(size: 18)
+    }
+    
+    func setUpperBar() {
+//        backBtn.image(for: .normal) =
+        
+        viewTitleLabel.textColor = .subGray3
+        viewTitleLabel.font = .spoqaMedium(size: 18)
+        
+        if answerCnt >= 5 {
+            finishBtnActivated()
+        } else {
+            finishBtnDeactivated()
+        }
     }
     
     func setSegueStyle() {
         segueRelationshipBtn.setTitle("관계", for: .normal)
-        segueRelationshipBtn.setTitleColor(.black, for: .normal)
+        segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
         
         segueFamilyBtn.setTitle("가족", for: .normal)
-        segueFamilyBtn.setTitleColor(.black, for: .normal)
+        segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
         
         segueCareerBtn.setTitle("커리어", for: .normal)
-        segueCareerBtn.setTitleColor(.black, for: .normal)
+        segueCareerBtn.setTitleColor(.subGray2, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
     }
     
     /// 질문뷰 스타일
@@ -155,15 +175,22 @@ extension ValueTestVC {
         view.layoutIfNeeded()
         
         questionView.makeRounded(cornerRadius: 10)
-        //        questionView.backgroundColor =
+        questionView.backgroundColor = .white
         
-        //        questionSegueTitleView.backgroundColor =
+        questionSegueTitleView.backgroundColor = .find_LightPurple
         questionSegueTitleView.makeRounded(cornerRadius: questionSegueTitleView.frame.height / 2)
+        
+        questionSegueTitleLabel.textColor = .subGray3
+        questionSegueTitleLabel.font = .spoqaRegular(size: 14)
         
         questionChoiceTableView.backgroundColor = .white
         
         questionContentLabel.numberOfLines = 0
-        questionContentLabel.textAlignment = .center
+        questionContentLabel.textAlignment = .left
+        questionContentLabel.font = .spoqaRegular(size: 18)
+        
+        countLabel.textColor = .subGray3
+        countLabel.font = .spoqaRegular(size: 12)
     }
     
     func setQuestionFinishViewStyle() {
@@ -181,23 +208,35 @@ extension ValueTestVC {
     
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
-        segueIndicator[0].backgroundColor = .purple
-        segueIndicator[1].backgroundColor = .gray
-        segueIndicator[2].backgroundColor = .gray
+        segueIndicator[0].backgroundColor = .find_DarkPurple
+        segueIndicator[1].backgroundColor = .subGray1
+        segueIndicator[2].backgroundColor = .subGray1
+        
+        segueRelationshipBtn.setTitle("관계", for: .normal)
+        segueRelationshipBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaMedium(size: 14)
     }
     
     /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
-        segueIndicator[0].backgroundColor = .gray
-        segueIndicator[1].backgroundColor = .purple
-        segueIndicator[2].backgroundColor = .gray
+        segueIndicator[0].backgroundColor = .subGray1
+        segueIndicator[1].backgroundColor = .find_DarkPurple
+        segueIndicator[2].backgroundColor = .subGray1
+        
+        segueFamilyBtn.setTitle("가족", for: .normal)
+        segueFamilyBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueFamilyBtn.titleLabel?.font = .spoqaMedium(size: 14)
     }
     
     /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
-        segueIndicator[0].backgroundColor = .gray
-        segueIndicator[1].backgroundColor = .gray
-        segueIndicator[2].backgroundColor = .purple
+        segueIndicator[0].backgroundColor = .subGray1
+        segueIndicator[1].backgroundColor = .subGray1
+        segueIndicator[2].backgroundColor = .find_DarkPurple
+        
+        segueCareerBtn.setTitle("커리어", for: .normal)
+        segueCareerBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueCareerBtn.titleLabel?.font = .spoqaMedium(size: 14)
     }
     
     /// 질문 번호 라벨 세팅
@@ -209,7 +248,8 @@ extension ValueTestVC {
     func setPreviousBtnActivated() {
         previousBtn.isUserInteractionEnabled = true
         previousBtn.setTitle("이전", for: .normal)
-        previousBtn.setTitleColor(.black, for: .normal)
+        previousBtn.setTitleColor(.subGray3, for: .normal)
+        previousBtn.titleLabel?.font = .spoqaRegular(size: 14)
         previousBtn.makeRounded(cornerRadius: 10)
         previousBtn.backgroundColor = .white
     }
@@ -218,16 +258,18 @@ extension ValueTestVC {
     func setPreviousBtnDeactivated() {
         previousBtn.isUserInteractionEnabled = false
         previousBtn.setTitle("이전", for: .normal)
-        previousBtn.setTitleColor(.white, for: .normal)
+        previousBtn.setTitleColor(.subGray1, for: .normal)
+        previousBtn.titleLabel?.font = .spoqaRegular(size: 14)
         previousBtn.makeRounded(cornerRadius: 10)
-        previousBtn.backgroundColor = .lightGray
+        previousBtn.backgroundColor = .subGray4
     }
     
     /// 다음 버튼 활성화 됐을 때
     func setNextBtnActivated() {
         nextBtn.isUserInteractionEnabled = true
         nextBtn.setTitle("다음", for: .normal)
-        nextBtn.setTitleColor(.black, for: .normal)
+        nextBtn.setTitleColor(.subGray3, for: .normal)
+        nextBtn.titleLabel?.font = .spoqaRegular(size: 14)
         nextBtn.makeRounded(cornerRadius: 10)
         nextBtn.backgroundColor = .white
     }
@@ -236,25 +278,30 @@ extension ValueTestVC {
     func setNextBtnDeactivated() {
         nextBtn.isUserInteractionEnabled = false
         nextBtn.setTitle("다음", for: .normal)
-        nextBtn.setTitleColor(.white, for: .normal)
+        nextBtn.setTitleColor(.subGray1, for: .normal)
+        nextBtn.titleLabel?.font = .spoqaRegular(size: 14)
         nextBtn.makeRounded(cornerRadius: 10)
-        nextBtn.backgroundColor = .lightGray
+        nextBtn.backgroundColor = .subGray4
     }
     
+    /// 선택된 답변
     func choiceSelected(cell: ValueTestQuestionTVC) {
         cell.choiceCell.layer.borderWidth = 1
-        cell.choiceCell.layer.borderColor = UIColor.purple.cgColor
-        cell.choiceCell.layer.cornerRadius = 10
+        cell.choiceCell.layer.borderColor = UIColor.find_DarkPurple.cgColor
+        cell.choiceCell.layer.cornerRadius = cell.choiceCell.frame.height / 2
         cell.choiceCell.backgroundColor = .white
-        cell.choiceLabel.textColor = .purple
+        cell.choiceLabel.textColor = .find_DarkPurple
+        cell.choiceLabel.font = .spoqaRegular(size: 14)
     }
     
+    /// 선택되지 않은 답변
     func choiceUnselected(cell: ValueTestQuestionTVC) {
         cell.choiceCell.layer.borderWidth = 1
-        cell.choiceCell.layer.borderColor = UIColor.gray.cgColor
-        cell.choiceCell.layer.cornerRadius = 10
+        cell.choiceCell.layer.borderColor = UIColor.subGray2.cgColor
+        cell.choiceCell.layer.cornerRadius = cell.choiceCell.frame.height / 2
         cell.choiceCell.backgroundColor = .white
-        cell.choiceLabel.textColor = .gray
+        cell.choiceLabel.textColor = .subGray5
+        cell.choiceLabel.font = .spoqaRegular(size: 14)
     }
     
     func answerDone() {
@@ -280,6 +327,7 @@ extension ValueTestVC {
         }
         
         /// 문제 번호에 따라 카테고리 활성화
+        setSegueStyle()
         if getQuestionCategory(questionIndex: questionIdx) == "관계" {
             RelationshipSelected()
         }
