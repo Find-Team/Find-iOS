@@ -19,7 +19,7 @@ class ProfileWritingVC: UIViewController {
     
     @IBOutlet var profilePicture: UILabel!
     @IBOutlet var pictureExplain: UILabel!
-    @IBOutlet var pictureGuide: UIButton!
+    @IBOutlet var pictureGuideBtn: UIButton!
     
     @IBOutlet var profileCollectionView: UICollectionView!
     @IBOutlet var imagePreview: UIImageView!
@@ -49,6 +49,7 @@ class ProfileWritingVC: UIViewController {
     
     @IBOutlet var basicInfo: UILabel!
     @IBOutlet var basicInfoExplain: UILabel!
+    @IBOutlet var basicInfoStack: UIStackView!
     
     @IBOutlet var job: UILabel!
     @IBOutlet var jobTextField: UITextField!
@@ -85,6 +86,7 @@ class ProfileWritingVC: UIViewController {
         super.viewDidLoad()
         setHeader()
         setView()
+        
         self.profileCollectionView.delegate = self
         self.profileCollectionView.dataSource = self
         
@@ -103,20 +105,65 @@ extension ProfileWritingVC {
         profileWriting.text = "프로필 작성"
         profileWriting.font = UIFont.spoqaMedium(size: 18)
         profileWriting.textColor = UIColor.subGray3
+        
+        completeBtn.setTitle("완료", for: .normal)
+        completeBtn.titleLabel?.font = UIFont.spoqaRegular(size: 18)
+        completeBtn.setTitleColor(UIColor.black, for: .normal)
+        
     }
     
     func setView() {
         profilePicture.text = "프로필 사진"
-        profilePicture.font = UIFont.spoqaMedium(size: 18)
+        profilePicture.font = UIFont.spoqaLight(size: 22)
         profilePicture.textColor = UIColor.subGray3
         
-        pictureExplain.text = "프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)"
-        pictureExplain.font = UIFont.spoqaMedium(size: 18)
-        pictureExplain.textColor = UIColor.find_Purple
+        let text = "프로필 가이드"
+        let titleString = NSMutableAttributedString(string: "프로필 가이드")
+        let underLine = NSUnderlineStyle.thick.rawValue
+        titleString.addAttribute(NSMutableAttributedString.Key.underlineStyle, value: underLine, range: NSRange(location: 0, length: text.count))
+        pictureGuideBtn.setAttributedTitle(titleString, for: .normal)
         
-        identityVerify.text = ""
+        pictureGuideBtn.titleLabel?.font = UIFont.spoqaRegular(size: 12)
+        pictureGuideBtn.setTitleColor(UIColor.subGray3, for: .normal)
+        
+        pictureExplain.text = "프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)"
+        pictureExplain.font = UIFont.spoqaRegular(size: 12)
+        pictureExplain.textColor = UIColor.find_DarkPurple
+        
+        identityVerify.text = "본인 인증"
+        identityVerify.font = UIFont.spoqaLight(size: 22)
+        identityVerify.textColor = UIColor.subGray3
+       
+        verifyBtn.clipsToBounds = true
+        verifyBtn.layer.cornerRadius = 10
+        verifyBtn.layer.borderWidth = 1.0
+        verifyBtn.layer.borderColor = UIColor.find_DarkPurple.cgColor
+        verifyBtn.layer.backgroundColor = UIColor.find_LightPurple.cgColor
+        
+        verifyBtn.setTitle("인증 완료", for: .normal)
+        verifyBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
+        verifyBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
+        
+        infoWriting.text = "소개글"
+        infoWriting.font = UIFont.spoqaLight(size: 22)
+        infoWriting.textColor = UIColor.subGray3
+        
+        infoExplain.text = "당신을 소개해주세요! (최소 30자)"
+        infoExplain.font = UIFont.spoqaRegular(size: 12)
+        infoExplain.textColor = UIColor.find_DarkPurple
+        
+        goToInfoBtn.clipsToBounds = true
+        goToInfoBtn.layer.cornerRadius = 10
+        goToInfoBtn.layer.borderWidth = 1.0
+        goToInfoBtn.layer.borderColor = UIColor.find_DarkPurple.cgColor
+        goToInfoBtn.layer.backgroundColor = UIColor.find_LightPurple.cgColor
+        
+        goToInfoBtn.setTitle("소개글 작성하러 가기", for: .normal)
+        goToInfoBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
+        goToInfoBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
         
     }
+    
 }
 
 extension ProfileWritingVC: UICollectionViewDataSource {
