@@ -26,7 +26,7 @@
         <!--Value TestVC-->
         <scene sceneID="vkI-kE-sCs">
             <objects>
-                <viewController id="19P-Vc-vJJ" customClass="ValueTestVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ValueTestVC" storyboardIdentifier="ValueTestVC" id="19P-Vc-vJJ" customClass="ValueTestVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMV-Bp-Sda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

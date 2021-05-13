@@ -11,7 +11,7 @@
         <!--Value ListVC-->
         <scene sceneID="M43-fy-51x">
             <objects>
-                <viewController id="CwM-YO-OEU" customClass="ValueListVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ValueListVC" storyboardIdentifier="ValueListVC" id="CwM-YO-OEU" customClass="ValueListVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkl-20-vFJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

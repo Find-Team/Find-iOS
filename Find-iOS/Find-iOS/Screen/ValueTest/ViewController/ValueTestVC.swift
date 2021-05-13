@@ -72,7 +72,10 @@ class ValueTestVC: UIViewController {
     }
     
     @IBAction func finishBtnDidTap(_ sender: Any) {
+        let nextStoryboard = UIStoryboard(name: "ValueList", bundle: nil)
+        let dvc = (nextStoryboard.instantiateViewController(identifier: "ValueListVC") as? ValueListVC)!
         
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     @IBAction func relationshipBtnDidTap(_ sender: Any) {
