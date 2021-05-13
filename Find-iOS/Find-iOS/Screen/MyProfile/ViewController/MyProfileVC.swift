@@ -32,24 +32,24 @@ class MyProfileVC: UIViewController {
     }
     
     func setLayout() {
-        imageBackView.makeRounded(cornerRadius: imageBackView.frame.height/2)
-        profileImageView.makeRounded(cornerRadius: profileImageView.frame.height/2)
-        previewBtn.makeRounded(cornerRadius: previewBtn.frame.height/2)
-        preferBtn.makeRounded(cornerRadius: preferBtn.frame.height/2)
+        imageBackView.makeRounded(cornerRadius: nil)
+        profileImageView.makeRounded(cornerRadius: nil)
+        previewBtn.makeRounded(cornerRadius: nil)
+        preferBtn.makeRounded(cornerRadius: nil)
         
         // 버튼 4개
         editProfileView.backgroundColor = .white
         print("넓이 \(editProfileView.frame.width)", "높이 \(editProfileView.frame.height)")
-        editProfileView.makeRounded(cornerRadius: editProfileView.frame.height/2)
+        editProfileView.makeRounded(cornerRadius: nil)
         editProfileView.dropShadow(color: .profileBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
         interviewView.backgroundColor = .white
-        interviewView.makeRounded(cornerRadius: interviewView.frame.height/2)
+        interviewView.makeRounded(cornerRadius: nil)
         interviewView.dropShadow(color: .interviewBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
         connectedView.backgroundColor = .white
-        connectedView.makeRounded(cornerRadius: connectedView.frame.height/2)
+        connectedView.makeRounded(cornerRadius: nil)
         connectedView.dropShadow(color: .connectedBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
         mannerView.backgroundColor = .white
-        mannerView.makeRounded(cornerRadius: mannerView.frame.height/2)
+        mannerView.makeRounded(cornerRadius: nil)
         mannerView.dropShadow(color: .mannerBlur, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 30)
     }
     
