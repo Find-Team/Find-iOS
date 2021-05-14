@@ -27,7 +27,6 @@ class InterviewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setSegueStyle()
         whatSelected(seg: .pros, idx: 0)
     }
@@ -75,6 +74,11 @@ extension InterviewVC {
         }
         interviewTV.reloadSections(IndexSet(0...0), with: .none)
     }
+    
+    // 화면 터치시 키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
     
 extension InterviewVC: UITableViewDelegate, UITableViewDataSource {
@@ -96,26 +100,38 @@ extension InterviewVC: UITableViewDelegate, UITableViewDataSource {
         switch currentCategory {
         case .pros:
             currIndexPath = indexPath.row
+            cell.curCategory = "pros"
             cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
             cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
+            cell.answerTextField.text = interviewQuestions[currIndexPath].answer
         case .love:
             currIndexPath = indexPath.row+4
+            cell.curCategory = "love"
             cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
             cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
+            cell.answerTextField.text = interviewQuestions[currIndexPath].answer
         case .taste:
             currIndexPath = indexPath.row+9
+            cell.curCategory = "taste"
             cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
             cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
+            cell.answerTextField.text = interviewQuestions[currIndexPath].answer
         case .life:
             currIndexPath = indexPath.row+13
+            cell.curCategory = "life"
             cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
             cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
+            cell.answerTextField.text = interviewQuestions[currIndexPath].answer
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 

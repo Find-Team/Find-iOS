@@ -255,9 +255,9 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="119"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhq-vE-x47">
-                                                            <rect key="frame" x="20" y="89.5" width="342" height="18.5"/>
+                                                            <rect key="frame" x="20" y="90.5" width="342" height="17.5"/>
                                                             <color key="backgroundColor" name="subGray6"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxS-zr-UY6">
@@ -273,10 +273,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KJ-gV-cfv">
-                                                            <rect key="frame" x="335" y="89.5" width="27" height="18.5"/>
+                                                            <rect key="frame" x="335" y="90.5" width="27" height="17.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-B2-0xm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="7.5" height="18.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="7.5" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                                                     <color key="textColor" name="subGray1"/>
                                                                     <nil key="highlightedColor"/>
@@ -287,7 +287,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbB-Rn-QSz">
-                                                                    <rect key="frame" x="7.5" y="0.0" width="19.5" height="18.5"/>
+                                                                    <rect key="frame" x="7.5" y="0.0" width="19.5" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                                                     <color key="textColor" name="subGray1"/>
                                                                     <nil key="highlightedColor"/>
@@ -325,6 +325,7 @@
                                         <connections>
                                             <outlet property="answerTextField" destination="Qhq-vE-x47" id="35x-Zg-EZ7"/>
                                             <outlet property="countLabel" destination="8gz-B2-0xm" id="DP7-A6-jCJ"/>
+                                            <outlet property="maxLabel" destination="zbB-Rn-QSz" id="D6D-VL-E6s"/>
                                             <outlet property="questionNumLabel" destination="TxS-zr-UY6" id="nqZ-Uc-Xjj"/>
                                             <outlet property="questionTitleLabel" destination="xeI-1T-SLe" id="tlF-RH-N6c"/>
                                             <outlet property="questionView" destination="kP7-8k-tRj" id="Llt-CL-BoY"/>
