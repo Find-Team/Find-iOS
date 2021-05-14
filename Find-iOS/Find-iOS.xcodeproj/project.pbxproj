@@ -40,6 +40,13 @@
 		54B9666726490D510028F1BF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666626490D510028F1BF /* NetworkResult.swift */; };
 		54B9666926490D950028F1BF /* PlainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666826490D950028F1BF /* PlainData.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
+		92B10359264CFE6D003801C8 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */; };
+		92B1035C264D134E003801C8 /* FindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035B264D134E003801C8 /* FindVC.swift */; };
+		92B1035F264D1377003801C8 /* FoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035E264D1377003801C8 /* FoundVC.swift */; };
+		92B10362264D1F51003801C8 /* FoundProfileCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */; };
+		92B10366264D2905003801C8 /* ProfileCardDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10365264D2905003801C8 /* ProfileCardDataModel.swift */; };
+		92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10390264E4C2A003801C8 /* BeforeTestView.swift */; };
+		92B10395264E4C4C003801C8 /* BeforeTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B10394264E4C4C003801C8 /* BeforeTestView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +85,13 @@
 		54B96664264909F70028F1BF /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		54B9666626490D510028F1BF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		54B9666826490D950028F1BF /* PlainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainData.swift; sourceTree = "<group>"; };
+		92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		92B1035B264D134E003801C8 /* FindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC.swift; sourceTree = "<group>"; };
+		92B1035E264D1377003801C8 /* FoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundVC.swift; sourceTree = "<group>"; };
+		92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundProfileCardCVC.swift; sourceTree = "<group>"; };
+		92B10365264D2905003801C8 /* ProfileCardDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardDataModel.swift; sourceTree = "<group>"; };
+		92B10390264E4C2A003801C8 /* BeforeTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTestView.swift; sourceTree = "<group>"; };
+		92B10394264E4C4C003801C8 /* BeforeTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeforeTestView.xib; sourceTree = "<group>"; };
 		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -228,8 +242,12 @@
 		54B96628264902BF0028F1BF /* FindFound */ = {
 			isa = PBXGroup;
 			children = (
+				92B10393264E4C3F003801C8 /* View */,
 				54B9662D264903420028F1BF /* ViewController */,
 				54B9662E264903470028F1BF /* Storyboard */,
+				92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */,
+				92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */,
+				92B10365264D2905003801C8 /* ProfileCardDataModel.swift */,
 			);
 			path = FindFound;
 			sourceTree = "<group>";
@@ -263,6 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				54B966522649048A0028F1BF /* FIndFoundVC.swift */,
+				92B1035B264D134E003801C8 /* FindVC.swift */,
+				92B1035E264D1377003801C8 /* FoundVC.swift */,
+				92B10390264E4C2A003801C8 /* BeforeTestView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -369,6 +390,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		92B10393264E4C3F003801C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92B10394264E4C4C003801C8 /* BeforeTestView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,6 +468,7 @@
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
+				92B10395264E4C4C003801C8 /* BeforeTestView.xib in Resources */,
 				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
 				54B9665C264906900028F1BF /* SpoqaHanSansNeo-Light.ttf in Resources */,
 			);
@@ -496,10 +526,12 @@
 				542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */,
 				36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
+				92B10359264CFE6D003801C8 /* CustomSegmentedControl.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				54B966532649048A0028F1BF /* FIndFoundVC.swift in Sources */,
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
+				92B1035C264D134E003801C8 /* FindVC.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
@@ -507,8 +539,12 @@
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
+				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
+				92B1035F264D1377003801C8 /* FoundVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
+				92B10366264D2905003801C8 /* ProfileCardDataModel.swift in Sources */,
+				92B10362264D1F51003801C8 /* FoundProfileCardCVC.swift in Sources */,
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
