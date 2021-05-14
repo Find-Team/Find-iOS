@@ -9,12 +9,25 @@ import UIKit
 
 class YourProfileVC: UIViewController {
 
+    @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var criteriaView: UIView!
+    @IBOutlet weak var criteriaLabel: UILabel!
+    @IBOutlet weak var informationView: UIView!
+    @IBOutlet weak var introductionView: UIView!
+    @IBOutlet weak var introductionContentView: UIView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var informationLabel1: UILabel!
+    @IBOutlet weak var informationLabel2: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setView()
         // Do any additional setup after loading the view.
     }
     
+    func setView() {
+        introductionContentView.makeRounded(cornerRadius: 10)
+    }
 
     /*
     // MARK: - Navigation
