@@ -12,13 +12,12 @@ class ValueListTVC: UITableViewCell {
     //MARK: - custom variables
     
     static let identifier = "ValueListTVC"
-    var selectedCount: Int = 0
-    var currentIndex: Int?
     
     
     //MARK: - IBOutlets
     
-    @IBOutlet var questionView: UIView!
+
+    @IBOutlet var questionNumberLabel: UILabel!
     @IBOutlet var questionLabel: UILabel!
     
     @IBOutlet var answerView: UIView!
@@ -51,26 +50,5 @@ class ValueListTVC: UITableViewCell {
 }
 
 extension ValueListTVC {
-    /// 선택된 답변일 때
-    func selectedQuestion() {
-        selectedBoxView.layer.borderWidth = 2
-        selectedBoxView.layer.borderColor = UIColor.find_DarkPurple.cgColor
-        selectedBoxView.backgroundColor = .find_Purple
-        selectedBoxView.makeRounded(cornerRadius: 10)
-        
-        selectedCountLabel.isHidden = false
-        selectedCountLabel.text = "\(selectedCount)"
-        selectedCountLabel.font = .spoqaBold(size: 9)
-        selectedCountLabel.textColor = .subGray6
-    }
     
-    /// 선택되지 않은 답변일 때
-    func unselectedQuestion() {
-        selectedBoxView.layer.borderWidth = 2
-        selectedBoxView.layer.borderColor = UIColor.subGray1.cgColor
-        selectedBoxView.backgroundColor = .white
-        selectedBoxView.makeRounded(cornerRadius: 10)
-        
-        selectedCountLabel.isHidden = true
-    }
 }
