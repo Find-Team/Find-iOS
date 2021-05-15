@@ -202,4 +202,20 @@ extension ValueListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    /// 왼쪽 or 오른쪽으로 스와이프 하면
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        
+        switch currentIndex {
+        case 0:
+            RelationshipSelected()
+        case 1:
+            FamilySelected()
+        case 2:
+            CareerSelected()
+        default:
+            break
+        }
+    }
 }
