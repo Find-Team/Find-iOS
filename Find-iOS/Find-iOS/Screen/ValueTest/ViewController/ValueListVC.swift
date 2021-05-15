@@ -177,6 +177,8 @@ extension ValueListVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        cell.currentCategory = currentCategory
+        
         return cell
     }
     
@@ -217,5 +219,7 @@ extension ValueListVC: UICollectionViewDelegateFlowLayout {
         default:
             break
         }
+        
+        valueListCollectionView.reloadData()
     }
 }

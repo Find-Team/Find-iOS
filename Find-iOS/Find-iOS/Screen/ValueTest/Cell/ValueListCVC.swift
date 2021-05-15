@@ -26,6 +26,11 @@ class ValueListCVC: UICollectionViewCell {
     override func awakeFromNib() {
         valueListTableView.dataSource = self
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        valueListTableView.reloadData()
+    }
 }
 
 extension ValueListCVC {
