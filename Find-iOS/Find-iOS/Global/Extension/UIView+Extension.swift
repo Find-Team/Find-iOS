@@ -23,9 +23,9 @@ extension UIView {
     // UIView 부분적으로 둥글게 적용
     // 왼상단:layerMinXMinYCorner, 오른상단: layerMaxXMinYCorner, 왼하단: layerMinXMaxYCorner, 오른하단: layerMaxXMaxYCorner
     func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
-            clipsToBounds = true
-            layer.cornerRadius = cornerRadius
-            layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
     }
     
     // Set UIView's Shadow
@@ -41,6 +41,26 @@ extension UIView {
         layer.shadowRadius = radius
         // 구글링 해보세요!
         layer.masksToBounds = false
+    }
+    
+    // Set UIView's Border
+    func setBorder(borderColor : UIColor?, borderWidth : CGFloat?) {
+        
+        // UIView 의 테두리 색상 설정
+        if let borderColor_ = borderColor {
+            self.layer.borderColor = borderColor_.cgColor
+        } else {
+            // borderColor 변수가 nil 일 경우의 default
+            self.layer.borderColor = UIColor(red: 205/255, green: 209/255, blue: 208/255, alpha: 1.0).cgColor
+        }
+        
+        // UIView 의 테두리 두께 설정
+        if let borderWidth_ = borderWidth {
+            self.layer.borderWidth = borderWidth_
+        } else {
+            // borderWidth 변수가 nil 일 경우의 default
+            self.layer.borderWidth = 1.0
+        }
     }
 }
 
