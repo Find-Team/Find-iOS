@@ -242,7 +242,6 @@
                                             <outlet property="questionView" destination="kac-HO-OKg" id="69G-QI-Yos"/>
                                             <outlet property="selectedBoxView" destination="nRF-Lf-WWX" id="3Hk-h2-4Wd"/>
                                             <outlet property="selectedBtn" destination="21t-yl-bpB" id="60C-pc-hbz"/>
-                                            <outlet property="selectedCountLabel" destination="Z70-xb-GK3" id="fd4-5U-6re"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

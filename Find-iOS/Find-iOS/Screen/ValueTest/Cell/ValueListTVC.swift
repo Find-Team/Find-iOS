@@ -12,7 +12,8 @@ class ValueListTVC: UITableViewCell {
     //MARK: - custom variables
     
     static let identifier = "ValueListTVC"
-    var selectedCount = 0
+    var selectedCount: Int = 0
+    var currentIndex: Int?
     
     
     //MARK: - IBOutlets
@@ -49,32 +50,38 @@ class ValueListTVC: UITableViewCell {
     
     
     @IBAction func selectedBtnDidTap(_ sender: Any) {
-        
+        if let currIdx = currentIndex {
+            if valueQuestions[currIdx].isChosen {
+                selectedQuestion()
+            } else {
+                unselectedQuestion()
+            }
+        }
     }
     
 }
 
 extension ValueListTVC {
     /// 선택된 답변일 때
-    func selectedQuestion(cell: ValueListTVC) {
-        cell.selectedBoxView.layer.borderWidth = 2
-        cell.selectedBoxView.layer.borderColor = UIColor.find_DarkPurple.cgColor
-        cell.selectedBoxView.backgroundColor = .find_Purple
-        cell.selectedBoxView.makeRounded(cornerRadius: 10)
+    func selectedQuestion() {
+        selectedBoxView.layer.borderWidth = 2
+        selectedBoxView.layer.borderColor = UIColor.find_DarkPurple.cgColor
+        selectedBoxView.backgroundColor = .find_Purple
+        selectedBoxView.makeRounded(cornerRadius: 10)
         
-        cell.selectedCountLabel.isHidden = false
-        cell.selectedCountLabel.text = "\(selectedCount)"
-        cell.selectedCountLabel.font = .spoqaBold(size: 9)
-        cell.selectedCountLabel.textColor = .subGray6
+        selectedCountLabel.isHidden = false
+        selectedCountLabel.text = "\(selectedCount)"
+        selectedCountLabel.font = .spoqaBold(size: 9)
+        selectedCountLabel.textColor = .subGray6
     }
     
     /// 선택되지 않은 답변일 때
-    func unselectedQuestion(cell: ValueListTVC) {
-        cell.selectedBoxView.layer.borderWidth = 2
-        cell.selectedBoxView.layer.borderColor = UIColor.subGray1.cgColor
-        cell.selectedBoxView.backgroundColor = .white
-        cell.selectedBoxView.makeRounded(cornerRadius: 10)
+    func unselectedQuestion() {
+        selectedBoxView.layer.borderWidth = 2
+        selectedBoxView.layer.borderColor = UIColor.subGray1.cgColor
+        selectedBoxView.backgroundColor = .white
+        selectedBoxView.makeRounded(cornerRadius: 10)
         
-        cell.selectedCountLabel.isHidden = true
+        selectedCountLabel.isHidden = true
     }
 }

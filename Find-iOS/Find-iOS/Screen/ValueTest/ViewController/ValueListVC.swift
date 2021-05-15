@@ -76,6 +76,10 @@ class ValueListVC: UIViewController {
         CareerSelected()
         valueListTableView.reloadData()
     }
+    
+    @objc func selectBtnDidTap(_ sender: UIButton) {
+        print("tap \(sender.tag)")
+    }
 }
 
 extension ValueListVC {
@@ -240,14 +244,19 @@ extension ValueListVC: UITableViewDataSource {
             cell.selectedBtn.isUserInteractionEnabled = false
         }
         
+        cell.selectedBtn.tag = indexPath.row
+        cell.selectedBtn.addTarget(self, action: #selector(selectBtnDidTap), for: .touchUpInside)
+        
+        cell.currentIndex = indexPath.row
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        
-        
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: false)
+//        print("didSelect")
+//
+//    }
 }
 
 extension ValueListVC: UITableViewDelegate {
