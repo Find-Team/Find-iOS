@@ -177,6 +177,4 @@ extension ValueListCVC: UITableViewDataSource {
         
         return cell
     }
-    
 }
-
