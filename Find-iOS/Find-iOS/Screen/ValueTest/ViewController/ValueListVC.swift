@@ -42,13 +42,11 @@ class ValueListVC: UIViewController {
         super.viewDidLoad()
         
         valueListTableView.dataSource = self
-//        valueListTableView.delegate = self
         
         setSegueStyle()
         RelationshipSelected()
         finishBtnDeactivated()
         
-        // Do any additional setup after loading the view.
     }
     
     
@@ -256,18 +254,7 @@ extension ValueListVC: UITableViewDataSource {
         } else {
             answerUnfilled(cell: cell)
         }
-        
-//        /// 선택이 된 답변 / 안 된 답변 분기처리
-//        if valueQuestions[currIndexPath].isChosen {
-//            cell.selectedBtn.isHidden = false
-//            cell.selectedBtn.isUserInteractionEnabled = true
-//            cell.selectedBtn.setTitle("\((chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id) ?? 0) + 1 ) / 5", for: .normal)
-//            cell.selectedBtn.setTitleColor(.white, for: .normal)
-//            cell.selectedBtn.backgroundColor = .purple
-//        } else {
-//            cell.selectedBtn.isHidden = true
-//            cell.selectedBtn.isUserInteractionEnabled = false
-//        }
+
         
         /// 선택이 된 답변 / 안 된 답변 분기처리
         if valueQuestions[currIndexPath].isChosen {
@@ -284,49 +271,4 @@ extension ValueListVC: UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: false)
-//        print("didSelect")
-//
-//    }
 }
-
-//extension ValueListVC: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let selectAction = UIContextualAction(style: .normal, title:  valueQuestions[indexPath.row].isChosen ? "취소" : "선택", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-//
-//            // Call edit action
-//
-//            var currIndexPath = 0
-//
-//            switch self.currentCategory {
-//            case .relationship:
-//                currIndexPath = indexPath.row
-//            case .family:
-//                currIndexPath = indexPath.row + 10
-//            case .career:
-//                currIndexPath = indexPath.row + 20
-//            }
-//
-//            valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
-//
-//            if valueQuestions[currIndexPath].isChosen {
-//                self.selectedCount += 1
-//                self.chosenQuestions.append(valueQuestions[currIndexPath].id)
-//                print(self.chosenQuestions)
-//            } else {
-//                self.selectedCount -= 1
-//                self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
-//            }
-//
-//
-//            // Reset state
-//
-//            success(true)
-//            tableView.reloadData()
-//
-//        })
-//
-//        return UISwipeActionsConfiguration(actions: [selectAction])
-//    }
-//}

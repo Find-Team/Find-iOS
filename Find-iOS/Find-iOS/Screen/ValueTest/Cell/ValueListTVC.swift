@@ -48,18 +48,6 @@ class ValueListTVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-    @IBAction func selectedBtnDidTap(_ sender: Any) {
-        print("didTap in TVC")
-        if let currIdx = currentIndex {
-            if valueQuestions[currIdx].isChosen {
-//                selectedQuestion()
-            } else {
-//                unselectedQuestion()
-            }
-        }
-    }
-    
 }
 
 extension ValueListTVC {
