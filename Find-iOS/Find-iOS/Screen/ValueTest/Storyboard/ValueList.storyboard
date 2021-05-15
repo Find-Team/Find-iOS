@@ -190,24 +190,47 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21t-yl-bpB">
-                                                    <rect key="frame" x="354" y="0.0" width="60" height="104"/>
+                                                    <rect key="frame" x="354" y="44" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="we2-7h-yVr"/>
+                                                        <constraint firstAttribute="height" constant="40" id="g8v-Rp-6C3"/>
+                                                        <constraint firstAttribute="width" constant="40" id="we2-7h-yVr"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="selectedBtnDidTap:" destination="3Sz-RH-ig0" eventType="touchUpInside" id="OUw-Uc-e6q"/>
+                                                    </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-Lf-WWX">
+                                                    <rect key="frame" x="362" y="50" width="24" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z70-xb-GK3">
+                                                            <rect key="frame" x="-8.5" y="1.5" width="41.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Z70-xb-GK3" firstAttribute="centerY" secondItem="nRF-Lf-WWX" secondAttribute="centerY" id="Cwd-DI-teg"/>
+                                                        <constraint firstItem="Z70-xb-GK3" firstAttribute="centerX" secondItem="nRF-Lf-WWX" secondAttribute="centerX" id="Oca-44-4jm"/>
+                                                        <constraint firstAttribute="width" constant="24" id="fpL-1a-Bp1"/>
+                                                        <constraint firstAttribute="height" constant="24" id="i7E-GL-W7M"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kac-HO-OKg" firstAttribute="leading" secondItem="4uf-mg-RnD" secondAttribute="leading" constant="20" symbolic="YES" id="6xG-rm-47l"/>
+                                                <constraint firstAttribute="trailing" secondItem="nRF-Lf-WWX" secondAttribute="trailing" constant="28" id="AIB-1F-Aya"/>
                                                 <constraint firstAttribute="bottom" secondItem="7xp-Bs-B2p" secondAttribute="bottom" constant="16" id="BAA-xd-f0X"/>
-                                                <constraint firstAttribute="trailing" secondItem="21t-yl-bpB" secondAttribute="trailing" id="Bfd-K7-aCE"/>
+                                                <constraint firstAttribute="trailing" secondItem="21t-yl-bpB" secondAttribute="trailing" constant="20" id="Bfd-K7-aCE"/>
                                                 <constraint firstItem="kac-HO-OKg" firstAttribute="top" secondItem="4uf-mg-RnD" secondAttribute="top" constant="16" id="Ezd-ai-F1F"/>
                                                 <constraint firstItem="7xp-Bs-B2p" firstAttribute="top" secondItem="kac-HO-OKg" secondAttribute="bottom" constant="12" id="Gvw-fd-Qcb"/>
-                                                <constraint firstAttribute="bottom" secondItem="21t-yl-bpB" secondAttribute="bottom" id="KbW-rJ-FNW"/>
+                                                <constraint firstAttribute="bottom" secondItem="21t-yl-bpB" secondAttribute="bottom" constant="20" id="KbW-rJ-FNW"/>
                                                 <constraint firstAttribute="trailing" secondItem="iqR-9l-fBt" secondAttribute="trailing" id="PJf-bx-M7V"/>
+                                                <constraint firstItem="iqR-9l-fBt" firstAttribute="top" secondItem="nRF-Lf-WWX" secondAttribute="bottom" constant="28" id="TpP-WJ-FZJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="iqR-9l-fBt" secondAttribute="bottom" id="gI8-Cs-TiS"/>
                                                 <constraint firstItem="7xp-Bs-B2p" firstAttribute="leading" secondItem="kac-HO-OKg" secondAttribute="leading" id="grB-xA-6HC"/>
-                                                <constraint firstItem="21t-yl-bpB" firstAttribute="top" secondItem="4uf-mg-RnD" secondAttribute="top" id="uvx-Wy-79f"/>
                                                 <constraint firstItem="iqR-9l-fBt" firstAttribute="leading" secondItem="4uf-mg-RnD" secondAttribute="leading" id="vP9-XQ-u0L"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -217,7 +240,9 @@
                                             <outlet property="dividerView" destination="iqR-9l-fBt" id="wj6-Yw-Bud"/>
                                             <outlet property="questionLabel" destination="X52-Su-BZU" id="mXj-qB-HTG"/>
                                             <outlet property="questionView" destination="kac-HO-OKg" id="69G-QI-Yos"/>
+                                            <outlet property="selectedBoxView" destination="nRF-Lf-WWX" id="3Hk-h2-4Wd"/>
                                             <outlet property="selectedBtn" destination="21t-yl-bpB" id="60C-pc-hbz"/>
+                                            <outlet property="selectedCountLabel" destination="Z70-xb-GK3" id="fd4-5U-6re"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

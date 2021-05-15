@@ -160,6 +160,29 @@ extension ValueListVC {
         
     }
     
+    /// 선택된 답변일 때
+    func selectedQuestion(cell: ValueListTVC) {
+        cell.selectedBoxView.layer.borderWidth = 2
+        cell.selectedBoxView.layer.borderColor = UIColor.find_DarkPurple.cgColor
+        cell.selectedBoxView.backgroundColor = .find_Purple
+        cell.selectedBoxView.makeRounded(cornerRadius: 10)
+        
+        cell.selectedCountLabel.isHidden = false
+        cell.selectedCountLabel.text = "\(selectedCount)"
+        cell.selectedCountLabel.font = .spoqaBold(size: 9)
+        cell.selectedCountLabel.textColor = .subGray6
+    }
+    
+    /// 선택되지 않은 답변일 때
+    func unselectedQuestion(cell: ValueListTVC) {
+        cell.selectedBoxView.layer.borderWidth = 2
+        cell.selectedBoxView.layer.borderColor = UIColor.subGray1.cgColor
+        cell.selectedBoxView.backgroundColor = .white
+        cell.selectedBoxView.makeRounded(cornerRadius: 10)
+        
+        cell.selectedCountLabel.isHidden = true
+    }
+    
     //MARK: - functions
     
     
@@ -216,7 +239,6 @@ extension ValueListVC: UITableViewDataSource {
             cell.selectedBtn.isHidden = true
             cell.selectedBtn.isUserInteractionEnabled = false
         }
-        
         
         return cell
     }
