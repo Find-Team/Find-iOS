@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3618F64E264FBD49006CF618 /* IntroductionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3618F64D264FBD49006CF618 /* IntroductionVC.swift */; };
-		3618F652264FC48E006CF618 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3618F651264FC48E006CF618 /* Introduction.storyboard */; };
+		3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3618F65D2650123F006CF618 /* Introduction.storyboard */; };
 		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
 		36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */; };
 		36F148E4264AE030005A5C74 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */; };
@@ -49,7 +49,7 @@
 /* Begin PBXFileReference section */
 		30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3618F64D264FBD49006CF618 /* IntroductionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionVC.swift; sourceTree = "<group>"; };
-		3618F651264FC48E006CF618 /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
+		3618F65D2650123F006CF618 /* Introduction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCollectionViewCell.swift; path = Cell/ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileCollectionViewCell.xib; path = Cell/ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				54B96646264904490028F1BF /* ProfileWriting.storyboard */,
-				3618F651264FC48E006CF618 /* Introduction.storyboard */,
+				3618F65D2650123F006CF618 /* Introduction.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */,
 				54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */,
-				3618F652264FC48E006CF618 /* Introduction.storyboard in Resources */,
+				3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */,
 				54B96643264904390028F1BF /* Interview.storyboard in Resources */,
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,

@@ -13,7 +13,6 @@
         <!--ProfileWritingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="ProfileWritingVC" id="Y6W-OH-hqX" customClass="ProfileWritingVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
@@ -729,6 +728,7 @@
                         <outlet property="verifyInfoBtn" destination="niS-Wf-0on" id="SAD-xJ-RjC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063.768115942029" y="39.508928571428569"/>
         </scene>
