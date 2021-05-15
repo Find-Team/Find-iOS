@@ -50,6 +50,7 @@ class ValueListTVC: UITableViewCell {
     
     
     @IBAction func selectedBtnDidTap(_ sender: Any) {
+        print("didTap in TVC")
         if let currIdx = currentIndex {
             if valueQuestions[currIdx].isChosen {
                 selectedQuestion()

@@ -189,17 +189,6 @@
                                                         <constraint firstItem="X52-Su-BZU" firstAttribute="leading" secondItem="kac-HO-OKg" secondAttribute="leading" constant="13" id="hC0-IX-Il6"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21t-yl-bpB">
-                                                    <rect key="frame" x="354" y="44" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="g8v-Rp-6C3"/>
-                                                        <constraint firstAttribute="width" constant="40" id="we2-7h-yVr"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="selectedBtnDidTap:" destination="3Sz-RH-ig0" eventType="touchUpInside" id="OUw-Uc-e6q"/>
-                                                    </connections>
-                                                </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-Lf-WWX">
                                                     <rect key="frame" x="362" y="50" width="24" height="24"/>
                                                     <subviews>
@@ -218,6 +207,17 @@
                                                         <constraint firstAttribute="height" constant="24" id="i7E-GL-W7M"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21t-yl-bpB">
+                                                    <rect key="frame" x="354" y="44" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="g8v-Rp-6C3"/>
+                                                        <constraint firstAttribute="width" constant="40" id="we2-7h-yVr"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="selectedBtnDidTap:" destination="3Sz-RH-ig0" eventType="touchUpInside" id="OUw-Uc-e6q"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kac-HO-OKg" firstAttribute="leading" secondItem="4uf-mg-RnD" secondAttribute="leading" constant="20" symbolic="YES" id="6xG-rm-47l"/>
@@ -242,6 +242,7 @@
                                             <outlet property="questionView" destination="kac-HO-OKg" id="69G-QI-Yos"/>
                                             <outlet property="selectedBoxView" destination="nRF-Lf-WWX" id="3Hk-h2-4Wd"/>
                                             <outlet property="selectedBtn" destination="21t-yl-bpB" id="60C-pc-hbz"/>
+                                            <outlet property="selectedCountLabel" destination="Z70-xb-GK3" id="yMM-qk-km0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

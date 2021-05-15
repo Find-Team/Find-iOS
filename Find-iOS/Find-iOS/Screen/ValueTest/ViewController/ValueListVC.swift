@@ -232,16 +232,23 @@ extension ValueListVC: UITableViewDataSource {
             answerUnfilled(cell: cell)
         }
         
+//        /// 선택이 된 답변 / 안 된 답변 분기처리
+//        if valueQuestions[currIndexPath].isChosen {
+//            cell.selectedBtn.isHidden = false
+//            cell.selectedBtn.isUserInteractionEnabled = true
+//            cell.selectedBtn.setTitle("\((chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id) ?? 0) + 1 ) / 5", for: .normal)
+//            cell.selectedBtn.setTitleColor(.white, for: .normal)
+//            cell.selectedBtn.backgroundColor = .purple
+//        } else {
+//            cell.selectedBtn.isHidden = true
+//            cell.selectedBtn.isUserInteractionEnabled = false
+//        }
+        
         /// 선택이 된 답변 / 안 된 답변 분기처리
         if valueQuestions[currIndexPath].isChosen {
-            cell.selectedBtn.isHidden = false
-            cell.selectedBtn.isUserInteractionEnabled = true
-            cell.selectedBtn.setTitle("\((chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id) ?? 0) + 1 ) / 5", for: .normal)
-            cell.selectedBtn.setTitleColor(.white, for: .normal)
-            cell.selectedBtn.backgroundColor = .purple
+            selectedQuestion(cell: cell)
         } else {
-            cell.selectedBtn.isHidden = true
-            cell.selectedBtn.isUserInteractionEnabled = false
+            unselectedQuestion(cell: cell)
         }
         
         cell.selectedBtn.tag = indexPath.row
