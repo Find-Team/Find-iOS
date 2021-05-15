@@ -135,9 +135,8 @@
                                     <action selector="finishBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="eDS-Zd-GCh"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oug-s9-WOy">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oug-s9-WOy">
                                 <rect key="frame" x="0.0" y="164.5" width="414" height="697.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lkz-82-hzH">
                                     <size key="itemSize" width="414" height="711"/>
@@ -149,7 +148,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ValueListCVC" id="jnR-bh-pkK" customClass="ValueListCVC" customModule="Find_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="-7" width="414" height="711"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q8b-xe-D48">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6yQ-oL-WQY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -265,13 +264,12 @@
                                                 </tableView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7RU-sa-9Wy" firstAttribute="top" secondItem="q8b-xe-D48" secondAttribute="top" id="6Bd-sC-5BN"/>
+                                                <constraint firstItem="7RU-sa-9Wy" firstAttribute="top" secondItem="6yQ-oL-WQY" secondAttribute="top" id="6Bd-sC-5BN"/>
                                                 <constraint firstAttribute="trailing" secondItem="7RU-sa-9Wy" secondAttribute="trailing" id="NxD-bH-IVV"/>
-                                                <constraint firstItem="7RU-sa-9Wy" firstAttribute="leading" secondItem="q8b-xe-D48" secondAttribute="leading" id="Z4e-Rc-Jxg"/>
+                                                <constraint firstItem="7RU-sa-9Wy" firstAttribute="leading" secondItem="6yQ-oL-WQY" secondAttribute="leading" id="Z4e-Rc-Jxg"/>
                                                 <constraint firstAttribute="bottom" secondItem="7RU-sa-9Wy" secondAttribute="bottom" id="cad-t3-bgg"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="414" height="711"/>
                                         <connections>
                                             <outlet property="valueListTableView" destination="7RU-sa-9Wy" id="Bkx-eM-6hq"/>
                                         </connections>
@@ -286,8 +284,12 @@
                             <constraint firstItem="O8W-7H-dOX" firstAttribute="trailing" secondItem="nkp-2q-9ZQ" secondAttribute="trailing" constant="16" id="ETT-a2-Zly"/>
                             <constraint firstItem="SSH-ds-kgY" firstAttribute="top" secondItem="O8W-7H-dOX" secondAttribute="top" constant="39" id="G0H-QC-EJd"/>
                             <constraint firstItem="H7H-am-s3L" firstAttribute="leading" secondItem="vkl-20-vFJ" secondAttribute="leading" id="JBe-IL-Sxl"/>
+                            <constraint firstItem="oug-s9-WOy" firstAttribute="leading" secondItem="O8W-7H-dOX" secondAttribute="leading" id="Lgj-Gc-spd"/>
+                            <constraint firstItem="oug-s9-WOy" firstAttribute="trailing" secondItem="O8W-7H-dOX" secondAttribute="trailing" id="SbB-90-UVu"/>
+                            <constraint firstItem="oug-s9-WOy" firstAttribute="bottom" secondItem="O8W-7H-dOX" secondAttribute="bottom" id="X0t-zR-SGT"/>
                             <constraint firstItem="Rso-xS-JID" firstAttribute="leading" secondItem="vkl-20-vFJ" secondAttribute="leading" constant="15" id="gvR-NN-XdP"/>
                             <constraint firstItem="SSH-ds-kgY" firstAttribute="centerX" secondItem="vkl-20-vFJ" secondAttribute="centerX" id="jlk-O9-d2N"/>
+                            <constraint firstItem="oug-s9-WOy" firstAttribute="top" secondItem="H7H-am-s3L" secondAttribute="bottom" id="lkJ-qo-Py5"/>
                             <constraint firstItem="nkp-2q-9ZQ" firstAttribute="centerY" secondItem="SSH-ds-kgY" secondAttribute="centerY" id="lxY-ma-gWA"/>
                             <constraint firstItem="H7H-am-s3L" firstAttribute="top" secondItem="SSH-ds-kgY" secondAttribute="bottom" constant="30" id="pn2-N3-eCF"/>
                             <constraint firstItem="Rso-xS-JID" firstAttribute="centerY" secondItem="SSH-ds-kgY" secondAttribute="centerY" id="xCF-RZ-JZ2"/>
