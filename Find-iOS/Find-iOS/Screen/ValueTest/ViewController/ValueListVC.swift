@@ -112,6 +112,7 @@ extension ValueListVC {
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
         currentCategory = .relationship
+        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
         
         segueIndicator[0].backgroundColor = .find_DarkPurple
         segueIndicator[1].backgroundColor = .subGray1
@@ -128,6 +129,7 @@ extension ValueListVC {
     /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
         currentCategory = .family
+        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
         
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .find_DarkPurple
@@ -144,6 +146,7 @@ extension ValueListVC {
     /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
         currentCategory = .career
+        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 2, section: 0) as IndexPath, at: .left, animated: true)
         
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .subGray1
