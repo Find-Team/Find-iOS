@@ -112,50 +112,70 @@ extension ValueListVC {
         finishBtn.isUserInteractionEnabled = true
         finishBtn.setTitle("완료", for: .normal)
         finishBtn.setTitleColor(.black, for: .normal)
+        finishBtn.titleLabel?.font = .spoqaRegular(size: 18)
     }
     
     func finishBtnDeactivated() {
         finishBtn.isUserInteractionEnabled = false
         finishBtn.setTitle("완료", for: .normal)
         finishBtn.setTitleColor(.gray, for: .normal)
+        finishBtn.titleLabel?.font = .spoqaRegular(size: 18)
     }
     
     func setSegueStyle() {
         segueRelationshipBtn.setTitle("관계", for: .normal)
-        segueRelationshipBtn.setTitleColor(.black, for: .normal)
+        segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
         segueFamilyBtn.setTitle("가족", for: .normal)
-        segueFamilyBtn.setTitleColor(.black, for: .normal)
+        segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
         segueCareerBtn.setTitle("커리어", for: .normal)
-        segueCareerBtn.setTitleColor(.black, for: .normal)
+        segueCareerBtn.setTitleColor(.subGray2, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
     }
     
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
-        currentCategory = .relationship
+        segueIndicator[0].backgroundColor = .find_DarkPurple
+        segueIndicator[1].backgroundColor = .subGray1
+        segueIndicator[2].backgroundColor = .subGray1
         
-        segueIndicator[0].backgroundColor = .purple
-        segueIndicator[1].backgroundColor = .gray
-        segueIndicator[2].backgroundColor = .gray
+        segueRelationshipBtn.setTitle("관계", for: .normal)
+        segueRelationshipBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueRelationshipBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
+        segueCareerBtn.setTitleColor(.subGray2, for: .normal)
     }
     
     /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
-        currentCategory = .family
+        segueIndicator[0].backgroundColor = .subGray1
+        segueIndicator[1].backgroundColor = .find_DarkPurple
+        segueIndicator[2].backgroundColor = .subGray1
         
-        segueIndicator[0].backgroundColor = .gray
-        segueIndicator[1].backgroundColor = .purple
-        segueIndicator[2].backgroundColor = .gray
+        segueFamilyBtn.setTitle("가족", for: .normal)
+        segueFamilyBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueFamilyBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
+        segueCareerBtn.setTitleColor(.subGray2, for: .normal)
     }
     
     /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
-        currentCategory = .career
+        segueIndicator[0].backgroundColor = .subGray1
+        segueIndicator[1].backgroundColor = .subGray1
+        segueIndicator[2].backgroundColor = .find_DarkPurple
         
-        segueIndicator[0].backgroundColor = .gray
-        segueIndicator[1].backgroundColor = .gray
-        segueIndicator[2].backgroundColor = .purple
+        segueCareerBtn.setTitle("커리어", for: .normal)
+        segueCareerBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueCareerBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        segueRelationshipBtn.setTitleColor(.subGray2, for: .normal)
+        segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
     }
     
     func answerFilled(cell: ValueListTVC, indexPath: Int) {
