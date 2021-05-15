@@ -98,8 +98,21 @@ class ProfileWritingVC: UIViewController {
     
     // MARK:- IBAction
     
+    @IBAction func goToIntroduction(_ sender: Any) {
+        //Introduction 로 이동
+        guard let IntroductionVC = self.storyboard?.instantiateViewController(identifier: "IntroductionVC") as? IntroductionVC else {
+            return
+        }
+        IntroductionVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(IntroductionVC, animated: true)
+    }
+    
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         setHeader()
         setView()
         setAccountInfo()
