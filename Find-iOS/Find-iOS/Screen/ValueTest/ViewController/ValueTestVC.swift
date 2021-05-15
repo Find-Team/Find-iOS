@@ -411,8 +411,10 @@ extension ValueTestVC: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         
         /// 선택된 문항을 유저초이스에 저장
+        if valueQuestions[questionIdx-1].userChoice == 0 {
+            answerCnt += 1 /// 원래 선택이 되어 있지 않았던 거라면 답변 개수 하나 증가
+        }
         valueQuestions[questionIdx-1].userChoice = indexPath.row + 1
-        answerCnt += 1
         
         /// 다음 버튼을 클릭하지 않았어도 5번째 답을 선택하면 완료 버튼 활성화
         if answerCnt == 5 {

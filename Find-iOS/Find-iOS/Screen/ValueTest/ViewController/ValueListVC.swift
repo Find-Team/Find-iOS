@@ -192,15 +192,7 @@ extension ValueListVC {
         cell.answerView.layer.borderColor = UIColor.find_DarkPurple.cgColor
         
         cell.answerLabel.textColor = .find_DarkPurple
-        
-        switch currentCategory {
-        case .relationship:
-            cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
-        case .family:
-            cell.answerLabel.text = valueQuestions[indexPath + 10].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
-        case .career:
-            cell.answerLabel.text = valueQuestions[indexPath + 20].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
-        }
+        cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
     }
     
     /// 답변이 없는 질문  답변 뷰 생성
