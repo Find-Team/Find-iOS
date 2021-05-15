@@ -12,7 +12,7 @@ extension UIViewController {
         let width_variable: CGFloat = 100
         let toastLabel = UILabel(frame: CGRect(x: width_variable, y: UIScreen.main.bounds.height/2, width: view.frame.size.width-2*width_variable, height: 27))
         // 뷰가 위치할 위치를 지정해준다. 여기서는 아래로부터 100만큼 떨어져있고, 너비는 양쪽에 10만큼 여백을 가지며, 높이는 35로
-        toastLabel.backgroundColor = UIColor(red: 125/255, green: 95/255, blue: 255/255, alpha: 0.7)
+        toastLabel.backgroundColor = UIColor(red: 125/255, green: 95/255, blue: 255/255, alpha: 0.8)
         toastLabel.textColor = UIColor.subGray6
         toastLabel.textAlignment = .center
         toastLabel.font = .spoqaRegular(size: 9)
