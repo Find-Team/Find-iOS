@@ -54,4 +54,7 @@ extension UIColor {
     @nonobjc class var textLimitRed: UIColor {
         return UIColor(red: 235.0 / 255.0, green: 87.0 / 255.0, blue: 87.0 / 255.0, alpha: 1.0)
     }
+    @nonobjc class var photoBtnBack: UIColor {
+        return UIColor(red: 235.0 / 255.0, green: 230.0 / 255.0, blue: 254.0 / 255.0, alpha: 1.0)
+    }
 }

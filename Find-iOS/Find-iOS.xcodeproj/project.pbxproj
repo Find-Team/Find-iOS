@@ -17,8 +17,13 @@
 		542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E0D2644315200E69A4D /* UIColor+Additions.swift */; };
 		542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E102644317300E69A4D /* UIView+Extension.swift */; };
 		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
+		548A677C264FF1820014CBE8 /* InterviewPhotoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A677B264FF1820014CBE8 /* InterviewPhotoTVCell.swift */; };
+		548A677E264FF95D0014CBE8 /* InterviewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677D264FF95D0014CBE8 /* InterviewCVCell.xib */; };
+		548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */; };
+		548A6783265009AC0014CBE8 /* photoPreviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A6781265009AC0014CBE8 /* photoPreviewCVCell.swift */; };
+		548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A6782265009AC0014CBE8 /* photoPreviewCVCell.xib */; };
 		54A0385E264CDFA700EDF78F /* UIDevice+ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */; };
-		54A0386C264D68CE00EDF78F /* InterviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0386B264D68CE00EDF78F /* InterviewTVCell.swift */; };
+		54A0386C264D68CE00EDF78F /* InterviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0386B264D68CE00EDF78F /* InterviewCVCell.swift */; };
 		54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0386E264D6A0100EDF78F /* InterviewData.swift */; };
 		54A03871264D6BA100EDF78F /* GetInterviewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A03870264D6BA100EDF78F /* GetInterviewCategory.swift */; };
 		54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A03872264D73CC00EDF78F /* UITextField+Extension.swift */; };
@@ -63,8 +68,13 @@
 		542A1E0D2644315200E69A4D /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		542A1E102644317300E69A4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		548A677B264FF1820014CBE8 /* InterviewPhotoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewPhotoTVCell.swift; sourceTree = "<group>"; };
+		548A677D264FF95D0014CBE8 /* InterviewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewCVCell.xib; sourceTree = "<group>"; };
+		548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewPhotoCVCell.xib; sourceTree = "<group>"; };
+		548A6781265009AC0014CBE8 /* photoPreviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoPreviewCVCell.swift; sourceTree = "<group>"; };
+		548A6782265009AC0014CBE8 /* photoPreviewCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = photoPreviewCVCell.xib; sourceTree = "<group>"; };
 		54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenSize.swift"; sourceTree = "<group>"; };
-		54A0386B264D68CE00EDF78F /* InterviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewTVCell.swift; sourceTree = "<group>"; };
+		54A0386B264D68CE00EDF78F /* InterviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewCVCell.swift; sourceTree = "<group>"; };
 		54A0386E264D6A0100EDF78F /* InterviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewData.swift; sourceTree = "<group>"; };
 		54A03870264D6BA100EDF78F /* GetInterviewCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInterviewCategory.swift; sourceTree = "<group>"; };
 		54A03872264D73CC00EDF78F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -208,7 +218,12 @@
 		54A03862264D20A600EDF78F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				54A0386B264D68CE00EDF78F /* InterviewTVCell.swift */,
+				54A0386B264D68CE00EDF78F /* InterviewCVCell.swift */,
+				548A677D264FF95D0014CBE8 /* InterviewCVCell.xib */,
+				548A677B264FF1820014CBE8 /* InterviewPhotoTVCell.swift */,
+				548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */,
+				548A6781265009AC0014CBE8 /* photoPreviewCVCell.swift */,
+				548A6782265009AC0014CBE8 /* photoPreviewCVCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -473,10 +488,13 @@
 				54B96643264904390028F1BF /* Interview.storyboard in Resources */,
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
+				548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */,
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
+				548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */,
 				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
+				548A677E264FF95D0014CBE8 /* InterviewCVCell.xib in Resources */,
 				54B9665C264906900028F1BF /* SpoqaHanSansNeo-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +551,7 @@
 				542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */,
 				36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */,
 				54A03871264D6BA100EDF78F /* GetInterviewCategory.swift in Sources */,
-				54A0386C264D68CE00EDF78F /* InterviewTVCell.swift in Sources */,
+				54A0386C264D68CE00EDF78F /* InterviewCVCell.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
@@ -550,11 +568,13 @@
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
+				548A6783265009AC0014CBE8 /* photoPreviewCVCell.swift in Sources */,
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */,
 				54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
+				548A677C264FF1820014CBE8 /* InterviewPhotoTVCell.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

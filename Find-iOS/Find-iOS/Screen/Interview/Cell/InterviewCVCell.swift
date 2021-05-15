@@ -1,5 +1,5 @@
 //
-//  InterviewTVCell.swift
+//  InterviewCVCell.swift
 //  Find-iOS
 //
 //  Created by 이원석 on 2021/05/13.
@@ -7,14 +7,16 @@
 
 import UIKit
 
-class InterviewTVCell: UITableViewCell {
-    static let idientifier = "InterviewTVCell"
+class InterviewCVCell: UICollectionViewCell {
+    static let idientifier = "InterviewCVCell"
     var curCategory: String?
     let maxLength_keyword = 40
+    
     
     @IBOutlet weak var questionView: UIView!{
         didSet{
             questionView.makeRounded(cornerRadius: 10)
+            questionView.backgroundColor = .subGray6
         }
     }
     @IBOutlet weak var questionNumLabel: UILabel!
@@ -23,19 +25,20 @@ class InterviewTVCell: UITableViewCell {
         didSet{
             answerTextField.delegate = self
             answerTextField.addRightPadding(x: 0, y: 0, width: 40, height: answerTextField.frame.height)
+            answerTextField.backgroundColor = .subGray6
         }
     }
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         addLetterCountNoti()
         // Initialization code
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    static func nib() -> UINib {
+        return UINib(nibName: "InterviewCVCell", bundle: nil)
     }
     
     // 글자 수 검사 노티들 가진 함수
@@ -72,7 +75,7 @@ class InterviewTVCell: UITableViewCell {
     }
 }
 
-extension InterviewTVCell: UITextFieldDelegate{
+extension InterviewCVCell: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("edit")
     }
