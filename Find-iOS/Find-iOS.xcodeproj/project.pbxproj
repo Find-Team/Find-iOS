@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3618F64E264FBD49006CF618 /* IntroductionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3618F64D264FBD49006CF618 /* IntroductionVC.swift */; };
+		3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3618F65D2650123F006CF618 /* Introduction.storyboard */; };
 		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
+		36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */; };
+		36F148E4264AE030005A5C74 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
 		542A1DF826442F8B00E69A4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF726442F8B00E69A4D /* ViewController.swift */; };
@@ -47,7 +51,11 @@
 
 /* Begin PBXFileReference section */
 		30A6F874187F6EA5D20A692A /* Pods-Find-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		3618F64D264FBD49006CF618 /* IntroductionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionVC.swift; sourceTree = "<group>"; };
+		3618F65D2650123F006CF618 /* Introduction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCollectionViewCell.swift; path = Cell/ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileCollectionViewCell.xib; path = Cell/ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		542A1DF526442F8B00E69A4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +218,8 @@
 			children = (
 				54B96636264903920028F1BF /* ViewController */,
 				54B96637264903960028F1BF /* Storyboard */,
+				36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */,
+				36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */,
 			);
 			path = ProfileWriting;
 			sourceTree = "<group>";
@@ -320,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				54B9664C264904660028F1BF /* ProfileWritingVC.swift */,
+				3618F64D264FBD49006CF618 /* IntroductionVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -328,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				54B96646264904490028F1BF /* ProfileWriting.storyboard */,
+				3618F65D2650123F006CF618 /* Introduction.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -442,11 +454,13 @@
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */,
 				54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */,
+				3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */,
 				54B96643264904390028F1BF /* Interview.storyboard in Resources */,
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
+				36F148E4264AE030005A5C74 /* ProfileCollectionViewCell.xib in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
 				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
 				54B9665C264906900028F1BF /* SpoqaHanSansNeo-Light.ttf in Resources */,
@@ -519,8 +533,11 @@
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
+				36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */,
+				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
+				3618F64E264FBD49006CF618 /* IntroductionVC.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
