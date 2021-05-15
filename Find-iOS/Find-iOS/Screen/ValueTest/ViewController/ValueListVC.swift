@@ -111,14 +111,14 @@ extension ValueListVC {
     func finishBtnActivated() {
         finishBtn.isUserInteractionEnabled = true
         finishBtn.setTitle("완료", for: .normal)
-        finishBtn.setTitleColor(.black, for: .normal)
+        finishBtn.setTitleColor(.subGray3, for: .normal)
         finishBtn.titleLabel?.font = .spoqaRegular(size: 18)
     }
     
     func finishBtnDeactivated() {
         finishBtn.isUserInteractionEnabled = false
         finishBtn.setTitle("완료", for: .normal)
-        finishBtn.setTitleColor(.gray, for: .normal)
+        finishBtn.setTitleColor(.subGray1, for: .normal)
         finishBtn.titleLabel?.font = .spoqaRegular(size: 18)
     }
     
@@ -138,6 +138,8 @@ extension ValueListVC {
     
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
+        currentCategory = .relationship
+        
         segueIndicator[0].backgroundColor = .find_DarkPurple
         segueIndicator[1].backgroundColor = .subGray1
         segueIndicator[2].backgroundColor = .subGray1
@@ -152,6 +154,8 @@ extension ValueListVC {
     
     /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
+        currentCategory = .family
+        
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .find_DarkPurple
         segueIndicator[2].backgroundColor = .subGray1
@@ -166,6 +170,8 @@ extension ValueListVC {
     
     /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
+        currentCategory = .career
+        
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .subGray1
         segueIndicator[2].backgroundColor = .find_DarkPurple
@@ -178,13 +184,14 @@ extension ValueListVC {
         segueFamilyBtn.setTitleColor(.subGray2, for: .normal)
     }
     
+    /// 답변이 있는 질문 답변 뷰 생성
     func answerFilled(cell: ValueListTVC, indexPath: Int) {
-        cell.answerView.makeRounded(cornerRadius: 4)
+        cell.answerView.makeRounded(cornerRadius: 16.5)
         cell.answerView.backgroundColor = .white
         cell.answerView.layer.borderWidth = 1
-        cell.answerView.layer.borderColor = UIColor.blue.cgColor
+        cell.answerView.layer.borderColor = UIColor.find_DarkPurple.cgColor
         
-        cell.answerLabel.textColor = .blue
+        cell.answerLabel.textColor = .find_DarkPurple
         
         switch currentCategory {
         case .relationship:
@@ -196,13 +203,16 @@ extension ValueListVC {
         }
     }
     
+    /// 답변이 없는 질문  답변 뷰 생성
     func answerUnfilled(cell: ValueListTVC) {
-        cell.answerView.makeRounded(cornerRadius: 4)
-        cell.answerView.backgroundColor = .lightGray
-        cell.answerView.layer.borderWidth = 0
+        cell.answerView.makeRounded(cornerRadius: 16.5)
+        cell.answerView.backgroundColor = .white
+        cell.answerView.layer.borderWidth = 1
+        cell.answerView.layer.borderColor = UIColor.subGray2.cgColor
         
-        cell.answerLabel.text = "아직 답변 전입니다."
-        cell.answerLabel.textColor = .black
+        cell.answerLabel.text = "아직 답변을 안 했어요!"
+        cell.answerLabel.textColor = .subGray2
+        cell.answerLabel.font = .spoqaRegular(size: 12)
         
     }
     
@@ -249,9 +259,12 @@ extension ValueListVC: UITableViewDataSource {
         }
         
         /// 질문 뷰 스타일
-        cell.questionView.makeRounded(cornerRadius: 4)
-        cell.questionView.backgroundColor = .purple
-        cell.questionLabel.textColor = .white
+        cell.questionNumberLabel.text = "Q \(indexPath.row + 1)"
+        cell.questionNumberLabel.font = .spoqaRegular(size: 16)
+        cell.questionNumberLabel.textColor = .subGray3
+        
+        cell.questionLabel.font = .spoqaRegular(size: 13)
+        cell.questionLabel.textColor = .subGray3
         
         /// 선택 카테고리에 따른 질문
         var currIndexPath: Int = 0
@@ -285,8 +298,6 @@ extension ValueListVC: UITableViewDataSource {
         
         cell.selectedBtn.tag = indexPath.row
         cell.selectedBtn.addTarget(self, action: #selector(selectBtnDidTap), for: .touchUpInside)
-        
-        cell.currentIndex = indexPath.row
         
         return cell
     }
