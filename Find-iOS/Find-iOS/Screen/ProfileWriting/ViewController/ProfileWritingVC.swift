@@ -98,17 +98,12 @@ class ProfileWritingVC: UIViewController {
     
     // MARK:- IBAction
     
-    @IBAction func goToIntroduction(_ sender: Any) {
+    @IBAction func goToIntroduction(_ sender: UIButton) {
         //Introduction 로 이동
-        guard let IntroductionVC = self.storyboard?.instantiateViewController(identifier: "IntroductionVC") as? IntroductionVC else {
-            return
-        }
-        IntroductionVC.hidesBottomBarWhenPushed = true
+        let nextStoryboard = UIStoryboard(name: "Introduction", bundle: nil)
+        guard let IntroductionVC = nextStoryboard.instantiateViewController(withIdentifier: "IntroductionVC") as? IntroductionVC else {return}
         self.navigationController?.pushViewController(IntroductionVC, animated: true)
     }
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -290,12 +285,6 @@ extension ProfileWritingVC {
         drinking.text = "주량"
         setTitleFont(title: drinking)
     }
-    
-    
-    
-    
-    
-    
 }
 
 extension ProfileWritingVC: UICollectionViewDataSource {
@@ -333,7 +322,6 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    func
-    collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0) }
     }

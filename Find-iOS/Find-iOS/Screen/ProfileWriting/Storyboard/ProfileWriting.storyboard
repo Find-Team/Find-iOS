@@ -732,13 +732,27 @@
             </objects>
             <point key="canvasLocation" x="1063.768115942029" y="39.508928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--View Controller-->
+        <scene sceneID="2U1-KM-hOv">
+            <objects>
+                <viewController id="3SM-2e-ao1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJ6-fd-V8K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="B2e-Ad-x67"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keN-O2-l8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2178" y="-100"/>
+        </scene>
+        <!--ProfileNavigationController-->
         <scene sceneID="mnN-XD-a69">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zkp-dA-QXO" sceneMemberID="viewController">
+                <navigationController title="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zkp-dA-QXO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j44-bQ-lZb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
