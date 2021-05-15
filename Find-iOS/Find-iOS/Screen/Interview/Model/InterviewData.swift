@@ -10,10 +10,11 @@ import Foundation
 struct InterviewData {
     let id : Int
     let question : String
-    var isEdit : Bool = false
-    var answer: String?
+    var isEdit : Bool = false // 답변이 작성 되었는지
+    var answer: String? // 질문에 대한 답변
 }
 
+// MARK: - 인터뷰 질문 목록
 var interviewQuestions: [InterviewData] = [
     InterviewData(id: 1, question: "성격 & 매력포인트", isEdit: false, answer: nil),
     InterviewData(id: 2, question: "외모특징 & 자신있는 부분", isEdit: false, answer: nil),
@@ -36,6 +37,4 @@ var interviewQuestions: [InterviewData] = [
     InterviewData(id: 16, question: "스트레스 해소방법", isEdit: false, answer: nil),
     InterviewData(id: 17, question: "좌우명이나 생활신조", isEdit: false, answer: nil),
     InterviewData(id: 18, question: "행복을 느끼는 때", isEdit: false, answer: nil),
-    
-    
 ]

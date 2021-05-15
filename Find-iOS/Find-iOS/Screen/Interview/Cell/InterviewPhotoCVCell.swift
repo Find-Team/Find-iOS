@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import Photos
 
 class InterviewPhotoCVCell: UICollectionViewCell {
     static let identifier = "InterviewPhotoCVCell"
     
     @IBOutlet var addPhotoBtns: [UIButton]!
+    @IBOutlet var interviewImages: [UIImageView]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,17 +30,27 @@ class InterviewPhotoCVCell: UICollectionViewCell {
             addPhotoBtns[i].backgroundColor = .photoBtnBack
             addPhotoBtns[i].layer.borderWidth = 1
             addPhotoBtns[i].layer.borderColor = UIColor.find_Purple.cgColor
+            interviewImages?[i].makeRounded(cornerRadius: 10)
         }
     }
+    
     @IBAction func firstBtnTapped(_ sender: Any) {
-        print("firstTapped")
+        if interviewImages?[0].image == nil{
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openPhotoLibrary"),object: nil)
+        }else{
+            
+        }
     }
     
     @IBAction func secBtnTapped(_ sender: Any) {
-        print("secondTapped")
+        if interviewImages?[1].image == nil{
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openPhotoLibrary"),object: nil)
+        }
     }
     
     @IBAction func thirdBtnTapped(_ sender: Any) {
-        print("thirdTapped")
+        if interviewImages?[2].image == nil{
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openPhotoLibrary"),object: nil)
+        }
     }
 }

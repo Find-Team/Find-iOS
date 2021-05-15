@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="266" height="294"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본인의 라이프 스타일을 보여줄 수 있는 사진을 업로드 해주세요" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yax-ZZ-zcy">
-                                <rect key="frame" x="65.333333333333329" y="120.66666666666667" width="135.33333333333337" height="52.666666666666671"/>
+                                <rect key="frame" x="68.666666666666686" y="122.66666666666669" width="129" height="49"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                 <color key="textColor" name="find_DarkPurple"/>
                                 <nil key="highlightedColor"/>

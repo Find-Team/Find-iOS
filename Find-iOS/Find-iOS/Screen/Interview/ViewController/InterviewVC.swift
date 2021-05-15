@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class InterviewVC: UIViewController {
     
@@ -13,6 +14,8 @@ class InterviewVC: UIViewController {
         case pros, love, taste, life
     }
     var currentCategory: InterviewCategory?
+    let picker = UIImagePickerController()
+    
     @IBOutlet weak var interviewCV: UICollectionView!{
         didSet{
             interviewCV.delegate = self
@@ -28,6 +31,8 @@ class InterviewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
+        setUPNoti()
         setSegueStyle()
         whatSelected(seg: .pros, idx: 0)
     }
@@ -78,9 +83,9 @@ class InterviewVC: UIViewController {
     }
 }
 
+
 extension InterviewVC {
-    
-    //MARK: - Styles
+    // MARK: - Segue Styles
     func setSegueStyle() {
         segueBtns[0].setTitle("장점", for: .normal)
         segueBtns[0].setTitleColor(.subGray2, for: .normal)
@@ -95,7 +100,7 @@ extension InterviewVC {
         segueBtns[3].setTitleColor(.subGray2, for: .normal)
     }
     
-    // 어떤 세그가 선택되었는지
+    // MARK: - Remind Me Selected Segue
     func whatSelected(seg: InterviewCategory, idx: Int){
         if currentCategory != seg {
             currentCategory = seg
@@ -108,13 +113,117 @@ extension InterviewVC {
                     segueBtns[i].setTitleColor(.subGray2, for: .normal)
                 }
             }
-            interviewCV.reloadSections(IndexSet(0...0))
+            interviewCV.reloadSections(IndexSet(0...2))
         }
+    }
+    
+    // MARK: - Set Up Notification
+    func setUPNoti(){
+        NotificationCenter.default.addObserver(self, selector: #selector(openPhotoLibrary), name: NSNotification.Name(rawValue:"openPhotoLibrary"), object: nil)
     }
     
     // 화면 터치시 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+//    @objc func getValue(_ notification: Notification){
+//        let getValue = notification.object as! String
+//        print(getValue)
+//    }
+    
+    // MARK: - Open Photo Library
+    @objc func openPhotoLibrary() {
+        /// 사진 접근 권한이 허용되었는지 검사
+        switch PHPhotoLibrary.authorizationStatus() {
+        /// 권한이 거부된 경우
+        case .denied:
+            print("denied")
+            /// 설정창에서 권한을 재설정 하게끔 유도한다
+            if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String {
+                let alert = UIAlertController(title: "설정", message: "\(appName)의 사진 접근 권한이\n허용되어 있지 않습니다.\n설정에서 변경 가능합니다.", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "취소", style: .default) { (action) in
+                    
+                }
+                let confirmAction = UIAlertAction(title: "설정", style: .default) { (action) in
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                }
+                
+                alert.addAction(cancelAction)
+                alert.addAction(confirmAction)
+                self.present(alert, animated: true, completion: nil)
+            }
+        /// restricted
+        case .restricted:
+            print("restricted")
+            break
+        /// 권한이 허용된 경우
+        case .authorized:
+            print("authorized")
+            picker.sourceType = .photoLibrary
+            picker.allowsEditing = true
+            
+            picker.modalPresentationStyle = .fullScreen
+            present(picker, animated: true, completion: nil)
+        /// 권한 허용을 묻기 전인 경우 (최초 1회)
+        case .notDetermined:
+            print("notDetermined")
+            PHPhotoLibrary.requestAuthorization({ state in
+                if state == .authorized {
+                    DispatchQueue.main.async {
+                        self.picker.sourceType = .photoLibrary
+                        self.picker.allowsEditing = true
+                        
+                        self.picker.modalPresentationStyle = .fullScreen
+                        self.present(self.picker, animated: true, completion: nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String {
+                            let alert = UIAlertController(title: "설정", message: "\(appName)의 사진 접근 권한이\n허용되어 있지 않습니다.\n설정에서 변경 가능합니다.", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: "취소", style: .default) { (action) in
+                                
+                            }
+                            let confirmAction = UIAlertAction(title: "설정", style: .default) { (action) in
+                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                            }
+                            
+                            alert.addAction(cancelAction)
+                            alert.addAction(confirmAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                    //                        self.dismiss(animated: true, completion: nil)
+                }
+            })
+        default:
+            print("break")
+            break
+        }
+        
+    }
+}
+
+// MARK: - Protocols
+extension InterviewVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // 선택된 이미지를 각 카테고리에 맞게 구조체에 아카이빙
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            switch currentCategory {
+            case .pros:
+                interviewImgs[0].images.append(image)
+            case .love:
+                interviewImgs[1].images.append(image)
+            case .taste:
+                interviewImgs[2].images.append(image)
+            case .life:
+                interviewImgs[3].images.append(image)
+            default:
+                return
+            }
+        }
+        interviewCV.reloadSections(IndexSet(1...1))
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -142,50 +251,64 @@ extension InterviewVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         if indexPath.section == 0{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InterviewCVCell.idientifier, for: indexPath) as? InterviewCVCell else { return UICollectionViewCell() }
             
-            /// 선택 카테고리에 따른 질문
-            var currIndexPath: Int = 0
+            /// 선택 카테고리에 따른 질문 및 답변 셋팅
+            func setQandA(curCat: String, curIdx: Int){
+                cell.curCategory = curCat
+                cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
+                cell.questionTitleLabel.text = interviewQuestions[curIdx].question
+                cell.answerTextField.text = interviewQuestions[curIdx].answer
+            }
             
             switch currentCategory {
             case .pros:
-                currIndexPath = indexPath.row
-                cell.curCategory = "pros"
-                cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
-                cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
-                cell.answerTextField.text = interviewQuestions[currIndexPath].answer
+                setQandA(curCat: "pros", curIdx: indexPath.row)
             case .love:
-                currIndexPath = indexPath.row+4
-                cell.curCategory = "love"
-                cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
-                cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
-                cell.answerTextField.text = interviewQuestions[currIndexPath].answer
+                setQandA(curCat: "love", curIdx: indexPath.row+4)
             case .taste:
-                currIndexPath = indexPath.row+9
-                cell.curCategory = "taste"
-                cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
-                cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
-                cell.answerTextField.text = interviewQuestions[currIndexPath].answer
+                setQandA(curCat: "taste", curIdx: indexPath.row+9)
             case .life:
-                currIndexPath = indexPath.row+13
-                cell.curCategory = "life"
-                cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
-                cell.questionTitleLabel.text = interviewQuestions[currIndexPath].question
-                cell.answerTextField.text = interviewQuestions[currIndexPath].answer
+                setQandA(curCat: "life", curIdx: indexPath.row+13)
             case .none:
-                0
+                return UICollectionViewCell()
             }
             return cell
+            
         } else if indexPath.section == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InterviewPhotoCVCell.identifier, for: indexPath) as? InterviewPhotoCVCell else { return UICollectionViewCell() }
             
+            /// 선택 카테고리에 따른 이미지 셋팅
+            func setInterviewImage(_ ctgNum: Int){
+                cell.interviewImages?.forEach{
+                    $0.image = nil
+                }
+                for (idx,img) in interviewImgs[ctgNum].images.enumerated() {
+                    cell.interviewImages?[idx].image = img
+                }
+            }
+
+            switch currentCategory {
+            case .pros:
+                setInterviewImage(0)
+            case .love:
+                setInterviewImage(1)
+            case .taste:
+                setInterviewImage(2)
+            case .life:
+                setInterviewImage(3)
+            default:
+                return UICollectionViewCell()
+            }
             return cell
+            
         } else if indexPath.section == 2 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photoPreviewCVCell.identifier, for: indexPath) as? photoPreviewCVCell else { return UICollectionViewCell() }
-
+            
             return cell
         }
         return UICollectionViewCell()
     }
     
+    //MARK: - Cell 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.section == 0 {
@@ -195,7 +318,7 @@ extension InterviewVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         } else if indexPath.section == 2 {
             return CGSize(width: collectionView.frame.width-32, height: collectionView.frame.width-32 )
         }
-         
+        
         return CGSize(width: 0, height: 0)
     }
     
