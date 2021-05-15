@@ -42,7 +42,7 @@ class ValueListVC: UIViewController {
         super.viewDidLoad()
         
         valueListTableView.dataSource = self
-        valueListTableView.delegate = self
+//        valueListTableView.delegate = self
         
         setSegueStyle()
         RelationshipSelected()
@@ -79,6 +79,30 @@ class ValueListVC: UIViewController {
     
     @objc func selectBtnDidTap(_ sender: UIButton) {
         print("tap \(sender.tag)")
+        
+        var currIndexPath = 0
+        
+        switch self.currentCategory {
+        case .relationship:
+            currIndexPath = sender.tag
+        case .family:
+            currIndexPath = sender.tag + 10
+        case .career:
+            currIndexPath = sender.tag + 20
+        }
+        
+        valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
+        
+        if valueQuestions[currIndexPath].isChosen {
+            self.selectedCount += 1
+            self.chosenQuestions.append(valueQuestions[currIndexPath].id)
+            print(self.chosenQuestions)
+        } else {
+            self.selectedCount -= 1
+            self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
+        }
+        
+        valueListTableView.reloadData()
     }
 }
 
@@ -165,16 +189,17 @@ extension ValueListVC {
     }
     
     /// 선택된 답변일 때
-    func selectedQuestion(cell: ValueListTVC) {
+    func selectedQuestion(cell: ValueListTVC, currIndexPath: Int) {
         cell.selectedBoxView.layer.borderWidth = 2
         cell.selectedBoxView.layer.borderColor = UIColor.find_DarkPurple.cgColor
         cell.selectedBoxView.backgroundColor = .find_Purple
         cell.selectedBoxView.makeRounded(cornerRadius: 10)
         
         cell.selectedCountLabel.isHidden = false
-        cell.selectedCountLabel.text = "\(selectedCount)"
         cell.selectedCountLabel.font = .spoqaBold(size: 9)
         cell.selectedCountLabel.textColor = .subGray6
+        
+        cell.selectedCountLabel.text = "\((chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id) ?? 0) + 1 )"
     }
     
     /// 선택되지 않은 답변일 때
@@ -246,7 +271,7 @@ extension ValueListVC: UITableViewDataSource {
         
         /// 선택이 된 답변 / 안 된 답변 분기처리
         if valueQuestions[currIndexPath].isChosen {
-            selectedQuestion(cell: cell)
+            selectedQuestion(cell: cell, currIndexPath: currIndexPath)
         } else {
             unselectedQuestion(cell: cell)
         }
@@ -266,42 +291,42 @@ extension ValueListVC: UITableViewDataSource {
 //    }
 }
 
-extension ValueListVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectAction = UIContextualAction(style: .normal, title:  valueQuestions[indexPath.row].isChosen ? "취소" : "선택", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            
-            // Call edit action
-            
-            var currIndexPath = 0
-            
-            switch self.currentCategory {
-            case .relationship:
-                currIndexPath = indexPath.row
-            case .family:
-                currIndexPath = indexPath.row + 10
-            case .career:
-                currIndexPath = indexPath.row + 20
-            }
-            
-            valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
-            
-            if valueQuestions[currIndexPath].isChosen {
-                self.selectedCount += 1
-                self.chosenQuestions.append(valueQuestions[currIndexPath].id)
-                print(self.chosenQuestions)
-            } else {
-                self.selectedCount -= 1
-                self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
-            }
-            
-            
-            // Reset state
-            
-            success(true)
-            tableView.reloadData()
-            
-        })
-        
-        return UISwipeActionsConfiguration(actions: [selectAction])
-    }
-}
+//extension ValueListVC: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let selectAction = UIContextualAction(style: .normal, title:  valueQuestions[indexPath.row].isChosen ? "취소" : "선택", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+//
+//            // Call edit action
+//
+//            var currIndexPath = 0
+//
+//            switch self.currentCategory {
+//            case .relationship:
+//                currIndexPath = indexPath.row
+//            case .family:
+//                currIndexPath = indexPath.row + 10
+//            case .career:
+//                currIndexPath = indexPath.row + 20
+//            }
+//
+//            valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
+//
+//            if valueQuestions[currIndexPath].isChosen {
+//                self.selectedCount += 1
+//                self.chosenQuestions.append(valueQuestions[currIndexPath].id)
+//                print(self.chosenQuestions)
+//            } else {
+//                self.selectedCount -= 1
+//                self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
+//            }
+//
+//
+//            // Reset state
+//
+//            success(true)
+//            tableView.reloadData()
+//
+//        })
+//
+//        return UISwipeActionsConfiguration(actions: [selectAction])
+//    }
+//}

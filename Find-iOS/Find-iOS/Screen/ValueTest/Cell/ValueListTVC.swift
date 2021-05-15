@@ -53,9 +53,9 @@ class ValueListTVC: UITableViewCell {
         print("didTap in TVC")
         if let currIdx = currentIndex {
             if valueQuestions[currIdx].isChosen {
-                selectedQuestion()
+//                selectedQuestion()
             } else {
-                unselectedQuestion()
+//                unselectedQuestion()
             }
         }
     }

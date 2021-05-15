@@ -213,7 +213,6 @@
                                                         <constraint firstAttribute="height" constant="40" id="g8v-Rp-6C3"/>
                                                         <constraint firstAttribute="width" constant="40" id="we2-7h-yVr"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="selectedBtnDidTap:" destination="3Sz-RH-ig0" eventType="touchUpInside" id="OUw-Uc-e6q"/>
                                                     </connections>
