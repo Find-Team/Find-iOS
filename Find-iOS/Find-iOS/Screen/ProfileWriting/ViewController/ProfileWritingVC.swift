@@ -35,57 +35,75 @@ class ProfileWritingVC: UIViewController {
     @IBOutlet var accountWriting: UILabel!
     @IBOutlet var accountExplain: UILabel!
     
+    @IBOutlet var nicknameView: UIView!
+    @IBOutlet var birthdayView: UIView!
+    @IBOutlet var genderView: UIView!
+    @IBOutlet var regionView: UIView!
+    
     @IBOutlet var nickname: UILabel!
-    @IBOutlet var nicknameTextField: UITextField!
+    @IBOutlet var nicknameInfo: UILabel!
     
     @IBOutlet var birthday: UILabel!
-    @IBOutlet var birthdayTextField: UITextField!
-    
+    @IBOutlet var birthdayInfo: UILabel!
+   
     @IBOutlet var gender: UILabel!
-    @IBOutlet var genderTextField: UITextField!
+    @IBOutlet var genderInfo: UILabel!
     
     @IBOutlet var region: UILabel!
-    @IBOutlet var regionTextField: UITextField!
+    @IBOutlet var regionInfo: UILabel!
     
     @IBOutlet var basicInfo: UILabel!
     @IBOutlet var basicInfoExplain: UILabel!
-    @IBOutlet var basicInfoStack: UIStackView!
     
+    @IBOutlet var jobBox: UIView!
     @IBOutlet var job: UILabel!
     @IBOutlet var jobTextField: UITextField!
     
+    @IBOutlet var companyBox: UIView!
     @IBOutlet var company: UILabel!
     @IBOutlet var companyTextField: UITextField!
     
+    @IBOutlet var educationBox: UIView!
     @IBOutlet var education: UILabel!
     @IBOutlet var educationTextField: UITextField!
     
+    @IBOutlet var mbtiBox: UIView!
     @IBOutlet var mbti: UILabel!
     @IBOutlet var mbtiTextField: UITextField!
     
+    @IBOutlet var heightBox: UIView!
     @IBOutlet var height: UILabel!
     @IBOutlet var heightTextField: UITextField!
     
+    @IBOutlet var bodyShapeBox: UIView!
     @IBOutlet var bodyShape: UILabel!
     @IBOutlet var bodyShapeTextField: UITextField!
     
+    @IBOutlet var smokingBox: UIView!
     @IBOutlet var smoking: UILabel!
     @IBOutlet var smokingTextField: UITextField!
     
+    @IBOutlet var religionBox: UIView!
     @IBOutlet var religion: UILabel!
     @IBOutlet var religionTextField: UITextField!
     
+    @IBOutlet var marriageBox: UIView!
     @IBOutlet var marriage: UILabel!
     @IBOutlet var marriageTextField: UITextField!
     
+    @IBOutlet var drinkingBox: UIView!
     @IBOutlet var drinking: UILabel!
     @IBOutlet var drinkingTextField: UITextField!
+    
+    
     // MARK:- IBAction
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setHeader()
         setView()
+        setAccountInfo()
+        setBasicInfo()
         
         self.profileCollectionView.delegate = self
         self.profileCollectionView.dataSource = self
@@ -93,9 +111,6 @@ class ProfileWritingVC: UIViewController {
         let nibName = UINib(nibName: "ProfileCollectionViewCell", bundle: nil)
         profileCollectionView.register(nibName, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
         
-        nicknameTextField.layer.borderColor = UIColor.subGray6.cgColor
-        nicknameTextField.layer.borderWidth = 0.0
-        nicknameTextField.backgroundColor = UIColor.subGray6
     }
     
 }
@@ -161,8 +176,112 @@ extension ProfileWritingVC {
         goToInfoBtn.setTitle("소개글 작성하러 가기", for: .normal)
         goToInfoBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
         goToInfoBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
+    }
+    
+    func setBoxRadius(box: UIView) {
+        box.clipsToBounds = true
+        box.layer.cornerRadius = 10
+    }
+    
+    func setTitleFont(title: UILabel) {
+        title.font = UIFont.spoqaMedium(size: 13)
+        title.textColor = UIColor.subGray3
+    }
+    
+    func setInfoFont(info: UILabel) {
+        info.font = UIFont.spoqaRegular(size: 13)
+        info.textColor = UIColor.subGray5
         
     }
+    
+    func setAccountInfo() {
+        accountWriting.text = "계정 정보"
+        accountWriting.font = UIFont.spoqaLight(size: 22)
+        accountWriting.textColor = UIColor.subGray3
+        
+        accountExplain.text = "가입시 기재된 정보로 변경이 불가합니다."
+        accountExplain.font = UIFont.spoqaRegular(size: 12)
+        accountExplain.textColor = UIColor.find_DarkPurple
+        
+        setBoxRadius(box: nicknameView)
+        nickname.text = "닉네임"
+        setTitleFont(title: nickname)
+        nicknameInfo.text = "맹고감자"
+        setInfoFont(info: nicknameInfo)
+        
+        setBoxRadius(box: birthdayView)
+        birthday.text = "생년월일"
+        setTitleFont(title: birthday)
+        birthdayInfo.text = "1998.10.22"
+        setInfoFont(info: birthdayInfo)
+        
+        setBoxRadius(box: genderView)
+        gender.text = "성별"
+        setTitleFont(title: gender)
+        genderInfo.text = "여자"
+        setInfoFont(info: genderInfo)
+        
+        setBoxRadius(box: regionView)
+        region.text = "지역"
+        setTitleFont(title: region)
+        regionInfo.text = "서울특별시 성북구"
+        setInfoFont(info: regionInfo)
+    }
+    
+    func setBasicInfo() {
+        basicInfo.text = "기본 정보"
+        basicInfo.font = UIFont.spoqaLight(size: 22)
+        basicInfo.textColor = UIColor.subGray3
+        
+        basicInfoExplain.text = "여기에 쓰는 글은 마이 프로필에 노출됩니다."
+        basicInfoExplain.font = UIFont.spoqaRegular(size: 12)
+        basicInfoExplain.textColor = UIColor.find_DarkPurple
+        
+        setBoxRadius(box: jobBox)
+        job.text = "직업"
+        setTitleFont(title: job)
+        
+        setBoxRadius(box: companyBox)
+        company.text = "회사"
+        setTitleFont(title: company)
+        
+        setBoxRadius(box: educationBox)
+        education.text = "학력"
+        setTitleFont(title: education)
+        
+        setBoxRadius(box: mbtiBox)
+        mbti.text = "MBTI"
+        setTitleFont(title: mbti)
+        
+        setBoxRadius(box: heightBox)
+        height.text = "키"
+        setTitleFont(title: height)
+        
+        setBoxRadius(box: bodyShapeBox)
+        bodyShape.text = "체형"
+        setTitleFont(title: bodyShape)
+        
+        setBoxRadius(box: smokingBox)
+        smoking.text = "흡연여부"
+        setTitleFont(title: smoking)
+        
+        setBoxRadius(box: religionBox)
+        religion.text = "종교"
+        setTitleFont(title: religion)
+        
+        setBoxRadius(box: marriageBox)
+        marriage.text = "결혼여부"
+        setTitleFont(title: marriage)
+        
+        setBoxRadius(box: drinkingBox)
+        drinking.text = "주량"
+        setTitleFont(title: drinking)
+    }
+    
+    
+    
+    
+    
     
 }
 
@@ -186,8 +305,6 @@ extension ProfileWritingVC: UICollectionViewDataSource {
     
     
 }
-
-
 
 
 extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
