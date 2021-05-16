@@ -7,9 +7,13 @@
 
 import UIKit
 
-struct InterviewImages {
+struct InterviewImages: Equatable {
     let category : String
     var images = [UIImage]()
+    
+    static func == (lhs: InterviewImages, rhs: InterviewImages) -> Bool {
+        return lhs.images == rhs.images
+    }
 }
 
 // MARK: - 장점, 연애, 호불호, 라이프 별 이미지

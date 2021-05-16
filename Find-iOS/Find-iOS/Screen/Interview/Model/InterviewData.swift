@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct InterviewData {
+struct InterviewData: Equatable {
     let id : Int
     let question : String
     var isEdit : Bool = false // 답변이 작성 되었는지
     var answer: String? // 질문에 대한 답변
+    
+    static func == (lhs: InterviewData, rhs: InterviewData) -> Bool {
+        return (lhs.isEdit == rhs.isEdit) && (lhs.answer == rhs.answer)
+    }
 }
 
 // MARK: - 인터뷰 질문 목록

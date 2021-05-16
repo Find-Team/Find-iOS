@@ -43,6 +43,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bG-OK-49y">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="46"/>
                                         <state key="normal" image="backBtn"/>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HgM-j8-3iR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvT-QY-AE0">
                                         <rect key="frame" x="325" y="0.0" width="34" height="46"/>
@@ -55,6 +58,9 @@
                                                 <real key="value" value="-0.54000000000000004"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uuW-dm-M7O"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

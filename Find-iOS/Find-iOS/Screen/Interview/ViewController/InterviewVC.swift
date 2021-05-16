@@ -14,6 +14,8 @@ class InterviewVC: UIViewController {
         case pros, love, taste, life
     }
     var currentCategory: InterviewCategory?
+    var beforeInterviewData = interviewQuestions // 저장 전 인터뷰 답변 데이터
+    var beforeInterviewImgs = interviewImgs // 저장 전 이미지 데이터
     var receivedInt : Int? // 선택된 이미지의 인덱스 값 - preview View에서 사용하기 위함
     let picker = UIImagePickerController()
     
@@ -38,6 +40,29 @@ class InterviewVC: UIViewController {
         whatSelected(seg: .pros, idx: 0)
     }
     
+    @IBAction func backBtnTapped(_ sender: Any) {
+        // viewDidLoad()시 내용과 viewWillDisappear() 내용이 다르면 Alert Show 같으면 그냥 pop
+        let alert =  UIAlertController(title: "저장하시겠습니까?", message: nil, preferredStyle: .alert)
+        let yes = UIAlertAction(title: "예", style: .default) { [self] (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let no = UIAlertAction(title: "아니오", style: .cancel) { [self] (action) in
+            interviewQuestions = beforeInterviewData
+            interviewImgs = beforeInterviewImgs
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(no)
+        alert.addAction(yes)
+        
+        if interviewQuestions != beforeInterviewData || interviewImgs != beforeInterviewImgs {
+            present(alert, animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    @IBAction func saveBtnTapped(_ sender: Any) {
+        // 저장되었습니다 토스트
+    }
     @IBAction func prosBtnTapped(_ sender: Any) {
         whatSelected(seg: .pros, idx: 0)
     }
