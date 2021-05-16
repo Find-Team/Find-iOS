@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ProfileCollectionViewCell" reuseIdentifier="ProfileCollectionViewCell" id="gTV-IL-0wX" customClass="ProfileCollectionViewCell" customModule="Find_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-wS-gdO">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnE-Ks-8ol">
+                                <rect key="frame" x="23" y="34.5" width="24" height="1"/>
+                                <color key="backgroundColor" name="find_DarkPurple"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="apH-11-QU2"/>
+                                    <constraint firstAttribute="height" constant="1" id="nxI-yj-emx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9br-FX-F6l">
+                                <rect key="frame" x="34.5" y="23" width="1" height="24"/>
+                                <color key="backgroundColor" name="find_DarkPurple"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="DiW-Za-T5V"/>
+                                    <constraint firstAttribute="height" constant="24" id="Moz-Fh-E45"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="find_LightPurple"/>
+                        <constraints>
+                            <constraint firstItem="vnE-Ks-8ol" firstAttribute="centerX" secondItem="pJt-wS-gdO" secondAttribute="centerX" id="DS7-cz-cpb"/>
+                            <constraint firstItem="9br-FX-F6l" firstAttribute="centerY" secondItem="pJt-wS-gdO" secondAttribute="centerY" id="Dpl-ue-xnS"/>
+                            <constraint firstItem="9br-FX-F6l" firstAttribute="centerX" secondItem="pJt-wS-gdO" secondAttribute="centerX" id="NWh-ZR-dV2"/>
+                            <constraint firstItem="vnE-Ks-8ol" firstAttribute="centerY" secondItem="pJt-wS-gdO" secondAttribute="centerY" id="r35-t0-1fy"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="pJt-wS-gdO" secondAttribute="bottom" id="XQJ-nl-2iw"/>
+                <constraint firstItem="pJt-wS-gdO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aqs-Fv-dLl"/>
+                <constraint firstAttribute="trailing" secondItem="pJt-wS-gdO" secondAttribute="trailing" id="rOO-76-LgC"/>
+                <constraint firstItem="pJt-wS-gdO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xIi-zj-pAA"/>
+            </constraints>
+            <size key="customSize" width="99" height="95"/>
+            <connections>
+                <outlet property="purpleBox" destination="pJt-wS-gdO" id="Twb-xt-fTs"/>
+            </connections>
+            <point key="canvasLocation" x="-37.681159420289859" y="78.348214285714278"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="find_DarkPurple">
+            <color red="0.49000000953674316" green="0.37299999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="find_LightPurple">
+            <color red="0.90600001811981201" green="0.88200002908706665" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
