@@ -25,6 +25,7 @@ class ValueListCVC: UICollectionViewCell {
     //MARK: - Lifecycle Methods
     override func awakeFromNib() {
         valueListTableView.dataSource = self
+        valueListTableView.delegate = self
     }
     
     override func prepareForReuse() {
@@ -181,5 +182,27 @@ extension ValueListCVC: UITableViewDataSource {
         cell.selectedBtn.addTarget(self, action: #selector(selectBtnDidTap), for: .touchUpInside)
         
         return cell
+    }
+}
+
+extension ValueListCVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+        
+        var currIndexPath: Int = 0
+        
+        switch currentCategory {
+        case .relationship:
+            currIndexPath = indexPath.row
+        case .family:
+            currIndexPath = indexPath.row + 10
+        case .career:
+            currIndexPath = indexPath.row + 20
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "QuestionSelected"), object: currIndexPath + 1)
+        print("noti sent")
+        
+        tableView.parentViewController?.navigationController?.popViewController(animated: true)
     }
 }

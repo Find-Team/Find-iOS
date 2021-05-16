@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ValueTestVC: UIViewController {
+class ValueTestVC: UIViewController, UICollectionViewDelegate {
     
     //MARK: - Custom Variables
     
@@ -60,8 +60,18 @@ class ValueTestVC: UIViewController {
         setNextBtnActivated()
         answerNotDone()
         
+        countAnswers()
+        
         changeQuestion()
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(">>>>>> \(answerCnt)")
+        changeQuestion()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(questionSelected(_:)), name: NSNotification.Name("QuestionSelected"), object: nil)
     }
     
     //MARK: - IBActions
@@ -368,6 +378,21 @@ extension ValueTestVC {
         } else {
             setPreviousBtnActivated()
             setNextBtnActivated()
+        }
+    }
+    
+    @objc func questionSelected(_ noti: Notification) {
+        print("noti received")
+        questionIdx = noti.object as! Int
+        viewWillAppear(true)
+    }
+    
+    /// 뷰 진입 시점에서의 답변 개수 카운트
+    func countAnswers() {
+        for i in 0...valueQuestions.count - 1 {
+            if valueQuestions[i].userChoice != 0 {
+                answerCnt += 1
+            }
         }
     }
     
