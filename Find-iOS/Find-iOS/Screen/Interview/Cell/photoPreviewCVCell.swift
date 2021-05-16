@@ -9,18 +9,28 @@ import UIKit
 
 class photoPreviewCVCell: UICollectionViewCell {
     static let identifier = "photoPreviewCVCell"
-    @IBOutlet weak var previewView: UIView!{
-        didSet{
-            previewView.makeRounded(cornerRadius: 10)
-        }
-    }
+    
+    @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var editBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setPreviewStyle()
     }
     
     static func nib() -> UINib {
             return UINib(nibName: "photoPreviewCVCell", bundle: nil)
     }
+    
+    func setPreviewStyle() {
+        previewView.makeRounded(cornerRadius: 10)
+        previewImageView.makeRounded(cornerRadius: 10)
+        editBtn.makeRounded(cornerRadius: nil)
+        editBtn.isHidden = true
+    }
 
+    @IBAction func editBtnTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changePhoto"),object: nil)
+    }
 }

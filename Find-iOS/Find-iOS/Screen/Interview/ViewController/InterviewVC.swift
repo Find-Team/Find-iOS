@@ -14,6 +14,7 @@ class InterviewVC: UIViewController {
         case pros, love, taste, life
     }
     var currentCategory: InterviewCategory?
+    var receivedInt : Int? // 선택된 이미지의 인덱스 값 - preview View에서 사용하기 위함
     let picker = UIImagePickerController()
     
     @IBOutlet weak var interviewCV: UICollectionView!{
@@ -113,13 +114,16 @@ extension InterviewVC {
                     segueBtns[i].setTitleColor(.subGray2, for: .normal)
                 }
             }
+            interviewCV.scrollToItem(at: IndexPath(index: 0), at: .top, animated: true)
             interviewCV.reloadSections(IndexSet(0...2))
         }
     }
     
     // MARK: - Set Up Notification
     func setUPNoti(){
-        NotificationCenter.default.addObserver(self, selector: #selector(openPhotoLibrary), name: NSNotification.Name(rawValue:"openPhotoLibrary"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoSheet), name: NSNotification.Name(rawValue:"showPhotoSheet"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changePhoto), name: NSNotification.Name(rawValue:"changePhoto"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
     }
     
     // 화면 터치시 키보드 내리기
@@ -127,13 +131,63 @@ extension InterviewVC {
         self.view.endEditing(true)
     }
     
-//    @objc func getValue(_ notification: Notification){
-//        let getValue = notification.object as! String
-//        print(getValue)
-//    }
+    // 액션시트 - 사진 추가
+    @objc func showPhotoSheet() {
+        /// 사진을 앞에서부터 차례대로 넣기 위해 사진 선택 인덱스 값 초기화
+        receivedInt = nil
+        let alert =  UIAlertController(title: "인터뷰 사진 추가", message: nil, preferredStyle: .actionSheet)
+        let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { (action) in self.openPhotoLibrary()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // 액션시트 - 사진 변경 및 삭제
+    @objc func changePhoto() {
+        let alert =  UIAlertController(title: "인터뷰 사진 변경", message: nil, preferredStyle: .actionSheet)
+        let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [self] (action) in openPhotoLibrary()
+        }
+        let deletePhoto =  UIAlertAction(title: "삭제", style: .default) { [self] (action) in
+            switch currentCategory {
+            case .pros:
+                interviewImgs[0].images.remove(at: receivedInt!)
+            case .love:
+                interviewImgs[1].images.remove(at: receivedInt!)
+            case .taste:
+                interviewImgs[2].images.remove(at: receivedInt!)
+            case .life:
+                interviewImgs[3].images.remove(at: receivedInt!)
+            default:
+                return
+            }
+            if receivedInt! != 0 { receivedInt! -= 1 }
+            interviewCV.reloadSections(IndexSet(1...2))
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(deletePhoto)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // NotificationCenter를 이용해 데이터 전달 받기(receivedInt)
+    @objc func dataReceived(notification : NSNotification)
+    {
+        let receivedData = notification.object as? Int
+        if receivedData != receivedInt {
+            receivedInt = receivedData
+            interviewCV.reloadSections(IndexSet(2...2))
+        }
+    }
     
     // MARK: - Open Photo Library
-    @objc func openPhotoLibrary() {
+    func openPhotoLibrary() {
         /// 사진 접근 권한이 허용되었는지 검사
         switch PHPhotoLibrary.authorizationStatus() {
         /// 권한이 거부된 경우
@@ -200,7 +254,6 @@ extension InterviewVC {
             print("break")
             break
         }
-        
     }
 }
 
@@ -208,21 +261,32 @@ extension InterviewVC {
 extension InterviewVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // 선택된 이미지를 각 카테고리에 맞게 구조체에 아카이빙
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            func addImage(idx: Int) {
+                if receivedInt != nil {
+                    interviewImgs[idx].images[receivedInt!] = image
+                } else {
+                    interviewImgs[idx].images.append(image)
+                }
+            }
+            
+            /// 선택된 사진의 idx를 이용하여 사진 변경
             switch currentCategory {
             case .pros:
-                interviewImgs[0].images.append(image)
+                addImage(idx: 0)
             case .love:
-                interviewImgs[1].images.append(image)
+                addImage(idx: 1)
             case .taste:
-                interviewImgs[2].images.append(image)
+                addImage(idx: 2)
             case .life:
-                interviewImgs[3].images.append(image)
+                addImage(idx: 3)
             default:
                 return
             }
         }
-        interviewCV.reloadSections(IndexSet(1...1))
+        interviewCV.reloadSections(IndexSet(1...2))
         dismiss(animated: true, completion: nil)
     }
 }
@@ -285,7 +349,7 @@ extension InterviewVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                     cell.interviewImages?[idx].image = img
                 }
             }
-
+            
             switch currentCategory {
             case .pros:
                 setInterviewImage(0)
@@ -303,6 +367,35 @@ extension InterviewVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         } else if indexPath.section == 2 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photoPreviewCVCell.identifier, for: indexPath) as? photoPreviewCVCell else { return UICollectionViewCell() }
             
+            /// 선택된 인덱스 값에 따라 미리보기 이미지 전환
+            func setPreviewImage(_ ctgNum: Int){
+                if interviewImgs[ctgNum].images.count > 0 {
+                    if receivedInt != nil {
+                        cell.previewImageView.image = interviewImgs[ctgNum].images[receivedInt!]
+                    } else {
+                        cell.previewImageView.image = interviewImgs[ctgNum].images.last
+                        receivedInt = interviewImgs[ctgNum].images.count - 1
+                    }
+                    /// 사진이 있으면 수정버튼 활성화
+                    cell.editBtn.isHidden = false
+                }else{
+                    cell.previewImageView.image = nil
+                    /// 사진이 없으면 수정버튼 비활성화
+                    cell.editBtn.isHidden = true
+                }
+            }
+            switch currentCategory {
+            case .pros:
+                setPreviewImage(0)
+            case .love:
+                setPreviewImage(1)
+            case .taste:
+                setPreviewImage(2)
+            case .life:
+                setPreviewImage(3)
+            default:
+                return UICollectionViewCell()
+            }
             return cell
         }
         return UICollectionViewCell()

@@ -31,16 +31,33 @@
                                 <color key="textColor" name="find_DarkPurple"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDQ-71-5fT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDQ-71-5fT">
                                 <rect key="frame" x="0.0" y="0.0" width="266" height="294"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI2-8o-rr4">
+                                <rect key="frame" x="181" y="259" width="69" height="19"/>
+                                <color key="backgroundColor" name="subGray1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="2QL-qe-9Dm"/>
+                                    <constraint firstAttribute="height" constant="19" id="dvn-bm-v6t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                <state key="normal" title="수정하기">
+                                    <color key="titleColor" name="subGray6"/>
+                                </state>
+                                <connections>
+                                    <action selector="editBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6j2-Zh-ddz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="subGray6"/>
                         <constraints>
                             <constraint firstItem="sDQ-71-5fT" firstAttribute="top" secondItem="GfS-d1-iJR" secondAttribute="top" id="7zn-Oo-oZH"/>
                             <constraint firstAttribute="bottom" secondItem="sDQ-71-5fT" secondAttribute="bottom" id="C43-vt-7tV"/>
+                            <constraint firstAttribute="bottom" secondItem="bI2-8o-rr4" secondAttribute="bottom" constant="16" id="KOb-bf-B82"/>
                             <constraint firstItem="yax-ZZ-zcy" firstAttribute="centerX" secondItem="GfS-d1-iJR" secondAttribute="centerX" id="Oml-JF-lGr"/>
                             <constraint firstAttribute="trailing" secondItem="sDQ-71-5fT" secondAttribute="trailing" id="cTa-W2-e0N"/>
+                            <constraint firstAttribute="trailing" secondItem="bI2-8o-rr4" secondAttribute="trailing" constant="16" id="e5H-w3-yWF"/>
                             <constraint firstItem="sDQ-71-5fT" firstAttribute="leading" secondItem="GfS-d1-iJR" secondAttribute="leading" id="fEl-7N-Hzj"/>
                             <constraint firstItem="yax-ZZ-zcy" firstAttribute="centerY" secondItem="GfS-d1-iJR" secondAttribute="centerY" id="y5e-1n-oca"/>
                         </constraints>
@@ -56,6 +73,8 @@
             </constraints>
             <size key="customSize" width="266" height="294"/>
             <connections>
+                <outlet property="editBtn" destination="bI2-8o-rr4" id="Pa6-i1-W1v"/>
+                <outlet property="previewImageView" destination="sDQ-71-5fT" id="vhJ-0M-C2g"/>
                 <outlet property="previewView" destination="GfS-d1-iJR" id="1R7-Os-5dU"/>
             </connections>
             <point key="canvasLocation" x="130.43478260869566" y="198.21428571428569"/>
@@ -64,6 +83,9 @@
     <resources>
         <namedColor name="find_DarkPurple">
             <color red="0.49000000953674316" green="0.37299999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray1">
+            <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="subGray6">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
