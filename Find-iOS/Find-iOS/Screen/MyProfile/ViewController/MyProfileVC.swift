@@ -31,6 +31,11 @@ class MyProfileVC: UIViewController {
         setGesture()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func setLayout() {
         imageBackView.makeRounded(cornerRadius: nil)
         profileImageView.makeRounded(cornerRadius: nil)

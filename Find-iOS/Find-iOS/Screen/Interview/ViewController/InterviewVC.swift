@@ -35,6 +35,7 @@ class InterviewVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        self.tabBarController?.tabBar.isHidden = true
         setUPNoti()
         setSegueStyle()
         addGesture()
