@@ -33,44 +33,10 @@ class InterviewCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //addLetterCountNoti()
-        // Initialization code
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "InterviewCVCell", bundle: nil)
-    }
-    
-    // 글자 수 검사 노티들 가진 함수
-    func addLetterCountNoti(){
-        NotificationCenter.default.addObserver(self, selector: #selector(textviewDidChange(_:)), name: UITextView.textDidChangeNotification, object: nil)
-    }
-    
-    // 메모 입력 TextView 글자 수 Counting(& 복붙 검사)
-    @objc private func textviewDidChange(_ notification: Notification) {
-        if let textView = notification.object as? UITextView {
-            if let text = textView.text {
-                countLabel.text =  "\(text.count)"
-                
-                if text.count > maxLength_keyword {
-                    // 5글자 넘어가면 자동으로 키보드 내려감
-                    textView.resignFirstResponder()
-                    countLabel.text =  "40"
-                    countLabel.textColor = .textLimitRed
-                    maxLabel.textColor = .textLimitRed
-                }else{
-                    countLabel.textColor = .subGray1
-                    maxLabel.textColor = .subGray1
-                }
-                
-                // 초과되는 텍스트 제거
-                if text.count >= maxLength_keyword {
-                    let index = text.index(text.startIndex, offsetBy: maxLength_keyword)
-                    let newString = text[text.startIndex..<index]
-                    textView.text = String(newString)
-                }
-            }
-        }
     }
 }
 
