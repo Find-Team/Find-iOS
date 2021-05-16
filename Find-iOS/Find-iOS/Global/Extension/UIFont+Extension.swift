@@ -9,8 +9,8 @@ import UIKit
 
 extension UIFont {
     // MARK: SpoqaHanSansNeo Font
-    class func spoqaThin(size: CGFloat) -> UIFont {
-        return UIFont(name: "SpoqaHanSansNeo-Thin", size: size)!
+    class func spoqaLight(size: CGFloat) -> UIFont {
+        return UIFont(name: "SpoqaHanSansNeo-Light", size: size)!
     }
     
     class func spoqaRegular(size: CGFloat) -> UIFont {
