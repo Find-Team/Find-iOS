@@ -21,11 +21,11 @@ class InterviewCVCell: UICollectionViewCell {
     }
     @IBOutlet weak var questionNumLabel: UILabel!
     @IBOutlet weak var questionTitleLabel: UILabel!
-    @IBOutlet weak var answerTextField: UITextField!{
+    @IBOutlet weak var answerTextView: UITextView!{
         didSet{
-            answerTextField.delegate = self
-            answerTextField.addRightPadding(x: 0, y: 0, width: 40, height: answerTextField.frame.height)
-            answerTextField.backgroundColor = .subGray6
+            answerTextView.delegate = self
+            answerTextView.backgroundColor = .subGray6
+            answerTextView.textContainerInset = UIEdgeInsets(top: 8, left: 32, bottom: 24, right: 32);
         }
     }
     @IBOutlet weak var countLabel: UILabel!
@@ -33,7 +33,7 @@ class InterviewCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addLetterCountNoti()
+        //addLetterCountNoti()
         // Initialization code
     }
     
@@ -43,20 +43,19 @@ class InterviewCVCell: UICollectionViewCell {
     
     // 글자 수 검사 노티들 가진 함수
     func addLetterCountNoti(){
-        NotificationCenter.default.addObserver(self, selector: #selector(textfieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textviewDidChange(_:)), name: UITextView.textDidChangeNotification, object: nil)
     }
     
-    // 1. 키워드 입력 TextField 글자 수 Counting(& 복붙 검사)
-    @objc private func textfieldDidChange(_ notification: Notification) {
-        if let textField = notification.object as? UITextField {
-            if let text = textField.text {
-                
+    // 메모 입력 TextView 글자 수 Counting(& 복붙 검사)
+    @objc private func textviewDidChange(_ notification: Notification) {
+        if let textView = notification.object as? UITextView {
+            if let text = textView.text {
                 countLabel.text =  "\(text.count)"
                 
                 if text.count > maxLength_keyword {
                     // 5글자 넘어가면 자동으로 키보드 내려감
-                    textField.resignFirstResponder()
-                    countLabel.text =  "40/"
+                    textView.resignFirstResponder()
+                    countLabel.text =  "40"
                     countLabel.textColor = .textLimitRed
                     maxLabel.textColor = .textLimitRed
                 }else{
@@ -68,21 +67,44 @@ class InterviewCVCell: UICollectionViewCell {
                 if text.count >= maxLength_keyword {
                     let index = text.index(text.startIndex, offsetBy: maxLength_keyword)
                     let newString = text[text.startIndex..<index]
-                    textField.text = String(newString)
+                    textView.text = String(newString)
                 }
             }
         }
     }
 }
 
-extension InterviewCVCell: UITextFieldDelegate{
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+extension InterviewCVCell: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if let text = textView.text {
+            countLabel.text =  "\(text.count)"
+            
+            if text.count > maxLength_keyword {
+                // 5글자 넘어가면 자동으로 키보드 내려감
+                textView.resignFirstResponder()
+                countLabel.text =  "40"
+                countLabel.textColor = .textLimitRed
+                maxLabel.textColor = .textLimitRed
+            }else{
+                countLabel.textColor = .subGray1
+                maxLabel.textColor = .subGray1
+            }
+            
+            // 초과되는 텍스트 제거
+            if text.count >= maxLength_keyword {
+                let index = text.index(text.startIndex, offsetBy: maxLength_keyword)
+                let newString = text[text.startIndex..<index]
+                textView.text = String(newString)
+            }
+        }
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
         print("edit")
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         print("finish")
-        print(curCategory)
         let num = Array(questionNumLabel.text ?? "999") // 질문 번호
         var n = 999 // 질문 번호 환산을 위한 값
         switch curCategory {
@@ -93,16 +115,10 @@ extension InterviewCVCell: UITextFieldDelegate{
         default: return
         }
         
-        if answerTextField.text?.count ?? 0 > 0 {
+        if answerTextView.text?.count ?? 0 > 0 {
             interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].isEdit = true
-            interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].answer = answerTextField.text
+            interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].answer = answerTextView.text
         }
         print(interviewQuestions)
-    }
-    
-    // Return 눌렀을 때 키보드 내리기
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

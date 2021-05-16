@@ -363,7 +363,7 @@ extension InterviewVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 cell.curCategory = curCat
                 cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
                 cell.questionTitleLabel.text = interviewQuestions[curIdx].question
-                cell.answerTextField.text = interviewQuestions[curIdx].answer
+                cell.answerTextView.text = interviewQuestions[curIdx].answer
             }
             
             switch currentCategory {

@@ -37,24 +37,24 @@
                                 <color key="textColor" name="subGray5"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lop-yI-A0P">
-                                <rect key="frame" x="20" y="154.5" width="472" height="19.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mFZ-zK-225">
+                                <rect key="frame" x="0.0" y="36.5" width="504" height="149.5"/>
                                 <color key="backgroundColor" name="subGray6"/>
-                                <color key="textColor" name="subGray3"/>
-                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" name="subGray5"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dlm-Yg-7r4">
-                                <rect key="frame" x="465" y="154.5" width="27" height="19.5"/>
+                                <rect key="frame" x="465" y="159.5" width="27" height="15.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayp-dO-0iu">
-                                        <rect key="frame" x="0.0" y="0.0" width="7.5" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="7.5" height="15.5"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <color key="textColor" name="subGray1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfE-G3-mha">
-                                        <rect key="frame" x="7.5" y="0.0" width="19.5" height="19.5"/>
+                                        <rect key="frame" x="7.5" y="0.0" width="19.5" height="15.5"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <color key="textColor" name="subGray1"/>
                                         <nil key="highlightedColor"/>
@@ -66,12 +66,12 @@
                         <constraints>
                             <constraint firstItem="vRq-rR-ddT" firstAttribute="centerY" secondItem="R1o-yY-8se" secondAttribute="centerY" id="1EC-Jj-vID"/>
                             <constraint firstItem="vRq-rR-ddT" firstAttribute="leading" secondItem="R1o-yY-8se" secondAttribute="trailing" constant="36" id="8Aw-Z4-K2E"/>
-                            <constraint firstItem="Lop-yI-A0P" firstAttribute="leading" secondItem="R1o-yY-8se" secondAttribute="leading" id="8f1-3T-ZEb"/>
-                            <constraint firstItem="Dlm-Yg-7r4" firstAttribute="trailing" secondItem="Lop-yI-A0P" secondAttribute="trailing" id="Dpt-EN-Tj1"/>
-                            <constraint firstItem="Dlm-Yg-7r4" firstAttribute="centerY" secondItem="Lop-yI-A0P" secondAttribute="centerY" id="TrH-r5-BoM"/>
-                            <constraint firstItem="Dlm-Yg-7r4" firstAttribute="bottom" secondItem="Lop-yI-A0P" secondAttribute="bottom" id="Ywj-4B-QEF"/>
-                            <constraint firstAttribute="trailing" secondItem="Lop-yI-A0P" secondAttribute="trailing" constant="12" id="duJ-mD-nVH"/>
-                            <constraint firstAttribute="bottom" secondItem="Lop-yI-A0P" secondAttribute="bottom" constant="12" id="hBY-HO-q60"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlm-Yg-7r4" secondAttribute="trailing" constant="12" id="IBS-se-D5Y"/>
+                            <constraint firstItem="mFZ-zK-225" firstAttribute="leading" secondItem="GRq-Tp-YJD" secondAttribute="leading" id="PJ7-W4-tW1"/>
+                            <constraint firstItem="mFZ-zK-225" firstAttribute="top" secondItem="R1o-yY-8se" secondAttribute="bottom" id="XPn-bW-wYN"/>
+                            <constraint firstAttribute="bottom" secondItem="Dlm-Yg-7r4" secondAttribute="bottom" constant="11" id="e3C-Of-J0t"/>
+                            <constraint firstAttribute="trailing" secondItem="mFZ-zK-225" secondAttribute="trailing" id="s1s-Xd-2Kg"/>
+                            <constraint firstAttribute="bottom" secondItem="mFZ-zK-225" secondAttribute="bottom" id="ss9-vz-bGj"/>
                             <constraint firstItem="R1o-yY-8se" firstAttribute="leading" secondItem="GRq-Tp-YJD" secondAttribute="leading" constant="20" id="uv4-rn-r99"/>
                             <constraint firstItem="R1o-yY-8se" firstAttribute="top" secondItem="GRq-Tp-YJD" secondAttribute="top" constant="20" id="wWL-lm-DAG"/>
                         </constraints>
@@ -86,7 +86,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="504" height="186"/>
             <connections>
-                <outlet property="answerTextField" destination="Lop-yI-A0P" id="ucP-F5-kPL"/>
+                <outlet property="answerTextView" destination="mFZ-zK-225" id="AvK-b3-m6t"/>
                 <outlet property="countLabel" destination="Ayp-dO-0iu" id="eyf-Jy-qII"/>
                 <outlet property="maxLabel" destination="RfE-G3-mha" id="BxA-kb-pbJ"/>
                 <outlet property="questionNumLabel" destination="R1o-yY-8se" id="cNa-17-wHV"/>
