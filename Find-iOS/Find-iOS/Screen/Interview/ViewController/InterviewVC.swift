@@ -37,6 +37,7 @@ class InterviewVC: UIViewController {
         picker.delegate = self
         setUPNoti()
         setSegueStyle()
+        addGesture()
         whatSelected(seg: .pros, idx: 0)
     }
     
@@ -75,24 +76,9 @@ class InterviewVC: UIViewController {
     @IBAction func lifeBtnTapped(_ sender: Any) {
         whatSelected(seg: .life, idx: 3)
     }
-    @IBAction func swipeAction(_ sender: Any) {
-        if swipeRecognizer.direction == .left{
+    @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left{
             print("left")
-            switch currentCategory {
-            case .pros:
-                return
-            case .love:
-                whatSelected(seg: .pros, idx: 0)
-            case .taste:
-                whatSelected(seg: .love, idx: 1)
-            case .life:
-                whatSelected(seg: .taste, idx: 2)
-            default:
-                return
-            }
-        }
-        if swipeRecognizer.direction == .right{
-            print("right")
             switch currentCategory {
             case .pros:
                 whatSelected(seg: .love, idx: 1)
@@ -102,6 +88,21 @@ class InterviewVC: UIViewController {
                 whatSelected(seg: .life, idx: 3)
             case .life:
                 return
+            default:
+                return
+            }
+        }
+        if sender.direction == .right{
+            print("right")
+            switch currentCategory {
+            case .pros:
+                return
+            case .love:
+                whatSelected(seg: .pros, idx: 0)
+            case .taste:
+                whatSelected(seg: .love, idx: 1)
+            case .life:
+                whatSelected(seg: .taste, idx: 2)
             default:
                 return
             }
@@ -126,6 +127,18 @@ extension InterviewVC {
         segueBtns[3].setTitleColor(.subGray2, for: .normal)
     }
     
+    // MARK: - 세그 좌,우 스와이프 제스쳐로 이동
+    func addGesture() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        
+        swipeRight.direction = .right
+        swipeLeft.direction = .left
+ 
+        self.interviewCV.addGestureRecognizer(swipeRight)
+        self.interviewCV.addGestureRecognizer(swipeLeft)
+    }
+    
     // MARK: - Remind Me Selected Segue
     func whatSelected(seg: InterviewCategory, idx: Int){
         if currentCategory != seg {
@@ -140,7 +153,11 @@ extension InterviewVC {
                 }
             }
             interviewCV.scrollToItem(at: IndexPath(index: 0), at: .top, animated: true)
-            interviewCV.reloadSections(IndexSet(0...2))
+            UIView.performWithoutAnimation {
+                if let collectionView = self.interviewCV {
+                    collectionView.reloadSections(IndexSet(0...2))
+                }
+            }
         }
     }
     
@@ -430,11 +447,11 @@ extension InterviewVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.section == 0 {
-            return CGSize(width: collectionView.frame.width-32, height: 100)
+            return CGSize(width: view.frame.width-32, height: 100)
         } else if indexPath.section == 1 {
-            return CGSize(width: collectionView.frame.width-32, height: 70)
+            return CGSize(width: view.frame.width-32, height: 70)
         } else if indexPath.section == 2 {
-            return CGSize(width: collectionView.frame.width-32, height: collectionView.frame.width-32 )
+            return CGSize(width: view.frame.width-32, height: collectionView.frame.width-32 )
         }
         
         return CGSize(width: 0, height: 0)
