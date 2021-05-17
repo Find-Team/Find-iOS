@@ -45,16 +45,24 @@ extension InterviewCVCell {
     // MARK: - Set Up Notification
     func setUPNoti(){
         NotificationCenter.default.addObserver(self, selector: #selector(changeSegue), name: NSNotification.Name(rawValue:"changeSegue"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollToTextField), name: NSNotification.Name(rawValue:"scrollToTextField"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showPhotoSheet), name: NSNotification.Name(rawValue:"showPhotoSheet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changePhoto), name: NSNotification.Name(rawValue:"changePhoto"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
     }
     
+    // InterviewVC에서 세그 변경 감지
     @objc func changeSegue(notification: NSNotification) {
         let changeData = notification.object as? InterviewCategory
         currentCategory = changeData
         innerInterviewCV.scrollToItem(at: IndexPath(index: 0), at: .top, animated: true)
         innerInterviewCV.reloadSections(IndexSet(0...2))
+    }
+    
+    // 인터뷰 답변 입력시 해당 위치로 스크롤 이동
+    @objc func scrollToTextField(notification: NSNotification) {
+        guard let idx = notification.object as? Int else { return }
+        innerInterviewCV.scrollToItem(at: IndexPath(row: idx, section: 0), at: .top, animated: true)
     }
     
     // 액션시트 - 사진 추가
@@ -210,7 +218,6 @@ extension InterviewCVCell: UIImagePickerControllerDelegate, UINavigationControll
                 return
             }
         }
-        //노티로 사진 섹션 리로드 포스트
         innerInterviewCV.reloadSections(IndexSet(1...2))
         self.parentViewController?.dismiss(animated: true, completion: nil)
     }
@@ -239,9 +246,9 @@ extension InterviewCVCell: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InterviewQestionCVCell.idientifier, for: indexPath) as? InterviewQestionCVCell else { return UICollectionViewCell() }
-            
             /// 선택 카테고리에 따른 질문 및 답변 셋팅
             func setQandA(curCat: String, curIdx: Int){
+                cell.idxRow = indexPath.row
                 cell.curCategory = curCat
                 cell.questionNumLabel.text = "Q.\(indexPath.row+1)"
                 cell.questionTitleLabel.text = interviewQuestions[curIdx].question
@@ -332,7 +339,7 @@ extension InterviewCVCell: UICollectionViewDelegate, UICollectionViewDataSource,
         }
     }
     
-    //MARK: - Cell 크기
+    // MARK: - Cell 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.section == 0 {
@@ -346,7 +353,7 @@ extension InterviewCVCell: UICollectionViewDelegate, UICollectionViewDataSource,
         return CGSize(width: 0, height: 0)
     }
     
-    //MARK: - Cell간의 상하간격 지정
+    // MARK: - Cell간의 상하간격 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if section == 0 {
             return 16
@@ -355,7 +362,7 @@ extension InterviewCVCell: UICollectionViewDelegate, UICollectionViewDataSource,
         }
     }
     
-    //MARK: - 마진
+    // MARK: - 마진
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
         if section == 0 || section == 1{

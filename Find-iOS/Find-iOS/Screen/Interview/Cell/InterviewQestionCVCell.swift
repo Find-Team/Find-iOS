@@ -10,6 +10,7 @@ import UIKit
 class InterviewQestionCVCell: UICollectionViewCell {
     static let idientifier = "InterviewQestionCVCell"
     var curCategory: String?
+    var idxRow: Int?
     let maxLength_keyword = 40
     
     
@@ -37,6 +38,10 @@ class InterviewQestionCVCell: UICollectionViewCell {
     
     static func nib() -> UINib {
         return UINib(nibName: "InterviewQestionCVCell", bundle: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -67,6 +72,7 @@ extension InterviewQestionCVCell: UITextViewDelegate{
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("edit")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "scrollToTextField"),object: idxRow)
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
