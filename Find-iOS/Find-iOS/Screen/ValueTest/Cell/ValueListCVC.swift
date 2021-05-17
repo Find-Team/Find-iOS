@@ -48,7 +48,7 @@ extension ValueListCVC {
         }
         
         if valueQuestions[currIndexPath].userChoice == 0 { /// 답변이 안 된 질문이면
-            self.parentViewController?.showToast(message: "답변을 하지 않아 선택이 불가합니다")
+            self.parentViewController?.showToastGray(message: "답변을 하지 않아 선택이 불가합니다")
         } else { /// 답변을 한 문항이면
             if chosenQuestions.count >= 5 { /// 이미 5개가 선택된 상황이면
                 if valueQuestions[currIndexPath].isChosen { /// 선택 했던 걸 선택하면
@@ -60,7 +60,7 @@ extension ValueListCVC {
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FinishBtnStateChanged"), object: false)
                     
                 } else { /// 새로운 걸 선택하면
-                    self.parentViewController?.showToast(message: "최대 5개까지 선택이 가능합니다")
+                    self.parentViewController?.showToastGray(message: "최대 5개까지 선택이 가능합니다")
                 }
 
             } else { /// 아직 5개가 안 됐으면
