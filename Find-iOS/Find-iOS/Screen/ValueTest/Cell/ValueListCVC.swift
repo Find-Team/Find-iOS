@@ -35,7 +35,6 @@ class ValueListCVC: UICollectionViewCell {
 
 extension ValueListCVC {
     @objc func selectBtnDidTap(_ sender: UIButton) {
-        print("tap \(sender.tag)")
         
         var currIndexPath = 0
         
