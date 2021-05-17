@@ -12,6 +12,16 @@
 		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
 		36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */; };
 		36F148E4264AE030005A5C74 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */; };
+		3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */; };
+		3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */; };
+		377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */; };
+		377C2777264446FD003FF385 /* ValueTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377C2776264446FD003FF385 /* ValueTest.storyboard */; };
+		377C277A2644470C003FF385 /* ValueList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377C27792644470C003FF385 /* ValueList.storyboard */; };
+		377C277D26444750003FF385 /* ValueTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C277C26444750003FF385 /* ValueTestVC.swift */; };
+		377C278026444761003FF385 /* ValueListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C277F26444761003FF385 /* ValueListVC.swift */; };
+		377C278826445D84003FF385 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C278726445D84003FF385 /* Questions.swift */; };
+		378E3A0E26503E910023A326 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378E3A0D26503E910023A326 /* UIViewController+Extension.swift */; };
+		378E3A10265044190023A326 /* ValueListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378E3A0F265044190023A326 /* ValueListCVC.swift */; };
 		5412CC1A26526279003EDA6C /* InterviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412CC1926526279003EDA6C /* InterviewCVCell.swift */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
@@ -67,6 +77,16 @@
 		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		36F148E1264AE030005A5C74 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCollectionViewCell.swift; path = Cell/ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		36F148E2264AE030005A5C74 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileCollectionViewCell.xib; path = Cell/ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuestionCategory.swift; sourceTree = "<group>"; };
+		3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestQuestionTVC.swift; sourceTree = "<group>"; };
+		3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListTVC.swift; sourceTree = "<group>"; };
+		377C2776264446FD003FF385 /* ValueTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ValueTest.storyboard; sourceTree = "<group>"; };
+		377C27792644470C003FF385 /* ValueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ValueList.storyboard; sourceTree = "<group>"; };
+		377C277C26444750003FF385 /* ValueTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestVC.swift; sourceTree = "<group>"; };
+		377C277F26444761003FF385 /* ValueListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListVC.swift; sourceTree = "<group>"; };
+		377C278726445D84003FF385 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		378E3A0D26503E910023A326 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		378E3A0F265044190023A326 /* ValueListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListCVC.swift; sourceTree = "<group>"; };
 		5412CC1926526279003EDA6C /* InterviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewCVCell.swift; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +167,54 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		377C27722644462B003FF385 /* ValueTest */ = {
+			isa = PBXGroup;
+			children = (
+				377C277326444636003FF385 /* Storyboard */,
+				377C277426444640003FF385 /* ViewController */,
+				377C277526444658003FF385 /* Cell */,
+				377C278626445D6D003FF385 /* Model */,
+			);
+			path = ValueTest;
+			sourceTree = "<group>";
+		};
+		377C277326444636003FF385 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				377C2776264446FD003FF385 /* ValueTest.storyboard */,
+				377C27792644470C003FF385 /* ValueList.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		377C277426444640003FF385 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				377C277C26444750003FF385 /* ValueTestVC.swift */,
+				377C277F26444761003FF385 /* ValueListVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		377C277526444658003FF385 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */,
+				3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */,
+				378E3A0F265044190023A326 /* ValueListCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		377C278626445D6D003FF385 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				377C278726445D84003FF385 /* Questions.swift */,
+				3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		542A1DE726442F8B00E69A4D = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +276,7 @@
 				36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */,
 				54A0385D264CDFA700EDF78F /* UIDevice+ScreenSize.swift */,
 				54A03872264D73CC00EDF78F /* UITextField+Extension.swift */,
+				378E3A0D26503E910023A326 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -215,6 +284,7 @@
 		542A1E0B2644311F00E69A4D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				377C27722644462B003FF385 /* ValueTest */,
 				54B96629264902CF0028F1BF /* YourProfile */,
 				54B96628264902BF0028F1BF /* FindFound */,
 				54B96627264902B80028F1BF /* Interview */,
@@ -498,6 +568,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377C2777264446FD003FF385 /* ValueTest.storyboard in Resources */,
 				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
 				54B96649264904500028F1BF /* TabBar.storyboard in Resources */,
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
@@ -515,6 +586,7 @@
 				548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */,
 				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
 				548A677E264FF95D0014CBE8 /* InterviewQestionCVCell.xib in Resources */,
+				377C277A2644470C003FF385 /* ValueList.storyboard in Resources */,
 				54B9665C264906900028F1BF /* SpoqaHanSansNeo-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +647,10 @@
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				5412CC1A26526279003EDA6C /* InterviewCVCell.swift in Sources */,
+				378E3A10265044190023A326 /* ValueListCVC.swift in Sources */,
+				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
+				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
+				378E3A0E26503E910023A326 /* UIViewController+Extension.swift in Sources */,
 				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
 				54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */,
 				54A0385E264CDFA700EDF78F /* UIDevice+ScreenSize.swift in Sources */,
@@ -583,9 +659,12 @@
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
+				377C278826445D84003FF385 /* Questions.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
 				54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */,
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
+				377C277D26444750003FF385 /* ValueTestVC.swift in Sources */,
+				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */,
@@ -599,7 +678,10 @@
 				54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
 				548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */,
+				377C278026444761003FF385 /* ValueListVC.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
+				3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */,
+				377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

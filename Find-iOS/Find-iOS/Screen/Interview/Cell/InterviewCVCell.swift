@@ -181,19 +181,6 @@ extension InterviewCVCell {
     }
 }
 
-extension UICollectionViewCell {
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
-    }
-}
-
 // MARK: - Protocols
 extension InterviewCVCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // 선택된 이미지를 각 카테고리에 맞게 구조체에 아카이빙
