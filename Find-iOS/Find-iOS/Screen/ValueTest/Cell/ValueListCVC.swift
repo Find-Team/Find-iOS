@@ -7,15 +7,14 @@
 
 import UIKit
 
+var chosenQuestions: [Int] = []
+
 class ValueListCVC: UICollectionViewCell {
     
     //MARK: - Custom Variables
     
     static let identifier = "ValueListCVC"
     var currentCategory: Category = .relationship
-    var selectedCount: Int = 0
-    var chosenQuestions: [Int] = []
-    
     
     //MARK: - IBOutlets
     
@@ -52,12 +51,11 @@ extension ValueListCVC {
         if valueQuestions[currIndexPath].userChoice == 0 { /// 답변이 안 된 질문이면
             self.parentViewController?.showToast(message: "답변을 하지 않아 선택이 불가합니다")
         } else { /// 답변을 한 문항이면
-            if selectedCount >= 5 { /// 이미 5개가 선택된 상황이면
+            if chosenQuestions.count >= 5 { /// 이미 5개가 선택된 상황이면
                 if valueQuestions[currIndexPath].isChosen { /// 선택 했던 걸 선택하면
                     /// 선택 취소
                     valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
-                    self.selectedCount -= 1
-                    self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
+                    chosenQuestions.remove(at: chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
                 } else { /// 새로운 걸 선택하면
                     self.parentViewController?.showToast(message: "최대 5개까지 선택이 가능합니다")
                 }
@@ -65,16 +63,14 @@ extension ValueListCVC {
                 valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
                 
                 if valueQuestions[currIndexPath].isChosen { /// 새로 선택된 거면
-                    self.selectedCount += 1
-                    self.chosenQuestions.append(valueQuestions[currIndexPath].id)
-                    print(self.chosenQuestions)
+                    chosenQuestions.append(valueQuestions[currIndexPath].id)
                 } else { /// 선택 해제된 거면
-                    self.selectedCount -= 1
-                    self.chosenQuestions.remove(at: self.chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
+                    chosenQuestions.remove(at: chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
                 }
             }
         }
-        
+        print(chosenQuestions)
+        print(chosenQuestions.count)
         valueListTableView.reloadData()
     }
     
@@ -187,7 +183,7 @@ extension ValueListCVC: UITableViewDataSource {
 
 extension ValueListCVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         
         var currIndexPath: Int = 0
         
@@ -201,7 +197,6 @@ extension ValueListCVC: UITableViewDelegate {
         }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "QuestionSelected"), object: currIndexPath + 1)
-        print("noti sent")
         
         tableView.parentViewController?.navigationController?.popViewController(animated: true)
     }

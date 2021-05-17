@@ -14,6 +14,9 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
     var questionIdx: Int = 1 /// 현재 문제 번호 (1-30)
     var answerCnt: Int = 0 /// 답변한 문제 개수 (0-30)
     
+    var dvc = ValueListVC()
+    var visitedFlag: Bool = false
+    
     
     //MARK: - IBOutlets
     
@@ -82,8 +85,13 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction func finishBtnDidTap(_ sender: Any) {
-        let nextStoryboard = UIStoryboard(name: "ValueList", bundle: nil)
-        let dvc = (nextStoryboard.instantiateViewController(identifier: "ValueListVC") as? ValueListVC)!
+        if !visitedFlag {
+            let nextStoryboard = UIStoryboard(name: "ValueList", bundle: nil)
+            dvc = (nextStoryboard.instantiateViewController(identifier: "ValueListVC") as? ValueListVC)!
+            
+            visitedFlag = true
+        }
+        
         
         self.navigationController?.pushViewController(dvc, animated: true)
     }

@@ -19,8 +19,6 @@ class ValueListVC: UIViewController {
     
     var selectedCount: Int = 0
     
-    var chosenQuestions: [Int] = []
-    
     //MARK: - IBOutlets
     
     @IBOutlet var viewTitleLabel: UILabel!
@@ -168,7 +166,7 @@ extension ValueListVC {
 
 extension ValueListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
