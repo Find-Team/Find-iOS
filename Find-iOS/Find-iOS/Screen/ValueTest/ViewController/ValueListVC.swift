@@ -18,6 +18,7 @@ class ValueListVC: UIViewController {
     var currentCategory: Category = .relationship
     
     var selectedCount: Int = 0
+    var finishState: Bool = false
     
     //MARK: - IBOutlets
     
@@ -44,6 +45,8 @@ class ValueListVC: UIViewController {
         
         valueListCollectionView.dataSource = self
         valueListCollectionView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(finishBtnState(_:)), name: NSNotification.Name("FinishBtnStateChanged"), object: nil)
     }
     
     
@@ -162,6 +165,16 @@ extension ValueListVC {
     
     //MARK: - functions
     
+    /// 5개가 클릭이 됐는지 안 됐는지 상태 편경
+    @objc func finishBtnState(_ noti: Notification) {
+        finishState = noti.object as! Bool
+        
+        if finishState {
+            finishBtnActivated()
+        } else {
+            finishBtnDeactivated()
+        }
+    }
 }
 
 extension ValueListVC: UICollectionViewDataSource {

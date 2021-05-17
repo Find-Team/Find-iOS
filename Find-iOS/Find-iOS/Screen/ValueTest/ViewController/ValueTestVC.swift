@@ -67,14 +67,12 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
         
         changeQuestion()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(questionSelected(_:)), name: NSNotification.Name("QuestionSelected"), object: nil)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print(">>>>>> \(answerCnt)")
         changeQuestion()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(questionSelected(_:)), name: NSNotification.Name("QuestionSelected"), object: nil)
     }
     
     //MARK: - IBActions
@@ -389,6 +387,7 @@ extension ValueTestVC {
         }
     }
     
+    /// 리스트 뷰에서 문항 클릭해 넘어왔을 때 문항 번호 받는 노티
     @objc func questionSelected(_ noti: Notification) {
         print("noti received")
         questionIdx = noti.object as! Int

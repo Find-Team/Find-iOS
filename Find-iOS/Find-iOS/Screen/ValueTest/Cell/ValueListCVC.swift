@@ -56,9 +56,14 @@ extension ValueListCVC {
                     /// 선택 취소
                     valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
                     chosenQuestions.remove(at: chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
+                    
+                    /// 5개에서 4개가 됐을 때 노티 보내기
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FinishBtnStateChanged"), object: false)
+                    
                 } else { /// 새로운 걸 선택하면
                     self.parentViewController?.showToast(message: "최대 5개까지 선택이 가능합니다")
                 }
+
             } else { /// 아직 5개가 안 됐으면
                 valueQuestions[currIndexPath].isChosen = !valueQuestions[currIndexPath].isChosen
                 
@@ -67,10 +72,14 @@ extension ValueListCVC {
                 } else { /// 선택 해제된 거면
                     chosenQuestions.remove(at: chosenQuestions.firstIndex(of: valueQuestions[currIndexPath].id)!)
                 }
+                
+                /// 5개가 다 찼을 때 노티 보내기
+                if chosenQuestions.count == 5 {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FinishBtnStateChanged"), object: true)
+                }
             }
         }
-        print(chosenQuestions)
-        print(chosenQuestions.count)
+        
         valueListTableView.reloadData()
     }
     
