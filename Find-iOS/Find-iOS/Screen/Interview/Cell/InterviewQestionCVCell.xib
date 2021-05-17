@@ -15,46 +15,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterviewCVCell" id="VJW-z4-bav" customClass="InterviewCVCell" customModule="Find_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="504" height="186"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterviewQestionCVCell" id="zVR-Cc-u2E" customClass="InterviewQestionCVCell" customModule="Find_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RNq-a4-UCL">
-                <rect key="frame" x="0.0" y="0.0" width="504" height="186"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iAE-qx-CJs">
+                <rect key="frame" x="0.0" y="0.0" width="462" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRq-Tp-YJD">
-                        <rect key="frame" x="0.0" y="0.0" width="504" height="186"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xne-0a-rw3">
+                        <rect key="frame" x="0.0" y="0.0" width="462" height="116"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1o-yY-8se">
-                                <rect key="frame" x="20" y="20" width="20.5" height="16.5"/>
+                                <rect key="frame" x="20" y="20" width="21" height="15.5"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                 <color key="textColor" name="subGray3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성격 &amp; 매력포인트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-rR-ddT">
-                                <rect key="frame" x="76.5" y="20" width="98.5" height="16.5"/>
+                                <rect key="frame" x="77" y="20" width="94.5" height="15.5"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                 <color key="textColor" name="subGray5"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mFZ-zK-225">
-                                <rect key="frame" x="0.0" y="36.5" width="504" height="149.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mFZ-zK-225">
+                                <rect key="frame" x="0.0" y="43.5" width="462" height="72.5"/>
                                 <color key="backgroundColor" name="subGray6"/>
                                 <color key="textColor" name="subGray5"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dlm-Yg-7r4">
-                                <rect key="frame" x="465" y="159.5" width="27" height="15.5"/>
+                                <rect key="frame" x="425.5" y="91" width="24.5" height="14"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayp-dO-0iu">
-                                        <rect key="frame" x="0.0" y="0.0" width="7.5" height="15.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="7" height="14"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <color key="textColor" name="subGray1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfE-G3-mha">
-                                        <rect key="frame" x="7.5" y="0.0" width="19.5" height="15.5"/>
+                                        <rect key="frame" x="7" y="0.0" width="17.5" height="14"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                         <color key="textColor" name="subGray1"/>
                                         <nil key="highlightedColor"/>
@@ -64,36 +64,36 @@
                         </subviews>
                         <color key="backgroundColor" name="subGray6"/>
                         <constraints>
-                            <constraint firstItem="vRq-rR-ddT" firstAttribute="centerY" secondItem="R1o-yY-8se" secondAttribute="centerY" id="1EC-Jj-vID"/>
-                            <constraint firstItem="vRq-rR-ddT" firstAttribute="leading" secondItem="R1o-yY-8se" secondAttribute="trailing" constant="36" id="8Aw-Z4-K2E"/>
-                            <constraint firstAttribute="trailing" secondItem="Dlm-Yg-7r4" secondAttribute="trailing" constant="12" id="IBS-se-D5Y"/>
-                            <constraint firstItem="mFZ-zK-225" firstAttribute="leading" secondItem="GRq-Tp-YJD" secondAttribute="leading" id="PJ7-W4-tW1"/>
-                            <constraint firstItem="mFZ-zK-225" firstAttribute="top" secondItem="R1o-yY-8se" secondAttribute="bottom" id="XPn-bW-wYN"/>
-                            <constraint firstAttribute="bottom" secondItem="Dlm-Yg-7r4" secondAttribute="bottom" constant="11" id="e3C-Of-J0t"/>
-                            <constraint firstAttribute="trailing" secondItem="mFZ-zK-225" secondAttribute="trailing" id="s1s-Xd-2Kg"/>
-                            <constraint firstAttribute="bottom" secondItem="mFZ-zK-225" secondAttribute="bottom" id="ss9-vz-bGj"/>
-                            <constraint firstItem="R1o-yY-8se" firstAttribute="leading" secondItem="GRq-Tp-YJD" secondAttribute="leading" constant="20" id="uv4-rn-r99"/>
-                            <constraint firstItem="R1o-yY-8se" firstAttribute="top" secondItem="GRq-Tp-YJD" secondAttribute="top" constant="20" id="wWL-lm-DAG"/>
+                            <constraint firstItem="mFZ-zK-225" firstAttribute="top" secondItem="R1o-yY-8se" secondAttribute="bottom" constant="8" id="4We-hK-ycb"/>
+                            <constraint firstItem="mFZ-zK-225" firstAttribute="leading" secondItem="xne-0a-rw3" secondAttribute="leading" id="5mS-V8-mmw"/>
+                            <constraint firstItem="R1o-yY-8se" firstAttribute="leading" secondItem="xne-0a-rw3" secondAttribute="leading" constant="20" id="Hf3-q9-Tbj"/>
+                            <constraint firstAttribute="bottom" secondItem="Dlm-Yg-7r4" secondAttribute="bottom" constant="11" id="Tqr-lA-k9c"/>
+                            <constraint firstItem="vRq-rR-ddT" firstAttribute="leading" secondItem="R1o-yY-8se" secondAttribute="trailing" constant="36" id="UD8-xz-6pd"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlm-Yg-7r4" secondAttribute="trailing" constant="12" id="db4-5k-V9E"/>
+                            <constraint firstItem="R1o-yY-8se" firstAttribute="top" secondItem="xne-0a-rw3" secondAttribute="top" constant="20" id="fnP-ty-1hO"/>
+                            <constraint firstItem="vRq-rR-ddT" firstAttribute="centerY" secondItem="R1o-yY-8se" secondAttribute="centerY" id="hLQ-7h-kec"/>
+                            <constraint firstAttribute="trailing" secondItem="mFZ-zK-225" secondAttribute="trailing" id="p75-kS-Fs6"/>
+                            <constraint firstAttribute="bottom" secondItem="mFZ-zK-225" secondAttribute="bottom" id="sdI-fS-GpF"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="GRq-Tp-YJD" secondAttribute="bottom" id="gvP-nU-yL9"/>
-                    <constraint firstItem="GRq-Tp-YJD" firstAttribute="leading" secondItem="RNq-a4-UCL" secondAttribute="leading" id="pZo-eM-tZh"/>
-                    <constraint firstItem="GRq-Tp-YJD" firstAttribute="top" secondItem="RNq-a4-UCL" secondAttribute="top" id="qSm-iK-GSi"/>
-                    <constraint firstAttribute="trailing" secondItem="GRq-Tp-YJD" secondAttribute="trailing" id="qmL-eO-VQY"/>
+                    <constraint firstAttribute="trailing" secondItem="xne-0a-rw3" secondAttribute="trailing" id="5Xx-xb-NsJ"/>
+                    <constraint firstItem="xne-0a-rw3" firstAttribute="top" secondItem="iAE-qx-CJs" secondAttribute="top" id="HJ6-So-8aB"/>
+                    <constraint firstItem="xne-0a-rw3" firstAttribute="leading" secondItem="iAE-qx-CJs" secondAttribute="leading" id="kfW-y3-ax5"/>
+                    <constraint firstAttribute="bottom" secondItem="xne-0a-rw3" secondAttribute="bottom" id="zlw-fg-mLY"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="504" height="186"/>
+            <size key="customSize" width="462" height="116"/>
             <connections>
-                <outlet property="answerTextView" destination="mFZ-zK-225" id="AvK-b3-m6t"/>
-                <outlet property="countLabel" destination="Ayp-dO-0iu" id="eyf-Jy-qII"/>
-                <outlet property="maxLabel" destination="RfE-G3-mha" id="BxA-kb-pbJ"/>
-                <outlet property="questionNumLabel" destination="R1o-yY-8se" id="cNa-17-wHV"/>
-                <outlet property="questionTitleLabel" destination="vRq-rR-ddT" id="5eM-wQ-DqU"/>
-                <outlet property="questionView" destination="GRq-Tp-YJD" id="qPe-J0-J3b"/>
+                <outlet property="answerTextView" destination="mFZ-zK-225" id="HNi-de-quI"/>
+                <outlet property="countLabel" destination="Ayp-dO-0iu" id="3ga-Si-J65"/>
+                <outlet property="maxLabel" destination="RfE-G3-mha" id="qkz-NZ-x6w"/>
+                <outlet property="questionNumLabel" destination="R1o-yY-8se" id="Ybl-tG-eL9"/>
+                <outlet property="questionTitleLabel" destination="vRq-rR-ddT" id="ZH6-pi-SmB"/>
+                <outlet property="questionView" destination="xne-0a-rw3" id="QcJ-iA-AKf"/>
             </connections>
-            <point key="canvasLocation" x="-1582.608695652174" y="-336.83035714285711"/>
+            <point key="canvasLocation" x="-1607.2463768115942" y="-708.48214285714278"/>
         </collectionViewCell>
     </objects>
     <resources>
