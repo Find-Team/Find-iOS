@@ -47,4 +47,32 @@ extension UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
+    
+    func showToastPurple(message: String, completion: @escaping () -> ()) {
+        let width_variable: CGFloat = 50
+        let toastLabel = UILabel(frame: CGRect(x: width_variable, y: UIScreen.main.bounds.height/2, width: view.frame.size.width-2*width_variable, height: 30))
+        
+        // 뷰가 위치할 위치를 지정해준다. 여기서는 아래로부터 100만큼 떨어져있고, 너비는 양쪽에 10만큼 여백을 가지며, 높이는 35로
+        toastLabel.backgroundColor = .find_DarkPurple
+        toastLabel.textColor = UIColor.subGray6
+        toastLabel.textAlignment = .center
+        toastLabel.font = .spoqaRegular(size: 12)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 15
+        toastLabel.clipsToBounds = true
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            toastLabel.alpha = 1
+        }, completion: { finish in
+            UIView.animate(withDuration: 0.3, delay: 0.7, animations: {
+                toastLabel.alpha = 0
+            }, completion: { finish in
+                if finish {
+                    toastLabel.removeFromSuperview()
+                    completion()
+                }
+            })
+        })
+    }
 }
