@@ -36,10 +36,42 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biz-oE-MB4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV9-TI-RON">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEv-QZ-1se">
+                                                        <rect key="frame" x="310" y="5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="jEv-QZ-1se" secondAttribute="height" multiplier="1:1" id="r7R-u5-yhY"/>
+                                                        </constraints>
+                                                        <state key="normal" image="btnFoundStarMintLine"/>
+                                                        <connections>
+                                                            <action selector="starBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eGh-46-Z17"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="jEv-QZ-1se" firstAttribute="leading" secondItem="XV9-TI-RON" secondAttribute="leading" constant="310" id="6ve-qi-ITc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jEv-QZ-1se" secondAttribute="bottom" constant="330" id="Wz1-TD-hkC"/>
+                                                    <constraint firstItem="jEv-QZ-1se" firstAttribute="top" secondItem="XV9-TI-RON" secondAttribute="top" constant="5" id="bjJ-8u-32e"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jEv-QZ-1se" secondAttribute="trailing" constant="16" id="cXH-jX-cGk"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="K32-yX-AY1">
+                                                <rect key="frame" x="126.66666666666669" y="173.66666666666666" width="122" height="28"/>
+                                            </pageControl>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="XV9-TI-RON" firstAttribute="centerX" secondItem="K32-yX-AY1" secondAttribute="centerX" id="07C-Zw-zXq"/>
+                                            <constraint firstAttribute="trailing" secondItem="XV9-TI-RON" secondAttribute="trailing" id="4Oo-2X-JA1"/>
                                             <constraint firstAttribute="width" secondItem="Biz-oE-MB4" secondAttribute="height" multiplier="1:1" id="7Ch-WO-LTp"/>
+                                            <constraint firstItem="XV9-TI-RON" firstAttribute="centerY" secondItem="K32-yX-AY1" secondAttribute="centerY" id="Cjw-za-mwg"/>
                                             <constraint firstAttribute="height" constant="375" id="G6s-qG-zn5"/>
+                                            <constraint firstAttribute="bottom" secondItem="XV9-TI-RON" secondAttribute="bottom" id="GhC-P3-4sF"/>
+                                            <constraint firstItem="XV9-TI-RON" firstAttribute="leading" secondItem="Biz-oE-MB4" secondAttribute="leading" id="i1E-7L-eq0"/>
+                                            <constraint firstItem="XV9-TI-RON" firstAttribute="top" secondItem="Biz-oE-MB4" secondAttribute="top" id="jel-67-Nlf"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-Nd-ccp">
@@ -122,7 +154,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fs-iM-YDY">
-                                                <rect key="frame" x="30" y="31" width="78" height="17"/>
+                                                <rect key="frame" x="29.999999999999993" y="31" width="77.333333333333314" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="GIe-fh-CBu"/>
                                                 </constraints>
@@ -131,7 +163,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님의 가치관 문답 보러가기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keN-UQ-JSn">
-                                                <rect key="frame" x="108" y="30.666666666666629" width="152" height="18"/>
+                                                <rect key="frame" x="107.33333333333333" y="30.666666666666629" width="151.33333333333337" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -211,6 +243,9 @@
                     <connections>
                         <outlet property="criteriaLabel" destination="6H6-b3-i6I" id="9XD-gw-Tmu"/>
                         <outlet property="criteriaView" destination="jKc-Nd-ccp" id="nr4-iD-6So"/>
+                        <outlet property="fulllScrollView" destination="OeC-m0-wBs" id="kTC-qC-AlV"/>
+                        <outlet property="imagePageControl" destination="K32-yX-AY1" id="HD6-sT-r8d"/>
+                        <outlet property="imageScrollView" destination="XV9-TI-RON" id="t37-9d-ChN"/>
                         <outlet property="imageView" destination="Biz-oE-MB4" id="VUi-5Q-7Ku"/>
                         <outlet property="informationLabel1" destination="TCp-5f-IUg" id="h1H-ep-PIY"/>
                         <outlet property="informationLabel2" destination="fHh-pm-1vb" id="Rp1-nh-Yhe"/>
@@ -218,6 +253,7 @@
                         <outlet property="introductionContentView" destination="wro-eE-Tvd" id="wob-fN-knZ"/>
                         <outlet property="introductionView" destination="z5H-1r-nyi" id="Mpl-Ie-k99"/>
                         <outlet property="nicknameLabel" destination="9rE-KO-5ew" id="tSE-rL-Bs2"/>
+                        <outlet property="starBtn" destination="jEv-QZ-1se" id="2Fo-8p-L97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -226,6 +262,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnFoundStarMintLine" width="40" height="40"/>
         <image name="iconlyLightArrowRight" width="30" height="30"/>
         <namedColor name="find_LightPurple">
             <color red="0.90600001811981201" green="0.88200002908706665" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
