@@ -13,6 +13,7 @@ class YourProfileVC: UIViewController {
     @IBOutlet weak var imageScrollView: UIScrollView!
     @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var starBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var imageView: UIView!
     @IBOutlet weak var criteriaView: UIView!
     @IBOutlet weak var criteriaLabel: UILabel!

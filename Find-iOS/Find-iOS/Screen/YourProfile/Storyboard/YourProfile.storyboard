@@ -50,10 +50,19 @@
                                                             <action selector="starBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eGh-46-Z17"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sg8-Y0-ozz">
+                                                        <rect key="frame" x="1" y="6" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Sg8-Y0-ozz" secondAttribute="height" multiplier="1:1" id="Xtw-Lx-EHd"/>
+                                                        </constraints>
+                                                        <state key="normal" image="backBtn"/>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="jEv-QZ-1se" firstAttribute="leading" secondItem="XV9-TI-RON" secondAttribute="leading" constant="310" id="6ve-qi-ITc"/>
+                                                    <constraint firstItem="Sg8-Y0-ozz" firstAttribute="top" secondItem="XV9-TI-RON" secondAttribute="top" constant="6" id="Icm-2M-9p4"/>
                                                     <constraint firstAttribute="bottom" secondItem="jEv-QZ-1se" secondAttribute="bottom" constant="330" id="Wz1-TD-hkC"/>
+                                                    <constraint firstItem="Sg8-Y0-ozz" firstAttribute="leading" secondItem="XV9-TI-RON" secondAttribute="leading" constant="1" id="YSu-1H-gaQ"/>
                                                     <constraint firstItem="jEv-QZ-1se" firstAttribute="top" secondItem="XV9-TI-RON" secondAttribute="top" constant="5" id="bjJ-8u-32e"/>
                                                     <constraint firstAttribute="trailing" secondItem="jEv-QZ-1se" secondAttribute="trailing" constant="16" id="cXH-jX-cGk"/>
                                                 </constraints>
@@ -241,6 +250,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1838"/>
                     <connections>
+                        <outlet property="backBtn" destination="Sg8-Y0-ozz" id="X3m-AY-tFz"/>
                         <outlet property="criteriaLabel" destination="6H6-b3-i6I" id="9XD-gw-Tmu"/>
                         <outlet property="criteriaView" destination="jKc-Nd-ccp" id="nr4-iD-6So"/>
                         <outlet property="fulllScrollView" destination="OeC-m0-wBs" id="kTC-qC-AlV"/>
@@ -262,6 +272,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backBtn" width="40" height="40"/>
         <image name="btnFoundStarMintLine" width="40" height="40"/>
         <image name="iconlyLightArrowRight" width="30" height="30"/>
         <namedColor name="find_LightPurple">
