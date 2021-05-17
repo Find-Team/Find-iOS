@@ -57,7 +57,12 @@ class ValueListVC: UIViewController {
     }
     
     @IBAction func finishBtnDidTap(_ sender: Any) {
-        
+        if finishState {
+            // 서버 연결
+            // 뷰 연결
+        } else {
+            self.showToast(message: "5개를 선택해야 합니다.")
+        }
     }
     
     @IBAction func relationshipBtnDidTap(_ sender: Any) {
@@ -83,14 +88,12 @@ extension ValueListVC {
     //MARK: - Styles
     
     func finishBtnActivated() {
-        finishBtn.isUserInteractionEnabled = true
         finishBtn.setTitle("완료", for: .normal)
         finishBtn.setTitleColor(.subGray3, for: .normal)
         finishBtn.titleLabel?.font = .spoqaRegular(size: 18)
     }
     
     func finishBtnDeactivated() {
-        finishBtn.isUserInteractionEnabled = false
         finishBtn.setTitle("완료", for: .normal)
         finishBtn.setTitleColor(.subGray1, for: .normal)
         finishBtn.titleLabel?.font = .spoqaRegular(size: 18)
