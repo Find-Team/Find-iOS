@@ -305,6 +305,7 @@
                         <outlet property="editProfileView" destination="FeJ-e0-n3D" id="jZh-PP-g6j"/>
                         <outlet property="firstInfoLabel" destination="65m-ER-wjI" id="MPz-6s-G6k"/>
                         <outlet property="imageBackView" destination="tB4-3W-0Ng" id="wYO-7d-DsA"/>
+                        <outlet property="interviewPercentLabel" destination="Q0g-h2-BoQ" id="cye-YF-cJ8"/>
                         <outlet property="interviewView" destination="G17-uX-xyy" id="eXe-Yj-Imq"/>
                         <outlet property="mannerView" destination="K6A-MG-3EK" id="oTA-2n-ZCG"/>
                         <outlet property="nickNameLabel" destination="kfl-9z-PwG" id="Shh-a4-nDV"/>
