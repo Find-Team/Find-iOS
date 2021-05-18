@@ -76,7 +76,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GEo-b9-yMa">
-                                                <rect key="frame" x="8" y="102" width="406" height="70"/>
+                                                <rect key="frame" x="16" y="102" width="398" height="70"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="Kff-Fw-QtP"/>
@@ -89,7 +89,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zJ6-iE-fhr">
-                                                        <rect key="frame" x="98" y="0.0" width="210" height="70"/>
+                                                        <rect key="frame" x="94" y="0.0" width="210" height="70"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w0s-gz-gOt">
                                                             <rect key="frame" x="0.0" y="0.0" width="210" height="70"/>
@@ -627,7 +627,7 @@
                                             <constraint firstItem="2ZX-dF-f05" firstAttribute="top" secondItem="s1D-jp-bnk" secondAttribute="bottom" constant="12" id="eZc-cF-XhR"/>
                                             <constraint firstItem="niS-Wf-0on" firstAttribute="top" secondItem="jJD-SU-h9X" secondAttribute="bottom" constant="42" id="hQt-SU-Ib1"/>
                                             <constraint firstAttribute="trailing" secondItem="enK-4s-61g" secondAttribute="trailing" constant="16" id="hb0-g9-2Sx"/>
-                                            <constraint firstItem="GEo-b9-yMa" firstAttribute="leading" secondItem="IfI-H9-P45" secondAttribute="leading" constant="8" id="kRM-qe-I59"/>
+                                            <constraint firstItem="GEo-b9-yMa" firstAttribute="leading" secondItem="IfI-H9-P45" secondAttribute="leading" constant="16" id="kRM-qe-I59"/>
                                             <constraint firstItem="GfP-Dk-H0b" firstAttribute="centerY" secondItem="enK-4s-61g" secondAttribute="centerY" id="nYq-L4-W7v"/>
                                             <constraint firstItem="jBO-wz-EdK" firstAttribute="top" secondItem="SFQ-c1-s2e" secondAttribute="bottom" constant="12" id="sMh-Yu-LIZ"/>
                                             <constraint firstItem="TUo-b6-5NJ" firstAttribute="top" secondItem="jJD-SU-h9X" secondAttribute="bottom" constant="38" id="vrS-nw-sVk"/>
