@@ -24,6 +24,9 @@ class ProfileWritingVC: UIViewController {
     @IBOutlet var profileCollectionView: UICollectionView!
     @IBOutlet var imagePreview: UIImageView!
     
+    @IBOutlet var previewView: UIView!
+    @IBOutlet var previewLabel: UILabel!
+    
     @IBOutlet var identityVerify: UILabel!
     @IBOutlet var verifyInfoBtn: UIButton!
     @IBOutlet var verifyBtn: UIButton!
@@ -152,6 +155,11 @@ extension ProfileWritingVC {
         pictureExplain.text = "프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)"
         pictureExplain.font = UIFont.spoqaRegular(size: 12)
         pictureExplain.textColor = UIColor.find_DarkPurple
+        
+        previewView.makeRounded(cornerRadius: 10)
+        previewLabel.text = "프로필 사진 \n 미리보기"
+        previewLabel.font = UIFont.spoqaRegular(size: 12)
+        previewLabel.textColor = UIColor.find_DarkPurple
         
         identityVerify.text = "본인 인증"
         identityVerify.font = UIFont.spoqaLight(size: 22)
