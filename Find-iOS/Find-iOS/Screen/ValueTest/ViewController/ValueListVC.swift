@@ -61,7 +61,7 @@ class ValueListVC: UIViewController {
             // 서버 연결
             // 뷰 연결
         } else {
-            self.showToast(message: "5개를 선택해야 합니다.")
+            self.showToastGray(message: "5개를 선택해야 합니다.")
         }
     }
     

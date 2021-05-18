@@ -22,6 +22,7 @@ class MyProfileVC: UIViewController {
     
     @IBOutlet weak var editProfileView: UIView!
     @IBOutlet weak var interviewView: UIView!
+    @IBOutlet weak var interviewPercentLabel: UILabel!
     @IBOutlet weak var connectedView: UIView!
     @IBOutlet weak var mannerView: UIView!
     
@@ -29,6 +30,18 @@ class MyProfileVC: UIViewController {
         super.viewDidLoad()
         setLayout()
         setGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
+        setInterviewPercentage()
+    }
+    
+    func setInterviewPercentage() {
+        print(interviewQuestions.compactMap { $0.answer }.count)
+        let percent = Int((Double(interviewQuestions.compactMap { $0.answer }.count) / Double(interviewQuestions.count)) * 100)
+        interviewPercentLabel.text = "\(percent)%"
     }
     
     func setLayout() {
