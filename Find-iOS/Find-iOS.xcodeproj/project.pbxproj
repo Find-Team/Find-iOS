@@ -35,6 +35,15 @@
 		5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5461109B26553E350009B5CF /* MatchingStatus.storyboard */; };
 		5461109E26553E490009B5CF /* MatchingStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109D26553E490009B5CF /* MatchingStatusVC.swift */; };
 		546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109F265541450009B5CF /* MatchingStatusNC.swift */; };
+		546110A22655463B0009B5CF /* MatchingStatusCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */; };
+		546110AB265551740009B5CF /* ConnectedTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110A9265551740009B5CF /* ConnectedTVCell.swift */; };
+		546110AC265551740009B5CF /* ConnectedTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110AA265551740009B5CF /* ConnectedTVCell.xib */; };
+		546110B1265551AF0009B5CF /* FeelingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110AF265551AF0009B5CF /* FeelingTVCell.swift */; };
+		546110B2265551AF0009B5CF /* FeelingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110B0265551AF0009B5CF /* FeelingTVCell.xib */; };
+		546110B5265552F40009B5CF /* DibsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110B3265552F40009B5CF /* DibsTVCell.swift */; };
+		546110B6265552F40009B5CF /* DibsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110B4265552F40009B5CF /* DibsTVCell.xib */; };
+		546110B9265556470009B5CF /* FeelingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110B7265556470009B5CF /* FeelingCVCell.swift */; };
+		546110BA265556470009B5CF /* FeelingCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110B8265556470009B5CF /* FeelingCVCell.xib */; };
 		548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A677B264FF1820014CBE8 /* InterviewPhotoCVCell.swift */; };
 		548A677E264FF95D0014CBE8 /* InterviewQestionCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677D264FF95D0014CBE8 /* InterviewQestionCVCell.xib */; };
 		548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */; };
@@ -105,6 +114,15 @@
 		5461109B26553E350009B5CF /* MatchingStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingStatus.storyboard; sourceTree = "<group>"; };
 		5461109D26553E490009B5CF /* MatchingStatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStatusVC.swift; sourceTree = "<group>"; };
 		5461109F265541450009B5CF /* MatchingStatusNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatchingStatusNC.swift; path = "Find-iOS/Screen/MatchingStatus/ViewController/MatchingStatusNC.swift"; sourceTree = SOURCE_ROOT; };
+		546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStatusCVCell.swift; sourceTree = "<group>"; };
+		546110A9265551740009B5CF /* ConnectedTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedTVCell.swift; sourceTree = "<group>"; };
+		546110AA265551740009B5CF /* ConnectedTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectedTVCell.xib; sourceTree = "<group>"; };
+		546110AF265551AF0009B5CF /* FeelingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingTVCell.swift; sourceTree = "<group>"; };
+		546110B0265551AF0009B5CF /* FeelingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingTVCell.xib; sourceTree = "<group>"; };
+		546110B3265552F40009B5CF /* DibsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DibsTVCell.swift; sourceTree = "<group>"; };
+		546110B4265552F40009B5CF /* DibsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DibsTVCell.xib; sourceTree = "<group>"; };
+		546110B7265556470009B5CF /* FeelingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCVCell.swift; sourceTree = "<group>"; };
+		546110B8265556470009B5CF /* FeelingCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCVCell.xib; sourceTree = "<group>"; };
 		548A677B264FF1820014CBE8 /* InterviewPhotoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewPhotoCVCell.swift; sourceTree = "<group>"; };
 		548A677D264FF95D0014CBE8 /* InterviewQestionCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewQestionCVCell.xib; sourceTree = "<group>"; };
 		548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewPhotoCVCell.xib; sourceTree = "<group>"; };
@@ -334,8 +352,33 @@
 		5461109A26553E130009B5CF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				546110A82655514D0009B5CF /* Dibs */,
+				546110A7265551450009B5CF /* Feeling */,
+				546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		546110A7265551450009B5CF /* Feeling */ = {
+			isa = PBXGroup;
+			children = (
+				546110A9265551740009B5CF /* ConnectedTVCell.swift */,
+				546110AF265551AF0009B5CF /* FeelingTVCell.swift */,
+				546110B0265551AF0009B5CF /* FeelingTVCell.xib */,
+				546110B7265556470009B5CF /* FeelingCVCell.swift */,
+				546110B8265556470009B5CF /* FeelingCVCell.xib */,
+				546110AA265551740009B5CF /* ConnectedTVCell.xib */,
+			);
+			path = Feeling;
+			sourceTree = "<group>";
+		};
+		546110A82655514D0009B5CF /* Dibs */ = {
+			isa = PBXGroup;
+			children = (
+				546110B3265552F40009B5CF /* DibsTVCell.swift */,
+				546110B4265552F40009B5CF /* DibsTVCell.xib */,
+			);
+			path = Dibs;
 			sourceTree = "<group>";
 		};
 		54A03862264D20A600EDF78F /* Cell */ = {
@@ -612,12 +655,16 @@
 				377C2777264446FD003FF385 /* ValueTest.storyboard in Resources */,
 				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
 				5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */,
+				546110B6265552F40009B5CF /* DibsTVCell.xib in Resources */,
 				54B96649264904500028F1BF /* TabBar.storyboard in Resources */,
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
+				546110B2265551AF0009B5CF /* FeelingTVCell.xib in Resources */,
 				54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */,
 				54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */,
 				54B96643264904390028F1BF /* Interview.storyboard in Resources */,
+				546110BA265556470009B5CF /* FeelingCVCell.xib in Resources */,
+				546110AC265551740009B5CF /* ConnectedTVCell.xib in Resources */,
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
 				548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */,
@@ -692,6 +739,7 @@
 				378E3A10265044190023A326 /* ValueListCVC.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
+				546110A22655463B0009B5CF /* MatchingStatusCVCell.swift in Sources */,
 				378E3A0E26503E910023A326 /* UIViewController+Extension.swift in Sources */,
 				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
 				54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */,
@@ -720,10 +768,14 @@
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */,
 				54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */,
+				546110B5265552F40009B5CF /* DibsTVCell.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
 				548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */,
 				377C278026444761003FF385 /* ValueListVC.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
+				546110AB265551740009B5CF /* ConnectedTVCell.swift in Sources */,
+				546110B9265556470009B5CF /* FeelingCVCell.swift in Sources */,
+				546110B1265551AF0009B5CF /* FeelingTVCell.swift in Sources */,
 				3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */,
 				377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */,
 			);

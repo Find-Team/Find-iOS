@@ -7,23 +7,36 @@
 
 import UIKit
 
-class MatchingStatusVC: UIViewController {
+enum MatchingCategory {
+    case feelings, dibs
+}
 
+class MatchingStatusVC: UIViewController {
+    var curCategory: MatchingCategory?
+    
+    @IBOutlet var segIndicators: [UIView]!
+    @IBOutlet weak var matchingCV: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
+}
+
+extension MatchingStatusVC {
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+    }
+    
+    
 }
