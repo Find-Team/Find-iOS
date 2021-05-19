@@ -205,7 +205,7 @@
                                 <rect key="frame" x="0.0" y="274" width="375" height="374"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대의 성향은?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqO-MV-5HF">
-                                        <rect key="frame" x="16.000000000000007" y="19.666666666666686" width="108.66666666666669" height="23"/>
+                                        <rect key="frame" x="16.000000000000007" y="19.666666666666686" width="111.66666666666669" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="5x0-Xq-twR"/>
                                         </constraints>
@@ -231,9 +231,10 @@
                                                 <rect key="frame" x="5" y="5" width="150" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="JPD-FH-YcV">
-                                                        <rect key="frame" x="28.666666666666657" y="41" width="93" height="68"/>
+                                                        <rect key="frame" x="26.666666666666657" y="38.333333333333314" width="97" height="73"/>
                                                         <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal">
                                                             <string key="title">나와 
 닮은 점이 
@@ -272,7 +273,7 @@
                                                 <rect key="frame" x="5" y="5" width="150" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="OcR-Qk-1e3">
-                                                        <rect key="frame" x="31.666666666666657" y="41" width="87" height="68"/>
+                                                        <rect key="frame" x="29.666666666666657" y="38.333333333333314" width="91" height="73"/>
                                                         <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
                                                         <color key="tintColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

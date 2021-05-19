@@ -21,7 +21,6 @@ class FindVC: UIViewController {
     var checkSimilarActive: Bool = false
     var checkDifferentActive: Bool = false
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -44,8 +43,10 @@ class FindVC: UIViewController {
     func setButton() {
         similarBtn.titleLabel?.textAlignment = .center
         differentBtn.titleLabel?.textAlignment = .center
+    
         findBtn.makeRounded(cornerRadius: 25)
         findBtn.isEnabled = false
+
     }
 
     

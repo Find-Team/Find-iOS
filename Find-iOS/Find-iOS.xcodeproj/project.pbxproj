@@ -242,12 +242,12 @@
 		54B96628264902BF0028F1BF /* FindFound */ = {
 			isa = PBXGroup;
 			children = (
+				926314D92654F6BC00E8E8FD /* Model */,
+				926314D82654F6B200E8E8FD /* Cell */,
 				92B10393264E4C3F003801C8 /* View */,
 				54B9662D264903420028F1BF /* ViewController */,
 				54B9662E264903470028F1BF /* Storyboard */,
 				92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */,
-				92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */,
-				92B10365264D2905003801C8 /* ProfileCardDataModel.swift */,
 			);
 			path = FindFound;
 			sourceTree = "<group>";
@@ -388,6 +388,22 @@
 				54B9666626490D510028F1BF /* NetworkResult.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		926314D82654F6B200E8E8FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		926314D92654F6BC00E8E8FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92B10365264D2905003801C8 /* ProfileCardDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		92B10393264E4C3F003801C8 /* View */ = {
