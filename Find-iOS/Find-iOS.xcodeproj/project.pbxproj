@@ -34,6 +34,7 @@
 		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
 		5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5461109B26553E350009B5CF /* MatchingStatus.storyboard */; };
 		5461109E26553E490009B5CF /* MatchingStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109D26553E490009B5CF /* MatchingStatusVC.swift */; };
+		546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109F265541450009B5CF /* MatchingStatusNC.swift */; };
 		548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A677B264FF1820014CBE8 /* InterviewPhotoCVCell.swift */; };
 		548A677E264FF95D0014CBE8 /* InterviewQestionCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677D264FF95D0014CBE8 /* InterviewQestionCVCell.xib */; };
 		548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */; };
@@ -103,6 +104,7 @@
 		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		5461109B26553E350009B5CF /* MatchingStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingStatus.storyboard; sourceTree = "<group>"; };
 		5461109D26553E490009B5CF /* MatchingStatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStatusVC.swift; sourceTree = "<group>"; };
+		5461109F265541450009B5CF /* MatchingStatusNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatchingStatusNC.swift; path = "Find-iOS/Screen/MatchingStatus/ViewController/MatchingStatusNC.swift"; sourceTree = SOURCE_ROOT; };
 		548A677B264FF1820014CBE8 /* InterviewPhotoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewPhotoCVCell.swift; sourceTree = "<group>"; };
 		548A677D264FF95D0014CBE8 /* InterviewQestionCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewQestionCVCell.xib; sourceTree = "<group>"; };
 		548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewPhotoCVCell.xib; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				5461109D26553E490009B5CF /* MatchingStatusVC.swift */,
+				5461109F265541450009B5CF /* MatchingStatusNC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */,
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				377C277D26444750003FF385 /* ValueTestVC.swift in Sources */,
+				546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */,
 				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
