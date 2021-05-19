@@ -40,6 +40,9 @@
 		54B9666726490D510028F1BF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666626490D510028F1BF /* NetworkResult.swift */; };
 		54B9666926490D950028F1BF /* PlainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666826490D950028F1BF /* PlainData.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
+		926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */; };
+		926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D1265451D700E8E8FD /* InterviewImgTVC.swift */; };
+		926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		54B96664264909F70028F1BF /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		54B9666626490D510028F1BF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		54B9666826490D950028F1BF /* PlainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainData.swift; sourceTree = "<group>"; };
+		926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegueInterviewCVC.swift; path = "Find-iOS/Screen/YourProfile/ViewController/SegueInterviewCVC.swift"; sourceTree = SOURCE_ROOT; };
+		926314D1265451D700E8E8FD /* InterviewImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewImgTVC.swift; sourceTree = "<group>"; };
+		926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAnswerTVC.swift; sourceTree = "<group>"; };
 		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -237,6 +243,7 @@
 		54B96629264902CF0028F1BF /* YourProfile */ = {
 			isa = PBXGroup;
 			children = (
+				926314C8265448FB00E8E8FD /* Cell */,
 				54B9662C264903350028F1BF /* ViewController */,
 				54B9662B2649032E0028F1BF /* Storyboard */,
 			);
@@ -367,6 +374,16 @@
 				54B9666626490D510028F1BF /* NetworkResult.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		926314C8265448FB00E8E8FD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */,
+				926314D1265451D700E8E8FD /* InterviewImgTVC.swift */,
+				926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +518,8 @@
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
+				926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */,
+				926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */,
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
@@ -512,6 +531,7 @@
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
+				926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
