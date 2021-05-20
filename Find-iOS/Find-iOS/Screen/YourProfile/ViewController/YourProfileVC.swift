@@ -103,7 +103,6 @@ extension YourProfileVC {
         floatingLikeBtn.setTitle("호감 보내기", for: .normal)
         floatingLikeBtn.setTitleColor(.white, for: .normal)
         floatingLikeBtn.titleLabel?.font = .spoqaMedium(size: 16)
-    
     }
     
     func showToast(message : String, font: UIFont = UIFont.spoqaRegular(size: 14)) {
