@@ -43,7 +43,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>TabBar</string>
+					<string>MatchingLottie</string>
 				</dict>
 			</array>
 		</dict>
