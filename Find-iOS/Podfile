@@ -8,4 +8,5 @@ target 'Find-iOS' do
   # Pods for Find-iOS
   pod 'Moya'
   pod 'Kingfisher'
+  pod 'lottie-ios'
 end
