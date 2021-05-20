@@ -1,5 +1,5 @@
 //
-//  FIndFoundVC.swift
+//  FindFoundVC.swift
 //  Find-iOS
 //
 //  Created by 이원석 on 2021/05/10.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FIndFoundVC: UIViewController {
+class FindFoundVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

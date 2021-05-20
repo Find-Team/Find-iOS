@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Matching LottieVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MatchingLottieVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientBgImg" translatesAutoresizingMaskIntoConstraints="NO" id="hZU-RT-0Go">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psm-cw-sTy">
+                                <rect key="frame" x="186" y="387.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOX-ge-Eby">
+                                <rect key="frame" x="186" y="336.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ur-Vd-3Iu" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="147" y="448.5" width="120" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0qp-nm-2n7"/>
+                                    <constraint firstAttribute="width" constant="120" id="pGU-hL-Aiw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="psm-cw-sTy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="91C-bV-w99"/>
+                            <constraint firstItem="hZU-RT-0Go" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CEZ-fM-CA2"/>
+                            <constraint firstItem="psm-cw-sTy" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="DGG-w5-6fk"/>
+                            <constraint firstItem="psm-cw-sTy" firstAttribute="top" secondItem="SOX-ge-Eby" secondAttribute="bottom" constant="30" id="RRB-7c-F5K"/>
+                            <constraint firstItem="hZU-RT-0Go" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="TGa-GD-Rf8"/>
+                            <constraint firstItem="2ur-Vd-3Iu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="acr-dm-uJX"/>
+                            <constraint firstItem="hZU-RT-0Go" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cBy-jz-guO"/>
+                            <constraint firstItem="SOX-ge-Eby" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="doZ-iX-hc8"/>
+                            <constraint firstAttribute="bottom" secondItem="hZU-RT-0Go" secondAttribute="bottom" id="hCB-Xo-Mi5"/>
+                            <constraint firstItem="2ur-Vd-3Iu" firstAttribute="top" secondItem="psm-cw-sTy" secondAttribute="bottom" constant="40" id="mg5-pO-mwl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="psm-cw-sTy" id="HPm-ha-wIx"/>
+                        <outlet property="loadingAnimationView" destination="2ur-Vd-3Iu" id="nB8-1n-NMo"/>
+                        <outlet property="searchingLabel" destination="SOX-ge-Eby" id="ayQ-mL-Gcz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gradientBgImg" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
