@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Light.ttf">
+            <string>SpoqaHanSansNeo-Light</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Medium.ttf">
+            <string>SpoqaHanSansNeo-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindView" customModule="Find_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutValueView" destination="j19-s1-unH" id="szp-ld-ilM"/>
+                <outlet property="differentBtn" destination="5Bf-G7-67X" id="JLe-Fo-zrg"/>
+                <outlet property="differentView" destination="hSV-kA-xq6" id="k8l-ro-NVK"/>
+                <outlet property="findBtn" destination="UWD-79-b4i" id="UsG-13-FjZ"/>
+                <outlet property="similarBtn" destination="huT-OC-Baj" id="Co8-Ci-3F1"/>
+                <outlet property="similarView" destination="1bf-9G-7mb" id="kEc-fY-GOU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="FindView" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="FindView" customModule="Find_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j19-s1-unH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="274"/>
+                    <color key="backgroundColor" name="mannerBlur"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="274" id="uEe-8L-W04"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuB-a2-Osl">
+                    <rect key="frame" x="0.0" y="274" width="375" height="2"/>
+                    <color key="backgroundColor" name="subGray4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Nth-XG-jlG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWs-Fs-w0c">
+                    <rect key="frame" x="0.0" y="276" width="375" height="323"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대의 성향은?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-1n-lVa">
+                            <rect key="frame" x="16.000000000000007" y="19" width="108.66666666666669" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="23" id="qSX-2c-CoJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="18"/>
+                            <color key="textColor" name="subGray5"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bf-9G-7mb">
+                            <rect key="frame" x="20" y="60" width="160" height="160"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="huT-OC-Baj">
+                                    <rect key="frame" x="5" y="5" width="150" height="150"/>
+                                    <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="150" id="OIA-fz-Y73"/>
+                                        <constraint firstAttribute="width" secondItem="huT-OC-Baj" secondAttribute="height" multiplier="1:1" id="see-uy-AxN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <state key="normal">
+                                        <string key="title">나와 
+닮은 점이 
+많은 사람을 원해요!
+(상호 유사성)</string>
+                                        <color key="titleColor" name="subGray3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="similarBtnClicked:" destination="-1" eventType="touchUpInside" id="oN4-VO-5WZ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="huT-OC-Baj" firstAttribute="leading" secondItem="1bf-9G-7mb" secondAttribute="leading" constant="5" id="5bE-33-ppF"/>
+                                <constraint firstAttribute="bottom" secondItem="huT-OC-Baj" secondAttribute="bottom" constant="5" id="C2r-rW-ziS"/>
+                                <constraint firstAttribute="height" constant="160" id="IG2-Xc-Tqh"/>
+                                <constraint firstAttribute="trailing" secondItem="huT-OC-Baj" secondAttribute="trailing" constant="5" id="V5Z-GE-gyH"/>
+                                <constraint firstAttribute="width" secondItem="1bf-9G-7mb" secondAttribute="height" multiplier="1:1" id="VYt-lc-zWd"/>
+                                <constraint firstItem="huT-OC-Baj" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="top" constant="5" id="eD3-sU-Jg1"/>
+                                <constraint firstItem="huT-OC-Baj" firstAttribute="centerY" secondItem="1bf-9G-7mb" secondAttribute="centerY" id="we1-rC-pIB"/>
+                                <constraint firstItem="huT-OC-Baj" firstAttribute="centerX" secondItem="1bf-9G-7mb" secondAttribute="centerX" id="xNX-T4-gm0"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-kA-xq6">
+                            <rect key="frame" x="195" y="60" width="160" height="160"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
+                                    <rect key="frame" x="5" y="5" width="150" height="150"/>
+                                    <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="5Bf-G7-67X" secondAttribute="height" multiplier="1:1" id="DSA-k8-AGG"/>
+                                        <constraint firstAttribute="height" constant="150" id="G0L-RT-Ptc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <state key="normal">
+                                        <string key="title">나와 
+다르기에 매력적인
+사람을 찾아요!
+(상호보완성)</string>
+                                        <color key="titleColor" name="subGray3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="differentBtnClicked:" destination="-1" eventType="touchUpInside" id="Veo-MI-Gbe"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="5Bf-G7-67X" firstAttribute="leading" secondItem="hSV-kA-xq6" secondAttribute="leading" constant="5" id="8fM-zH-BBN"/>
+                                <constraint firstItem="5Bf-G7-67X" firstAttribute="top" secondItem="hSV-kA-xq6" secondAttribute="top" constant="5" id="9Nx-Ce-mAi"/>
+                                <constraint firstItem="5Bf-G7-67X" firstAttribute="centerY" secondItem="hSV-kA-xq6" secondAttribute="centerY" id="BTZ-tm-92o"/>
+                                <constraint firstAttribute="trailing" secondItem="5Bf-G7-67X" secondAttribute="trailing" constant="5" id="GRc-nW-IsP"/>
+                                <constraint firstAttribute="bottom" secondItem="5Bf-G7-67X" secondAttribute="bottom" constant="5" id="MVh-j8-L5f"/>
+                                <constraint firstItem="5Bf-G7-67X" firstAttribute="centerX" secondItem="hSV-kA-xq6" secondAttribute="centerX" id="Uci-Lj-HYV"/>
+                                <constraint firstAttribute="width" secondItem="hSV-kA-xq6" secondAttribute="height" multiplier="1:1" id="VSE-03-NKy"/>
+                                <constraint firstAttribute="height" constant="160" id="riZ-Ht-4B4"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWD-79-b4i">
+                            <rect key="frame" x="16" y="249" width="343" height="50"/>
+                            <color key="backgroundColor" name="subGray4"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="96y-Cw-XE2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="18"/>
+                            <state key="normal" title="FIND!">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hSV-kA-xq6" firstAttribute="bottom" secondItem="1bf-9G-7mb" secondAttribute="bottom" id="2WK-5t-NAa"/>
+                        <constraint firstAttribute="trailing" secondItem="hSV-kA-xq6" secondAttribute="trailing" constant="20" id="3N3-n6-H2u"/>
+                        <constraint firstAttribute="bottom" secondItem="UWD-79-b4i" secondAttribute="bottom" constant="24" id="4rO-eq-eB5"/>
+                        <constraint firstItem="5bp-1n-lVa" firstAttribute="top" secondItem="wWs-Fs-w0c" secondAttribute="top" constant="19" id="LF6-Ny-8AK"/>
+                        <constraint firstItem="1bf-9G-7mb" firstAttribute="top" secondItem="5bp-1n-lVa" secondAttribute="bottom" constant="18" id="OlS-8e-GuB"/>
+                        <constraint firstItem="5bp-1n-lVa" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="SpG-Rj-VYc"/>
+                        <constraint firstAttribute="trailing" secondItem="UWD-79-b4i" secondAttribute="trailing" constant="16" id="W00-BR-vOn"/>
+                        <constraint firstItem="UWD-79-b4i" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="a2h-Av-MSu"/>
+                        <constraint firstItem="hSV-kA-xq6" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="top" id="dl6-nV-HnC"/>
+                        <constraint firstItem="1bf-9G-7mb" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="20" id="mbm-hd-7hk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vuB-a2-Osl" firstAttribute="top" secondItem="j19-s1-unH" secondAttribute="bottom" id="0qh-lO-G4r"/>
+                <constraint firstAttribute="trailing" secondItem="wWs-Fs-w0c" secondAttribute="trailing" id="2hi-kd-iDu"/>
+                <constraint firstItem="j19-s1-unH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4OQ-d0-1HT"/>
+                <constraint firstItem="vuB-a2-Osl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JCE-Ak-dyn"/>
+                <constraint firstItem="wWs-Fs-w0c" firstAttribute="top" secondItem="vuB-a2-Osl" secondAttribute="bottom" id="Ldu-eg-g0H"/>
+                <constraint firstItem="wWs-Fs-w0c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aU7-3m-uti"/>
+                <constraint firstItem="j19-s1-unH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cbE-Yp-m4h"/>
+                <constraint firstAttribute="trailing" secondItem="vuB-a2-Osl" secondAttribute="trailing" id="rcF-xb-xdc"/>
+                <constraint firstAttribute="bottom" secondItem="wWs-Fs-w0c" secondAttribute="bottom" id="wZw-rw-EJL"/>
+                <constraint firstAttribute="trailing" secondItem="j19-s1-unH" secondAttribute="trailing" id="zHV-FH-LYv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33" y="72"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="mannerBlur">
+            <color red="0.60799998044967651" green="0.97600001096725464" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray3">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray4">
+            <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray5">
+            <color red="0.31000000238418579" green="0.31000000238418579" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

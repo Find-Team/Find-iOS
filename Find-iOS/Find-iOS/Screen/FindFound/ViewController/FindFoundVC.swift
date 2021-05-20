@@ -24,12 +24,15 @@ class FindFoundVC: UIViewController {
     @IBOutlet weak var segueIndicatorStackView: UIStackView!
     @IBOutlet var segueIndicatorView: [UIView]!
     @IBOutlet weak var myCollectionView: UICollectionView!
-    
+
     // MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setSegueStyle()
+        findSelected()
+        myCollectionView.delegate = self
+        myCollectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -37,10 +40,12 @@ class FindFoundVC: UIViewController {
     
     @IBAction func findBtnClicked(_ sender: Any) {
         findSelected()
+        myCollectionView.reloadData()
     }
     
     @IBAction func foundBtnClicked(_ sender: Any) {
         foundSelected()
+        myCollectionView.reloadData()
     }
 }
 
@@ -48,45 +53,48 @@ class FindFoundVC: UIViewController {
 
 extension FindFoundVC {
     func setSegueStyle() {
-        segueFindBtn.setTitle("find", for: .normal)
-        segueFindBtn.setTitleColor(.gray , for: .normal)
-        segueFindBtn.titleLabel?.font = .systemFont(ofSize: 14)
+        print("setsegueStyle")
+        segueFindBtn.setTitle("FIND", for: .normal)
+        segueFindBtn.setTitleColor(.find_DarkPurple , for: .normal)
+        segueFindBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
-        segueFindBtn.setTitle("found", for: .normal)
-        segueFindBtn.setTitleColor(.gray , for: .normal)
-        segueFindBtn.titleLabel?.font = .systemFont(ofSize: 14)
+        segueFoundBtn.setTitle("FOUND", for: .normal)
+        segueFoundBtn.setTitleColor(.subGray1 , for: .normal)
+        segueFoundBtn.titleLabel?.font = .spoqaRegular(size: 14)
     }
     
     func findSelected() {
+        print("findselected")
         currentCategory = .find
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
         
         if segueIndicatorView.count == 2 {
-            segueIndicatorView[0].backgroundColor = .purple
-            segueIndicatorView[1].backgroundColor = .gray
+            segueIndicatorView[0].backgroundColor = .find_DarkPurple
+            segueIndicatorView[1].backgroundColor = .subGray1
         }
         
-        segueFindBtn.setTitle("find", for: .normal)
-        segueFindBtn.setTitleColor(.purple, for: .normal)
-        segueFindBtn.titleLabel?.font = .systemFont(ofSize: 14)
+        segueFindBtn.setTitle("FIND", for: .normal)
+        segueFindBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueFindBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
-        segueFoundBtn.setTitleColor(.gray, for: .normal)
+        segueFoundBtn.setTitleColor(.subGray1, for: .normal)
     }
     
     func foundSelected() {
+        print("foundSelected")
         currentCategory = .found
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
         
         if segueIndicatorView.count == 2 {
-            segueIndicatorView[0].backgroundColor = .gray
-            segueIndicatorView[1].backgroundColor = .purple
+            segueIndicatorView[0].backgroundColor = .subGray1
+            segueIndicatorView[1].backgroundColor = .find_DarkPurple
         }
         
-        segueFoundBtn.setTitle("found", for: .normal)
-        segueFoundBtn.setTitleColor(.purple, for: .normal)
-        segueFoundBtn.titleLabel?.font = .systemFont(ofSize: 14)
+        segueFoundBtn.setTitle("FOUND", for: .normal)
+        segueFoundBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        segueFoundBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
-        segueFindBtn.setTitleColor(.gray, for: .normal)
+        segueFindBtn.setTitleColor(.subGray1, for: .normal)
     }
 }
 
@@ -98,12 +106,53 @@ extension FindFoundVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
+        cell.currentCategory = currentCategory
+        if cell.currentCategory == .find {
+            var findView = FindView(frame: cell.myContentView.frame)
+//            cell.addSubview(findView)
+            cell.myContentView.addSubview(findView)
+        }
+        else {
+            
+        }
+        return cell
     }
-    
-    
 }
 
 extension FindFoundVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        switch currentIndex {
+        case 0:
+            findSelected()
+            print("case0")
+        case 1:
+            foundSelected()
+            print("case1")
+        default:
+            break
+        }
+        myCollectionView.reloadData()
+    }
 }

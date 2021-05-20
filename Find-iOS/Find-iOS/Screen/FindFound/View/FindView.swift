@@ -1,88 +1,97 @@
 //
-//  FindVC.swift
+//  FindView.swift
 //  Find-iOS
 //
-//  Created by 장서현 on 2021/05/13.
+//  Created by 장서현 on 2021/05/21.
 //
 
 import UIKit
 
-class FindVC1: UIViewController {
+class FindView: UIView {
 
+    @IBOutlet weak var aboutValueView: UIView!
     @IBOutlet weak var similarView: UIView!
-    @IBOutlet weak var differentView: UIView!
-    @IBOutlet weak var similarCollectedView: UIView!
-    @IBOutlet weak var differentCollectedView: UIView!
-    @IBOutlet weak var recycleView: UIView!
     @IBOutlet weak var similarBtn: UIButton!
+    @IBOutlet weak var differentView: UIView!
     @IBOutlet weak var differentBtn: UIButton!
     @IBOutlet weak var findBtn: UIButton!
     
     var checkSimilarActive: Bool = false
     var checkDifferentActive: Bool = false
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        let nib = UINib(nibName: "FindView", bundle: Bundle.main)
+        
+        guard let xibView = nib.instantiate(withOwner: self, options: nil).first as? UIView else {return}
+        
+        xibView.frame = self.bounds
+        xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(xibView)
+        
         setView()
         setButton()
-        // Do any additional setup after loading the view.
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
     }
     
     func setView() {
+        similarView.makeRounded(cornerRadius: similarView.frame.width/2)
+        differentView.makeRounded(cornerRadius: differentView.frame.width/2)
+        similarView.backgroundColor = .white
+        differentView.backgroundColor = .white
         
-        self.similarView.makeRounded(cornerRadius: similarView.frame.width/2)
-        self.differentView.makeRounded(cornerRadius: differentView.frame.width/2)
-        similarCollectedView.makeRounded(cornerRadius: similarCollectedView.frame.width/2)
-        differentCollectedView.makeRounded(cornerRadius: differentCollectedView.frame.width/2)
-        similarCollectedView.backgroundColor = .white
-        differentCollectedView.backgroundColor = .white
-        
-        var beforeTestView = BeforeTestView(frame: recycleView.frame)
-        self.recycleView.addSubview(beforeTestView)
+        var beforeTestView = BeforeTestView(frame: aboutValueView.frame)
+        self.aboutValueView.addSubview(beforeTestView)
     }
     
     func setButton() {
         similarBtn.titleLabel?.textAlignment = .center
         differentBtn.titleLabel?.textAlignment = .center
+        
+        similarBtn.makeRounded(cornerRadius: similarBtn.frame.width/2)
+        differentBtn.makeRounded(cornerRadius: differentBtn.frame.width/2)
     
         findBtn.makeRounded(cornerRadius: 25)
         findBtn.isEnabled = false
 
     }
 
-    
-    // MARK: - IBActions
-    
+
     @IBAction func similarBtnClicked(_ sender: Any) {
         if self.similarBtn.isSelected == false {
             self.similarBtn.isSelected = true
             self.checkSimilarActive = true
-            similarCollectedView.backgroundColor = .find_Mint
+            similarView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
         }
-
+        
         else {
             self.similarBtn.isSelected = false
             self.checkSimilarActive = false
-            similarCollectedView.backgroundColor = .white
+            similarView.backgroundColor = .white
             if checkDifferentActive == false {
                 findBtn.backgroundColor = .subGray4
                 findBtn.isEnabled = false
             }
         }
     }
+    
     @IBAction func differentBtnClicked(_ sender: Any) {
         if self.differentBtn.isSelected == false {
             self.differentBtn.isSelected = true
             self.checkDifferentActive = true
-            differentCollectedView.backgroundColor = .find_Mint
+            differentView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
         }
 
         else {
             self.differentBtn.isSelected = false
             self.checkDifferentActive = false
-            differentCollectedView.backgroundColor = .white
+            differentView.backgroundColor = .white
             if checkSimilarActive == false {
                 findBtn.backgroundColor = .subGray4
                 findBtn.isEnabled = false

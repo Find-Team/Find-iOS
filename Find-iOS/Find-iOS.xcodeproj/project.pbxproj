@@ -41,6 +41,9 @@
 		54B9666926490D950028F1BF /* PlainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666826490D950028F1BF /* PlainData.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
 		926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314E52656306800E8E8FD /* FindFoundVC.swift */; };
+		926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */; };
+		926314F02656CD0F00E8E8FD /* FindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 926314EF2656CD0E00E8E8FD /* FindView.xib */; };
+		926314F72656CE8A00E8E8FD /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314F62656CE8A00E8E8FD /* FindView.swift */; };
 		92B10359264CFE6D003801C8 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */; };
 		92B1035C264D134E003801C8 /* FindVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035B264D134E003801C8 /* FindVC1.swift */; };
 		92B1035F264D1377003801C8 /* FoundVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035E264D1377003801C8 /* FoundVC1.swift */; };
@@ -87,6 +90,9 @@
 		54B9666626490D510028F1BF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		54B9666826490D950028F1BF /* PlainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainData.swift; sourceTree = "<group>"; };
 		926314E52656306800E8E8FD /* FindFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC.swift; sourceTree = "<group>"; };
+		926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundSegueCVC.swift; sourceTree = "<group>"; };
+		926314EF2656CD0E00E8E8FD /* FindView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindView.xib; sourceTree = "<group>"; };
+		926314F62656CE8A00E8E8FD /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		92B1035B264D134E003801C8 /* FindVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC1.swift; sourceTree = "<group>"; };
 		92B1035E264D1377003801C8 /* FoundVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundVC1.swift; sourceTree = "<group>"; };
@@ -397,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */,
+				926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -412,7 +419,9 @@
 		92B10393264E4C3F003801C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				926314F62656CE8A00E8E8FD /* FindView.swift */,
 				92B10394264E4C4C003801C8 /* BeforeTestView.xib */,
+				926314EF2656CD0E00E8E8FD /* FindView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -486,6 +495,7 @@
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
+				926314F02656CD0F00E8E8FD /* FindView.xib in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
 				92B10395264E4C4C003801C8 /* BeforeTestView.xib in Resources */,
 				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
@@ -551,6 +561,7 @@
 				926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */,
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
+				926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */,
 				92B1035C264D134E003801C8 /* FindVC1.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
@@ -558,6 +569,7 @@
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
+				926314F72656CE8A00E8E8FD /* FindView.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,

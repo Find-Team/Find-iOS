@@ -212,7 +212,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="VPt-VI-fhO"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                        <state key="normal" title="FIND">
+                                            <color key="titleColor" name="find_DarkPurple"/>
+                                        </state>
                                         <connections>
                                             <action selector="findBtnClicked:" destination="gQc-Nb-lez" eventType="touchUpInside" id="eUm-8x-4sj"/>
                                         </connections>
@@ -222,13 +225,15 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="o1H-j3-ZQI"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                        <state key="normal" title="FOUND">
+                                            <color key="titleColor" name="subGray1"/>
+                                        </state>
                                         <connections>
                                             <action selector="foundBtnClicked:" destination="gQc-Nb-lez" eventType="touchUpInside" id="0tD-VD-R9o"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="profileBlur"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h7D-jR-TH5">
                                 <rect key="frame" x="0.0" y="127" width="375" height="3"/>
@@ -247,17 +252,29 @@
                                     <constraint firstAttribute="height" constant="3" id="Nee-ln-FY4"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-VO-kLZ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-VO-kLZ">
                                 <rect key="frame" x="0.0" y="130" width="375" height="599"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AsY-DM-pK8">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AsY-DM-pK8">
                                     <size key="itemSize" width="375" height="599"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindFoundSegueCVC" id="CJG-KW-pLn" customClass="FindFoundSegueCVC" customModule="Find_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="930-aH-RNk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="375" height="599"/>
+                                        <connections>
+                                            <outlet property="myContentView" destination="930-aH-RNk" id="mDj-y4-xYF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3I7-eN-ucT"/>
@@ -265,11 +282,15 @@
                         <constraints>
                             <constraint firstItem="Djm-0q-3nk" firstAttribute="leading" secondItem="3I7-eN-ucT" secondAttribute="leading" id="1G5-gY-umt"/>
                             <constraint firstAttribute="trailing" secondItem="h7D-jR-TH5" secondAttribute="trailing" id="5lq-Yl-BjD"/>
+                            <constraint firstItem="3I7-eN-ucT" firstAttribute="bottom" secondItem="QwU-VO-kLZ" secondAttribute="bottom" constant="49" id="7eI-w0-Dzu"/>
                             <constraint firstAttribute="trailing" secondItem="Djm-0q-3nk" secondAttribute="trailing" id="JJA-vV-dkR"/>
                             <constraint firstItem="h7D-jR-TH5" firstAttribute="leading" secondItem="CmP-Gj-BC3" secondAttribute="leading" id="VEZ-xa-nhK"/>
                             <constraint firstItem="h7D-jR-TH5" firstAttribute="top" secondItem="bI9-Re-VzZ" secondAttribute="bottom" id="XQk-cS-oC9"/>
                             <constraint firstItem="3I7-eN-ucT" firstAttribute="trailing" secondItem="bI9-Re-VzZ" secondAttribute="trailing" id="Zkq-UJ-D8X"/>
+                            <constraint firstItem="QwU-VO-kLZ" firstAttribute="trailing" secondItem="h7D-jR-TH5" secondAttribute="trailing" id="a3c-3R-0WH"/>
+                            <constraint firstItem="QwU-VO-kLZ" firstAttribute="top" secondItem="h7D-jR-TH5" secondAttribute="bottom" id="fMk-E3-yRS"/>
                             <constraint firstItem="bI9-Re-VzZ" firstAttribute="leading" secondItem="3I7-eN-ucT" secondAttribute="leading" id="ndl-x3-g5N"/>
+                            <constraint firstItem="QwU-VO-kLZ" firstAttribute="leading" secondItem="h7D-jR-TH5" secondAttribute="leading" id="nsC-BJ-qjz"/>
                             <constraint firstItem="Djm-0q-3nk" firstAttribute="top" secondItem="3I7-eN-ucT" secondAttribute="top" id="u4b-tY-GUw"/>
                             <constraint firstItem="bI9-Re-VzZ" firstAttribute="top" secondItem="Djm-0q-3nk" secondAttribute="bottom" id="wTp-i3-SUZ"/>
                         </constraints>
@@ -600,8 +621,8 @@
         <namedColor name="interviewBlur">
             <color red="0.6470000147819519" green="0.88999998569488525" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="profileBlur">
-            <color red="1" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="subGray1">
+            <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="subGray2">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
