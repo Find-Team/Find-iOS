@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FoundVC: UIViewController {
+class FoundVC1: UIViewController {
 
     @IBOutlet weak var foundProfileCardCV: UICollectionView!
     
@@ -31,7 +31,7 @@ class FoundVC: UIViewController {
 
 }
 
-extension FoundVC: UICollectionViewDataSource {
+extension FoundVC1: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return profileList.count
     }
@@ -49,11 +49,11 @@ extension FoundVC: UICollectionViewDataSource {
     }
 }
 
-extension FoundVC: UICollectionViewDelegate {
+extension FoundVC1: UICollectionViewDelegate {
     
 }
 
-extension FoundVC: UICollectionViewDelegateFlowLayout {
+extension FoundVC1: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width-30
         return CGSize(width: width, height: width*300/345)

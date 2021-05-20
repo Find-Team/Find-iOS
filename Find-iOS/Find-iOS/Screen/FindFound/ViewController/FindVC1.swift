@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindVC: UIViewController {
+class FindVC1: UIViewController {
 
     @IBOutlet weak var similarView: UIView!
     @IBOutlet weak var differentView: UIView!

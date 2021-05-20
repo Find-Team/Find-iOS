@@ -28,7 +28,7 @@
 		54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9664C264904660028F1BF /* ProfileWritingVC.swift */; };
 		54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9664E264904780028F1BF /* MyProfileVC.swift */; };
 		54B96651264904800028F1BF /* InterviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B96650264904800028F1BF /* InterviewVC.swift */; };
-		54B966532649048A0028F1BF /* FIndFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B966522649048A0028F1BF /* FIndFoundVC.swift */; };
+		54B966532649048A0028F1BF /* FindFoundVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B966522649048A0028F1BF /* FindFoundVC1.swift */; };
 		54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966552649068D0028F1BF /* SpoqaHanSansNeo-Regular.ttf */; };
 		54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966562649068E0028F1BF /* SpoqaHanSansNeo-Medium.ttf */; };
 		54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966572649068F0028F1BF /* SpoqaHanSansNeo-Bold.ttf */; };
@@ -40,9 +40,10 @@
 		54B9666726490D510028F1BF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666626490D510028F1BF /* NetworkResult.swift */; };
 		54B9666926490D950028F1BF /* PlainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666826490D950028F1BF /* PlainData.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
+		926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314E52656306800E8E8FD /* FindFoundVC.swift */; };
 		92B10359264CFE6D003801C8 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */; };
-		92B1035C264D134E003801C8 /* FindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035B264D134E003801C8 /* FindVC.swift */; };
-		92B1035F264D1377003801C8 /* FoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035E264D1377003801C8 /* FoundVC.swift */; };
+		92B1035C264D134E003801C8 /* FindVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035B264D134E003801C8 /* FindVC1.swift */; };
+		92B1035F264D1377003801C8 /* FoundVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1035E264D1377003801C8 /* FoundVC1.swift */; };
 		92B10362264D1F51003801C8 /* FoundProfileCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */; };
 		92B10366264D2905003801C8 /* ProfileCardDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10365264D2905003801C8 /* ProfileCardDataModel.swift */; };
 		92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10390264E4C2A003801C8 /* BeforeTestView.swift */; };
@@ -74,7 +75,7 @@
 		54B9664C264904660028F1BF /* ProfileWritingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWritingVC.swift; sourceTree = "<group>"; };
 		54B9664E264904780028F1BF /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		54B96650264904800028F1BF /* InterviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewVC.swift; sourceTree = "<group>"; };
-		54B966522649048A0028F1BF /* FIndFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIndFoundVC.swift; sourceTree = "<group>"; };
+		54B966522649048A0028F1BF /* FindFoundVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC1.swift; sourceTree = "<group>"; };
 		54B966552649068D0028F1BF /* SpoqaHanSansNeo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.ttf"; sourceTree = "<group>"; };
 		54B966562649068E0028F1BF /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
 		54B966572649068F0028F1BF /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
@@ -85,9 +86,10 @@
 		54B96664264909F70028F1BF /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		54B9666626490D510028F1BF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		54B9666826490D950028F1BF /* PlainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainData.swift; sourceTree = "<group>"; };
+		926314E52656306800E8E8FD /* FindFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC.swift; sourceTree = "<group>"; };
 		92B10358264CFE6D003801C8 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
-		92B1035B264D134E003801C8 /* FindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC.swift; sourceTree = "<group>"; };
-		92B1035E264D1377003801C8 /* FoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundVC.swift; sourceTree = "<group>"; };
+		92B1035B264D134E003801C8 /* FindVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindVC1.swift; sourceTree = "<group>"; };
+		92B1035E264D1377003801C8 /* FoundVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundVC1.swift; sourceTree = "<group>"; };
 		92B10361264D1F50003801C8 /* FoundProfileCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundProfileCardCVC.swift; sourceTree = "<group>"; };
 		92B10365264D2905003801C8 /* ProfileCardDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardDataModel.swift; sourceTree = "<group>"; };
 		92B10390264E4C2A003801C8 /* BeforeTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTestView.swift; sourceTree = "<group>"; };
@@ -280,10 +282,11 @@
 		54B9662D264903420028F1BF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				54B966522649048A0028F1BF /* FIndFoundVC.swift */,
-				92B1035B264D134E003801C8 /* FindVC.swift */,
-				92B1035E264D1377003801C8 /* FoundVC.swift */,
+				54B966522649048A0028F1BF /* FindFoundVC1.swift */,
+				92B1035B264D134E003801C8 /* FindVC1.swift */,
+				92B1035E264D1377003801C8 /* FoundVC1.swift */,
 				92B10390264E4C2A003801C8 /* BeforeTestView.swift */,
+				926314E52656306800E8E8FD /* FindFoundVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -544,10 +547,11 @@
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				92B10359264CFE6D003801C8 /* CustomSegmentedControl.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
-				54B966532649048A0028F1BF /* FIndFoundVC.swift in Sources */,
+				54B966532649048A0028F1BF /* FindFoundVC1.swift in Sources */,
+				926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */,
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
-				92B1035C264D134E003801C8 /* FindVC.swift in Sources */,
+				92B1035C264D134E003801C8 /* FindVC1.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
@@ -557,7 +561,7 @@
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
-				92B1035F264D1377003801C8 /* FoundVC.swift in Sources */,
+				92B1035F264D1377003801C8 /* FoundVC1.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				92B10366264D2905003801C8 /* ProfileCardDataModel.swift in Sources */,
 				92B10362264D1F51003801C8 /* FoundProfileCardCVC.swift in Sources */,

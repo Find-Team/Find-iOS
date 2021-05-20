@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FIndFoundVC: UIViewController, UIGestureRecognizerDelegate {
+class FindFoundVC1: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var segmentView: CustomSegmentedControl! {
         didSet{
@@ -50,7 +50,7 @@ class FIndFoundVC: UIViewController, UIGestureRecognizerDelegate {
 
 }
 
-extension FIndFoundVC: UIScrollViewDelegate {
+extension FindFoundVC1: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         changingIndex = false
     }
@@ -74,7 +74,7 @@ extension FIndFoundVC: UIScrollViewDelegate {
     }
 }
 
-extension FIndFoundVC: CustomSegmentedControlDelegate {
+extension FindFoundVC1: CustomSegmentedControlDelegate {
     func change(to index: Int) {
         changingIndex = true
         let x = segmentView.selectedIndex * Int(externalSV.frame.width)

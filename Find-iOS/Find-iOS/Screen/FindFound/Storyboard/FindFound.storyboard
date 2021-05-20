@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQc-Nb-lez">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -27,7 +27,7 @@
         <!--FIndFoundVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="FIndFoundVC" id="Y6W-OH-hqX" customClass="FIndFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FIndFoundVC" id="Y6W-OH-hqX" customClass="FindFoundVC1" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,10 +179,120 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="123.39901477832512"/>
         </scene>
+        <!--FindFoundVC-->
+        <scene sceneID="1sU-u7-Onk">
+            <objects>
+                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CmP-Gj-BC3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djm-0q-3nk">
+                                <rect key="frame" x="0.0" y="44" width="375" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-3U-gD5">
+                                        <rect key="frame" x="16" y="12.999999999999998" width="78.333333333333329" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
+                                        <color key="textColor" name="subGray3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="KPr-yW-sZe"/>
+                                    <constraint firstItem="N0H-3U-gD5" firstAttribute="top" secondItem="Djm-0q-3nk" secondAttribute="top" constant="13" id="NpN-7B-T0B"/>
+                                    <constraint firstItem="N0H-3U-gD5" firstAttribute="leading" secondItem="Djm-0q-3nk" secondAttribute="leading" constant="16" id="b4h-lV-nj8"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bI9-Re-VzZ">
+                                <rect key="frame" x="0.0" y="90" width="375" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t13-gY-ViP">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="VPt-VI-fhO"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="findBtnClicked:" destination="gQc-Nb-lez" eventType="touchUpInside" id="eUm-8x-4sj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-IE-42a">
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="o1H-j3-ZQI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="foundBtnClicked:" destination="gQc-Nb-lez" eventType="touchUpInside" id="0tD-VD-R9o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="profileBlur"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h7D-jR-TH5">
+                                <rect key="frame" x="0.0" y="127" width="375" height="3"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izg-Vc-r3J">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="3"/>
+                                        <color key="backgroundColor" name="subGray2"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-Qe-e8C">
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="3"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="connectedBlur"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="Nee-ln-FY4"/>
+                                </constraints>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-VO-kLZ">
+                                <rect key="frame" x="0.0" y="130" width="375" height="599"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AsY-DM-pK8">
+                                    <size key="itemSize" width="375" height="599"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3I7-eN-ucT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Djm-0q-3nk" firstAttribute="leading" secondItem="3I7-eN-ucT" secondAttribute="leading" id="1G5-gY-umt"/>
+                            <constraint firstAttribute="trailing" secondItem="h7D-jR-TH5" secondAttribute="trailing" id="5lq-Yl-BjD"/>
+                            <constraint firstAttribute="trailing" secondItem="Djm-0q-3nk" secondAttribute="trailing" id="JJA-vV-dkR"/>
+                            <constraint firstItem="h7D-jR-TH5" firstAttribute="leading" secondItem="CmP-Gj-BC3" secondAttribute="leading" id="VEZ-xa-nhK"/>
+                            <constraint firstItem="h7D-jR-TH5" firstAttribute="top" secondItem="bI9-Re-VzZ" secondAttribute="bottom" id="XQk-cS-oC9"/>
+                            <constraint firstItem="3I7-eN-ucT" firstAttribute="trailing" secondItem="bI9-Re-VzZ" secondAttribute="trailing" id="Zkq-UJ-D8X"/>
+                            <constraint firstItem="bI9-Re-VzZ" firstAttribute="leading" secondItem="3I7-eN-ucT" secondAttribute="leading" id="ndl-x3-g5N"/>
+                            <constraint firstItem="Djm-0q-3nk" firstAttribute="top" secondItem="3I7-eN-ucT" secondAttribute="top" id="u4b-tY-GUw"/>
+                            <constraint firstItem="bI9-Re-VzZ" firstAttribute="top" secondItem="Djm-0q-3nk" secondAttribute="bottom" id="wTp-i3-SUZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myCollectionView" destination="QwU-VO-kLZ" id="QLn-6w-dKn"/>
+                        <outlet property="segueBtnStackView" destination="bI9-Re-VzZ" id="LqN-Mu-91N"/>
+                        <outlet property="segueFindBtn" destination="t13-gY-ViP" id="E9r-uY-acw"/>
+                        <outlet property="segueFoundBtn" destination="viQ-IE-42a" id="YJe-yI-gRy"/>
+                        <outlet property="segueIndicatorStackView" destination="h7D-jR-TH5" id="ayR-c1-gIg"/>
+                        <outlet property="topView" destination="Djm-0q-3nk" id="Pzf-Lb-wmb"/>
+                        <outletCollection property="segueIndicatorView" destination="izg-Vc-r3J" collectionClass="NSMutableArray" id="sLl-Kb-xyE"/>
+                        <outletCollection property="segueIndicatorView" destination="e0p-Qe-e8C" collectionClass="NSMutableArray" id="pLX-jo-ySB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6o-OE-OjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.8" y="469.95073891625617"/>
+        </scene>
         <!--FindVC-->
         <scene sceneID="Hur-uv-Eqo">
             <objects>
-                <viewController title="FindVC" id="qVe-ON-Ivg" customClass="FindVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FindVC" id="qVe-ON-Ivg" customClass="FindVC1" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dwE-Gy-YDS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="648"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,7 +467,7 @@
         <!--FoundVC-->
         <scene sceneID="ONz-6p-bOk">
             <objects>
-                <viewController title="FoundVC" id="36P-rD-GI7" customClass="FoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FoundVC" id="36P-rD-GI7" customClass="FoundVC1" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEP-P6-1h4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="648"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,6 +588,9 @@
     <resources>
         <image name="btnFoundStarMint" width="40" height="40"/>
         <image name="btnFoundStarMintLine" width="40" height="40"/>
+        <namedColor name="connectedBlur">
+            <color red="0.76499998569488525" green="0.6940000057220459" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="find_DarkPurple">
             <color red="0.49000000953674316" green="0.37299999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -486,6 +599,9 @@
         </namedColor>
         <namedColor name="interviewBlur">
             <color red="0.6470000147819519" green="0.88999998569488525" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="profileBlur">
+            <color red="1" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="subGray2">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -504,6 +620,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
