@@ -363,11 +363,11 @@
 			isa = PBXGroup;
 			children = (
 				546110A9265551740009B5CF /* ConnectedTVCell.swift */,
+				546110AA265551740009B5CF /* ConnectedTVCell.xib */,
 				546110AF265551AF0009B5CF /* FeelingTVCell.swift */,
 				546110B0265551AF0009B5CF /* FeelingTVCell.xib */,
 				546110B7265556470009B5CF /* FeelingCVCell.swift */,
 				546110B8265556470009B5CF /* FeelingCVCell.xib */,
-				546110AA265551740009B5CF /* ConnectedTVCell.xib */,
 			);
 			path = Feeling;
 			sourceTree = "<group>";

@@ -8,10 +8,15 @@
 import UIKit
 
 class DibsTVCell: UITableViewCell {
-
+    static let identifier = "DibsTVCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "DibsTVCell", bundle: nil)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
