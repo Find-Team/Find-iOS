@@ -37,10 +37,12 @@ class YourProfileVC: UIViewController {
     @IBOutlet weak var segueLifeBtn: UIButton!
     @IBOutlet var segueIndicator: [UIView]!
     @IBOutlet weak var segueInterviewCollectionView: UICollectionView!
+    @IBOutlet weak var floatingLikeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setButton()
         setSegueStyle()
         prosSelected()
         
@@ -49,6 +51,7 @@ class YourProfileVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - IBAction
 
     @IBAction func starBtnClicked(_ sender: Any) {
         if self.starBtn.isSelected == false {
@@ -82,11 +85,25 @@ class YourProfileVC: UIViewController {
         lifeSelected()
         segueInterviewCollectionView.reloadData()
     }
+    
+    @IBAction func floatingLikeBtnClicked(_ sender: Any) {
+        floatingLikeBtn.setTitle("호감 보냄", for: .normal)
+        floatingLikeBtn.isEnabled = false
+    }
 }
 
 extension YourProfileVC {
     func setView() {
         introductionContentView.makeRounded(cornerRadius: 10)
+    }
+    
+    func setButton() {
+        floatingLikeBtn.backgroundColor = .find_DarkPurple
+        floatingLikeBtn.makeRounded(cornerRadius: 10)
+        floatingLikeBtn.setTitle("호감 보내기", for: .normal)
+        floatingLikeBtn.setTitleColor(.white, for: .normal)
+        floatingLikeBtn.titleLabel?.font = .spoqaMedium(size: 16)
+    
     }
     
     func showToast(message : String, font: UIFont = UIFont.spoqaRegular(size: 14)) {

@@ -16,10 +16,15 @@ class SegueInterviewCVC: UICollectionViewCell {
     override func awakeFromNib() {
         interviewContentsTableView.dataSource = self
         interviewContentsTableView.delegate = self
+        interviewContentsTableView.separatorStyle = .none
     }
 }
 
 extension SegueInterviewCVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -55,5 +60,10 @@ extension SegueInterviewCVC: UITableViewDataSource {
 }
 
 extension SegueInterviewCVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 250
+        }
+        return 120
+    }
 }

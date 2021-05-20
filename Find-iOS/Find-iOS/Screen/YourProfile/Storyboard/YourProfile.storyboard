@@ -299,10 +299,10 @@
                                                     <constraint firstItem="mve-XA-wvZ" firstAttribute="centerY" secondItem="t5K-d5-aUa" secondAttribute="centerY" id="xYk-be-695"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kdy-of-mUc">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kdy-of-mUc">
                                                 <rect key="frame" x="0.0" y="40" width="375" height="947"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m22-Xv-hcp">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m22-Xv-hcp">
                                                     <size key="itemSize" width="375" height="945"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -310,13 +310,13 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SegueInterviewCVC" id="ltw-Ok-jbt" customClass="SegueInterviewCVC" customModule="Find_iOS" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="945"/>
+                                                        <rect key="frame" x="0.0" y="1" width="375" height="945"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rVd-EU-cca">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="945"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wuJ-hB-IkZ">
+                                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wuJ-hB-IkZ">
                                                                     <rect key="frame" x="0.0" y="28" width="375" height="917"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <prototypes>
@@ -353,7 +353,7 @@
                                                                                         <color key="textColor" name="find_DarkPurple"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="패션에 관심이 많아서 나중에 같이 쇼핑하러 가요. 여행가는 것도 좋아해요." translatesAutoresizingMaskIntoConstraints="NO" id="39I-eD-z9p">
+                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="패션에 관심이 많아서 나중에 같이 쇼핑하러 가요. 여행가는 것도 좋아해요." translatesAutoresizingMaskIntoConstraints="NO" id="39I-eD-z9p">
                                                                                         <rect key="frame" x="16" y="45" width="343" height="50"/>
                                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                         <constraints>
@@ -438,13 +438,26 @@
                                     <constraint firstItem="jKc-Nd-ccp" firstAttribute="top" secondItem="Biz-oE-MB4" secondAttribute="bottom" id="yWl-0z-Fcl"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRS-gC-5sm">
+                                <rect key="frame" x="16" y="724" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LBu-u8-qwc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="floatingLikeBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qgo-LO-PZD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OeC-m0-wBs" secondAttribute="bottom" id="CM7-qN-Czy"/>
                             <constraint firstItem="OeC-m0-wBs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="J5U-Q8-1SQ"/>
+                            <constraint firstItem="lRS-gC-5sm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="LEh-3j-PPq"/>
+                            <constraint firstItem="lRS-gC-5sm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="680" id="UIW-jN-i6n"/>
                             <constraint firstItem="OeC-m0-wBs" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="cMT-D1-cCg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lRS-gC-5sm" secondAttribute="trailing" constant="16" id="s8O-tT-msM"/>
                             <constraint firstAttribute="trailing" secondItem="OeC-m0-wBs" secondAttribute="trailing" id="uaA-kl-mkV"/>
                         </constraints>
                     </view>
@@ -454,6 +467,7 @@
                         <outlet property="backBtn" destination="Sg8-Y0-ozz" id="X3m-AY-tFz"/>
                         <outlet property="criteriaLabel" destination="6H6-b3-i6I" id="9XD-gw-Tmu"/>
                         <outlet property="criteriaView" destination="jKc-Nd-ccp" id="nr4-iD-6So"/>
+                        <outlet property="floatingLikeBtn" destination="lRS-gC-5sm" id="S9D-J9-wc9"/>
                         <outlet property="fulllScrollView" destination="OeC-m0-wBs" id="kTC-qC-AlV"/>
                         <outlet property="imagePageControl" destination="K32-yX-AY1" id="HD6-sT-r8d"/>
                         <outlet property="imageScrollView" destination="XV9-TI-RON" id="t37-9d-ChN"/>
