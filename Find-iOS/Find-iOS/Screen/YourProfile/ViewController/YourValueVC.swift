@@ -63,10 +63,13 @@ extension YourValueVC: UICollectionViewDataSource {
 extension YourValueVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellWidth : CGFloat = collectionView.frame.width/4 - 6
+        let cellWidth : CGFloat = collectionView.frame.width
         let cellHeight : CGFloat = collectionView.frame.height
         
         return CGSize(width: cellWidth, height: cellHeight)
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
