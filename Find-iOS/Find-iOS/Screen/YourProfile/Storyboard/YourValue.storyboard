@@ -280,7 +280,6 @@
                                             <outlet property="dismissBtn" destination="wLQ-PQ-jkP" id="8lG-ic-KmJ"/>
                                             <outlet property="filterCountLabel" destination="Cdl-lX-SRQ" id="Nl1-cB-Sav"/>
                                             <outlet property="filterDescriptionLabel" destination="CJm-M9-xFz" id="yBn-Ta-Var"/>
-                                            <outlet property="filterQuestionLabel" destination="hrX-ly-dEq" id="h9t-lC-Q0f"/>
                                             <outlet property="filterTitleLabel" destination="oJu-C3-rgv" id="PLU-Cc-rDY"/>
                                             <outlet property="headerImageView" destination="MBl-Wa-veq" id="zk5-Lr-suA"/>
                                             <outlet property="headerSubTitleLabel" destination="OqZ-o8-Box" id="tCZ-dd-cuy"/>
@@ -289,16 +288,17 @@
                                             <outlet property="valueQnATitleLabel" destination="ctK-HZ-gRV" id="zBA-UD-CNT"/>
                                             <outletCollection property="filterQuestionView" destination="cFh-eT-cAm" collectionClass="NSMutableArray" id="2fo-nl-KKB"/>
                                             <outletCollection property="filterQuestionView" destination="h3Y-32-Z9J" collectionClass="NSMutableArray" id="L0z-PK-Sfc"/>
-                                            <outletCollection property="filterQuestionLabel" destination="P6h-jC-ml7" collectionClass="NSMutableArray" id="B41-nb-49O"/>
                                             <outletCollection property="filterQuestionView" destination="gKc-5E-fkh" collectionClass="NSMutableArray" id="AtY-W8-c20"/>
-                                            <outletCollection property="filterQuestionLabel" destination="iXh-Ki-LIq" collectionClass="NSMutableArray" id="pfN-WS-U5E"/>
                                             <outletCollection property="filterQuestionView" destination="zlw-hT-aXs" collectionClass="NSMutableArray" id="BdW-zY-8Hk"/>
-                                            <outletCollection property="filterQuestionLabel" destination="ity-eE-Egm" collectionClass="NSMutableArray" id="f2U-1h-P58"/>
                                             <outletCollection property="filterQuestionView" destination="pbg-yr-F4J" collectionClass="NSMutableArray" id="7PT-lv-DYT"/>
-                                            <outletCollection property="filterQuestionLabel" destination="5oY-K5-xfo" collectionClass="NSMutableArray" id="tHO-3g-amk"/>
+                                            <outletCollection property="filterQuestionLabel" destination="hrX-ly-dEq" collectionClass="NSMutableArray" id="nNy-sw-Xr6"/>
+                                            <outletCollection property="filterQuestionLabel" destination="P6h-jC-ml7" collectionClass="NSMutableArray" id="W2u-Z6-N9o"/>
+                                            <outletCollection property="filterQuestionLabel" destination="iXh-Ki-LIq" collectionClass="NSMutableArray" id="Lc4-0t-J4b"/>
+                                            <outletCollection property="filterQuestionLabel" destination="ity-eE-Egm" collectionClass="NSMutableArray" id="pjo-AV-zE7"/>
+                                            <outletCollection property="filterQuestionLabel" destination="5oY-K5-xfo" collectionClass="NSMutableArray" id="FCx-Dc-BBl"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Li5-yL-Qs9">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YourValueListCVC" id="Li5-yL-Qs9" customClass="YourValueListCVC" customModule="Find_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.5" y="591" width="413" height="391"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XyI-Nq-Oog">
@@ -463,12 +463,15 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CDo-m8-0cX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EpN-Zh-lZe"/>
+                            <constraint firstItem="CDo-m8-0cX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="EpN-Zh-lZe"/>
                             <constraint firstAttribute="trailing" secondItem="CDo-m8-0cX" secondAttribute="trailing" id="iFz-Iq-LMP"/>
                             <constraint firstItem="CDo-m8-0cX" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="jba-ZD-mQp"/>
                             <constraint firstAttribute="bottom" secondItem="CDo-m8-0cX" secondAttribute="bottom" id="oHQ-Ic-MCj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="yourValueCV" destination="CDo-m8-0cX" id="IEa-nC-RUj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

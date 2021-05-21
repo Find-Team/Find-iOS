@@ -9,4 +9,6 @@ import UIKit
 
 class YourValueListCVC: UICollectionViewCell {
     static let identifier = "YourValueListCVC"
+    
+    
 }
