@@ -17,10 +17,8 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     var basicInfoData : [BasicInfoData] = []
     var imageSelected: UIImage?
     
-    @IBOutlet weak var sendViewBottomMargin: NSLayoutConstraint!
+    @IBOutlet var scrollView: UIScrollView!
 
-
-    
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var profileWriting: UILabel!
     @IBOutlet var completeBtn: UIButton!
@@ -94,7 +92,6 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changePhoto"),object: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -102,7 +99,13 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
         setView()
         setAccountInfo()
         setBasicInfo()
-        initNotification()
+        
+        //스크롤뷰에서 view 누를 때 키보드 내리기
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyTapMethod))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
         
         profileImages = [ ProfileImages(images: [], isRep: true),
                           ProfileImages(images: [], isRep: false),
@@ -127,6 +130,10 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
 
 
 extension ProfileWritingVC {
+    @objc func MyTapMethod(sender: UITapGestureRecognizer) {
+            self.view.endEditing(true)
+        }
+    
     func setUPNoti(){
         NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
     }
@@ -341,41 +348,6 @@ extension ProfileWritingVC {
         basicInfoExplain.font = UIFont.spoqaRegular(size: 12)
         basicInfoExplain.textColor = UIColor.find_DarkPurple
     }
-    
-    
-    func initNotification() {
-        // 키보드 올라올 때
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        // 키보드 내려갈 때
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    // 키보드 올라오기
-    @objc func keyboardWillShow(noti: Notification) {
-        let notiInfo = noti.userInfo!
-        // 키보드 높이를 가져옴
-        let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-        let height = keyboardFrame.size.height - self.view.safeAreaInsets.bottom
-        sendViewBottomMargin.constant = height
-
-        // 애니메이션 효과를 키보드 애니메이션 시간과 동일하게
-        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
-        UIView.animate(withDuration: animationDuration) {
-            self.view.layoutIfNeeded()
-        }
-    }
-
-    // 키보드 내려가기
-    @objc func keyboardWillHide(noti: Notification) {
-        let notiInfo = noti.userInfo!
-        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
-        self.sendViewBottomMargin.constant = 0
-
-        // 애니메이션 효과를 키보드 애니메이션 시간과 동일하게
-        UIView.animate(withDuration: animationDuration) {
-            self.view.layoutIfNeeded()
-        }
-    }
  
 
 }
@@ -472,7 +444,6 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
             return 13
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == profileCV {

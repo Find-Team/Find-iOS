@@ -418,10 +418,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택하세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0l-rf-ecC">
-                                                                    <rect key="frame" x="166" y="36" width="60" height="16"/>
+                                                                    <rect key="frame" x="160.5" y="35.5" width="65.5" height="17.5"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="60" id="IKW-1u-Den"/>
-                                                                        <constraint firstAttribute="height" constant="16" id="Mtj-yX-Cw1"/>
+                                                                        <constraint firstAttribute="width" secondItem="F0l-rf-ecC" secondAttribute="height" multiplier="15:4" id="927-pq-5re"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -550,6 +549,7 @@
                         <outlet property="region" destination="G7M-2q-3s6" id="D6u-x5-rqY"/>
                         <outlet property="regionInfo" destination="qac-PD-k8p" id="NhK-Yo-aH9"/>
                         <outlet property="regionView" destination="Jsw-Kz-aFR" id="3Bb-xu-cwa"/>
+                        <outlet property="scrollView" destination="8EW-PJ-qt8" id="j6M-9s-NC2"/>
                         <outlet property="verifyBtn" destination="enK-4s-61g" id="ZWL-wl-gb4"/>
                         <outlet property="verifyInfoBtn" destination="niS-Wf-0on" id="SAD-xJ-RjC"/>
                     </connections>
