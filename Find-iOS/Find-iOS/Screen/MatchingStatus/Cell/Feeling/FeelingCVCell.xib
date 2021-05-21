@@ -98,6 +98,7 @@
             <size key="customSize" width="183" height="297"/>
             <connections>
                 <outlet property="acceptBtn" destination="fm7-YJ-fl5" id="bLT-sT-d0R"/>
+                <outlet property="feelingView" destination="388-h6-EPi" id="5ex-X8-KrY"/>
                 <outlet property="infoLabel" destination="hfh-XY-qCs" id="Lod-ek-yEN"/>
                 <outlet property="nameLabel" destination="ED9-So-FWO" id="Tmw-fY-kCh"/>
             </connections>

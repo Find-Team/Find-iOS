@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MatchingFooter" customModule="Find_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="528" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5p-qb-BUH">
+                    <rect key="frame" x="0.0" y="0.0" width="528" height="125"/>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                    <state key="normal" title="더보기">
+                        <color key="titleColor" name="subGray1"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                            <real key="value" value="-0.40000000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pZ-Wf-9Og">
+                    <rect key="frame" x="0.0" y="124.5" width="528" height="0.5"/>
+                    <color key="backgroundColor" name="subGray1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="gN8-3d-EZz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="D5p-qb-BUH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7xb-lF-3KO"/>
+                <constraint firstAttribute="trailing" secondItem="0pZ-Wf-9Og" secondAttribute="trailing" id="IS1-Cu-J01"/>
+                <constraint firstItem="D5p-qb-BUH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ibm-sD-G2Z"/>
+                <constraint firstAttribute="bottom" secondItem="D5p-qb-BUH" secondAttribute="bottom" id="PwG-Zc-Dbr"/>
+                <constraint firstAttribute="bottom" secondItem="0pZ-Wf-9Og" secondAttribute="bottom" id="gYi-94-CBX"/>
+                <constraint firstItem="0pZ-Wf-9Og" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nmB-UY-TGA"/>
+                <constraint firstAttribute="trailing" secondItem="D5p-qb-BUH" secondAttribute="trailing" id="onK-Oc-u8i"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="showMoreBtn" destination="D5p-qb-BUH" id="BYV-7z-2SG"/>
+            </connections>
+            <point key="canvasLocation" x="175.36231884057972" y="-171.76339285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="subGray1">
+            <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - 받은 호감, 보낸 호감 틀
 class FeelingTVCell: UITableViewCell {
     static let identifier = "FeelingTVCell"
     
@@ -19,21 +20,25 @@ class FeelingTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setStyle()
         feelingCV.register(FeelingCVCell.nib(), forCellWithReuseIdentifier: FeelingCVCell.identifier)
-        // Initialization code
     }
-
+    
     static func nib() -> UINib {
         return UINib(nibName: "FeelingTVCell", bundle: nil)
     }
     
+    private func setStyle() {
+        feelingCV.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+        self.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
 
+// MARK: - Protocols
 extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
@@ -59,7 +64,7 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     {
         return UIEdgeInsets(top: 17, left: 12, bottom: 29.5, right: 12)
     }
-
+    
     
     
 }

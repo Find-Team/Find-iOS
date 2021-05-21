@@ -70,7 +70,7 @@ extension MatchingStatusVC {
         segueBtns[1].setTitleColor(.subGray2, for: .normal)
     }
     
-    // MARK: - Remind Me Selected Segue
+    // MARK: - Remind Selected Segue
     func whatSelected(seg: MatchingCategory, idx: Int){
         if curCategory != seg {
             curCategory = seg
@@ -99,7 +99,7 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     
-    // Cell 크기
+    // MARK: - Cell 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }

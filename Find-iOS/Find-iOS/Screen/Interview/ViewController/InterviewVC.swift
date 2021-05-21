@@ -111,7 +111,7 @@ extension InterviewVC {
         segueBtns[3].setTitleColor(.subGray2, for: .normal)
     }
     
-    // MARK: - Remind Me Selected Segue
+    // MARK: - Remind Selected Segue
     func whatSelected(seg: InterviewCategory, idx: Int){
         if currentCategory != seg {
             currentCategory = seg

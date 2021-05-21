@@ -7,11 +7,11 @@
 
 import UIKit
 
+// MARK: - 매칭 현황 탭 Horizontal 컬렉션 뷰
 class MatchingStatusCVCell: UICollectionViewCell {
     static let identifier = "MatchingStatusCVCell"
     
     var curCategory: MatchingCategory?
-    //    var datasource: UITableViewDiffableDataSource<Section, Item>!
     
     @IBOutlet weak var innerTV: UITableView! {
         didSet {
@@ -21,6 +21,9 @@ class MatchingStatusCVCell: UICollectionViewCell {
             innerTV.register(ConnectedTVCell.nib(), forCellReuseIdentifier: ConnectedTVCell.identifier)
             innerTV.register(FeelingTVCell.nib(), forCellReuseIdentifier: FeelingTVCell.identifier)
             innerTV.register(DibsTVCell.nib(), forCellReuseIdentifier: DibsTVCell.identifier)
+            innerTV.register(MatchingHeader.nib(), forHeaderFooterViewReuseIdentifier: "MatchingHeader")
+            innerTV.register(MatchingFooter.nib(), forHeaderFooterViewReuseIdentifier: "MatchingFooter")
+            innerTV.separatorStyle = .none
         }
     }
     
@@ -60,70 +63,6 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch curCategory {
-        case .feelings:
-            if (section == 0) {
-                let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 59))
-                
-                let label = UILabel()
-                label.frame = CGRect.init(x: 16, y: 20, width: tableView.frame.width, height: headerView.frame.height-10)
-                label.text = "연결된 상대"
-                label.font = .spoqaLight(size: 18)
-                label.textColor = .subGray5
-                headerView.backgroundColor = .subGray6
-                headerView.addSubview(label)
-                
-                return headerView
-            }
-        case .dibs:
-            if (section == 0) {
-                let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 59))
-                
-                let label = UILabel()
-                label.frame = CGRect.init(x: 16, y: 20, width: headerView.frame.width-10, height: headerView.frame.height-10)
-                label.text = "연결된 사람"
-                label.font = .spoqaLight(size: 18)
-                label.textColor = .subGray5
-                headerView.addSubview(label)
-                
-                return headerView
-            } else if (section == 1) {
-                let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 59))
-                
-                let label = UILabel()
-                label.frame = CGRect.init(x: 16, y: 20, width: headerView.frame.width-10, height: headerView.frame.height-10)
-                label.text = "연결된 사람"
-                label.font = .spoqaLight(size: 18)
-                label.textColor = .subGray5
-                headerView.addSubview(label)
-                
-                return headerView
-            }
-        default:
-            return nil
-        }
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if curCategory == .feelings {
-            if (section == 0) {
-                let footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 60))
-                let showMoreBtn = UIButton()
-                showMoreBtn.frame = CGRect.init(x: 16, y: 20, width: tableView.frame.width, height: 60)
-                showMoreBtn.titleLabel?.text = "더보기"
-                showMoreBtn.titleLabel?.font = .spoqaRegular(size: 14)
-                showMoreBtn.titleLabel?.textColor = .subGray1
-                footerView.backgroundColor = .subGray6
-                footerView.addSubview(showMoreBtn)
-                
-                return footerView
-            }
-        }
-        return nil
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch curCategory {
         case .feelings:
@@ -144,18 +83,95 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch curCategory {
+        case .feelings:
+            if (section == 0) {
+                guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
+                header.headerLabel.text = "연결된 상대"
+                return header
+            } else {
+                return nil
+            }
+        case .dibs:
+            if (section == 0) {
+                guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
+                header.headerLabel.text = "나를 찜한 사람"
+                return header
+            } else if (section == 1) {
+                guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
+                header.headerLabel.text = "내가 찜한 사람"
+                return header
+            } else {
+                return nil
+            }
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch curCategory {
+        case .feelings:
+            if (section == 0 ) {
+                return 43
+            } else {
+                return 0
+            }
+        case .dibs:
+            return 43
+        default:
+            return 0
+        }
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        switch curCategory {
+        case .feelings:
+            if (section == 0) {
+                guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
+                return footer
+            } else {
+                return nil
+            }
+        case .dibs:
+            guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
+            return footer
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch curCategory {
+        case .feelings:
+            if (section == 0) {
+                return 60
+            } else {
+                return 0
+            }
+        case .dibs:
+            return 53
+        default:
+            return 0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch curCategory {
         case .feelings:
             if (indexPath.section == 0) {
                 guard let cntdCell = tableView.dequeueReusableCell(withIdentifier: "ConnectedTVCell", for: indexPath) as? ConnectedTVCell else { return UITableViewCell() }
+                cntdCell.selectionStyle = .none
                 return cntdCell
             } else {
                 guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
+                feelCell.selectionStyle = .none
                 return feelCell
             }
         case .dibs:
             guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
+            dibsCell.selectionStyle = .none
             return dibsCell
         default:
             UITableViewCell()
@@ -167,12 +183,12 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         switch curCategory {
         case .feelings:
             if (indexPath.section == 0) {
-                return 128
+                return 144
             } else if (indexPath.section == 1) || (indexPath.section == 2) {
                 return 333
             }
         case .dibs:
-            return 100
+            return 116
         default:
             return 0
         }
