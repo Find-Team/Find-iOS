@@ -17,66 +17,9 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     var basicInfoData : [BasicInfoData] = []
     var imageSelected: UIImage?
     
-    let toolbar = UIToolbar()
-    
-    var schoolPicker = UIPickerView() {
-        didSet{
-            schoolPicker.dataSource = self
-            schoolPicker.delegate = self
-        }
-    }
-    var mbtiPicker = UIPickerView() {
-        didSet{
-            mbtiPicker.dataSource = self
-            mbtiPicker.delegate = self
-        }
-    }
-    var heightPicker = UIPickerView() {
-        didSet{
-            heightPicker.dataSource = self
-            heightPicker.delegate = self
-        }
-    }
-    var bodyShapePicker = UIPickerView() {
-        didSet{
-            bodyShapePicker.dataSource = self
-            bodyShapePicker.delegate = self
-        }
-    }
-    var smokingPicker = UIPickerView() {
-        didSet{
-            smokingPicker.dataSource = self
-            smokingPicker.delegate = self
-        }
-    }
-    var religionPicker = UIPickerView() {
-        didSet{
-            religionPicker.dataSource = self
-            religionPicker.delegate = self
-        }
-    }
-    var marriagePicker = UIPickerView() {
-        didSet{
-            marriagePicker.dataSource = self
-            marriagePicker.delegate = self
-        }
-    }
-    var drinkingPicker = UIPickerView() {
-        didSet{
-            drinkingPicker.dataSource = self
-            drinkingPicker.delegate = self
-        }
-    }
-    
-    //피커에 들어가는 자료
-    let school = ["고등학교", "전문대", "대학교", "대학원", "석사", "박사", "기타"]
-    let mbti = ["ENTJ", "ENTP", "INTJ", "INTP", "ESTJ", "ESFJ", "ISTJ", "ISFJ", "ENFJ", "ENFP", "INFJ", "INFP", "ESTP", "ESFP", "ISTP", "ISFP"]
-    let height = ["145~190  (처음 켰을때 170에 커서 가있음)"]
-    let bodyShape = ["마른", "슬림", "보통", "근육질", "통통", "우람"]
-    let smoking = ["절대 안 핌", "사교적 흡연가", "자주 핌"]
-    let religion = ["종교없음", "개신교", "천주교", "불교", "원불교", "기타"]
-    let marriage = ["미혼", "재혼"]
-    let drinking = ["마시지 않음", "사교적 음주가", "어느정도 즐기는편", "술자리를 즐김"]
+    @IBOutlet weak var sendViewBottomMargin: NSLayoutConstraint!
+
+
     
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var profileWriting: UILabel!
@@ -159,12 +102,12 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
         setView()
         setAccountInfo()
         setBasicInfo()
+        initNotification()
         
         profileImages = [ ProfileImages(images: [], isRep: true),
                           ProfileImages(images: [], isRep: false),
                           ProfileImages(images: [], isRep: false)
         ]
-        
         
         basicInfoData = [ BasicInfoData(question: "직업", isEdit: false, answer: nil),
                           BasicInfoData(question: "직장", isEdit: false, answer: nil),
@@ -181,8 +124,9 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     
 }
 
+
+
 extension ProfileWritingVC {
-    
     func setUPNoti(){
         NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
     }
@@ -397,6 +341,43 @@ extension ProfileWritingVC {
         basicInfoExplain.font = UIFont.spoqaRegular(size: 12)
         basicInfoExplain.textColor = UIColor.find_DarkPurple
     }
+    
+    
+    func initNotification() {
+        // 키보드 올라올 때
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        // 키보드 내려갈 때
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    // 키보드 올라오기
+    @objc func keyboardWillShow(noti: Notification) {
+        let notiInfo = noti.userInfo!
+        // 키보드 높이를 가져옴
+        let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let height = keyboardFrame.size.height - self.view.safeAreaInsets.bottom
+        sendViewBottomMargin.constant = height
+
+        // 애니메이션 효과를 키보드 애니메이션 시간과 동일하게
+        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        UIView.animate(withDuration: animationDuration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    // 키보드 내려가기
+    @objc func keyboardWillHide(noti: Notification) {
+        let notiInfo = noti.userInfo!
+        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        self.sendViewBottomMargin.constant = 0
+
+        // 애니메이션 효과를 키보드 애니메이션 시간과 동일하게
+        UIView.animate(withDuration: animationDuration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+ 
+
 }
 
 
@@ -439,28 +420,30 @@ extension ProfileWritingVC: UICollectionViewDataSource {
             return cell
             
         } else {
-            //basicInfoCVCell
+            // basicInfoCVCell
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasicInfoCVCell.identifier, for: indexPath)
-                    as? BasicInfoCVCell else { return UICollectionViewCell()}
+                    as? BasicInfoCVCell else { return UICollectionViewCell() }
             
             cell.layer.cornerRadius = 10
             cell.layer.backgroundColor = UIColor.subGray6.cgColor
             cell.setStyle()
             cell.setCell(info: basicInfoData[indexPath.row])
             
-            
-            
-            
-            //cell.infoTextField.inputAccessoryView = toolbar
-            //cell.infoTextField.inputView = schoolPicker
+            if indexPath.row >= 2 {
+                cell.createPickerView(idx: indexPath.row)
+                cell.dismissPickerView()
+            }
             
             return cell
+            
         }
     }
 }
 
 
 extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
+    
+    
     // Cell 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == profileCV {
@@ -532,84 +515,17 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
 extension ProfileCVCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            
+            
             //사진 추가
+            
+            
             self.parentViewController?.dismiss(animated: true, completion: nil)
         }
     }
-}
-
-
-
-
-extension ProfileWritingVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == schoolPicker {
-            return school.count
-        }
-        else if pickerView == mbtiPicker {
-            return mbti.count
-        }
-        else if pickerView == heightPicker {
-            return height.count
-        }
-        else if pickerView == bodyShapePicker {
-            return bodyShape.count
-        }
-        else if pickerView == smokingPicker {
-            return smoking.count
-        }
-        else if pickerView == religionPicker {
-            return religion.count
-        }
-        else if pickerView == marriagePicker {
-            return marriage.count
-        }
-        else if pickerView == drinkingPicker {
-            return drinking.count
-        }
-        return 0
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == schoolPicker {
-            return school[row]
-        }
-        else if pickerView == mbtiPicker {
-            return mbti[row]
-        }
-        else if pickerView == heightPicker {
-            return height[row]
-        }
-        else if pickerView == bodyShapePicker {
-            return bodyShape[row]
-        }
-        else if pickerView == smokingPicker {
-            return smoking[row]
-        }
-        else if pickerView == religionPicker {
-            return religion[row]
-        }
-        else if pickerView == marriagePicker {
-            return marriage[row]
-        }
-        else if pickerView == drinkingPicker {
-            return drinking[row]
-        }
-        return ""
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // BasicInfoCVCell.i.text = fruits[row]
-    }
-
 }

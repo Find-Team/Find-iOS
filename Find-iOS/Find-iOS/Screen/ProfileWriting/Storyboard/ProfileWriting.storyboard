@@ -425,10 +425,6 @@
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits"/>
-                                                                    <connections>
-                                                                        <action selector="textFieldDidBeginEditing:" destination="sAA-Ad-uy8" eventType="editingDidBegin" id="55b-a4-YJd"/>
-                                                                        <action selector="textFieldDidEndEditing:" destination="sAA-Ad-uy8" eventType="editingDidEnd" id="Gpw-Ua-ynA"/>
-                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
