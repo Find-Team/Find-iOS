@@ -7,13 +7,17 @@
 
 import UIKit
 
-enum Category {
+//enum Category {
+//    case find, found
+//}
+
+enum FindFoundCategory {
     case find, found
 }
 
 class FindFoundVC: UIViewController {
     
-    var currentCategory: Category = .find
+    var currentCategory: FindFoundCategory = .find
     var checkFindCell: Int = 0
     var checkFoundCell: Int = 0
     

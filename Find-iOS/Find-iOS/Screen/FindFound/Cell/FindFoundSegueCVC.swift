@@ -10,7 +10,7 @@ import UIKit
 class FindFoundSegueCVC: UICollectionViewCell {
     static let identifier = "FindFoundSegueCVC"
     
-    var currentCategory = Category.find
+    var currentCategory = FindFoundCategory.find
     
     @IBOutlet weak var myContentView: UIView!
     @IBOutlet weak var myFindView: UIView!
