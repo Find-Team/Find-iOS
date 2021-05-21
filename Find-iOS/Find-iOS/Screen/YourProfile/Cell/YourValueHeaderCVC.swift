@@ -15,6 +15,8 @@ class YourValueHeaderCVC: UICollectionViewCell {
     var nickname: String = "다나"
     var sameValueCount: Int = 0
     
+    var currentSegue: ValueFilterAll = .same
+    
     //MARK: - IBOutlets
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var dismissBtn: UIButton!
@@ -85,6 +87,10 @@ class YourValueHeaderCVC: UICollectionViewCell {
         }
     }
     
+    @IBOutlet var sameQuestionBtn: UIButton!
+    @IBOutlet var differentQuestionBtn: UIButton!
+    @IBOutlet var segueIndicator: [UIView]!
+    
     //MARK: - Lifecycle Methods
     
     override class func awakeFromNib() {
@@ -133,5 +139,34 @@ extension YourValueHeaderCVC {
     
     //MARK: - Functions
     
+    func sameQuestionSelected() {
+        currentSegue = .same
+//        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
+        
+        segueIndicator[0].backgroundColor = .find_DarkPurple
+        segueIndicator[1].backgroundColor = .subGray1
+
+        
+        sameQuestionBtn.setTitle("같은 답변", for: .normal)
+        sameQuestionBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        sameQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        differentQuestionBtn.setTitleColor(.subGray2, for: .normal)
+    }
+    
+    func differentQuestionSelected() {
+        currentSegue = .different
+//        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
+        
+        segueIndicator[0].backgroundColor = .subGray1
+        segueIndicator[1].backgroundColor = .find_DarkPurple
+
+        
+        differentQuestionBtn.setTitle("다른 답변", for: .normal)
+        differentQuestionBtn.setTitleColor(.find_DarkPurple, for: .normal)
+        differentQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
+        
+        sameQuestionBtn.setTitleColor(.subGray2, for: .normal)
+    }
     
 }

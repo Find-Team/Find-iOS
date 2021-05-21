@@ -277,6 +277,7 @@
                                         <color key="backgroundColor" name="subGray1"/>
                                         <size key="customSize" width="414" height="591"/>
                                         <connections>
+                                            <outlet property="differentQuestionBtn" destination="r60-AH-s4S" id="k42-N4-r0T"/>
                                             <outlet property="dismissBtn" destination="wLQ-PQ-jkP" id="8lG-ic-KmJ"/>
                                             <outlet property="filterCountLabel" destination="Cdl-lX-SRQ" id="Nl1-cB-Sav"/>
                                             <outlet property="filterDescriptionLabel" destination="CJm-M9-xFz" id="yBn-Ta-Var"/>
@@ -284,6 +285,7 @@
                                             <outlet property="headerImageView" destination="MBl-Wa-veq" id="zk5-Lr-suA"/>
                                             <outlet property="headerSubTitleLabel" destination="OqZ-o8-Box" id="tCZ-dd-cuy"/>
                                             <outlet property="headerTitleLabel" destination="07M-wk-ue5" id="PJM-pe-AqT"/>
+                                            <outlet property="sameQuestionBtn" destination="FIq-j0-PKb" id="ZNn-di-huk"/>
                                             <outlet property="valueQnADescriptionLabel" destination="Aff-MZ-TQd" id="VTH-9d-D6O"/>
                                             <outlet property="valueQnATitleLabel" destination="ctK-HZ-gRV" id="zBA-UD-CNT"/>
                                             <outletCollection property="filterQuestionView" destination="cFh-eT-cAm" collectionClass="NSMutableArray" id="2fo-nl-KKB"/>
@@ -296,6 +298,8 @@
                                             <outletCollection property="filterQuestionLabel" destination="iXh-Ki-LIq" collectionClass="NSMutableArray" id="Lc4-0t-J4b"/>
                                             <outletCollection property="filterQuestionLabel" destination="ity-eE-Egm" collectionClass="NSMutableArray" id="pjo-AV-zE7"/>
                                             <outletCollection property="filterQuestionLabel" destination="5oY-K5-xfo" collectionClass="NSMutableArray" id="FCx-Dc-BBl"/>
+                                            <outletCollection property="segueIndicator" destination="ye3-cp-Vrh" collectionClass="NSMutableArray" id="XZR-eh-Dhv"/>
+                                            <outletCollection property="segueIndicator" destination="tuA-KS-F95" collectionClass="NSMutableArray" id="wg8-36-7fg"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YourValueListCVC" id="Li5-yL-Qs9" customClass="YourValueListCVC" customModule="Find_iOS" customModuleProvider="target">

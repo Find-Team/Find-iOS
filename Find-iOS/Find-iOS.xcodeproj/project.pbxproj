@@ -27,6 +27,7 @@
 		37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0BB26581A4700D810BE /* YourValueHeaderCVC.swift */; };
 		37F1E0BE26581AAD00D810BE /* YourValueListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0BD26581AAD00D810BE /* YourValueListCVC.swift */; };
 		37F1E0C2265828D900D810BE /* ValueFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0C1265828D900D810BE /* ValueFilter.swift */; };
+		37F1E0C4265834B300D810BE /* ValueFilterAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0C3265834B300D810BE /* ValueFilterAll.swift */; };
 		5412CC1A26526279003EDA6C /* InterviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412CC1926526279003EDA6C /* InterviewCVCell.swift */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
@@ -97,6 +98,7 @@
 		37F1E0BB26581A4700D810BE /* YourValueHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourValueHeaderCVC.swift; sourceTree = "<group>"; };
 		37F1E0BD26581AAD00D810BE /* YourValueListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourValueListCVC.swift; sourceTree = "<group>"; };
 		37F1E0C1265828D900D810BE /* ValueFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueFilter.swift; sourceTree = "<group>"; };
+		37F1E0C3265834B300D810BE /* ValueFilterAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueFilterAll.swift; sourceTree = "<group>"; };
 		5412CC1926526279003EDA6C /* InterviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewCVCell.swift; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				37F1E0C1265828D900D810BE /* ValueFilter.swift */,
+				37F1E0C3265834B300D810BE /* ValueFilterAll.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
+				37F1E0C4265834B300D810BE /* ValueFilterAll.swift in Sources */,
 				377C278826445D84003FF385 /* Questions.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
 				54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */,

@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum ValueFilterAll {
+    case same, different
+}
+var currentSegue: ValueFilterAll = .same
+
 class YourValueVC: UIViewController {
     
     //MARK: - custom variables
@@ -42,6 +47,12 @@ extension YourValueVC: UICollectionViewDataSource {
             
             cell.backgroundColor = .white
             cell.setValueList()
+            if currentSegue == .same {
+                cell.sameQuestionSelected()
+            } else {
+                cell.differentQuestionSelected()
+            }
+            
             
             return cell
         }
