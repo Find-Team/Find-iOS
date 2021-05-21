@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="90" width="414" height="1910"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfI-H9-P45">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1827"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6u-kq-Yfh">
                                                 <rect key="frame" x="16" y="42" width="41.5" height="20.5"/>
@@ -418,7 +418,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택하세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0l-rf-ecC">
-                                                                    <rect key="frame" x="162.5" y="35.5" width="63.5" height="17"/>
+                                                                    <rect key="frame" x="158.5" y="35" width="67.5" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="F0l-rf-ecC" secondAttribute="height" multiplier="15:4" id="927-pq-5re"/>
                                                                     </constraints>
@@ -449,7 +449,7 @@
                                             <constraint firstItem="RSe-VM-g5d" firstAttribute="top" secondItem="enK-4s-61g" secondAttribute="bottom" constant="36" id="1UV-kj-aRi"/>
                                             <constraint firstItem="3Ek-qF-7Lv" firstAttribute="top" secondItem="UHS-OJ-rbQ" secondAttribute="bottom" constant="12" id="1f9-CT-1cC"/>
                                             <constraint firstItem="6sh-33-f9Q" firstAttribute="top" secondItem="3Ek-qF-7Lv" secondAttribute="bottom" constant="16" id="2TY-GN-0rc"/>
-                                            <constraint firstAttribute="bottom" secondItem="YO9-oO-pzZ" secondAttribute="bottom" constant="50" id="5b5-hW-a9q"/>
+                                            <constraint firstAttribute="bottom" secondItem="YO9-oO-pzZ" secondAttribute="bottom" constant="210" id="5b5-hW-a9q"/>
                                             <constraint firstItem="s1D-jp-bnk" firstAttribute="leading" secondItem="IfI-H9-P45" secondAttribute="leading" constant="16" id="6YA-ds-RTt"/>
                                             <constraint firstAttribute="trailing" secondItem="3Ek-qF-7Lv" secondAttribute="trailing" id="7kU-YW-nd5"/>
                                             <constraint firstItem="Wbl-ry-8C8" firstAttribute="top" secondItem="RSe-VM-g5d" secondAttribute="bottom" constant="3" id="8Ih-v8-s1y"/>

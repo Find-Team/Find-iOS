@@ -168,13 +168,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		36693DB72656617500A27793 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		36E83A4E692BC8F7BD8CBEA7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,7 +351,6 @@
 		54B966252649029E0028F1BF /* ProfileWriting */ = {
 			isa = PBXGroup;
 			children = (
-				36693DB72656617500A27793 /* New Group */,
 				54B96636264903920028F1BF /* ViewController */,
 				54B96637264903960028F1BF /* Storyboard */,
 				361B6E502653B4FA00ACF88A /* ProfileImages.swift */,
