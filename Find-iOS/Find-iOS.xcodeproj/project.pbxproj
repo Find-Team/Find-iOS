@@ -22,6 +22,9 @@
 		377C278826445D84003FF385 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C278726445D84003FF385 /* Questions.swift */; };
 		378E3A0E26503E910023A326 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378E3A0D26503E910023A326 /* UIViewController+Extension.swift */; };
 		378E3A10265044190023A326 /* ValueListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378E3A0F265044190023A326 /* ValueListCVC.swift */; };
+		378E3A1426526ED40023A326 /* MatchingLottie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378E3A1326526ED40023A326 /* MatchingLottie.storyboard */; };
+		378E3A1626526EEC0023A326 /* MatchingLottieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378E3A1526526EEC0023A326 /* MatchingLottieVC.swift */; };
+		37A18C172653F29B00E3B67C /* 10649-gradient-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */; };
 		5412CC1A26526279003EDA6C /* InterviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412CC1926526279003EDA6C /* InterviewCVCell.swift */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
@@ -103,6 +106,9 @@
 		377C278726445D84003FF385 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		378E3A0D26503E910023A326 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		378E3A0F265044190023A326 /* ValueListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListCVC.swift; sourceTree = "<group>"; };
+		378E3A1326526ED40023A326 /* MatchingLottie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingLottie.storyboard; sourceTree = "<group>"; };
+		378E3A1526526EEC0023A326 /* MatchingLottieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingLottieVC.swift; sourceTree = "<group>"; };
+		37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10649-gradient-loading.json"; sourceTree = "<group>"; };
 		5412CC1926526279003EDA6C /* InterviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewCVCell.swift; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +251,14 @@
 				3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		37A18C152653F28300E3B67C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		542A1DE726442F8B00E69A4D = {
@@ -470,6 +484,7 @@
 			children = (
 				54B9662D264903420028F1BF /* ViewController */,
 				54B9662E264903470028F1BF /* Storyboard */,
+				37A18C152653F28300E3B67C /* Models */,
 			);
 			path = FindFound;
 			sourceTree = "<group>";
@@ -504,6 +519,7 @@
 			children = (
 				54B966522649048A0028F1BF /* FindFoundVC.swift */,
 				54E1BA21264A84AB0076C306 /* FindFoundNC.swift */,
+				378E3A1526526EEC0023A326 /* MatchingLottieVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -512,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				54B966402649042F0028F1BF /* FindFound.storyboard */,
+				378E3A1326526ED40023A326 /* MatchingLottie.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -689,8 +706,10 @@
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
 				548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */,
+				37A18C172653F29B00E3B67C /* 10649-gradient-loading.json in Resources */,
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
+				378E3A1426526ED40023A326 /* MatchingLottie.storyboard in Resources */,
 				36F148E4264AE030005A5C74 /* ProfileCollectionViewCell.xib in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
 				548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */,
@@ -779,6 +798,7 @@
 				377C277D26444750003FF385 /* ValueTestVC.swift in Sources */,
 				546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */,
 				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
+				378E3A1626526EEC0023A326 /* MatchingLottieVC.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */,
@@ -950,13 +970,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N8FDQCW52Q;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -970,13 +990,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N8FDQCW52Q;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
