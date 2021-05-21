@@ -2,18 +2,20 @@
 //  YourProfileVC.swift
 //  Find-iOS
 //
-//  Created by 이원석 on 2021/05/10.
-//
+
 
 import UIKit
 
-enum InterviewCategory {
+//enum InterviewCategory {
+//    case pros, love, taste, life
+//}
+enum ProfileCategory {
     case pros, love, taste, life
 }
 
 class YourProfileVC: UIViewController {
     
-    var currentCategory: InterviewCategory = .pros
+    var currentCategory: ProfileCategory = .pros
 
     @IBOutlet weak var fulllScrollView: UIScrollView!
     @IBOutlet weak var imageScrollView: UIScrollView!

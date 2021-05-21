@@ -9,8 +9,9 @@ import UIKit
 
 class SegueInterviewCVC: UICollectionViewCell {
     static let identifier = "SegueInterviewCVC"
-    var currentCategory = InterviewCategory.pros
     
+    var currentCategory = ProfileCategory.pros
+//
     @IBOutlet weak var interviewContentsTableView: UITableView!
     
     override func awakeFromNib() {
