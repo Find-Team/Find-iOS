@@ -107,6 +107,14 @@ class YourValueHeaderCVC: UICollectionViewCell {
         self.parentViewController?.dismiss(animated: true)
     }
     
+    @IBAction func sameQuestionBtnDidTap(_ sender: Any) {
+        sameQuestionSelected()
+    }
+    
+    @IBAction func differentQuestionBtnDidTap(_ sender: Any) {
+        differentQuestionSelected()
+    }
+    
 }
 
 extension YourValueHeaderCVC {
@@ -151,6 +159,8 @@ extension YourValueHeaderCVC {
         sameQuestionBtn.setTitleColor(.find_DarkPurple, for: .normal)
         sameQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
+        differentQuestionBtn.setTitle("다른 답변", for: .normal)
+        differentQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
         differentQuestionBtn.setTitleColor(.subGray2, for: .normal)
     }
     
@@ -166,6 +176,8 @@ extension YourValueHeaderCVC {
         differentQuestionBtn.setTitleColor(.find_DarkPurple, for: .normal)
         differentQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
+        sameQuestionBtn.setTitle("같은 답변", for: .normal)
+        sameQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
         sameQuestionBtn.setTitleColor(.subGray2, for: .normal)
     }
     
