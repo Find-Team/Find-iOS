@@ -16,9 +16,10 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     let picker = UIImagePickerController()
     var basicInfoData : [BasicInfoData] = []
     var imageSelected: UIImage?
+    var currentIndexPath: Int?
     
     @IBOutlet var scrollView: UIScrollView!
-
+    
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var profileWriting: UILabel!
     @IBOutlet var completeBtn: UIButton!
@@ -75,9 +76,7 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
             basicInfoCV.delegate = self
             basicInfoCV.dataSource = self
         }
-        
     }
-    
     
     // MARK:- IBAction
     
@@ -127,12 +126,10 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     
 }
 
-
-
 extension ProfileWritingVC {
     @objc func MyTapMethod(sender: UITapGestureRecognizer) {
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
     
     func setUPNoti(){
         NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
@@ -217,7 +214,6 @@ extension ProfileWritingVC {
         }
     }
     
-    
     func setHeader() {
         profileWriting.text = "프로필 작성"
         profileWriting.font = UIFont.spoqaMedium(size: 18)
@@ -226,7 +222,6 @@ extension ProfileWritingVC {
         completeBtn.setTitle("완료", for: .normal)
         completeBtn.titleLabel?.font = UIFont.spoqaRegular(size: 18)
         completeBtn.setTitleColor(UIColor.black, for: .normal)
-        
     }
     
     func setView() {
@@ -348,19 +343,19 @@ extension ProfileWritingVC {
         basicInfoExplain.font = UIFont.spoqaRegular(size: 12)
         basicInfoExplain.textColor = UIColor.find_DarkPurple
     }
- 
-
+    
+    
 }
 
 
 extension ProfileWritingVC: UICollectionViewDataSource {
     //셀 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //프로필 사진일 때
+        //profileCVCell
         if collectionView == profileCV {
             return 3
         } else {
-            //밑에 웅앵
+            //basicInfoCVCell
             return 10
         }
     }
@@ -387,12 +382,12 @@ extension ProfileWritingVC: UICollectionViewDataSource {
             } else {
                 //profileImages가 없는 경우
                 cell.profileImg.isHidden = true
-                //editBtn.isHidden = true //수정버튼 비활성화
+                editBtn.isHidden = true //수정버튼 비활성화
             }
             return cell
             
         } else {
-            // basicInfoCVCell
+            //basicInfoCVCell
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasicInfoCVCell.identifier, for: indexPath)
                     as? BasicInfoCVCell else { return UICollectionViewCell() }
             
@@ -401,27 +396,27 @@ extension ProfileWritingVC: UICollectionViewDataSource {
             cell.setStyle()
             cell.setCell(info: basicInfoData[indexPath.row])
             
+            //indexPath.row 2 이상이면 pickerView
             if indexPath.row >= 2 {
                 cell.createPickerView(idx: indexPath.row)
                 cell.dismissPickerView()
             }
             
             return cell
-            
         }
     }
 }
 
 
 extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
-    
-    
     // Cell 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == profileCV {
+            //profileCVCell
             return CGSize(width: 70, height: 70)
         }
         else {
+            //basicInfoCVCell
             return CGSize(width: (self.basicInfoCV.frame.width - 13)/2, height: 50)
             
         }
@@ -430,8 +425,10 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     //위아래 라인 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == profileCV {
+            //profileCVCell
             return 0
         } else {
+            //basicInfoCVCell
             return 12
         }
     }
@@ -439,14 +436,17 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     //옆 라인 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == profileCV {
+            //profileCVCell
             return 4
         } else {
+            //basicInfoCVCell
             return 13
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == profileCV {
+            currentIndexPath = indexPath.row
             //사진이 있는 경우
             if profileImages[indexPath.row].images != [] {
                 
@@ -458,7 +458,7 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
                     if receivedInt! != 0 {
                         receivedInt! -= 1
                     }
-                    profileCV.reloadSections(IndexSet(1...2))
+                    profileCV.reloadData()
                 }
                 
                 let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -486,17 +486,25 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ProfileCVCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ProfileWritingVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            imageSelected = image
+            if let indexPath = currentIndexPath {
+                profileImages[indexPath].images[0] = imageSelected!
+            }
             
-            
-            //사진 추가
-            
-            
-            self.parentViewController?.dismiss(animated: true, completion: nil)
         }
+        
+        dismiss(animated: true, completion: nil)
+
+        
+        self.parent?.dismiss(animated: true, completion: nil)
     }
+}
+
+extension ProfileWritingVC {
+    
 }

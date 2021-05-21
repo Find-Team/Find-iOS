@@ -116,7 +116,7 @@
                                                                         <constraint firstAttribute="width" constant="1" id="UpQ-Il-2eT"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUE-ZV-Mvx">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUE-ZV-Mvx">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
@@ -418,7 +418,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택하세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0l-rf-ecC">
-                                                                    <rect key="frame" x="160.5" y="35.5" width="65.5" height="17.5"/>
+                                                                    <rect key="frame" x="162.5" y="35.5" width="63.5" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="F0l-rf-ecC" secondAttribute="height" multiplier="15:4" id="927-pq-5re"/>
                                                                     </constraints>
@@ -573,7 +573,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ks0-Gd-SJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153.62318840579712" y="39.508928571428569"/>
+            <point key="canvasLocation" x="164" y="-64"/>
         </scene>
     </scenes>
     <resources>

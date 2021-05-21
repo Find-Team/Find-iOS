@@ -13,4 +13,7 @@ class ProfileCVCell: UICollectionViewCell {
     
     @IBOutlet var profileImg: UIImageView!
     @IBOutlet var plusView: [UIView]!
+
+    
 }
+
