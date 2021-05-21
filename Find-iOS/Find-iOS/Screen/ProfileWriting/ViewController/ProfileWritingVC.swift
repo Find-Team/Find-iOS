@@ -88,7 +88,30 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     }
     
     @IBAction func editBtnTapped(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changePhoto"),object: nil)
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changePhoto"),object: nil)
+        
+        let alert =  UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)
+        let repSet = UIAlertAction(title: "대표사진 설정", style: .default) { [self] (action) in setRep()}
+        let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [self] (action) in openPhotoLibrary()}
+        let deletePhoto =  UIAlertAction(title: "삭제", style: .default) { [self] (action) in
+            if let indexPath = currentIndexPath {
+                profileImages[indexPath].images.remove(at: receivedInt!)
+            }
+        
+            if receivedInt! != 0 {
+                receivedInt! -= 1
+            }
+            profileCV.reloadData()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(repSet)
+        alert.addAction(deletePhoto)
+        alert.addAction(cancel)
+        
+        self.parent?.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -98,6 +121,8 @@ class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
         setView()
         setAccountInfo()
         setBasicInfo()
+        
+        picker.delegate = self
         
         //스크롤뷰에서 view 누를 때 키보드 내리기
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyTapMethod))
@@ -131,9 +156,9 @@ extension ProfileWritingVC {
         self.view.endEditing(true)
     }
     
-    func setUPNoti(){
-        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
-    }
+//    func setUPNoti(){
+//        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"changePhoto"), object: nil)
+//    }
     
     // MARK: - Open Photo Library
     func openPhotoLibrary() {
@@ -204,13 +229,17 @@ extension ProfileWritingVC {
         }
     }
     
+    func setRep() {
+        print("나는 대표다")
+    }
+    
     // NotificationCenter를 이용해 데이터 전달 받기(receivedInt)
     @objc func dataReceived(notification : NSNotification)
     {
         let receivedData = notification.object as? Int
         if receivedData != receivedInt {
             receivedInt = receivedData
-            profileCV.reloadSections(IndexSet(2...2))
+            profileCV.reloadData()
         }
     }
     
@@ -376,6 +405,7 @@ extension ProfileWritingVC: UICollectionViewDataSource {
             
             if profileImages[indexPath.row].images != [] {
                 //이미지 있는 경우
+                cell.profileImg.isHidden = false
                 cell.profileImg.image = profileImages[indexPath.row].images[0]
                 cell.receivedInt = receivedInt
                 editBtn.isHidden = false //사진이 있으면 수정버튼 활성화
@@ -449,25 +479,9 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
             currentIndexPath = indexPath.row
             //사진이 있는 경우
             if profileImages[indexPath.row].images != [] {
-                
-                let alert =  UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)
-                let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [self] (action) in openPhotoLibrary()}
-                let deletePhoto =  UIAlertAction(title: "삭제", style: .default) { [self] (action) in
-                    profileImages[indexPath.row].images.remove(at: receivedInt!)
-                    
-                    if receivedInt! != 0 {
-                        receivedInt! -= 1
-                    }
-                    profileCV.reloadData()
-                }
-                
-                let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-                
-                alert.addAction(library)
-                alert.addAction(deletePhoto)
-                alert.addAction(cancel)
-                
-                self.parent?.present(alert, animated: true, completion: nil)
+                previewImageView.contentMode = .scaleAspectFill
+                previewImageView.image = profileImages[indexPath.row].images[0]
+                editBtn.isHidden = false
             }
             //사진이 없는 경우
             else {
@@ -493,18 +507,22 @@ extension ProfileWritingVC: UIImagePickerControllerDelegate, UINavigationControl
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             imageSelected = image
             if let indexPath = currentIndexPath {
-                profileImages[indexPath].images[0] = imageSelected!
+                if profileImages[indexPath].images == [] {
+                    profileImages[indexPath].images.append(imageSelected!)
+                } else {
+                    profileImages[indexPath].images[0] = imageSelected!
+                }
             }
             
         }
         
         dismiss(animated: true, completion: nil)
-
+        
+        previewImageView.contentMode = .scaleAspectFill
+        previewImageView.image = imageSelected
+        editBtn.isHidden = false
+        profileCV.reloadData()
         
         self.parent?.dismiss(animated: true, completion: nil)
     }
-}
-
-extension ProfileWritingVC {
-    
 }
