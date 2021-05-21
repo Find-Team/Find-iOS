@@ -53,9 +53,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLQ-PQ-jkP">
-                                                    <rect key="frame" x="352" y="49" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLQ-PQ-jkP">
+                                                    <rect key="frame" x="376" y="57" width="22" height="22"/>
+                                                    <state key="normal" image="icClose"/>
+                                                    <connections>
+                                                        <action selector="dismissBtnDidTap:" destination="RfS-c0-HBI" eventType="touchUpInside" id="ujF-EL-I4T"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-C3-rgv">
                                                     <rect key="frame" x="16" y="183" width="41.5" height="20.5"/>
@@ -474,6 +477,7 @@
     </scenes>
     <resources>
         <image name="bgGradientImg" width="375" height="160"/>
+        <image name="icClose" width="22" height="22"/>
         <namedColor name="subGray1">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

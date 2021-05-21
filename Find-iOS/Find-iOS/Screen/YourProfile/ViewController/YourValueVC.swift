@@ -14,9 +14,6 @@ class YourValueVC: UIViewController {
 //    var matchingType:
     //MARK: - IBOutlets
     
-    @IBOutlet var topBannerImageView: UIImageView!
-    @IBOutlet var typeDescriptionLabel: UILabel!
-    @IBOutlet var nameDescriptionLabel: UILabel!
     
     //MARK: - Lifecycle Methods
 
