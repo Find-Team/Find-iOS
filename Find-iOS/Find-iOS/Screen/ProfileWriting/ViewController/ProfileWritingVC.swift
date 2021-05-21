@@ -6,12 +6,77 @@
 //
 
 import UIKit
+import Photos
 
-class ProfileWritingVC: UIViewController {
-    static let identifier = "ProfileWritingVC"
+var profileImages: [ProfileImages] = [ProfileImages(images:[])] // 이미지
+
+class ProfileWritingVC: UIViewController, UITextFieldDelegate  {
     // MARK:- Variable Part
+    var receivedInt : Int? // 선택된 이미지의 인덱스 값 - preview View에서 사용하기 위함
+    let picker = UIImagePickerController()
+    var basicInfoData : [BasicInfoData] = []
+    var imageSelected: UIImage?
     
-    var numberOfCell: Int = 3
+    let toolbar = UIToolbar()
+    
+    var schoolPicker = UIPickerView() {
+        didSet{
+            schoolPicker.dataSource = self
+            schoolPicker.delegate = self
+        }
+    }
+    var mbtiPicker = UIPickerView() {
+        didSet{
+            mbtiPicker.dataSource = self
+            mbtiPicker.delegate = self
+        }
+    }
+    var heightPicker = UIPickerView() {
+        didSet{
+            heightPicker.dataSource = self
+            heightPicker.delegate = self
+        }
+    }
+    var bodyShapePicker = UIPickerView() {
+        didSet{
+            bodyShapePicker.dataSource = self
+            bodyShapePicker.delegate = self
+        }
+    }
+    var smokingPicker = UIPickerView() {
+        didSet{
+            smokingPicker.dataSource = self
+            smokingPicker.delegate = self
+        }
+    }
+    var religionPicker = UIPickerView() {
+        didSet{
+            religionPicker.dataSource = self
+            religionPicker.delegate = self
+        }
+    }
+    var marriagePicker = UIPickerView() {
+        didSet{
+            marriagePicker.dataSource = self
+            marriagePicker.delegate = self
+        }
+    }
+    var drinkingPicker = UIPickerView() {
+        didSet{
+            drinkingPicker.dataSource = self
+            drinkingPicker.delegate = self
+        }
+    }
+    
+    //피커에 들어가는 자료
+    let school = ["고등학교", "전문대", "대학교", "대학원", "석사", "박사", "기타"]
+    let mbti = ["ENTJ", "ENTP", "INTJ", "INTP", "ESTJ", "ESFJ", "ISTJ", "ISFJ", "ENFJ", "ENFP", "INFJ", "INFP", "ESTP", "ESFP", "ISTP", "ISFP"]
+    let height = ["145~190  (처음 켰을때 170에 커서 가있음)"]
+    let bodyShape = ["마른", "슬림", "보통", "근육질", "통통", "우람"]
+    let smoking = ["절대 안 핌", "사교적 흡연가", "자주 핌"]
+    let religion = ["종교없음", "개신교", "천주교", "불교", "원불교", "기타"]
+    let marriage = ["미혼", "재혼"]
+    let drinking = ["마시지 않음", "사교적 음주가", "어느정도 즐기는편", "술자리를 즐김"]
     
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var profileWriting: UILabel!
@@ -21,11 +86,17 @@ class ProfileWritingVC: UIViewController {
     @IBOutlet var pictureExplain: UILabel!
     @IBOutlet var pictureGuideBtn: UIButton!
     
-    @IBOutlet var profileCollectionView: UICollectionView!
-    @IBOutlet var imagePreview: UIImageView!
+    @IBOutlet weak var profileCV: UICollectionView! {
+        didSet {
+            profileCV.delegate = self
+            profileCV.dataSource = self
+        }
+    }
     
     @IBOutlet var previewView: UIView!
     @IBOutlet var previewLabel: UILabel!
+    @IBOutlet var previewImageView: UIImageView!
+    @IBOutlet var editBtn: UIButton!
     
     @IBOutlet var identityVerify: UILabel!
     @IBOutlet var verifyInfoBtn: UIButton!
@@ -48,7 +119,7 @@ class ProfileWritingVC: UIViewController {
     
     @IBOutlet var birthday: UILabel!
     @IBOutlet var birthdayInfo: UILabel!
-   
+    
     @IBOutlet var gender: UILabel!
     @IBOutlet var genderInfo: UILabel!
     
@@ -58,45 +129,13 @@ class ProfileWritingVC: UIViewController {
     @IBOutlet var basicInfo: UILabel!
     @IBOutlet var basicInfoExplain: UILabel!
     
-    @IBOutlet var jobBox: UIView!
-    @IBOutlet var job: UILabel!
-    @IBOutlet var jobTextField: UITextField!
-    
-    @IBOutlet var companyBox: UIView!
-    @IBOutlet var company: UILabel!
-    @IBOutlet var companyTextField: UITextField!
-    
-    @IBOutlet var educationBox: UIView!
-    @IBOutlet var education: UILabel!
-    @IBOutlet var educationTextField: UITextField!
-    
-    @IBOutlet var mbtiBox: UIView!
-    @IBOutlet var mbti: UILabel!
-    @IBOutlet var mbtiTextField: UITextField!
-    
-    @IBOutlet var heightBox: UIView!
-    @IBOutlet var height: UILabel!
-    @IBOutlet var heightTextField: UITextField!
-    
-    @IBOutlet var bodyShapeBox: UIView!
-    @IBOutlet var bodyShape: UILabel!
-    @IBOutlet var bodyShapeTextField: UITextField!
-    
-    @IBOutlet var smokingBox: UIView!
-    @IBOutlet var smoking: UILabel!
-    @IBOutlet var smokingTextField: UITextField!
-    
-    @IBOutlet var religionBox: UIView!
-    @IBOutlet var religion: UILabel!
-    @IBOutlet var religionTextField: UITextField!
-    
-    @IBOutlet var marriageBox: UIView!
-    @IBOutlet var marriage: UILabel!
-    @IBOutlet var marriageTextField: UITextField!
-    
-    @IBOutlet var drinkingBox: UIView!
-    @IBOutlet var drinking: UILabel!
-    @IBOutlet var drinkingTextField: UITextField!
+    @IBOutlet var basicInfoCV: UICollectionView!{
+        didSet {
+            basicInfoCV.delegate = self
+            basicInfoCV.dataSource = self
+        }
+        
+    }
     
     
     // MARK:- IBAction
@@ -108,6 +147,11 @@ class ProfileWritingVC: UIViewController {
         self.navigationController?.pushViewController(IntroductionVC, animated: true)
     }
     
+    @IBAction func editBtnTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changePhoto"),object: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -116,17 +160,113 @@ class ProfileWritingVC: UIViewController {
         setAccountInfo()
         setBasicInfo()
         
-        self.profileCollectionView.delegate = self
-        self.profileCollectionView.dataSource = self
+        profileImages = [ ProfileImages(images: [], isRep: true),
+                          ProfileImages(images: [], isRep: false),
+                          ProfileImages(images: [], isRep: false)
+        ]
         
-        let nibName = UINib(nibName: "ProfileCollectionViewCell", bundle: nil)
-        profileCollectionView.register(nibName, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
         
+        basicInfoData = [ BasicInfoData(question: "직업", isEdit: false, answer: nil),
+                          BasicInfoData(question: "직장", isEdit: false, answer: nil),
+                          BasicInfoData(question: "학력", isEdit: false, answer: nil),
+                          BasicInfoData(question: "MBTI", isEdit: false, answer: nil),
+                          BasicInfoData(question: "키", isEdit: false, answer: nil),
+                          BasicInfoData(question: "체형", isEdit: false, answer: nil),
+                          BasicInfoData(question: "흡연", isEdit: false, answer: nil),
+                          BasicInfoData(question: "종교", isEdit: false, answer: nil),
+                          BasicInfoData(question: "결혼", isEdit: false, answer: nil),
+                          BasicInfoData(question: "음주", isEdit: false, answer: nil)
+        ]
     }
     
 }
 
 extension ProfileWritingVC {
+    
+    func setUPNoti(){
+        NotificationCenter.default.addObserver(self, selector: #selector(dataReceived), name: NSNotification.Name(rawValue:"previewImageNoti"), object: nil)
+    }
+    
+    // MARK: - Open Photo Library
+    func openPhotoLibrary() {
+        /// 사진 접근 권한이 허용되었는지 검사
+        switch PHPhotoLibrary.authorizationStatus() {
+        /// 권한이 거부된 경우
+        case .denied:
+            print("denied")
+            /// 설정창에서 권한을 재설정 하게끔 유도한다
+            if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String {
+                let alert = UIAlertController(title: "설정", message: "\(appName)의 사진 접근 권한이\n허용되어 있지 않습니다.\n설정에서 변경 가능합니다.", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "취소", style: .default) { (action) in
+                    
+                }
+                let confirmAction = UIAlertAction(title: "설정", style: .default) { (action) in
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                }
+                
+                alert.addAction(cancelAction)
+                alert.addAction(confirmAction)
+                self.parent?.present(alert, animated: true, completion: nil)
+            }
+        /// restricted
+        case .restricted:
+            print("restricted")
+            break
+        /// 권한이 허용된 경우
+        case .authorized:
+            print("authorized")
+            picker.sourceType = .photoLibrary
+            picker.allowsEditing = true
+            
+            picker.modalPresentationStyle = .fullScreen
+            self.parent?.present(self.picker, animated: true, completion: nil)
+        /// 권한 허용을 묻기 전인 경우 (최초 1회)
+        case .notDetermined:
+            print("notDetermined")
+            PHPhotoLibrary.requestAuthorization({ state in
+                if state == .authorized {
+                    DispatchQueue.main.async {
+                        self.picker.sourceType = .photoLibrary
+                        self.picker.allowsEditing = true
+                        
+                        self.picker.modalPresentationStyle = .fullScreen
+                        self.parent?.present(self.picker, animated: true, completion: nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String {
+                            let alert = UIAlertController(title: "설정", message: "\(appName)의 사진 접근 권한이\n허용되어 있지 않습니다.\n설정에서 변경 가능합니다.", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: "취소", style: .default) { (action) in
+                                
+                            }
+                            let confirmAction = UIAlertAction(title: "설정", style: .default) { (action) in
+                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                            }
+                            
+                            alert.addAction(cancelAction)
+                            alert.addAction(confirmAction)
+                            self.parent?.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            })
+        default:
+            print("break")
+            break
+        }
+    }
+    
+    // NotificationCenter를 이용해 데이터 전달 받기(receivedInt)
+    @objc func dataReceived(notification : NSNotification)
+    {
+        let receivedData = notification.object as? Int
+        if receivedData != receivedInt {
+            receivedInt = receivedData
+            profileCV.reloadSections(IndexSet(2...2))
+        }
+    }
+    
+    
     func setHeader() {
         profileWriting.text = "프로필 작성"
         profileWriting.font = UIFont.spoqaMedium(size: 18)
@@ -157,14 +297,19 @@ extension ProfileWritingVC {
         pictureExplain.textColor = UIColor.find_DarkPurple
         
         previewView.makeRounded(cornerRadius: 10)
-        previewLabel.text = "프로필 사진 \n 미리보기"
-        previewLabel.font = UIFont.spoqaRegular(size: 12)
-        previewLabel.textColor = UIColor.find_DarkPurple
+        previewView.backgroundColor = .subGray6
+        previewLabel.textColor = .find_DarkPurple
+        previewLabel.font = .spoqaRegular(size: 12)
+        previewImageView.makeRounded(cornerRadius: 10)
+        editBtn.makeRounded(cornerRadius: 50)
+        editBtn.titleLabel?.font = UIFont.spoqaRegular(size: 12)
+        editBtn.setTitleColor(UIColor.subGray6, for: .normal)
+        editBtn.isHidden = true
         
         identityVerify.text = "본인 인증"
         identityVerify.font = UIFont.spoqaLight(size: 22)
         identityVerify.textColor = UIColor.subGray3
-       
+        
         verifyBtn.clipsToBounds = true
         verifyBtn.layer.cornerRadius = 10
         verifyBtn.layer.borderWidth = 1.0
@@ -207,7 +352,6 @@ extension ProfileWritingVC {
     func setInfoFont(info: UILabel) {
         info.font = UIFont.spoqaRegular(size: 13)
         info.textColor = UIColor.subGray5
-        
     }
     
     func setAccountInfo() {
@@ -252,84 +396,220 @@ extension ProfileWritingVC {
         basicInfoExplain.text = "여기에 쓰는 글은 마이 프로필에 노출됩니다."
         basicInfoExplain.font = UIFont.spoqaRegular(size: 12)
         basicInfoExplain.textColor = UIColor.find_DarkPurple
-        
-        setBoxRadius(box: jobBox)
-        job.text = "직업"
-        setTitleFont(title: job)
-        
-        setBoxRadius(box: companyBox)
-        company.text = "회사"
-        setTitleFont(title: company)
-        
-        setBoxRadius(box: educationBox)
-        education.text = "학력"
-        setTitleFont(title: education)
-        
-        setBoxRadius(box: mbtiBox)
-        mbti.text = "MBTI"
-        setTitleFont(title: mbti)
-        
-        setBoxRadius(box: heightBox)
-        height.text = "키"
-        setTitleFont(title: height)
-        
-        setBoxRadius(box: bodyShapeBox)
-        bodyShape.text = "체형"
-        setTitleFont(title: bodyShape)
-        
-        setBoxRadius(box: smokingBox)
-        smoking.text = "흡연여부"
-        setTitleFont(title: smoking)
-        
-        setBoxRadius(box: religionBox)
-        religion.text = "종교"
-        setTitleFont(title: religion)
-        
-        setBoxRadius(box: marriageBox)
-        marriage.text = "결혼여부"
-        setTitleFont(title: marriage)
-        
-        setBoxRadius(box: drinkingBox)
-        drinking.text = "주량"
-        setTitleFont(title: drinking)
     }
 }
 
+
 extension ProfileWritingVC: UICollectionViewDataSource {
-    
+    //셀 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.numberOfCell
+        //프로필 사진일 때
+        if collectionView == profileCV {
+            return 3
+        } else {
+            //밑에 웅앵
+            return 10
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as! ProfileCollectionViewCell
-        
-        return cell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == profileCV {
+            //profileCVCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCVCell.identifier, for: indexPath)
+                    as? ProfileCVCell else { return UICollectionViewCell()}
+            
+            //cell style
+            cell.layer.backgroundColor = UIColor(red: 153/255, green: 128/255, blue: 250/255, alpha: 0.2).cgColor
+            cell.layer.cornerRadius = 10
+            cell.layer.borderColor = UIColor.find_DarkPurple.cgColor
+            cell.layer.borderWidth = 1.0
+            
+            
+            if profileImages[indexPath.row].images != [] {
+                //이미지 있는 경우
+                cell.profileImg.image = profileImages[indexPath.row].images[0]
+                cell.receivedInt = receivedInt
+                editBtn.isHidden = false //사진이 있으면 수정버튼 활성화
+            } else {
+                //profileImages가 없는 경우
+                cell.profileImg.isHidden = true
+                //editBtn.isHidden = true //수정버튼 비활성화
+            }
+            return cell
+            
+        } else {
+            //basicInfoCVCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BasicInfoCVCell.identifier, for: indexPath)
+                    as? BasicInfoCVCell else { return UICollectionViewCell()}
+            
+            cell.layer.cornerRadius = 10
+            cell.layer.backgroundColor = UIColor.subGray6.cgColor
+            cell.setStyle()
+            cell.setCell(info: basicInfoData[indexPath.row])
+            
+            
+            
+            
+            //cell.infoTextField.inputAccessoryView = toolbar
+            //cell.infoTextField.inputView = schoolPicker
+            
+            return cell
+        }
     }
-    
-    //동적으로 셀의 갯수를 늘림. (언제? didSelectItem)
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        numberOfCell += 1
-        collectionView.reloadData()
-    }
-    
-    
 }
 
 
 extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
-                            UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 70, height: 70)
+    // Cell 크기
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == profileCV {
+            return CGSize(width: 70, height: 70)
+        }
+        else {
+            return CGSize(width: (self.basicInfoCV.frame.width - 13)/2, height: 50)
+            
+        }
     }
-
+    
+    //위아래 라인 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == profileCV {
+            return 0
+        } else {
+            return 12
+        }
+    }
+    
+    //옆 라인 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == profileCV {
+            return 4
+        } else {
+            return 13
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == profileCV {
+            //사진이 있는 경우
+            if profileImages[indexPath.row].images != [] {
+                
+                let alert =  UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)
+                let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [self] (action) in openPhotoLibrary()}
+                let deletePhoto =  UIAlertAction(title: "삭제", style: .default) { [self] (action) in
+                    profileImages[indexPath.row].images.remove(at: receivedInt!)
+                    
+                    if receivedInt! != 0 {
+                        receivedInt! -= 1
+                    }
+                    profileCV.reloadSections(IndexSet(1...2))
+                }
+                
+                let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+                
+                alert.addAction(library)
+                alert.addAction(deletePhoto)
+                alert.addAction(cancel)
+                
+                self.parent?.present(alert, animated: true, completion: nil)
+            }
+            //사진이 없는 경우
+            else {
+                receivedInt = nil
+                let alert =  UIAlertController(title: "프로필 사진 추가", message: nil, preferredStyle: .actionSheet)
+                let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { (action) in self.openPhotoLibrary()
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+                
+                alert.addAction(library)
+                alert.addAction(cancel)
+                self.parent?.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+    }
+}
+
+
+extension ProfileCVCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            //사진 추가
+            self.parentViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+
+
+
+extension ProfileWritingVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == schoolPicker {
+            return school.count
+        }
+        else if pickerView == mbtiPicker {
+            return mbti.count
+        }
+        else if pickerView == heightPicker {
+            return height.count
+        }
+        else if pickerView == bodyShapePicker {
+            return bodyShape.count
+        }
+        else if pickerView == smokingPicker {
+            return smoking.count
+        }
+        else if pickerView == religionPicker {
+            return religion.count
+        }
+        else if pickerView == marriagePicker {
+            return marriage.count
+        }
+        else if pickerView == drinkingPicker {
+            return drinking.count
+        }
         return 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == schoolPicker {
+            return school[row]
+        }
+        else if pickerView == mbtiPicker {
+            return mbti[row]
+        }
+        else if pickerView == heightPicker {
+            return height[row]
+        }
+        else if pickerView == bodyShapePicker {
+            return bodyShape[row]
+        }
+        else if pickerView == smokingPicker {
+            return smoking[row]
+        }
+        else if pickerView == religionPicker {
+            return religion[row]
+        }
+        else if pickerView == marriagePicker {
+            return marriage[row]
+        }
+        else if pickerView == drinkingPicker {
+            return drinking[row]
+        }
+        return ""
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // BasicInfoCVCell.i.text = fruits[row]
     }
+
+}

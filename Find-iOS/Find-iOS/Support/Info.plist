@@ -24,7 +24,7 @@
 	<string>사진을 추가하려면 권한 허용이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SpoqaHanSansNeo-Bold.ttf</string>
+		<string></string>
 		<string>SpoqaHanSansNeo-Light.ttf</string>
 		<string>SpoqaHanSansNeo-Medium.ttf</string>
 		<string>SpoqaHanSansNeo-Regular.ttf</string>
@@ -70,13 +70,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string></string>
-		<string>SpoqaHanSansNeo-Light.ttf</string>
-		<string>SpoqaHanSansNeo-Medium.ttf</string>
-		<string>SpoqaHanSansNeo-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
