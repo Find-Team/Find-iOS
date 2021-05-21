@@ -14,6 +14,8 @@ enum Category {
 class FindFoundVC: UIViewController {
     
     var currentCategory: Category = .find
+    var checkFindCell: Int = 0
+    var checkFoundCell: Int = 0
     
     // MARK: - IBOutlet
 
@@ -108,13 +110,28 @@ extension FindFoundVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
         cell.currentCategory = currentCategory
+        
         if cell.currentCategory == .find {
-            var findView = FindView(frame: cell.myContentView.frame)
-//            cell.addSubview(findView)
-            cell.myContentView.addSubview(findView)
+            let findView = FindView(frame: cell.myFindView.frame)
+            cell.myFindView.addSubview(findView)
+//            if checkFindCell == 0 {
+//                let findView = FindView(frame: cell.myFindView.frame)
+//                cell.myFindView.addSubview(findView)
+//                checkFindCell = 1
+//            }
+            cell.myFoundView.isHidden = true
+            cell.myFindView.isHidden = false
         }
         else {
-            
+            let foundView = FoundView(frame: cell.myFoundView.frame)
+            cell.myFoundView.addSubview(foundView)
+//            if checkFoundCell == 0 {
+//                let foundView = FoundView(frame: cell.myFoundView.frame)
+//                cell.myFoundView.addSubview(foundView)
+//                checkFoundCell = 1
+//            }
+            cell.myFindView.isHidden = true
+            cell.myFoundView.isHidden = false
         }
         return cell
     }

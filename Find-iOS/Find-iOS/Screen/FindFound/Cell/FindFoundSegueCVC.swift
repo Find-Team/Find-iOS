@@ -13,5 +13,7 @@ class FindFoundSegueCVC: UICollectionViewCell {
     var currentCategory = Category.find
     
     @IBOutlet weak var myContentView: UIView!
+    @IBOutlet weak var myFindView: UIView!
+    @IBOutlet weak var myFoundView: UIView!
     
 }
