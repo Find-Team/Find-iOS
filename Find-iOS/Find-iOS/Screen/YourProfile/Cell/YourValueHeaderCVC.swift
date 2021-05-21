@@ -61,7 +61,7 @@ class YourValueHeaderCVC: UICollectionViewCell {
     }
     @IBOutlet var filterCountLabel: UILabel! {
         didSet {
-            filterCountLabel.text = "가치관 \(sameValueCount) / 5"
+            filterCountLabel.text = "가치관  \(sameValueCount) / 5"
             filterCountLabel.textColor = .subGray2
             filterCountLabel.font = .spoqaRegular(size: 12)
             filterCountLabel.letterSpacing = -0.36
