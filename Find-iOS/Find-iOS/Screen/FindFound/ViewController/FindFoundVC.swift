@@ -115,8 +115,10 @@ extension FindFoundVC: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
         cell.currentCategory = currentCategory
         
+        let findView = FindView(frame: cell.myFindView.frame)
+        let foundView = FoundView(frame: cell.myFoundView.frame)
+        
         if cell.currentCategory == .find {
-            let findView = FindView(frame: cell.myFindView.frame)
             cell.myFindView.addSubview(findView)
 //            if checkFindCell == 0 {
 //                let findView = FindView(frame: cell.myFindView.frame)
@@ -125,9 +127,9 @@ extension FindFoundVC: UICollectionViewDataSource {
 //            }
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
+            foundView.removeFromSuperview()
         }
         else {
-            let foundView = FoundView(frame: cell.myFoundView.frame)
             cell.myFoundView.addSubview(foundView)
 //            if checkFoundCell == 0 {
 //                let foundView = FoundView(frame: cell.myFoundView.frame)
@@ -136,6 +138,7 @@ extension FindFoundVC: UICollectionViewDataSource {
 //            }
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
+            findView.removeFromSuperview()
         }
         return cell
     }

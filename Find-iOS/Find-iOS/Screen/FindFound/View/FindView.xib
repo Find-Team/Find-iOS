@@ -143,7 +143,6 @@
                     <constraints>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="bottom" secondItem="1bf-9G-7mb" secondAttribute="bottom" id="2WK-5t-NAa"/>
                         <constraint firstAttribute="trailing" secondItem="hSV-kA-xq6" secondAttribute="trailing" constant="20" id="3N3-n6-H2u"/>
-                        <constraint firstAttribute="bottom" secondItem="UWD-79-b4i" secondAttribute="bottom" constant="24" id="4rO-eq-eB5"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="top" secondItem="wWs-Fs-w0c" secondAttribute="top" constant="19" id="LF6-Ny-8AK"/>
                         <constraint firstItem="1bf-9G-7mb" firstAttribute="top" secondItem="5bp-1n-lVa" secondAttribute="bottom" constant="18" id="OlS-8e-GuB"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="SpG-Rj-VYc"/>
@@ -151,6 +150,7 @@
                         <constraint firstItem="UWD-79-b4i" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="a2h-Av-MSu"/>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="top" id="dl6-nV-HnC"/>
                         <constraint firstItem="1bf-9G-7mb" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="20" id="mbm-hd-7hk"/>
+                        <constraint firstItem="UWD-79-b4i" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="bottom" constant="29" id="qmv-59-r6I"/>
                     </constraints>
                 </view>
             </subviews>

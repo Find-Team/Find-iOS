@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQc-Nb-lez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dQD-7C-SVA">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -21,7 +21,7 @@
         <!--FindFoundVC-->
         <scene sceneID="1sU-u7-Onk">
             <objects>
-                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CmP-Gj-BC3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-3U-gD5">
-                                        <rect key="frame" x="16" y="12.999999999999998" width="75" height="23.333333333333329"/>
+                                        <rect key="frame" x="16" y="12.999999999999998" width="78.333333333333329" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
                                         <color key="textColor" name="subGray3"/>
                                         <nil key="highlightedColor"/>
@@ -156,6 +156,7 @@
                             <constraint firstItem="bI9-Re-VzZ" firstAttribute="top" secondItem="Djm-0q-3nk" secondAttribute="bottom" id="wTp-i3-SUZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hhf-dJ-Lqw"/>
                     <connections>
                         <outlet property="myCollectionView" destination="QwU-VO-kLZ" id="QLn-6w-dKn"/>
                         <outlet property="segueBtnStackView" destination="bI9-Re-VzZ" id="LqN-Mu-91N"/>
@@ -169,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6o-OE-OjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.8" y="469.95073891625617"/>
+            <point key="canvasLocation" x="2023" y="470"/>
         </scene>
         <!--Find FoundNC-->
         <scene sceneID="xaR-6m-sqx">
@@ -181,12 +182,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="aeY-Gh-hFs"/>
+                        <segue destination="gQc-Nb-lez" kind="relationship" relationship="rootViewController" id="Ss4-Sj-z4U"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8K-UP-gaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.637681159420293" y="99.776785714285708"/>
+            <point key="canvasLocation" x="1014" y="470"/>
         </scene>
     </scenes>
     <resources>
