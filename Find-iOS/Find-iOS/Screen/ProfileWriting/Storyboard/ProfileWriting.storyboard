@@ -120,9 +120,29 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irt-dJ-5e6">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="15"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwG-yE-buU">
+                                                                            <rect key="frame" x="-7.5" y="-3" width="42" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="DwG-yE-buU" firstAttribute="centerY" secondItem="irt-dJ-5e6" secondAttribute="centerY" id="0T7-3u-h9e"/>
+                                                                        <constraint firstAttribute="width" constant="27" id="AV8-7i-McU"/>
+                                                                        <constraint firstItem="DwG-yE-buU" firstAttribute="centerX" secondItem="irt-dJ-5e6" secondAttribute="centerX" id="Qoz-3a-dfy"/>
+                                                                        <constraint firstAttribute="height" constant="15" id="mKm-b0-XdO"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="2vn-In-jed" firstAttribute="centerX" secondItem="Iz5-hN-Pzb" secondAttribute="centerX" id="A22-OU-URT"/>
+                                                                <constraint firstItem="irt-dJ-5e6" firstAttribute="top" secondItem="Iz5-hN-Pzb" secondAttribute="top" id="SLJ-ok-7HR"/>
+                                                                <constraint firstItem="irt-dJ-5e6" firstAttribute="leading" secondItem="Iz5-hN-Pzb" secondAttribute="leading" id="TQW-A2-aEX"/>
                                                                 <constraint firstItem="vZy-SG-oSj" firstAttribute="centerY" secondItem="Iz5-hN-Pzb" secondAttribute="centerY" id="ovC-R6-Iy0"/>
                                                                 <constraint firstItem="2vn-In-jed" firstAttribute="centerY" secondItem="Iz5-hN-Pzb" secondAttribute="centerY" id="uxX-qc-3G7"/>
                                                                 <constraint firstItem="vZy-SG-oSj" firstAttribute="centerX" secondItem="Iz5-hN-Pzb" secondAttribute="centerX" id="vlj-5k-D75"/>
@@ -131,6 +151,8 @@
                                                         <size key="customSize" width="70" height="70"/>
                                                         <connections>
                                                             <outlet property="profileImg" destination="SUE-ZV-Mvx" id="CLr-h8-Ekn"/>
+                                                            <outlet property="repLabel" destination="DwG-yE-buU" id="xlw-tf-VUs"/>
+                                                            <outlet property="repView" destination="irt-dJ-5e6" id="l7Y-WD-3eh"/>
                                                             <outletCollection property="plusView" destination="vZy-SG-oSj" collectionClass="NSMutableArray" id="kkL-YE-dt4"/>
                                                             <outletCollection property="plusView" destination="2vn-In-jed" collectionClass="NSMutableArray" id="lYu-NO-RrF"/>
                                                         </connections>
@@ -418,7 +440,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="선택하세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0l-rf-ecC">
-                                                                    <rect key="frame" x="158.5" y="35" width="67.5" height="18"/>
+                                                                    <rect key="frame" x="162.5" y="35.5" width="63.5" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="F0l-rf-ecC" secondAttribute="height" multiplier="15:4" id="927-pq-5re"/>
                                                                     </constraints>
@@ -525,19 +547,19 @@
                         <outlet property="basicInfoExplain" destination="SFQ-c1-s2e" id="apT-BH-XiS"/>
                         <outlet property="birthday" destination="Z4U-HU-hlz" id="wj1-Up-hJw"/>
                         <outlet property="birthdayInfo" destination="4Yd-93-cMW" id="LKQ-2U-JdJ"/>
-                        <outlet property="birthdayView" destination="m1t-Nc-U0r" id="qlc-4q-gQX"/>
+                        <outlet property="birthdayView" destination="m1t-Nc-U0r" id="VZn-eA-k4i"/>
                         <outlet property="completeBtn" destination="HJf-A9-w6f" id="Adm-MQ-f8M"/>
                         <outlet property="editBtn" destination="UWh-Cg-3l1" id="dWB-Eh-f53"/>
                         <outlet property="gender" destination="kwe-61-Za4" id="8Ti-nJ-EHH"/>
                         <outlet property="genderInfo" destination="Nvf-Gj-s4A" id="c3w-ru-CoW"/>
-                        <outlet property="genderView" destination="Qzu-Qi-b6J" id="HU5-Yl-QqO"/>
+                        <outlet property="genderView" destination="Qzu-Qi-b6J" id="3Sm-ma-XPo"/>
                         <outlet property="goToInfoBtn" destination="eh7-u2-Tt7" id="ng8-ul-AiC"/>
                         <outlet property="identityVerify" destination="TUo-b6-5NJ" id="SAd-6O-2K5"/>
                         <outlet property="infoExplain" destination="Wbl-ry-8C8" id="um6-vg-sVH"/>
                         <outlet property="infoWriting" destination="RSe-VM-g5d" id="lrR-Z0-R1V"/>
                         <outlet property="nickname" destination="k8F-RR-iop" id="FPQ-9V-LJn"/>
                         <outlet property="nicknameInfo" destination="1s1-LM-OyZ" id="V1Q-fH-h2N"/>
-                        <outlet property="nicknameView" destination="4iI-s9-5OV" id="ZRW-4o-OZU"/>
+                        <outlet property="nicknameView" destination="4iI-s9-5OV" id="N2D-eD-4C2"/>
                         <outlet property="pictureExplain" destination="UHS-OJ-rbQ" id="AyC-Ty-ARk"/>
                         <outlet property="pictureGuideBtn" destination="Qfs-NW-Eti" id="OXY-8G-4Oe"/>
                         <outlet property="previewImageView" destination="wjd-pb-Kl7" id="h2C-ch-QtW"/>
@@ -548,7 +570,7 @@
                         <outlet property="profileWriting" destination="9Dh-sB-eKG" id="jqQ-vF-HZk"/>
                         <outlet property="region" destination="G7M-2q-3s6" id="D6u-x5-rqY"/>
                         <outlet property="regionInfo" destination="qac-PD-k8p" id="NhK-Yo-aH9"/>
-                        <outlet property="regionView" destination="Jsw-Kz-aFR" id="3Bb-xu-cwa"/>
+                        <outlet property="regionView" destination="Jsw-Kz-aFR" id="W6K-U5-qqE"/>
                         <outlet property="scrollView" destination="8EW-PJ-qt8" id="j6M-9s-NC2"/>
                         <outlet property="verifyBtn" destination="enK-4s-61g" id="ZWL-wl-gb4"/>
                         <outlet property="verifyInfoBtn" destination="niS-Wf-0on" id="SAD-xJ-RjC"/>
