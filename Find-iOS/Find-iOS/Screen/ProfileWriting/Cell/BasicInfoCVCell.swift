@@ -126,9 +126,7 @@ class BasicInfoCVCell: UICollectionViewCell, UITextFieldDelegate, UIPickerViewDa
     func createPickerView(idx: Int) {
         let pickerView = UIPickerView()
         pickerView.delegate = self
-        
         picker = PickerType(rawValue: idx)
-        
         infoTextField.inputView = pickerView
         infoTextField.tag = idx
     }
