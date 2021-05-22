@@ -18,8 +18,6 @@ enum FindFoundCategory {
 class FindFoundVC: UIViewController {
     
     var currentCategory: FindFoundCategory = .find
-    var checkFindCell: Int = 0
-    var checkFoundCell: Int = 0
     
     // MARK: - IBOutlet
 
@@ -120,22 +118,12 @@ extension FindFoundVC: UICollectionViewDataSource {
         
         if cell.currentCategory == .find {
             cell.myFindView.addSubview(findView)
-//            if checkFindCell == 0 {
-//                let findView = FindView(frame: cell.myFindView.frame)
-//                cell.myFindView.addSubview(findView)
-//                checkFindCell = 1
-//            }
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
             foundView.removeFromSuperview()
         }
         else {
             cell.myFoundView.addSubview(foundView)
-//            if checkFoundCell == 0 {
-//                let foundView = FoundView(frame: cell.myFoundView.frame)
-//                cell.myFoundView.addSubview(foundView)
-//                checkFoundCell = 1
-//            }
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
             findView.removeFromSuperview()
