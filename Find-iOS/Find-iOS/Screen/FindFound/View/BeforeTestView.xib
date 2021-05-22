@@ -31,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 가치관은?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gof-YL-6Rq">
-                    <rect key="frame" x="16.000000000000007" y="28" width="111.66666666666669" height="23"/>
+                    <rect key="frame" x="16.000000000000007" y="28" width="108.66666666666669" height="23"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="4F3-el-Vxk"/>
                     </constraints>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIW-xM-g25">
-                    <rect key="frame" x="76" y="94" width="223" height="44"/>
+                    <rect key="frame" x="81" y="94" width="213" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="UQM-0D-kGg"/>
                     </constraints>

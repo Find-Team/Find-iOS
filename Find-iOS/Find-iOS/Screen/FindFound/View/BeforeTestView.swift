@@ -30,8 +30,8 @@ class BeforeTestView: UIView {
             super.init(coder: aDecoder)
     }
     
+    // rootViewController
     func getCurrentViewController() -> UIViewController? {
-
        if let rootController = UIApplication.shared.keyWindow?.rootViewController {
            var currentController: UIViewController! = rootController
            while( currentController.presentedViewController != nil ) {
@@ -42,6 +42,7 @@ class BeforeTestView: UIView {
        return nil
    }
     
+    // parentViewController
     func getSuperViewController() -> UIViewController? {
         var viewController: UIViewController? = self.parentViewController
         return viewController
@@ -51,7 +52,6 @@ class BeforeTestView: UIView {
         let storyBoard = UIStoryboard(name: "ValueTest", bundle: nil)
         let dvc = storyBoard.instantiateViewController(identifier: "ValueTestVC")
         let currentController = self.getSuperViewController()
-        print(currentController)
         currentController?.navigationController?.pushViewController(dvc, animated: true)
     }
 }

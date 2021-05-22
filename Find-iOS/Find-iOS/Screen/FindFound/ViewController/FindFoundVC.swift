@@ -18,6 +18,7 @@ enum FindFoundCategory {
 class FindFoundVC: UIViewController {
     
     var currentCategory: FindFoundCategory = .find
+    var findCheckIndex: Int = 0
     
     // MARK: - IBOutlet
 
@@ -34,9 +35,15 @@ class FindFoundVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSegueStyle()
-        findSelected()
+        switch findCheckIndex {
+            case 0: findSelected()
+            case 1: foundSelected()
+            default: findSelected()
+        }
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        
+        print(findCheckIndex)
         // Do any additional setup after loading the view.
     }
 
