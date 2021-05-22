@@ -98,7 +98,6 @@ class ProfileWritingVC: UIViewController  {
     
     @IBAction func editBtnTapped(_ sender: Any) {
         // edit 버튼이 클릭되면
-        
         let alert =  UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)
         let repSet = UIAlertAction(title: "대표사진 설정", style: .default) { [self] (action) in setRep()}
         let library =  UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [self] (action) in openPhotoLibrary()}
@@ -110,7 +109,6 @@ class ProfileWritingVC: UIViewController  {
         }
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        
         alert.addAction(library)
         alert.addAction(repSet)
         alert.addAction(deletePhoto)
@@ -134,7 +132,7 @@ class ProfileWritingVC: UIViewController  {
         setAccountInfo()
         setBasicInfo()
         
-        picker.delegate = self //이미지피커 delegate
+        picker.delegate = self
         
         profileImages = [ ProfileImages(images: [], isRep: true),
                           ProfileImages(images: [], isRep: false),
@@ -162,9 +160,11 @@ extension ProfileWritingVC {
         profileWriting.text = "프로필 작성"
         profileWriting.font = UIFont.spoqaMedium(size: 18)
         profileWriting.textColor = UIColor.subGray3
+        profileWriting.letterSpacing = -0.54
         
         completeBtn.setTitle("완료", for: .normal)
         completeBtn.titleLabel?.font = UIFont.spoqaRegular(size: 18)
+        completeBtn.titleLabel?.letterSpacing = -0.54
         completeBtn.setTitleColor(UIColor.black, for: .normal)
     }
     
@@ -172,19 +172,20 @@ extension ProfileWritingVC {
         profilePicture.text = "프로필 사진"
         profilePicture.font = UIFont.spoqaLight(size: 22)
         profilePicture.textColor = UIColor.subGray3
+        profileWriting.letterSpacing = -1.1
         
         let text = "프로필 가이드"
         let titleString = NSMutableAttributedString(string: "프로필 가이드")
         let underLine = NSUnderlineStyle.thick.rawValue
         titleString.addAttribute(NSMutableAttributedString.Key.underlineStyle, value: underLine, range: NSRange(location: 0, length: text.count))
         pictureGuideBtn.setAttributedTitle(titleString, for: .normal)
-        
         pictureGuideBtn.titleLabel?.font = UIFont.spoqaRegular(size: 12)
         pictureGuideBtn.setTitleColor(UIColor.subGray3, for: .normal)
         
         pictureExplain.text = "프로필 사진은 최소 3장 이상 업로드 해주세요! (최대6장)"
         pictureExplain.font = UIFont.spoqaRegular(size: 12)
         pictureExplain.textColor = UIColor.find_DarkPurple
+        pictureExplain.letterSpacing = -0.36
         
         previewView.makeRounded(cornerRadius: 10)
         previewView.backgroundColor = .subGray6
@@ -201,6 +202,8 @@ extension ProfileWritingVC {
         identityVerify.text = "본인 인증"
         identityVerify.font = UIFont.spoqaLight(size: 22)
         identityVerify.textColor = UIColor.subGray3
+        identityVerify.letterSpacing = -1.1
+        
         
         verifyBtn.clipsToBounds = true
         verifyBtn.layer.cornerRadius = 10
@@ -210,6 +213,7 @@ extension ProfileWritingVC {
         
         verifyBtn.setTitle("인증 완료", for: .normal)
         verifyBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
+        verifyBtn.titleLabel?.letterSpacing = -0.42
         verifyBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
     }
     
@@ -217,10 +221,12 @@ extension ProfileWritingVC {
         infoWriting.text = "소개글"
         infoWriting.font = UIFont.spoqaLight(size: 22)
         infoWriting.textColor = UIColor.subGray3
+        infoWriting.letterSpacing = -1.1
         
         infoExplain.text = "당신을 소개해주세요! (최소 30자)"
         infoExplain.font = UIFont.spoqaRegular(size: 12)
         infoExplain.textColor = UIColor.find_DarkPurple
+        infoExplain.letterSpacing = -0.36
         
         goToInfoBtn.clipsToBounds = true
         goToInfoBtn.layer.cornerRadius = 10
@@ -230,6 +236,7 @@ extension ProfileWritingVC {
         
         goToInfoBtn.setTitle("소개글 작성하러 가기", for: .normal)
         goToInfoBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
+        goToInfoBtn.titleLabel?.letterSpacing = -0.42
         goToInfoBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
     }
     
@@ -246,10 +253,12 @@ extension ProfileWritingVC {
         accountWriting.text = "계정 정보"
         accountWriting.font = UIFont.spoqaLight(size: 22)
         accountWriting.textColor = UIColor.subGray3
+        accountWriting.letterSpacing = -1.1
         
         accountExplain.text = "가입시 기재된 정보로 변경이 불가합니다."
         accountExplain.font = UIFont.spoqaRegular(size: 12)
         accountExplain.textColor = UIColor.find_DarkPurple
+        accountExplain.letterSpacing = -0.36
         
         setBoxStyle(box: nicknameView, title: nickname, info: nicknameInfo)
         nickname.text = "닉네임"
@@ -272,10 +281,12 @@ extension ProfileWritingVC {
         basicInfo.text = "기본 정보"
         basicInfo.font = UIFont.spoqaLight(size: 22)
         basicInfo.textColor = UIColor.subGray3
+        basicInfo.letterSpacing = -1.1
         
         basicInfoExplain.text = "여기에 쓰는 글은 마이 프로필에 노출됩니다."
         basicInfoExplain.font = UIFont.spoqaRegular(size: 12)
         basicInfoExplain.textColor = UIColor.find_DarkPurple
+        basicInfoExplain.letterSpacing = -0.36
     }
     
     func keyboardHide() {
