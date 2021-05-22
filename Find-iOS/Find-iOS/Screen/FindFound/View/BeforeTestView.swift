@@ -30,12 +30,27 @@ class BeforeTestView: UIView {
             super.init(coder: aDecoder)
     }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder: ) has not been implemented")
-//    }
+    func getCurrentViewController() -> UIViewController? {
+
+       if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+           var currentController: UIViewController! = rootController
+           while( currentController.presentedViewController != nil ) {
+               currentController = currentController.presentedViewController
+           }
+           return currentController
+       }
+       return nil
+   }
+
+    @IBAction func goToValueTest(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "ValueTest", bundle: nil)
+        let dvc = storyBoard.instantiateViewController(identifier: "ValueTestVC")
+        let currentController = self.getCurrentViewController()
+        print(currentController)
+//        currentController?.navigationController?.pushViewController(dvc, animated: true)
+        dvc.modalPresentationStyle = .fullScreen
+        currentController?.present(dvc, animated: true, completion: nil)
+        print("하이")
+    }
 
 }

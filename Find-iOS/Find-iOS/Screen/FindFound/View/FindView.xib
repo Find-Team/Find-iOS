@@ -95,7 +95,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-kA-xq6">
                             <rect key="frame" x="195" y="60" width="160" height="160"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
                                     <rect key="frame" x="5" y="5" width="150" height="150"/>
                                     <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>

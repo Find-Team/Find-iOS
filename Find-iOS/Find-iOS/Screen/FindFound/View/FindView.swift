@@ -32,6 +32,7 @@ class FindView: UIView {
         
         setView()
         setButton()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,6 +68,7 @@ class FindView: UIView {
             self.checkSimilarActive = true
             similarView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
+            findBtn.isEnabled = true
         }
         
         else {
@@ -86,6 +88,7 @@ class FindView: UIView {
             self.checkDifferentActive = true
             differentView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
+            findBtn.isEnabled = true
         }
 
         else {
