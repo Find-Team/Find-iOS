@@ -41,16 +41,17 @@ class BeforeTestView: UIView {
        }
        return nil
    }
+    
+    func getSuperViewController() -> UIViewController? {
+        var viewController: UIViewController? = self.parentViewController
+        return viewController
+    }
 
     @IBAction func goToValueTest(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "ValueTest", bundle: nil)
         let dvc = storyBoard.instantiateViewController(identifier: "ValueTestVC")
-        let currentController = self.getCurrentViewController()
+        let currentController = self.getSuperViewController()
         print(currentController)
-//        currentController?.navigationController?.pushViewController(dvc, animated: true)
-        dvc.modalPresentationStyle = .fullScreen
-        currentController?.present(dvc, animated: true, completion: nil)
-        print("하이")
+        currentController?.navigationController?.pushViewController(dvc, animated: true)
     }
-
 }
