@@ -42,7 +42,15 @@ class FeelingTVCell: UITableViewCell {
 // MARK: - Protocols
 extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        switch cellCategory {
+        case .received:
+            return receivedFeelings.count
+        case .send:
+            return sendedFeelings.count
+        default:
+            return 0
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,8 +58,10 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         switch cellCategory {
         case .received:
             cell.cellCategory = .received
+            cell.setCell(feelingDatas: receivedFeelings[indexPath.row])
         case .send:
             cell.cellCategory = .send
+            cell.setCell(feelingDatas: sendedFeelings[indexPath.row])
         default:
             return UICollectionViewCell()
         }
@@ -73,7 +83,4 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     {
         return UIEdgeInsets(top: 17, left: 12, bottom: 29.5, right: 12)
     }
-    
-    
-    
 }

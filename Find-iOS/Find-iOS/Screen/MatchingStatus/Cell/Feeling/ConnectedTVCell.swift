@@ -36,11 +36,11 @@ class ConnectedTVCell: UITableViewCell {
     }
     
     
-    func setCell(imageName: String, name: String, info: [String], introduce: String) {
-        cntdImageView.image = UIImage(named: imageName)
-        cntdNameLabel.text = name
-        cntdInfoLabel.text = "\(info[0]) | \(info[1]) | \(info[2])"
-        cntdIntroduceLabel.text = introduce
+    func setCell(cntdDatas: ExpandableSection) {
+        cntdImageView.image = UIImage(named: cntdDatas.data.imageName)
+        cntdNameLabel.text = cntdDatas.data.nickName
+        cntdInfoLabel.text = "\(cntdDatas.data.info[0]) | \(cntdDatas.data.info[1]) | \(cntdDatas.data.info[2])"
+        cntdIntroduceLabel.text = cntdDatas.data.introduce
     }
     
     static func nib() -> UINib {

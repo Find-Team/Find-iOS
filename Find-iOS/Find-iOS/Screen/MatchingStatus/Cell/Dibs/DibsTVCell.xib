@@ -101,6 +101,8 @@
             <connections>
                 <outlet property="dibsBtn" destination="wgZ-fE-sIn" id="g4w-XC-GNU"/>
                 <outlet property="dibsImageView" destination="Z20-F6-FyF" id="ZVd-Wx-4Ud"/>
+                <outlet property="dibsInfoLabel" destination="wa6-du-mOZ" id="t0F-Dh-pUc"/>
+                <outlet property="dibsNameLabel" destination="E7o-og-e1g" id="5g2-tL-YbQ"/>
                 <outlet property="dibsView" destination="H2p-sc-9uM" id="peu-Zf-4ra"/>
                 <outlet property="sendBtn" destination="0IT-0D-Kqe" id="Ge6-Da-jXI"/>
             </connections>

@@ -34,7 +34,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한글_8자_옹야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2Z-gi-apY">
-                        <rect key="frame" x="134" y="16" width="101.66666666666669" height="20.666666666666671"/>
+                        <rect key="frame" x="134" y="15.999999999999998" width="101.33333333333331" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
                         <color key="textColor" name="subGray5"/>
                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26살 | 패션잡지에디터 | 서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McE-CC-cbz">
-                        <rect key="frame" x="134" y="44.666666666666664" width="142" height="15.333333333333336"/>
+                        <rect key="frame" x="134" y="44.333333333333336" width="142" height="15.333333333333336"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                         <color key="textColor" name="subGray1"/>
                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;만나서 반가워!&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvX-qd-hez">
-                        <rect key="frame" x="134" y="66" width="102" height="18"/>
+                        <rect key="frame" x="134" y="65.666666666666671" width="102" height="17.666666666666671"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                         <color key="textColor" name="find_Red"/>
                         <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                         <state key="normal" image="btnCancleStar"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yve-GR-fCr">
-                        <rect key="frame" x="164" y="92" width="210" height="30"/>
+                        <rect key="frame" x="164" y="91.333333333333329" width="210" height="30.666666666666671"/>
                         <color key="backgroundColor" name="find_Red"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                         <state key="normal" title=" 만남요청" image="iconSendLineGray"/>

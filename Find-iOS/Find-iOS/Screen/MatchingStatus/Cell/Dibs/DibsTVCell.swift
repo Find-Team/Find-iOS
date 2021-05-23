@@ -12,6 +12,8 @@ class DibsTVCell: UITableViewCell {
     static let identifier = "DibsTVCell"
     
     @IBOutlet weak var dibsImageView: UIImageView!
+    @IBOutlet weak var dibsNameLabel: UILabel!
+    @IBOutlet weak var dibsInfoLabel: UILabel!
     @IBOutlet weak var dibsView: UIView!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var dibsBtn: UIButton!
@@ -35,11 +37,15 @@ class DibsTVCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "DibsTVCell", bundle: nil)
     }
+    
+    func setCell(dibsDatas: Matching) {
+        dibsImageView.image = UIImage(named: dibsDatas.imageName)
+        dibsNameLabel.text = dibsDatas.nickName
+        dibsInfoLabel.text = "\(dibsDatas.info[0]) | \(dibsDatas.info[1]) | \(dibsDatas.info[2])"
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

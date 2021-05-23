@@ -7,8 +7,13 @@
 
 import UIKit
 
+enum WhereShowMore {
+    case feelings, dibs1, dibs2
+}
 class MatchingFooter: UITableViewHeaderFooterView {
     static let identifier = "MatchingFooter"
+    var whereSM: WhereShowMore? // 더보기 버튼 총 3개
+    var isTapped = false
     
     @IBOutlet weak var showMoreBtn: UIButton!
     
@@ -23,7 +28,16 @@ class MatchingFooter: UITableViewHeaderFooterView {
     }
     
     @IBAction func showMoreTapped(_ sender: Any) {
-        print("tapped")
+        switch whereSM {
+        case .feelings:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "whereShowMore"), object: connectedDatas)
+        case .dibs1:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "whereShowMore"), object: receivedDibs)
+        case .dibs2:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "whereShowMore"), object: sendedDibs)
+        default:
+            return
+        }
     }
     private func setStyle() {
         showMoreBtn.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)

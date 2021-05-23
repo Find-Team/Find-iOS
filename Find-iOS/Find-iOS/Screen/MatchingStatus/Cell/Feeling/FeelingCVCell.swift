@@ -7,13 +7,13 @@
 
 import UIKit
 
-enum feelingCell {
+enum FeelingCell {
     case received, send
 }
 // MARK: - 받은 호감, 보낸 호감 알맹이
 class FeelingCVCell: UICollectionViewCell {
     static let identifier = "FeelingCVCell"
-    var cellCategory : feelingCell?
+    var cellCategory : FeelingCell?
     
     @IBOutlet weak var feelingImageView: UIImageView!
     @IBOutlet weak var feelingView: UIView!
@@ -48,6 +48,12 @@ class FeelingCVCell: UICollectionViewCell {
         }
         acceptBtn.isHidden = btn
         descriptionLabel.isHidden = descript
+    }
+    
+    func setCell(feelingDatas: Matching) {
+        feelingImageView.image = UIImage(named: feelingDatas.imageName)
+        nameLabel.text = feelingDatas.nickName
+        infoLabel.text = "\(feelingDatas.info[0]) | \(feelingDatas.info[1]) | \(feelingDatas.info[2])"
     }
     
     static func nib() -> UINib {
