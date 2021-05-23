@@ -15,6 +15,7 @@ enum feelingCell {
 class MatchingStatusCVCell: UICollectionViewCell {
     static let identifier = "MatchingStatusCVCell"
     var curCategory: MatchingCategory?
+    
     @IBOutlet weak var innerTV: UITableView! {
         didSet {
             innerTV.delegate = self
@@ -78,10 +79,8 @@ class MatchingStatusCVCell: UICollectionViewCell {
             if isExpandable {
                 innerTV.insertRows(at: indexPaths, with: .fade)
             } else {
-                UIView.performWithoutAnimation {
-                    innerTV.deleteRows(at: indexPaths, with: .fade)
-                    innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)
-                }
+                innerTV.deleteRows(at: indexPaths, with: .top)
+                innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             }
         case .dibs:
             if section == 0 {
@@ -89,10 +88,8 @@ class MatchingStatusCVCell: UICollectionViewCell {
                 if isExpandable {
                     innerTV.insertRows(at: indexPaths, with: .fade)
                 } else {
-                    UIView.performWithoutAnimation {
-                        innerTV.deleteRows(at: indexPaths, with: .fade)
-                        innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)
-                    }
+                    innerTV.deleteRows(at: indexPaths, with: .top)
+                    innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                 }
             } else {
                 sendedDibs = doExpand(str: &whereShowMore)
@@ -212,7 +209,7 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
-    // 헤더 뷰 지정
+    // Header 뷰 지정
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch curCategory {
         case .feelings:
@@ -240,7 +237,7 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // 헤더 높이 지정
+    // Header 높이 지정
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch curCategory {
         case .feelings:
@@ -256,7 +253,7 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // 푸터 뷰 지정
+    // Footer 뷰 지정
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         switch curCategory {
         case .feelings:
@@ -280,7 +277,7 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    // 푸터 높이 지정
+    // Footer 높이 지정
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch curCategory {
         case .feelings:

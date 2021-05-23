@@ -20,6 +20,7 @@ class MatchingStatusVC: UIViewController {
         didSet {
             matchingCV.delegate = self
             matchingCV.dataSource = self
+            matchingCV.backgroundColor = .subGray6
         }
     }
     
