@@ -20,21 +20,21 @@ class ConnectedTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setStyle()
     }
-    
-    private func setStyle() {
-        sendRequestBtn.makeRounded(cornerRadius: nil)
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16))
+        cntdImageView.makeRounded(cornerRadius: 5)
+        print(sendRequestBtn.bounds.height)
+        print(sendRequestBtn.frame.height/2)
+        sendRequestBtn.makeRounded(cornerRadius: sendRequestBtn.frame.height/2)
         cntdView.backgroundColor = .white
         cntdView.makeRounded(cornerRadius: 5)
         cntdView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.05, radius: 8)
         self.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16))
-    }
     
     func setCell(imageName: String, name: String, info: [String], introduce: String) {
         cntdImageView.image = UIImage(named: imageName)

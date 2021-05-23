@@ -27,6 +27,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-F6-FyF">
                         <rect key="frame" x="8" y="8" width="95" height="95"/>
+                        <color key="backgroundColor" name="find_DarkPurple"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Z20-F6-FyF" secondAttribute="height" multiplier="1:1" id="Oe7-bZ-gar"/>
                         </constraints>
@@ -99,6 +100,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dibsBtn" destination="wgZ-fE-sIn" id="g4w-XC-GNU"/>
+                <outlet property="dibsImageView" destination="Z20-F6-FyF" id="ZVd-Wx-4Ud"/>
                 <outlet property="dibsView" destination="H2p-sc-9uM" id="peu-Zf-4ra"/>
                 <outlet property="sendBtn" destination="0IT-0D-Kqe" id="Ge6-Da-jXI"/>
             </connections>
@@ -107,7 +109,10 @@
     </objects>
     <resources>
         <image name="btnCancleStar" width="38" height="38"/>
-        <image name="iconStarMint" width="14" height="14"/>
+        <image name="iconStarMint" width="14" height="14.5"/>
+        <namedColor name="find_DarkPurple">
+            <color red="0.49000000953674316" green="0.37299999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="find_Mint">
             <color red="0.50599998235702515" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

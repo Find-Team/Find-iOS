@@ -10,7 +10,9 @@ import UIKit
 // MARK: - 받은 호감, 보낸 호감 틀
 class FeelingTVCell: UITableViewCell {
     static let identifier = "FeelingTVCell"
+    var cellCategory: feelingCell?
     
+    @IBOutlet weak var kindOfFeelingLabel: UILabel!
     @IBOutlet weak var feelingCV: UICollectionView! {
         didSet {
             feelingCV.delegate = self
@@ -20,7 +22,6 @@ class FeelingTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setStyle()
         feelingCV.register(FeelingCVCell.nib(), forCellWithReuseIdentifier: FeelingCVCell.identifier)
     }
     
@@ -28,13 +29,13 @@ class FeelingTVCell: UITableViewCell {
         return UINib(nibName: "FeelingTVCell", bundle: nil)
     }
     
-    private func setStyle() {
-        feelingCV.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
-        self.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
-    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override func layoutSubviews() {
+        feelingCV.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+        self.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
     }
 }
 
@@ -46,6 +47,14 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeelingCVCell.identifier, for: indexPath) as? FeelingCVCell else { return UICollectionViewCell() }
+        switch cellCategory {
+        case .received:
+            cell.cellCategory = .received
+        case .send:
+            cell.cellCategory = .send
+        default:
+            return UICollectionViewCell()
+        }
         return cell
     }
     

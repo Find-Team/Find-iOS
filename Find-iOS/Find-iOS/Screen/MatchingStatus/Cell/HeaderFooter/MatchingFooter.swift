@@ -22,6 +22,9 @@ class MatchingFooter: UITableViewHeaderFooterView {
         
     }
     
+    @IBAction func showMoreTapped(_ sender: Any) {
+        print("tapped")
+    }
     private func setStyle() {
         showMoreBtn.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
     }

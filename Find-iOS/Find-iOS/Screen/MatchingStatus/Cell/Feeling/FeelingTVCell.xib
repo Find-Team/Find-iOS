@@ -62,6 +62,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="feelingCV" destination="DYt-jL-bUY" id="0yQ-lc-lAy"/>
+                <outlet property="kindOfFeelingLabel" destination="iOq-GI-fD0" id="1Yd-2X-LYI"/>
             </connections>
             <point key="canvasLocation" x="218.84057971014494" y="137.94642857142856"/>
         </tableViewCell>

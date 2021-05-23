@@ -10,7 +10,6 @@ import UIKit
 // MARK: - 매칭 현황 탭 Horizontal 컬렉션 뷰
 class MatchingStatusCVCell: UICollectionViewCell {
     static let identifier = "MatchingStatusCVCell"
-    
     var curCategory: MatchingCategory?
     
     @IBOutlet weak var innerTV: UITableView! {
@@ -46,21 +45,17 @@ class MatchingStatusCVCell: UICollectionViewCell {
         curCategory = changeData
         print(curCategory)
         innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        innerTV.reloadData()
-        
+//        if curCategory == .feelings {
+//            innerTV.reloadSections(IndexSet(0...2), with: .fade)
+//        } else if curCategory == .dibs {
+//            
+//        }
     }
 }
 
 extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        switch curCategory {
-        case .feelings:
-            return 3
-        case .dibs:
-            return 2
-        default:
-            return 0
-        }
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,11 +67,7 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
                 return 1
             }
         case .dibs:
-            if (section == 0) {
-                return 5
-            } else if (section == 1) {
-                return 4
-            }
+            return 3
         default:
             return 0
         }
@@ -167,6 +158,13 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
             } else {
                 guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
                 feelCell.selectionStyle = .none
+                if (indexPath.section == 1) {
+                    feelCell.kindOfFeelingLabel.text = "받은호감"
+                    feelCell.cellCategory = .received
+                } else {
+                    feelCell.kindOfFeelingLabel.text = "보낸호감"
+                    feelCell.cellCategory = .send
+                }
                 return feelCell
             }
         case .dibs:
