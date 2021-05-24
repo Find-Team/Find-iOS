@@ -75,32 +75,21 @@ class MatchingStatusCVCell: UICollectionViewCell {
         switch curCategory {
         case .feelings:
             connectedDatas = doExpand(str: &whereShowMore)
-            print(connectedDatas)
-            if isExpandable {
-                innerTV.insertRows(at: indexPaths, with: .fade)
-            } else {
-                innerTV.deleteRows(at: indexPaths, with: .fade)
-                innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-            }
+            if isExpandable { doInsert(section) } else { doDelete(section) }
         case .dibs:
             if section == 0 {
                 receivedDibs = doExpand(str: &whereShowMore)
-                if isExpandable {
-                    innerTV.insertRows(at: indexPaths, with: .fade)
-                } else {
-                    innerTV.deleteRows(at: indexPaths, with: .fade)
-                    innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-                }
+                if isExpandable { doInsert(section) } else { doDelete(section) }
             } else {
                 sendedDibs = doExpand(str: &whereShowMore)
-                if isExpandable {   innerTV.insertRows(at: indexPaths, with: .fade) } else { innerTV.deleteRows(at: indexPaths, with: .fade) }
+                if isExpandable { doInsert(section) } else { doDelete(section) }
             }
         default:
             return
         }
         
         func doExpand(str: inout [ExpandableSection]) -> [ExpandableSection]{
-            // 축소
+            // 축소 설계
             if str[3].isExpanded {
                 isExpandable = false
                 for row in 3..<str.count {
@@ -108,8 +97,8 @@ class MatchingStatusCVCell: UICollectionViewCell {
                     indexPaths.append(indexPath)
                     str[row].isExpanded = false
                 }
-                // 확장
             } else {
+                // 확장 설계
                 isExpandable = true
                 for row in 3..<str.count {
                     let indexPath = IndexPath(row: row, section: section)
@@ -118,6 +107,27 @@ class MatchingStatusCVCell: UICollectionViewCell {
                 }
             }
             return str
+        }
+        
+        // 확장 진행
+        func doInsert(_ sec: Int) {
+            if sec != 1 {
+                innerTV.insertRows(at: indexPaths, with: .fade)
+                innerTV.layoutIfNeeded()
+            } else {
+                innerTV.insertRows(at: indexPaths, with: .fade)
+                innerTV.layoutIfNeeded()
+                innerTV.scrollToRow(at: IndexPath(row: sendedDibs.count-1, section: section), at: .top, animated: true)
+            }
+        }
+        
+        // 축소 진행
+        func doDelete(_ sec: Int) {
+            innerTV.deleteRows(at: indexPaths, with: .fade)
+            if sec != 1 {
+                innerTV.layoutIfNeeded()
+                innerTV.contentOffset = CGPoint(x: 0, y: 0)
+            }
         }
     }
 }
