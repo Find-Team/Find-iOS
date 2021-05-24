@@ -18,6 +18,9 @@ class YourValueVC: UIViewController {
     
     var scrollOffset: CGFloat = 0
     
+    var sameQuestionCount: Int = 10
+    var differentQustionCount: Int = 10
+    
 //    var matchingType:
     //MARK: - IBOutlets
     
@@ -125,7 +128,14 @@ extension YourValueVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.width, height: 595)
         }
         else if indexPath.row == 1 {
-            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+            var height: Float = 0
+            if currentSegue == .same {
+                height = Float(sameQuestionCount) * 113.5
+            } else {
+                height = Float(differentQustionCount) * 113.5
+            }
+            
+            return CGSize(width: collectionView.frame.width, height: CGFloat(height))
         }
         
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
