@@ -138,7 +138,7 @@ extension YourValueVC: UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollOffset = scrollView.contentOffset.y
         
-        if scrollOffset >= 525 {
+        if scrollOffset >= 521 {
             segueOnTopView.isHidden = false
         } else {
             segueOnTopView.isHidden = true

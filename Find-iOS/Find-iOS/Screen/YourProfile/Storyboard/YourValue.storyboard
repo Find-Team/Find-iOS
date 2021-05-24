@@ -473,10 +473,10 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-yf-H0k">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NG3-iy-bdh">
-                                        <rect key="frame" x="0.0" y="40" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="30"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Z3-g5-mhu">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
@@ -544,7 +544,7 @@
                                     <constraint firstItem="NG3-iy-bdh" firstAttribute="leading" secondItem="dkD-yf-H0k" secondAttribute="leading" id="LxH-ZX-z4y"/>
                                     <constraint firstAttribute="bottom" secondItem="NG3-iy-bdh" secondAttribute="bottom" id="fkk-ff-e2A"/>
                                     <constraint firstAttribute="trailing" secondItem="NG3-iy-bdh" secondAttribute="trailing" id="y0K-ER-Tuz"/>
-                                    <constraint firstAttribute="height" constant="70" id="ysX-gg-ofd"/>
+                                    <constraint firstAttribute="height" constant="74" id="ysX-gg-ofd"/>
                                 </constraints>
                             </view>
                         </subviews>
