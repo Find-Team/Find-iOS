@@ -472,18 +472,101 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-yf-H0k">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NG3-iy-bdh">
+                                        <rect key="frame" x="0.0" y="40" width="414" height="30"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Z3-g5-mhu">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-gW-fBg">
+                                                        <rect key="frame" x="0.0" y="28" width="207" height="2"/>
+                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="2" id="5Sv-Kp-ReW"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHo-NI-AxW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="WHo-NI-AxW" firstAttribute="top" secondItem="5Z3-g5-mhu" secondAttribute="top" id="307-uv-itC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oE8-gW-fBg" secondAttribute="trailing" id="44S-j7-dNz"/>
+                                                    <constraint firstItem="oE8-gW-fBg" firstAttribute="leading" secondItem="5Z3-g5-mhu" secondAttribute="leading" id="ClG-2H-8d0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WHo-NI-AxW" secondAttribute="trailing" id="LnC-0i-LeF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oE8-gW-fBg" secondAttribute="bottom" id="PrZ-V9-RrF"/>
+                                                    <constraint firstItem="oE8-gW-fBg" firstAttribute="top" secondItem="WHo-NI-AxW" secondAttribute="bottom" id="e8z-Qd-6lY"/>
+                                                    <constraint firstItem="WHo-NI-AxW" firstAttribute="leading" secondItem="5Z3-g5-mhu" secondAttribute="leading" id="y7E-db-Dyf"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyI-n9-VsN">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-tD-3Jg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1go-d6-qLk">
+                                                        <rect key="frame" x="0.0" y="28" width="207" height="2"/>
+                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="2" id="Ebl-Vs-ie2"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="mdb-tD-3Jg" firstAttribute="leading" secondItem="jyI-n9-VsN" secondAttribute="leading" id="3On-iz-0NA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mdb-tD-3Jg" secondAttribute="trailing" id="CRe-Ob-i98"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1go-d6-qLk" secondAttribute="bottom" id="R9Y-2C-hZq"/>
+                                                    <constraint firstItem="1go-d6-qLk" firstAttribute="leading" secondItem="jyI-n9-VsN" secondAttribute="leading" id="gAZ-TW-cX6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1go-d6-qLk" secondAttribute="trailing" id="gck-zW-70Q"/>
+                                                    <constraint firstItem="mdb-tD-3Jg" firstAttribute="top" secondItem="jyI-n9-VsN" secondAttribute="top" id="z9G-5w-3L3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mdb-tD-3Jg" secondAttribute="bottom" id="zJj-Im-kZS"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="aWk-WK-iZf"/>
+                                            <constraint firstAttribute="height" constant="30" id="jbr-05-9qD"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="NG3-iy-bdh" firstAttribute="leading" secondItem="dkD-yf-H0k" secondAttribute="leading" id="LxH-ZX-z4y"/>
+                                    <constraint firstAttribute="bottom" secondItem="NG3-iy-bdh" secondAttribute="bottom" id="fkk-ff-e2A"/>
+                                    <constraint firstAttribute="trailing" secondItem="NG3-iy-bdh" secondAttribute="trailing" id="y0K-ER-Tuz"/>
+                                    <constraint firstAttribute="height" constant="70" id="ysX-gg-ofd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dkD-yf-H0k" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="28Q-Bi-39u"/>
+                            <constraint firstItem="dkD-yf-H0k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7hg-YO-Tuv"/>
                             <constraint firstItem="CDo-m8-0cX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="EpN-Zh-lZe"/>
+                            <constraint firstItem="dkD-yf-H0k" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ezo-5m-qFD"/>
                             <constraint firstAttribute="trailing" secondItem="CDo-m8-0cX" secondAttribute="trailing" id="iFz-Iq-LMP"/>
                             <constraint firstItem="CDo-m8-0cX" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="jba-ZD-mQp"/>
                             <constraint firstAttribute="bottom" secondItem="CDo-m8-0cX" secondAttribute="bottom" id="oHQ-Ic-MCj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="differentQuestionBtn" destination="mdb-tD-3Jg" id="MsK-RY-AYQ"/>
+                        <outlet property="sameQuestionBtn" destination="WHo-NI-AxW" id="ccR-LB-W4b"/>
+                        <outlet property="segueOnTopView" destination="dkD-yf-H0k" id="23u-d6-sGt"/>
                         <outlet property="yourValueCV" destination="CDo-m8-0cX" id="IEa-nC-RUj"/>
+                        <outletCollection property="segueIndicator" destination="oE8-gW-fBg" collectionClass="NSMutableArray" id="WUK-ch-hjR"/>
+                        <outletCollection property="segueIndicator" destination="1go-d6-qLk" collectionClass="NSMutableArray" id="9iH-pL-qmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
