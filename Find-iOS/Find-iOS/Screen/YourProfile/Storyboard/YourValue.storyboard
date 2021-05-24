@@ -332,7 +332,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
-                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-zc-6Dg">
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zuw-zc-6Dg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
@@ -451,7 +451,7 @@
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <connections>
-                                                                <outlet property="valueListTableView" destination="zuw-zc-6Dg" id="fzs-mc-OTO"/>
+                                                                <outlet property="valueListTableView" destination="zuw-zc-6Dg" id="mFm-HO-P79"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -466,6 +466,9 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" name="subGray1"/>
                                         <size key="customSize" width="413" height="391"/>
+                                        <connections>
+                                            <outlet property="segueCV" destination="yaA-zc-3Qg" id="vlB-cX-oDA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

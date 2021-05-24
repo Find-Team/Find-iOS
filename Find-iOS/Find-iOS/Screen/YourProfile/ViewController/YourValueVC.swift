@@ -53,7 +53,6 @@ extension YourValueVC: UICollectionViewDataSource {
                 cell.differentQuestionSelected()
             }
             
-            
             return cell
         }
         else if indexPath.row == 1 { /// 하단 리스트
