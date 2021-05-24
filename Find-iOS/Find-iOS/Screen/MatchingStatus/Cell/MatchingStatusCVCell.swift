@@ -79,7 +79,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
             if isExpandable {
                 innerTV.insertRows(at: indexPaths, with: .fade)
             } else {
-                innerTV.deleteRows(at: indexPaths, with: .top)
+                innerTV.deleteRows(at: indexPaths, with: .fade)
                 innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             }
         case .dibs:
@@ -88,7 +88,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
                 if isExpandable {
                     innerTV.insertRows(at: indexPaths, with: .fade)
                 } else {
-                    innerTV.deleteRows(at: indexPaths, with: .top)
+                    innerTV.deleteRows(at: indexPaths, with: .fade)
                     innerTV.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                 }
             } else {

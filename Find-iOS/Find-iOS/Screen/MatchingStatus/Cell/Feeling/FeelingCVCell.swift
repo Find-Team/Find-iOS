@@ -7,13 +7,9 @@
 
 import UIKit
 
-enum FeelingCell {
-    case received, send
-}
 // MARK: - 받은 호감, 보낸 호감 알맹이
 class FeelingCVCell: UICollectionViewCell {
     static let identifier = "FeelingCVCell"
-    var cellCategory : FeelingCell?
     
     @IBOutlet weak var feelingImageView: UIImageView!
     @IBOutlet weak var feelingView: UIView!
@@ -30,24 +26,9 @@ class FeelingCVCell: UICollectionViewCell {
         feelingImageView.roundCorners(cornerRadius: 5, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
         feelingView.makeRounded(cornerRadius: 5)
         feelingView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.05, radius: 8)
-        switch cellCategory {
-        case .received:
-            setHidden(false, true)
-        case .send:
-            setHidden(true, false)
-        default:
-            setHidden(true, true)
-        }
-    }
-    
-    func setHidden(_ btn: Bool, _ descript: Bool) {
-        if btn == false {
-            acceptBtn.makeRounded(cornerRadius: nil)
-            acceptBtn.layer.borderWidth = 1
-            acceptBtn.layer.borderColor = UIColor.find_Purple.cgColor
-        }
-        acceptBtn.isHidden = btn
-        descriptionLabel.isHidden = descript
+        acceptBtn.makeRounded(cornerRadius: nil)
+        acceptBtn.layer.borderWidth = 1
+        acceptBtn.layer.borderColor = UIColor.find_Purple.cgColor
     }
     
     func setCell(feelingDatas: Matching) {

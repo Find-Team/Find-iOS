@@ -57,10 +57,10 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeelingCVCell.identifier, for: indexPath) as? FeelingCVCell else { return UICollectionViewCell() }
         switch cellCategory {
         case .received:
-            cell.cellCategory = .received
+            cell.descriptionLabel.isHidden = true
             cell.setCell(feelingDatas: receivedFeelings[indexPath.row])
         case .send:
-            cell.cellCategory = .send
+            cell.acceptBtn.isHidden = true
             cell.setCell(feelingDatas: sendedFeelings[indexPath.row])
         default:
             return UICollectionViewCell()
