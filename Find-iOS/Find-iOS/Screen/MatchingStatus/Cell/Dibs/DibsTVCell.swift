@@ -38,10 +38,10 @@ class DibsTVCell: UITableViewCell {
         return UINib(nibName: "DibsTVCell", bundle: nil)
     }
     
-    func setCell(dibsDatas: Matching) {
-        dibsImageView.image = UIImage(named: dibsDatas.imageName)
-        dibsNameLabel.text = dibsDatas.nickName
-        dibsInfoLabel.text = "\(dibsDatas.info[0]) | \(dibsDatas.info[1]) | \(dibsDatas.info[2])"
+    func setCell(dibsDatas: ExpandableSection) {
+        dibsImageView.image = UIImage(named: dibsDatas.data.imageName)
+        dibsNameLabel.text = dibsDatas.data.nickName
+        dibsInfoLabel.text = "\(dibsDatas.data.info[0]) | \(dibsDatas.data.info[1]) | \(dibsDatas.data.info[2])"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

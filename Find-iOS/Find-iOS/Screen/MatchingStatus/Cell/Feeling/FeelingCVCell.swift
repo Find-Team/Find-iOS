@@ -31,10 +31,10 @@ class FeelingCVCell: UICollectionViewCell {
         acceptBtn.layer.borderColor = UIColor.find_Purple.cgColor
     }
     
-    func setCell(feelingDatas: Matching) {
-        feelingImageView.image = UIImage(named: feelingDatas.imageName)
-        nameLabel.text = feelingDatas.nickName
-        infoLabel.text = "\(feelingDatas.info[0]) | \(feelingDatas.info[1]) | \(feelingDatas.info[2])"
+    func setCell(feelingDatas: ExpandableSection) {
+        feelingImageView.image = UIImage(named: feelingDatas.data.imageName)
+        nameLabel.text = feelingDatas.data.nickName
+        infoLabel.text = "\(feelingDatas.data.info[0]) | \(feelingDatas.data.info[1]) | \(feelingDatas.data.info[2])"
     }
     
     static func nib() -> UINib {

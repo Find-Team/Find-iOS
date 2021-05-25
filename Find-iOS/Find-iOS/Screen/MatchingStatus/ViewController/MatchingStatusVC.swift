@@ -7,12 +7,12 @@
 
 import UIKit
 
-enum MatchingCategory {
+enum MatchingCategory: Hashable {
     case feelings, dibs
 }
 
 class MatchingStatusVC: UIViewController {
-    var curCategory: MatchingCategory?
+    var toSendCategory: MatchingCategory?
     
     @IBOutlet var segIndicators: [UIView]!
     @IBOutlet var segueBtns: [UIButton]!
@@ -47,7 +47,7 @@ class MatchingStatusVC: UIViewController {
         let itemWidth = matchingCV.frame.size.width
         let proportionalOffset = (matchingCV.contentOffset.x / itemWidth)+0.3
         let index = Int(round(proportionalOffset))
-        let safeIndex = max(0, min(4, index))
+        let safeIndex = max(0, min(2, index))
         return safeIndex
     }
     
@@ -56,7 +56,7 @@ class MatchingStatusVC: UIViewController {
         let itemWidth = matchingCV.frame.size.width
         let proportionalOffset = (matchingCV.contentOffset.x / itemWidth)
         let back_index = Int(floor(proportionalOffset))
-        let safeIndex = max(0, min(4, back_index))
+        let safeIndex = max(0, min(2, back_index))
         return safeIndex
     }
 }
@@ -73,8 +73,8 @@ extension MatchingStatusVC {
     
     // MARK: - Remind Selected Segue
     func whatSelected(seg: MatchingCategory, idx: Int){
-        if curCategory != seg {
-            curCategory = seg
+        if toSendCategory != seg {
+            toSendCategory = seg
             for i in 0..<2{
                 if i == idx{
                     segIndicators[i].backgroundColor = .find_Purple
@@ -84,7 +84,7 @@ extension MatchingStatusVC {
                     segueBtns[i].setTitleColor(.subGray2, for: .normal)
                 }
             }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "changeMatchingSegue"),object: curCategory)
+            NotificationCenter.default.post(name: NSNotification.Name("changeMatchingSegue"), object: toSendCategory)
         }
     }
 }
@@ -96,7 +96,7 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchingStatusCVCell.identifier, for: indexPath) as? MatchingStatusCVCell else { return UICollectionViewCell() }
-        cell.curCategory = curCategory
+        cell.curCategory = toSendCategory
         return cell
     }
     

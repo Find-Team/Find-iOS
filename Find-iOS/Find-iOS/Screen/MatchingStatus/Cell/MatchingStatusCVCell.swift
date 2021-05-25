@@ -11,6 +11,10 @@ import UIKit
 enum feelingCell {
     case received, send
 }
+
+//enum Section {
+//    case feelings, dibs
+//}
 // MARK: - 매칭 현황 탭 Horizontal 컬렉션 뷰
 class MatchingStatusCVCell: UICollectionViewCell {
     static let identifier = "MatchingStatusCVCell"
@@ -63,7 +67,13 @@ class MatchingStatusCVCell: UICollectionViewCell {
     @objc func changeMatchingSegue(notification: NSNotification) {
         let changeData = notification.object as? MatchingCategory
         curCategory = changeData
-        innerTV.reloadData()
+        UIView.performWithoutAnimation {
+            innerTV.scrollToRow(at: IndexPath(index: 0), at: .top, animated: true)
+            innerTV.reloadSections(IndexSet(0...2), with: .automatic)
+        }
+        // 지금은 테이블 뷰 전체를 reload해주는데 이 테이블 뷰가 메인뷰컨 컬렉션뷰의 셀이라서 탭바 넘길 때 정보가 같이 바뀌어서 부자연스러운거
+        // 그래서 메인 뷰컨에 셀이 2개(탭바 갯수)니까 각각 리로드를 해준다면 자연스러워 질 것 같다.
+        // 그 방법을 생각해보자
     }
     
     @objc func showMore(notification: NSNotification) {
@@ -75,22 +85,22 @@ class MatchingStatusCVCell: UICollectionViewCell {
         switch curCategory {
         case .feelings:
             connectedDatas = doExpand(str: &whereShowMore)
-            if isExpandable { doInsert(section) } else { doDelete(section) }
+            if isExpandable { doInsert(section, connectedDatas) } else { doDelete(section, connectedDatas) }
         case .dibs:
             if section == 0 {
                 receivedDibs = doExpand(str: &whereShowMore)
-                if isExpandable { doInsert(section) } else { doDelete(section) }
+                if isExpandable { doInsert(section, receivedDibs) } else { doDelete(section, receivedDibs) }
             } else {
                 sendedDibs = doExpand(str: &whereShowMore)
-                if isExpandable { doInsert(section) } else { doDelete(section) }
+                if isExpandable { doInsert(section, sendedDibs) } else { doDelete(section, sendedDibs) }
             }
         default:
             return
         }
         
         func doExpand(str: inout [ExpandableSection]) -> [ExpandableSection]{
-            // 축소 설계
-            if str[3].isExpanded {
+            // Ready to Expand
+            if str[3].isExpanded ?? false {
                 isExpandable = false
                 for row in 3..<str.count {
                     let indexPath = IndexPath(row: row, section: section)
@@ -98,7 +108,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
                     str[row].isExpanded = false
                 }
             } else {
-                // 확장 설계
+                // Ready to Collapse
                 isExpandable = true
                 for row in 3..<str.count {
                     let indexPath = IndexPath(row: row, section: section)
@@ -109,25 +119,23 @@ class MatchingStatusCVCell: UICollectionViewCell {
             return str
         }
         
-        // 확장 진행
-        func doInsert(_ sec: Int) {
+        // Expandable
+        func doInsert(_ sec: Int, _ obj: [ExpandableSection]) {
             if sec != 1 {
                 innerTV.insertRows(at: indexPaths, with: .fade)
                 innerTV.layoutIfNeeded()
             } else {
                 innerTV.insertRows(at: indexPaths, with: .fade)
                 innerTV.layoutIfNeeded()
-                innerTV.scrollToRow(at: IndexPath(row: sendedDibs.count-1, section: section), at: .top, animated: true)
+                innerTV.scrollToRow(at: IndexPath(row: obj.count-1, section: section), at: .top, animated: true)
             }
         }
         
-        // 축소 진행
-        func doDelete(_ sec: Int) {
+        // Collapsable
+        func doDelete(_ sec: Int, _ obj: [ExpandableSection]) {
             innerTV.deleteRows(at: indexPaths, with: .fade)
-            if sec != 1 {
-                innerTV.layoutIfNeeded()
-                innerTV.contentOffset = CGPoint(x: 0, y: 0)
-            }
+            innerTV.layoutIfNeeded()
+            innerTV.scrollToRow(at: IndexPath(row: 0, section: section), at: .none, animated: true)
         }
     }
 }
@@ -136,14 +144,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
 extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     // 섹션 갯수
     func numberOfSections(in tableView: UITableView) -> Int {
-        switch curCategory {
-        case .feelings:
-            return 3
-        case .dibs:
-            return 2
-        default:
-            return 0
-        }
+        return 3
     }
     
     // 섹션 별 셀 갯수
@@ -151,15 +152,15 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
         switch curCategory {
         case .feelings:
             if (section == 0) {
-                return connectedDatas.filter{$0.isExpanded}.count
+                return connectedDatas.filter{$0.isExpanded ?? false}.count
             } else if (section == 1) || (section == 2) {
                 return 1
             }
         case .dibs:
             if (section == 0) {
-                return receivedDibs.filter{$0.isExpanded}.count
+                return receivedDibs.filter{$0.isExpanded ?? false}.count
             } else if (section == 1) {
-                return sendedDibs.filter{$0.isExpanded}.count
+                return sendedDibs.filter{$0.isExpanded ?? false}.count
             }
         default:
             return 0
@@ -192,9 +193,9 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
             guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
             dibsCell.selectionStyle = .none
             if (indexPath.section == 0) {
-                dibsCell.setCell(dibsDatas: receivedDibs[indexPath.row].data)
-            } else {
-                dibsCell.setCell(dibsDatas: sendedDibs[indexPath.row].data)
+                dibsCell.setCell(dibsDatas: receivedDibs[indexPath.row])
+            } else if (indexPath.section == 1) {
+                dibsCell.setCell(dibsDatas: sendedDibs[indexPath.row])
             }
             return dibsCell
         default:
@@ -212,7 +213,9 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
                 return 333
             }
         case .dibs:
-            return 116
+            if (indexPath.section == 0) || (indexPath.section == 1) {
+                return 116
+            }
         default:
             return 0
         }
@@ -257,7 +260,11 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
                 return 0
             }
         case .dibs:
-            return 43
+            if (section == 0) || (section == 1) {
+                return 43
+            } else {
+                return 0
+            }
         default:
             return 0
         }
@@ -297,7 +304,11 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
                 return 0
             }
         case .dibs:
-            return 53
+            if (section == 0) || (section==1) {
+                return 53
+            } else {
+                return 0
+            }
         default:
             return 0
         }

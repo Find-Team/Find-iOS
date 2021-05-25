@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Matching {
+struct Matching: Hashable {
+    let id = UUID() // Hash 값을 서로 다르게 하기 위해
     let imageName: String
     let nickName: String
     let info: [String]
@@ -15,8 +16,9 @@ struct Matching {
     let section: Int?
 }
 
-struct ExpandableSection {
-    var isExpanded: Bool
+struct ExpandableSection: Hashable {
+    let id = UUID() // Hash 값을 서로 다르게 하기 위해
+    var isExpanded: Bool?
     var data: Matching
 }
 
@@ -32,21 +34,21 @@ var connectedDatas: [ExpandableSection] = [
 ]
 
 // 받은 호감
-var receivedFeelings: [Matching] = [
-    Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil),
-    Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil),
-    Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil),
-    Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil),
-    Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil),
+var receivedFeelings: [ExpandableSection] = [
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "받은_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
 ]
 
 // 보낸 호감
-var sendedFeelings: [Matching] = [
-    Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: "안녕하세요 나는 누군데에", section: nil),
-    Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: "안녕하세요 나는 누군데에", section: nil),
-    Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: "안녕하세요 나는 누군데에", section: nil),
-    Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: "안녕하세요 나는 누군데에", section: nil),
-    Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: "안녕하세요 나는 누군데에", section: nil),
+var sendedFeelings: [ExpandableSection] = [
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
+    ExpandableSection(isExpanded: nil, data: Matching(imageName: "", nickName: "보낸_호감_부분", info: ["26살","패션잡지에디터","서울"], introduce: nil, section: nil)),
 ]
 
 // 받은 찜
