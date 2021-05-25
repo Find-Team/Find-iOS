@@ -133,8 +133,24 @@ extension ValueListCVC {
 }
 
 extension ValueListCVC: UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        if parentVC == .valueList {
+            return 1
+        } else {
+            return 3
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(Array(["관계", "가족", "커리어"])[section])
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if parentVC == .valueList {
+            return 10
+        } else {
+            return 6 // 여기 숫자 바꾸기 (해당 카테고리 같은/다른 문항 개수)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -149,9 +165,11 @@ extension ValueListCVC: UITableViewDataSource {
         if parentVC == .yourValue {
             cell.selectedBtn.isHidden = true
             cell.selectedBoxView.isHidden = true
+            cell.parentVC = .yourValue
         } else {
             cell.selectedBtn.isHidden = false
             cell.selectedBoxView.isHidden = false
+            cell.parentVC = .valueList
         }
         
         /// 질문 뷰 스타일
