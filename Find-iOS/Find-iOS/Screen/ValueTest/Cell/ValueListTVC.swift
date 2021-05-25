@@ -12,6 +12,7 @@ class ValueListTVC: UITableViewCell {
     //MARK: - custom variables
     
     static let identifier = "ValueListTVC"
+    var parentVC: ParentVC = .valueList
     
     
     //MARK: - IBOutlets

@@ -15,6 +15,8 @@ class ValueListCVC: UICollectionViewCell {
     
     static let identifier = "ValueListCVC"
     var currentCategory: Category = .relationship
+    var parentVC: ParentVC = .valueList
+    var currentSegue: ValueFilterAll = .same
     
     //MARK: - IBOutlets
     
@@ -25,6 +27,7 @@ class ValueListCVC: UICollectionViewCell {
     override func awakeFromNib() {
         valueListTableView.dataSource = self
         valueListTableView.delegate = self
+        valueListTableView.sectionHeaderHeight = 43
     }
     
     override func prepareForReuse() {
@@ -129,11 +132,39 @@ extension ValueListCVC {
         
         cell.selectedCountLabel.isHidden = true
     }
+    
+//    @objc func segueChanged(_ noti: Notification) {
+//        currentSegue = noti.object as! ValueFilterAll
+//
+//        if currentSegue == .same {
+//
+//        } else {
+//
+//        }
+//    }
 }
 
 extension ValueListCVC: UITableViewDataSource {
+    
+    /// 섹션 개수
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        if parentVC == .valueList {
+            return 1
+        } else {
+            return 3
+        }
+    }
+    
+    /// 각 섹션 별 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if parentVC == .valueList {
+            return 10
+        } else {
+            if section == 1 {
+                return 0
+            }
+            return 4 // 여기 숫자 바꾸기 (해당 카테고리 같은/다른 문항 개수)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -142,6 +173,17 @@ extension ValueListCVC: UITableViewDataSource {
         
         else {
             return UITableViewCell()
+        }
+        
+        /// 상대 가치관 문답 보기에서 넘어왔을 때는 버튼 제거
+        if parentVC == .yourValue {
+            cell.selectedBtn.isHidden = true
+            cell.selectedBoxView.isHidden = true
+            cell.parentVC = .yourValue
+        } else {
+            cell.selectedBtn.isHidden = false
+            cell.selectedBoxView.isHidden = false
+            cell.parentVC = .valueList
         }
         
         /// 질문 뷰 스타일
@@ -207,5 +249,21 @@ extension ValueListCVC: UITableViewDelegate {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "QuestionSelected"), object: currIndexPath + 1)
         
         tableView.parentViewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 43)) //set these values as necessary
+        returnedView.backgroundColor = .white
+        
+        let label = UILabel(frame: CGRect(x: 20, y: 17, width: 33, height: 15))
+        
+        label.text = ["관계", "가족", "커리어"][section]
+        label.font = .spoqaRegular(size: 12)
+        label.textColor = .subGray2
+        label.letterSpacing = -0.36
+        
+        returnedView.addSubview(label)
+        
+        return returnedView
     }
 }
