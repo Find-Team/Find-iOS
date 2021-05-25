@@ -26,6 +26,7 @@ class ValueListCVC: UICollectionViewCell {
     override func awakeFromNib() {
         valueListTableView.dataSource = self
         valueListTableView.delegate = self
+        valueListTableView.sectionHeaderHeight = 43
     }
     
     override func prepareForReuse() {
@@ -133,6 +134,8 @@ extension ValueListCVC {
 }
 
 extension ValueListCVC: UITableViewDataSource {
+    
+    /// 섹션 개수
     public func numberOfSections(in tableView: UITableView) -> Int {
         if parentVC == .valueList {
             return 1
@@ -141,15 +144,15 @@ extension ValueListCVC: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(Array(["관계", "가족", "커리어"])[section])
-    }
-    
+    /// 각 섹션 별 셀 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if parentVC == .valueList {
             return 10
         } else {
-            return 6 // 여기 숫자 바꾸기 (해당 카테고리 같은/다른 문항 개수)
+            if section == 1 {
+                return 0
+            }
+            return 4 // 여기 숫자 바꾸기 (해당 카테고리 같은/다른 문항 개수)
         }
     }
     
@@ -235,5 +238,21 @@ extension ValueListCVC: UITableViewDelegate {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "QuestionSelected"), object: currIndexPath + 1)
         
         tableView.parentViewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 43)) //set these values as necessary
+        returnedView.backgroundColor = .white
+        
+        let label = UILabel(frame: CGRect(x: 20, y: 17, width: 33, height: 15))
+        
+        label.text = ["관계", "가족", "커리어"][section]
+        label.font = .spoqaRegular(size: 12)
+        label.textColor = .subGray2
+        label.letterSpacing = -0.36
+        
+        returnedView.addSubview(label)
+        
+        return returnedView
     }
 }
