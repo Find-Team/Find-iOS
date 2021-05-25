@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xju-OB-GLC">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController storyboardIdentifier="MatchingStatusVC" id="Y6W-OH-hqX" customClass="MatchingStatusVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매칭 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0K-W2-G9d">
-                                <rect key="frame" x="16" y="58" width="70.5" height="23"/>
+                                <rect key="frame" x="16" y="57.999999999999993" width="70.333333333333329" height="22.666666666666664"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="18"/>
                                 <color key="textColor" name="subGray3"/>
                                 <nil key="highlightedColor"/>
@@ -35,20 +35,20 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-6S-p0n">
-                                <rect key="frame" x="0.0" y="94" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="93.666666666666671" width="375" height="40.000000000000014"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyW-df-TOW">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQz-2i-zaj">
-                                                <rect key="frame" x="0.0" y="37" width="207" height="3"/>
+                                                <rect key="frame" x="0.0" y="36.999999999999986" width="187.66666666666666" height="3"/>
                                                 <color key="backgroundColor" name="subGray4"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="pkU-cM-U2F"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7R-8q-BbJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="37"/>
                                                 <state key="normal" title="호감"/>
                                                 <connections>
                                                     <action selector="feelingsTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="G8E-XH-jSH"/>
@@ -67,17 +67,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFl-6n-RIz">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="40"/>
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-d0-Jwb">
-                                                <rect key="frame" x="0.0" y="37" width="207" height="3"/>
+                                                <rect key="frame" x="0.0" y="36.999999999999986" width="187.33333333333334" height="3"/>
                                                 <color key="backgroundColor" name="subGray4"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="eQz-xE-zny"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5T-oK-k0k">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="37"/>
                                                 <state key="normal" title="찜"/>
                                                 <connections>
                                                     <action selector="dibsTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UNJ-nG-4i0"/>
@@ -101,24 +101,24 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-ve-D5I">
-                                <rect key="frame" x="0.0" y="134" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="133.66666666666669" width="375" height="678.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1gK-Mv-oN7">
-                                    <size key="itemSize" width="415" height="763"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="16" id="1gK-Mv-oN7">
+                                    <size key="itemSize" width="378" height="720.33333333333326"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MatchingStatusCVCell" id="oGV-2z-k3f" customClass="MatchingStatusCVCell" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-0.5" width="415" height="763"/>
+                                        <rect key="frame" x="0.0" y="-21" width="378" height="720.33333333333326"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LSA-ve-QGX">
-                                            <rect key="frame" x="0.0" y="0.0" width="415" height="763"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="720.33333333333326"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-2m-ebd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="415" height="763"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="720.33333333333337"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </tableView>
                                             </subviews>
@@ -129,7 +129,7 @@
                                                 <constraint firstItem="Nt5-2m-ebd" firstAttribute="top" secondItem="LSA-ve-QGX" secondAttribute="top" id="yMr-TY-dHa"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="415" height="763"/>
+                                        <size key="customSize" width="378" height="720.33333333333326"/>
                                         <connections>
                                             <outlet property="innerTV" destination="Nt5-2m-ebd" id="PA6-xZ-Ez3"/>
                                         </connections>
@@ -154,6 +154,7 @@
                     <navigationItem key="navigationItem" id="4g3-yy-b8A"/>
                     <connections>
                         <outlet property="matchingCV" destination="RVY-ve-D5I" id="WFi-hw-QYX"/>
+                        <outlet property="segueStackView" destination="EZG-6S-p0n" id="Vj8-om-PHJ"/>
                         <outletCollection property="segIndicators" destination="ZQz-2i-zaj" collectionClass="NSMutableArray" id="k5w-1f-aVj"/>
                         <outletCollection property="segIndicators" destination="iK0-d0-Jwb" collectionClass="NSMutableArray" id="PNU-bR-Sng"/>
                         <outletCollection property="segueBtns" destination="i7R-8q-BbJ" collectionClass="NSMutableArray" id="hdh-7u-9bv"/>
@@ -162,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="98"/>
+            <point key="canvasLocation" x="944.79999999999995" y="97.536945812807886"/>
         </scene>
         <!--Matching StatusNC-->
         <scene sceneID="ibB-P0-jSd">

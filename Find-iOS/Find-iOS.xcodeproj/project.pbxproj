@@ -44,6 +44,8 @@
 		542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E0D2644315200E69A4D /* UIColor+Additions.swift */; };
 		542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E102644317300E69A4D /* UIView+Extension.swift */; };
 		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
+		542B5125265D494700A2006A /* MatchingDibsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542B5123265D494700A2006A /* MatchingDibsCVCell.swift */; };
+		542B5126265D494700A2006A /* MatchingDibsCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542B5124265D494700A2006A /* MatchingDibsCVCell.xib */; };
 		5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5461109B26553E350009B5CF /* MatchingStatus.storyboard */; };
 		5461109E26553E490009B5CF /* MatchingStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109D26553E490009B5CF /* MatchingStatusVC.swift */; };
 		546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109F265541450009B5CF /* MatchingStatusNC.swift */; };
@@ -153,6 +155,8 @@
 		542A1E0D2644315200E69A4D /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		542A1E102644317300E69A4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		542B5123265D494700A2006A /* MatchingDibsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingDibsCVCell.swift; sourceTree = "<group>"; };
+		542B5124265D494700A2006A /* MatchingDibsCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchingDibsCVCell.xib; sourceTree = "<group>"; };
 		5461109B26553E350009B5CF /* MatchingStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingStatus.storyboard; sourceTree = "<group>"; };
 		5461109D26553E490009B5CF /* MatchingStatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStatusVC.swift; sourceTree = "<group>"; };
 		5461109F265541450009B5CF /* MatchingStatusNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatchingStatusNC.swift; path = "Find-iOS/Screen/MatchingStatus/ViewController/MatchingStatusNC.swift"; sourceTree = SOURCE_ROOT; };
@@ -409,6 +413,16 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		542B5127265D5D3900A2006A /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */,
+				542B5123265D494700A2006A /* MatchingDibsCVCell.swift */,
+				542B5124265D494700A2006A /* MatchingDibsCVCell.xib */,
+			);
+			path = Segue;
+			sourceTree = "<group>";
+		};
 		5461109726553DF80009B5CF /* MatchingStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,10 +454,10 @@
 		5461109A26553E130009B5CF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				542B5127265D5D3900A2006A /* Segue */,
 				546110C126575C040009B5CF /* HeaderFooter */,
 				546110A82655514D0009B5CF /* Dibs */,
 				546110A7265551450009B5CF /* Feeling */,
-				546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -847,6 +861,7 @@
 				548A677E264FF95D0014CBE8 /* InterviewQestionCVCell.xib in Resources */,
 				377C277A2644470C003FF385 /* ValueList.storyboard in Resources */,
 				54B9665C264906900028F1BF /* SpoqaHanSansNeo-Light.ttf in Resources */,
+				542B5126265D494700A2006A /* MatchingDibsCVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,7 +959,6 @@
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
-				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
 				37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				548C8C8826502CED007EC128 /* InterviewImages.swift in Sources */,
@@ -965,6 +979,7 @@
 				373E1EE7265CEFE000516B47 /* ParentVC.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
 				546110AB265551740009B5CF /* ConnectedTVCell.swift in Sources */,
+				542B5125265D494700A2006A /* MatchingDibsCVCell.swift in Sources */,
 				546110B9265556470009B5CF /* FeelingCVCell.swift in Sources */,
 				546110B1265551AF0009B5CF /* FeelingTVCell.swift in Sources */,
 				36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */,
