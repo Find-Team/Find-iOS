@@ -15,6 +15,7 @@ class ValueListCVC: UICollectionViewCell {
     
     static let identifier = "ValueListCVC"
     var currentCategory: Category = .relationship
+    var parentVC: ParentVC = .valueList
     
     //MARK: - IBOutlets
     
@@ -142,6 +143,15 @@ extension ValueListCVC: UITableViewDataSource {
         
         else {
             return UITableViewCell()
+        }
+        
+        /// 상대 가치관 문답 보기에서 넘어왔을 때는 버튼 제거
+        if parentVC == .yourValue {
+            cell.selectedBtn.isHidden = true
+            cell.selectedBoxView.isHidden = true
+        } else {
+            cell.selectedBtn.isHidden = false
+            cell.selectedBoxView.isHidden = false
         }
         
         /// 질문 뷰 스타일

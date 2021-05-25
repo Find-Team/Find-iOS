@@ -46,6 +46,8 @@ extension YourValueListCVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        cell.parentVC = .yourValue
+        
         return cell
     }
 }
