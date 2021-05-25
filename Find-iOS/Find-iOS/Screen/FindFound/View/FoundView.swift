@@ -30,6 +30,24 @@ class FoundView: UIView {
     required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
     }
+    
+    // rootViewController
+    func getCurrentViewController() -> UIViewController? {
+       if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+           var currentController: UIViewController! = rootController
+           while( currentController.presentedViewController != nil ) {
+               currentController = currentController.presentedViewController
+           }
+           return currentController
+       }
+       return nil
+   }
+    
+    // parentViewController
+    func getSuperViewController() -> UIViewController? {
+        var viewController: UIViewController? = self.parentViewController
+        return viewController
+    }
 
 }
 
@@ -40,6 +58,8 @@ extension FoundView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoundProfileCardCVCell", for: indexPath) as? FoundProfileCardCVCell else { return UICollectionViewCell() }
+        print("파운드뷰뷰",cell.checkLike)
+        cell.makeStarBtn()
         return cell
     }
 }
@@ -52,5 +72,11 @@ extension FoundView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 12
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        let storyBoard = UIStoryboard(name: "YourProfile", bundle: nil)
+        let dvc = storyBoard.instantiateViewController(identifier: "YourProfileVC")
+        let currentController = self.getSuperViewController()
+        currentController?.navigationController?.pushViewController(dvc, animated: true)
+    }
 }

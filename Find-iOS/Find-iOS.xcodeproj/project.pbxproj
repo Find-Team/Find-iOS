@@ -56,7 +56,6 @@
 		54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9664C264904660028F1BF /* ProfileWritingVC.swift */; };
 		54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9664E264904780028F1BF /* MyProfileVC.swift */; };
 		54B96651264904800028F1BF /* InterviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B96650264904800028F1BF /* InterviewVC.swift */; };
-		54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B966522649048A0028F1BF /* FindFoundVC.swift */; };
 		54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966552649068D0028F1BF /* SpoqaHanSansNeo-Regular.ttf */; };
 		54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966562649068E0028F1BF /* SpoqaHanSansNeo-Medium.ttf */; };
 		54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966572649068F0028F1BF /* SpoqaHanSansNeo-Bold.ttf */; };
@@ -71,13 +70,14 @@
 		54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA1F264A84550076C306 /* MyProfileNC.swift */; };
 		54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA21264A84AB0076C306 /* FindFoundNC.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
-		926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */; };
-		926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D1265451D700E8E8FD /* InterviewImgTVC.swift */; };
-		926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */; };
 		920EEFF526578786009F263A /* FoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920EEFF426578786009F263A /* FoundView.xib */; };
 		920EEFF826578795009F263A /* FoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EEFF726578795009F263A /* FoundView.swift */; };
 		920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EF00626579D66009F263A /* FoundProfileCardCVCell.swift */; };
 		920EF00926579D66009F263A /* FoundProfileCardCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920EF00726579D66009F263A /* FoundProfileCardCVCell.xib */; };
+		920FD8F5265D1B6700AE9936 /* InterviewImgCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920FD8F4265D1B6700AE9936 /* InterviewImgCVCell.swift */; };
+		926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */; };
+		926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D1265451D700E8E8FD /* InterviewImgTVC.swift */; };
+		926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */; };
 		926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314E52656306800E8E8FD /* FindFoundVC.swift */; };
 		926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */; };
 		926314F02656CD0F00E8E8FD /* FindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 926314EF2656CD0E00E8E8FD /* FindView.xib */; };
@@ -140,7 +140,6 @@
 		54B9664C264904660028F1BF /* ProfileWritingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWritingVC.swift; sourceTree = "<group>"; };
 		54B9664E264904780028F1BF /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		54B96650264904800028F1BF /* InterviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewVC.swift; sourceTree = "<group>"; };
-		54B966522649048A0028F1BF /* FindFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC.swift; sourceTree = "<group>"; };
 		54B966552649068D0028F1BF /* SpoqaHanSansNeo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.ttf"; sourceTree = "<group>"; };
 		54B966562649068E0028F1BF /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
 		54B966572649068F0028F1BF /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
@@ -154,13 +153,14 @@
 		54B9666C2649250B0028F1BF /* FindTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTabBarController.swift; sourceTree = "<group>"; };
 		54E1BA1F264A84550076C306 /* MyProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileNC.swift; sourceTree = "<group>"; };
 		54E1BA21264A84AB0076C306 /* FindFoundNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundNC.swift; sourceTree = "<group>"; };
-		926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegueInterviewCVC.swift; path = "Find-iOS/Screen/YourProfile/ViewController/SegueInterviewCVC.swift"; sourceTree = SOURCE_ROOT; };
-		926314D1265451D700E8E8FD /* InterviewImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewImgTVC.swift; sourceTree = "<group>"; };
-		926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAnswerTVC.swift; sourceTree = "<group>"; };
 		920EEFF426578786009F263A /* FoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundView.xib; sourceTree = "<group>"; };
 		920EEFF726578795009F263A /* FoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundView.swift; sourceTree = "<group>"; };
 		920EF00626579D66009F263A /* FoundProfileCardCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundProfileCardCVCell.swift; sourceTree = "<group>"; };
 		920EF00726579D66009F263A /* FoundProfileCardCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundProfileCardCVCell.xib; sourceTree = "<group>"; };
+		920FD8F4265D1B6700AE9936 /* InterviewImgCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewImgCVCell.swift; sourceTree = "<group>"; };
+		926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegueInterviewCVC.swift; path = "Find-iOS/Screen/YourProfile/ViewController/SegueInterviewCVC.swift"; sourceTree = SOURCE_ROOT; };
+		926314D1265451D700E8E8FD /* InterviewImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewImgTVC.swift; sourceTree = "<group>"; };
+		926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAnswerTVC.swift; sourceTree = "<group>"; };
 		926314E52656306800E8E8FD /* FindFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC.swift; sourceTree = "<group>"; };
 		926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundSegueCVC.swift; sourceTree = "<group>"; };
 		926314EF2656CD0E00E8E8FD /* FindView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindView.xib; sourceTree = "<group>"; };
@@ -564,6 +564,7 @@
 				926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */,
 				926314D1265451D700E8E8FD /* InterviewImgTVC.swift */,
 				926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */,
+				920FD8F4265D1B6700AE9936 /* InterviewImgCVCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -754,6 +755,7 @@
 				920EEFF826578795009F263A /* FoundView.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
 				926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */,
+				920FD8F5265D1B6700AE9936 /* InterviewImgCVCell.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */,
 				926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */,
@@ -772,7 +774,6 @@
 				36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */,
 				920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
-				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				548C8C8826502CED007EC128 /* InterviewImages.swift in Sources */,
 				548A6783265009AC0014CBE8 /* photoPreviewCVCell.swift in Sources */,

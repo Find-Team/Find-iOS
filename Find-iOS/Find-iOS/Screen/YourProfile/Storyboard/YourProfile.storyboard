@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +26,7 @@
         <!--YourProfileVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="YourProfileVC" id="Y6W-OH-hqX" customClass="YourProfileVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YourProfileVC" title="YourProfileVC" id="Y6W-OH-hqX" customClass="YourProfileVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +56,9 @@
                                                             <constraint firstAttribute="width" secondItem="Sg8-Y0-ozz" secondAttribute="height" multiplier="1:1" id="Xtw-Lx-EHd"/>
                                                         </constraints>
                                                         <state key="normal" image="backBtn"/>
+                                                        <connections>
+                                                            <action selector="backBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tnj-Ta-cqz"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -154,6 +156,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6D-kX-neA">
                                         <rect key="frame" x="0.0" y="622" width="375" height="60"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerGradientImg" translatesAutoresizingMaskIntoConstraints="NO" id="VW2-Ij-0GS">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가치관  4 / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feA-HB-wfa">
                                                 <rect key="frame" x="30" y="13" width="62" height="14"/>
                                                 <constraints>
@@ -186,13 +191,16 @@
                                                 <state key="normal" image="iconlyLightArrowRight"/>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" name="find_Purple"/>
                                         <constraints>
                                             <constraint firstItem="feA-HB-wfa" firstAttribute="top" secondItem="F6D-kX-neA" secondAttribute="top" constant="13" id="0Qc-I3-P4q"/>
+                                            <constraint firstAttribute="trailing" secondItem="VW2-Ij-0GS" secondAttribute="trailing" id="11Q-3S-Zos"/>
                                             <constraint firstItem="keN-UQ-JSn" firstAttribute="centerY" secondItem="7fs-iM-YDY" secondAttribute="centerY" id="1d9-2x-JW1"/>
                                             <constraint firstItem="7fs-iM-YDY" firstAttribute="leading" secondItem="F6D-kX-neA" secondAttribute="leading" constant="30" id="3MD-87-YXO"/>
                                             <constraint firstItem="keN-UQ-JSn" firstAttribute="leading" secondItem="7fs-iM-YDY" secondAttribute="trailing" id="BlD-AS-6TZ"/>
+                                            <constraint firstItem="VW2-Ij-0GS" firstAttribute="leading" secondItem="F6D-kX-neA" secondAttribute="leading" id="Q5c-q2-TMQ"/>
                                             <constraint firstAttribute="height" constant="60" id="R3k-U1-G4t"/>
+                                            <constraint firstAttribute="bottom" secondItem="VW2-Ij-0GS" secondAttribute="bottom" id="Rmp-cV-tkL"/>
+                                            <constraint firstItem="VW2-Ij-0GS" firstAttribute="top" secondItem="F6D-kX-neA" secondAttribute="top" id="Sgs-R9-f3L"/>
                                             <constraint firstItem="feA-HB-wfa" firstAttribute="leading" secondItem="F6D-kX-neA" secondAttribute="leading" constant="30" id="VB3-Fc-N7o"/>
                                             <constraint firstItem="R5L-k7-UVX" firstAttribute="top" secondItem="F6D-kX-neA" secondAttribute="top" constant="15" id="hlg-Tr-n1r"/>
                                             <constraint firstAttribute="trailing" secondItem="R5L-k7-UVX" secondAttribute="trailing" constant="12" id="paI-BC-pI3"/>
@@ -326,7 +334,54 @@
                                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uaw-Sv-XPp" id="5ec-UY-a9b">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                                <subviews>
+                                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-0U-LZ9">
+                                                                                        <rect key="frame" x="16" y="0.0" width="359" height="250"/>
+                                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LEw-zX-XmK">
+                                                                                            <size key="itemSize" width="128" height="128"/>
+                                                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                        </collectionViewFlowLayout>
+                                                                                        <cells>
+                                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterviewImgCVCell" id="wxC-Vz-QfI" customClass="InterviewImgCVCell" customModule="Find_iOS" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g2y-OK-U4j">
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                                    <subviews>
+                                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jRMt9TsM_400x400" translatesAutoresizingMaskIntoConstraints="NO" id="bkQ-KX-xnw">
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                                                                        </imageView>
+                                                                                                    </subviews>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstItem="bkQ-KX-xnw" firstAttribute="leading" secondItem="g2y-OK-U4j" secondAttribute="leading" id="0cX-8A-BuI"/>
+                                                                                                        <constraint firstAttribute="bottom" secondItem="bkQ-KX-xnw" secondAttribute="bottom" id="6ZE-54-Gkl"/>
+                                                                                                        <constraint firstAttribute="trailing" secondItem="bkQ-KX-xnw" secondAttribute="trailing" id="YIk-AN-nzq"/>
+                                                                                                        <constraint firstItem="bkQ-KX-xnw" firstAttribute="top" secondItem="g2y-OK-U4j" secondAttribute="top" id="e1I-h3-Jow"/>
+                                                                                                    </constraints>
+                                                                                                </collectionViewCellContentView>
+                                                                                                <size key="customSize" width="250" height="250"/>
+                                                                                                <connections>
+                                                                                                    <outlet property="interviewImgView" destination="bkQ-KX-xnw" id="AMV-9Y-aGR"/>
+                                                                                                    <outlet property="myContentView" destination="g2y-OK-U4j" id="It1-9l-CH6"/>
+                                                                                                </connections>
+                                                                                            </collectionViewCell>
+                                                                                        </cells>
+                                                                                    </collectionView>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" secondItem="Qcw-0U-LZ9" secondAttribute="bottom" id="0ik-Tp-bfH"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="Qcw-0U-LZ9" secondAttribute="trailing" id="bgc-Do-o5l"/>
+                                                                                    <constraint firstItem="Qcw-0U-LZ9" firstAttribute="leading" secondItem="5ec-UY-a9b" secondAttribute="leading" constant="16" id="i4O-fo-B0j"/>
+                                                                                    <constraint firstItem="Qcw-0U-LZ9" firstAttribute="top" secondItem="5ec-UY-a9b" secondAttribute="top" id="pfB-kD-SPf"/>
+                                                                                </constraints>
                                                                             </tableViewCellContentView>
+                                                                            <connections>
+                                                                                <outlet property="interviewImgCVC" destination="Qcw-0U-LZ9" id="dam-pv-1te"/>
+                                                                            </connections>
                                                                         </tableViewCell>
                                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterviewAnswerTVC" rowHeight="120" id="pOn-j9-Xwr" customClass="InterviewAnswerTVC" customModule="Find_iOS" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="278" width="375" height="120"/>
@@ -439,7 +494,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRS-gC-5sm">
-                                <rect key="frame" x="16" y="724" width="343" height="50"/>
+                                <rect key="frame" x="16" y="680" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="LBu-u8-qwc"/>
                                 </constraints>
@@ -449,15 +504,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OeC-m0-wBs" secondAttribute="bottom" id="CM7-qN-Czy"/>
                             <constraint firstItem="OeC-m0-wBs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="J5U-Q8-1SQ"/>
-                            <constraint firstItem="lRS-gC-5sm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="LEh-3j-PPq"/>
-                            <constraint firstItem="lRS-gC-5sm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="680" id="UIW-jN-i6n"/>
+                            <constraint firstItem="lRS-gC-5sm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="LEh-3j-PPq"/>
+                            <constraint firstItem="lRS-gC-5sm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="680" id="UIW-jN-i6n"/>
                             <constraint firstItem="OeC-m0-wBs" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="cMT-D1-cCg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lRS-gC-5sm" secondAttribute="trailing" constant="16" id="s8O-tT-msM"/>
+                            <constraint firstAttribute="trailing" secondItem="lRS-gC-5sm" secondAttribute="trailing" constant="16" id="s8O-tT-msM"/>
                             <constraint firstAttribute="trailing" secondItem="OeC-m0-wBs" secondAttribute="trailing" id="uaA-kl-mkV"/>
                         </constraints>
                     </view>
@@ -499,8 +553,10 @@
     </scenes>
     <resources>
         <image name="backBtn" width="40" height="40"/>
+        <image name="bannerGradientImg" width="375" height="60"/>
         <image name="btnFoundStarMintLine" width="40" height="40"/>
         <image name="iconlyLightArrowRight" width="30" height="30"/>
+        <image name="jRMt9TsM_400x400" width="400" height="400"/>
         <namedColor name="connectedBlur">
             <color red="0.76499998569488525" green="0.6940000057220459" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -509,9 +565,6 @@
         </namedColor>
         <namedColor name="find_LightPurple">
             <color red="0.90600001811981201" green="0.88200002908706665" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="find_Purple">
-            <color red="0.60000002384185791" green="0.50199997425079346" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="subGray2">
             <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

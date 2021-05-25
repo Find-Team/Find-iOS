@@ -77,8 +77,8 @@ extension FindFoundVC {
     func findSelected() {
         print("findselected")
         currentCategory = .find
+        self.tabBarController?.tabBar.isHidden = false
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
-        
         if segueIndicatorView.count == 2 {
             segueIndicatorView[0].backgroundColor = .find_DarkPurple
             segueIndicatorView[1].backgroundColor = .subGray1
@@ -94,6 +94,7 @@ extension FindFoundVC {
     func foundSelected() {
         print("foundSelected")
         currentCategory = .found
+        self.tabBarController?.tabBar.isHidden = true
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
         
         if segueIndicatorView.count == 2 {
