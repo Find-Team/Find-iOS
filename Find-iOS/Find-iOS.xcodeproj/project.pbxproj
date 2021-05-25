@@ -14,6 +14,7 @@
 		36693DAA26564DBC00A27793 /* ProfileCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36693DA926564DBC00A27793 /* ProfileCVCell.swift */; };
 		36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36693DBB2656A65D00A27793 /* BasicInfoCVCell.swift */; };
 		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
+		373E1EE7265CEFE000516B47 /* ParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E1EE6265CEFE000516B47 /* ParentVC.swift */; };
 		3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */; };
 		3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */; };
 		377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */; };
@@ -27,6 +28,12 @@
 		378E3A1426526ED40023A326 /* MatchingLottie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378E3A1326526ED40023A326 /* MatchingLottie.storyboard */; };
 		378E3A1626526EEC0023A326 /* MatchingLottieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378E3A1526526EEC0023A326 /* MatchingLottieVC.swift */; };
 		37A18C172653F29B00E3B67C /* 10649-gradient-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */; };
+		37A18C19265402B300E3B67C /* YourValue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A18C18265402B300E3B67C /* YourValue.storyboard */; };
+		37A18C1B265402C300E3B67C /* YourValueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A18C1A265402C300E3B67C /* YourValueVC.swift */; };
+		37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0BB26581A4700D810BE /* YourValueHeaderCVC.swift */; };
+		37F1E0BE26581AAD00D810BE /* YourValueListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0BD26581AAD00D810BE /* YourValueListCVC.swift */; };
+		37F1E0C2265828D900D810BE /* ValueFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0C1265828D900D810BE /* ValueFilter.swift */; };
+		37F1E0C4265834B300D810BE /* ValueFilterAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1E0C3265834B300D810BE /* ValueFilterAll.swift */; };
 		5412CC1A26526279003EDA6C /* InterviewCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412CC1926526279003EDA6C /* InterviewCVCell.swift */; };
 		542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF326442F8B00E69A4D /* AppDelegate.swift */; };
 		542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1DF526442F8B00E69A4D /* SceneDelegate.swift */; };
@@ -98,6 +105,7 @@
 		36693DA926564DBC00A27793 /* ProfileCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCVCell.swift; path = Cell/ProfileCVCell.swift; sourceTree = "<group>"; };
 		36693DBB2656A65D00A27793 /* BasicInfoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicInfoCVCell.swift; path = Cell/BasicInfoCVCell.swift; sourceTree = "<group>"; };
 		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		373E1EE6265CEFE000516B47 /* ParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentVC.swift; sourceTree = "<group>"; };
 		3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuestionCategory.swift; sourceTree = "<group>"; };
 		3771675D26457E8000AE3A15 /* ValueTestQuestionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTestQuestionTVC.swift; sourceTree = "<group>"; };
 		3771675F2645ADAD00AE3A15 /* ValueListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueListTVC.swift; sourceTree = "<group>"; };
@@ -111,6 +119,12 @@
 		378E3A1326526ED40023A326 /* MatchingLottie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingLottie.storyboard; sourceTree = "<group>"; };
 		378E3A1526526EEC0023A326 /* MatchingLottieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingLottieVC.swift; sourceTree = "<group>"; };
 		37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10649-gradient-loading.json"; sourceTree = "<group>"; };
+		37A18C18265402B300E3B67C /* YourValue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourValue.storyboard; sourceTree = "<group>"; };
+		37A18C1A265402C300E3B67C /* YourValueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourValueVC.swift; sourceTree = "<group>"; };
+		37F1E0BB26581A4700D810BE /* YourValueHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourValueHeaderCVC.swift; sourceTree = "<group>"; };
+		37F1E0BD26581AAD00D810BE /* YourValueListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourValueListCVC.swift; sourceTree = "<group>"; };
+		37F1E0C1265828D900D810BE /* ValueFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueFilter.swift; sourceTree = "<group>"; };
+		37F1E0C3265834B300D810BE /* ValueFilterAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueFilterAll.swift; sourceTree = "<group>"; };
 		5412CC1926526279003EDA6C /* InterviewCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewCVCell.swift; sourceTree = "<group>"; };
 		542A1DF026442F8B00E69A4D /* Find-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		542A1DF326442F8B00E69A4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +263,7 @@
 			children = (
 				377C278726445D84003FF385 /* Questions.swift */,
 				3771675B2645791C00AE3A15 /* GetQuestionCategory.swift */,
+				373E1EE6265CEFE000516B47 /* ParentVC.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +274,24 @@
 				37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		37F1E0B9265819E800D810BE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				37F1E0BB26581A4700D810BE /* YourValueHeaderCVC.swift */,
+				37F1E0BD26581AAD00D810BE /* YourValueListCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		37F1E0BA26581A1900D810BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37F1E0C1265828D900D810BE /* ValueFilter.swift */,
+				37F1E0C3265834B300D810BE /* ValueFilterAll.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		542A1DE726442F8B00E69A4D = {
@@ -428,6 +461,8 @@
 				926314C8265448FB00E8E8FD /* Cell */,
 				54B9662C264903350028F1BF /* ViewController */,
 				54B9662B2649032E0028F1BF /* Storyboard */,
+				37F1E0B9265819E800D810BE /* Cell */,
+				37F1E0BA26581A1900D810BE /* Model */,
 			);
 			path = YourProfile;
 			sourceTree = "<group>";
@@ -436,6 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				54B9663E2649040F0028F1BF /* YourProfile.storyboard */,
+				37A18C18265402B300E3B67C /* YourValue.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -444,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				54B9663C264904020028F1BF /* YourProfileVC.swift */,
+				37A18C1A265402C300E3B67C /* YourValueVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -670,6 +707,7 @@
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */,
 				54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */,
+				37A18C19265402B300E3B67C /* YourValue.storyboard in Resources */,
 				3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */,
 				920EF00926579D66009F263A /* FoundProfileCardCVCell.xib in Resources */,
 				920EEFF526578786009F263A /* FoundView.xib in Resources */,
@@ -749,6 +787,8 @@
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
 				5412CC1A26526279003EDA6C /* InterviewCVCell.swift in Sources */,
+				37F1E0C2265828D900D810BE /* ValueFilter.swift in Sources */,
+				37F1E0BE26581AAD00D810BE /* YourValueListCVC.swift in Sources */,
 				378E3A10265044190023A326 /* ValueListCVC.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
@@ -767,6 +807,7 @@
 				36693DAA26564DBC00A27793 /* ProfileCVCell.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
 				361B6E512653B4FA00ACF88A /* ProfileImages.swift in Sources */,
+				37F1E0C4265834B300D810BE /* ValueFilterAll.swift in Sources */,
 				377C278826445D84003FF385 /* Questions.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
 				54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */,
@@ -782,6 +823,7 @@
 				920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
+				37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				548C8C8826502CED007EC128 /* InterviewImages.swift in Sources */,
 				548A6783265009AC0014CBE8 /* photoPreviewCVCell.swift in Sources */,
@@ -791,9 +833,11 @@
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
 				54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */,
 				54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */,
+				37A18C1B265402C300E3B67C /* YourValueVC.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
 				548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */,
 				377C278026444761003FF385 /* ValueListVC.swift in Sources */,
+				373E1EE7265CEFE000516B47 /* ParentVC.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
 				36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */,
 				3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */,
