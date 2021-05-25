@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SpoqaHanSansNeo-Bold.ttf</string>
+		<string>SpoqaHanSansNeo-Light.ttf</string>
+		<string>SpoqaHanSansNeo-Medium.ttf</string>
+		<string>SpoqaHanSansNeo-Regular.ttf</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -24,7 +33,7 @@
 	<string>사진을 추가하려면 권한 허용이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SpoqaHanSansNeo-Bold.ttf</string>
+		<string></string>
 		<string>SpoqaHanSansNeo-Light.ttf</string>
 		<string>SpoqaHanSansNeo-Medium.ttf</string>
 		<string>SpoqaHanSansNeo-Regular.ttf</string>
@@ -53,7 +62,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>TabBar</string>
+	<string>ProfileWriting</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
