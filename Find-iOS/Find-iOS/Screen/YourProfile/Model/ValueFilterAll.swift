@@ -7,6 +7,6 @@
 
 import Foundation
 
-//enum ValueFilterAll {
-//    case same, different
-//}
+enum ValueFilterAll {
+    case same, different
+}

@@ -9,6 +9,7 @@ import UIKit
 
 class YourValueListCVC: UICollectionViewCell {
     static let identifier = "YourValueListCVC"
+    var currentSegue: ValueFilterAll = .same
     
     @IBOutlet var segueCV: UICollectionView!
     
@@ -17,6 +18,8 @@ class YourValueListCVC: UICollectionViewCell {
         
         segueCV.delegate = self
         segueCV.dataSource = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(segueChanged(_:)), name: NSNotification.Name("SegueChanged"), object: nil)
     }
     
     override func prepareForReuse() {
@@ -27,11 +30,25 @@ class YourValueListCVC: UICollectionViewCell {
 
 extension YourValueListCVC {
     func sameQuestionSelected() {
-        
+        print("same")
+        currentSegue = .same
+        self.segueCV.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
     }
     
     func differentQuestionSelected() {
+        print("different")
+        currentSegue = .different
+        self.segueCV.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
+    }
+    
+    @objc func segueChanged(_ noti: Notification) {
+        currentSegue = noti.object as! ValueFilterAll
         
+        if currentSegue == .same {
+            sameQuestionSelected()
+        } else {
+            differentQuestionSelected()
+        }
     }
 }
 
@@ -85,7 +102,8 @@ extension YourValueListCVC: UICollectionViewDelegateFlowLayout {
         default:
             break
         }
-        
+        print(">> \(currentIndex) \(currentSegue)")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChangedbyScroll"), object: currentSegue)
         segueCV.reloadData()
     }
 }

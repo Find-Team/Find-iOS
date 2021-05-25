@@ -93,8 +93,8 @@ class YourValueHeaderCVC: UICollectionViewCell {
     
     //MARK: - Lifecycle Methods
     
-    override class func awakeFromNib() {
-        
+    override func awakeFromNib() {
+        NotificationCenter.default.addObserver(self, selector: #selector(segueChanged(_:)), name: NSNotification.Name("SegueChangedbyScroll"), object: nil)
     }
     
     override func prepareForReuse() {
@@ -109,10 +109,14 @@ class YourValueHeaderCVC: UICollectionViewCell {
     
     @IBAction func sameQuestionBtnDidTap(_ sender: Any) {
         sameQuestionSelected()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChanged"), object: currentSegue)
+        print("same noti sent")
     }
     
     @IBAction func differentQuestionBtnDidTap(_ sender: Any) {
         differentQuestionSelected()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChanged"), object: currentSegue)
+        print("different noti sent")
     }
     
 }
@@ -149,7 +153,6 @@ extension YourValueHeaderCVC {
     
     func sameQuestionSelected() {
         currentSegue = .same
-//        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
         
         segueIndicator[0].backgroundColor = .find_DarkPurple
         segueIndicator[1].backgroundColor = .subGray1
@@ -166,7 +169,6 @@ extension YourValueHeaderCVC {
     
     func differentQuestionSelected() {
         currentSegue = .different
-//        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
         
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .find_DarkPurple
@@ -179,6 +181,18 @@ extension YourValueHeaderCVC {
         sameQuestionBtn.setTitle("같은 답변", for: .normal)
         sameQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
         sameQuestionBtn.setTitleColor(.subGray2, for: .normal)
+    }
+    
+    @objc func segueChanged(_ noti: Notification) {
+        currentSegue = noti.object as! ValueFilterAll
+        
+        print("scroll noti received")
+        
+        if currentSegue == .same {
+            sameQuestionSelected()
+        } else {
+            differentQuestionSelected()
+        }
     }
     
 }

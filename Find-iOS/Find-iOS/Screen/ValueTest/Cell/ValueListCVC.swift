@@ -16,6 +16,7 @@ class ValueListCVC: UICollectionViewCell {
     static let identifier = "ValueListCVC"
     var currentCategory: Category = .relationship
     var parentVC: ParentVC = .valueList
+    var currentSegue: ValueFilterAll = .same
     
     //MARK: - IBOutlets
     
@@ -131,6 +132,16 @@ extension ValueListCVC {
         
         cell.selectedCountLabel.isHidden = true
     }
+    
+//    @objc func segueChanged(_ noti: Notification) {
+//        currentSegue = noti.object as! ValueFilterAll
+//
+//        if currentSegue == .same {
+//
+//        } else {
+//
+//        }
+//    }
 }
 
 extension ValueListCVC: UITableViewDataSource {

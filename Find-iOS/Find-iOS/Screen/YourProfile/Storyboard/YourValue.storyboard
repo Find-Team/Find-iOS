@@ -492,6 +492,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="sameQuestionBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WN5-1i-p9k"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -512,6 +515,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="differentQuestionBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Trp-Su-4rK"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1go-d6-qLk">
                                                         <rect key="frame" x="0.0" y="28" width="207" height="2"/>

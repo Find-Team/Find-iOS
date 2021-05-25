@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum ValueFilterAll {
-    case same, different
-}
-var currentSegue: ValueFilterAll = .same
-
 class YourValueVC: UIViewController {
     
     //MARK: - custom variables
@@ -20,6 +15,8 @@ class YourValueVC: UIViewController {
     
     var sameQuestionCount: Int = 10
     var differentQustionCount: Int = 10
+    
+    var currentSegue: ValueFilterAll = .same
     
 //    var matchingType:
     //MARK: - IBOutlets
@@ -42,14 +39,27 @@ class YourValueVC: UIViewController {
         segueOnTopView.isHidden = true
         
         sameQuestionSelected()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(segueChanged(_:)), name: NSNotification.Name("SegueChangedbyScroll"), object: nil)
     }
-
+    
+    //MARK: - IBActions
+    
+    @IBAction func sameQuestionBtnDidTap(_ sender: Any) {
+        sameQuestionSelected()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChanged"), object: currentSegue)
+    }
+    
+    @IBAction func differentQuestionBtnDidTap(_ sender: Any) {
+        differentQuestionSelected()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChanged"), object: currentSegue)
+    }
+    
 }
 
 extension YourValueVC {
     func sameQuestionSelected() {
         currentSegue = .same
-//        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
         
         segueIndicator[0].backgroundColor = .find_DarkPurple
         segueIndicator[1].backgroundColor = .subGray1
@@ -66,7 +76,6 @@ extension YourValueVC {
     
     func differentQuestionSelected() {
         currentSegue = .different
-//        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
         
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .find_DarkPurple
@@ -79,6 +88,18 @@ extension YourValueVC {
         sameQuestionBtn.setTitle("같은 답변", for: .normal)
         sameQuestionBtn.titleLabel?.font = .spoqaRegular(size: 14)
         sameQuestionBtn.setTitleColor(.subGray2, for: .normal)
+    }
+    
+    @objc func segueChanged(_ noti: Notification) {
+        currentSegue = noti.object as! ValueFilterAll
+        
+        print("scroll noti received")
+        
+        if currentSegue == .same {
+            sameQuestionSelected()
+        } else {
+            differentQuestionSelected()
+        }
     }
 }
 
