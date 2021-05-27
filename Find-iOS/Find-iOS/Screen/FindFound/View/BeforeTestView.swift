@@ -54,5 +54,6 @@ class BeforeTestView: UIView {
         let currentController = self.getSuperViewController()
         currentController?.hidesBottomBarWhenPushed = true
         currentController?.navigationController?.pushViewController(dvc, animated: true)
+        currentController?.hidesBottomBarWhenPushed = false
     }
 }

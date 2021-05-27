@@ -252,18 +252,30 @@ extension ValueListCVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 43)) //set these values as necessary
-        returnedView.backgroundColor = .white
-        
-        let label = UILabel(frame: CGRect(x: 20, y: 17, width: 33, height: 15))
-        
-        label.text = ["관계", "가족", "커리어"][section]
-        label.font = .spoqaRegular(size: 12)
-        label.textColor = .subGray2
-        label.letterSpacing = -0.36
-        
-        returnedView.addSubview(label)
-        
-        return returnedView
+        if parentVC == .yourValue {
+            let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 43)) //set these values as necessary
+            returnedView.backgroundColor = .white
+            
+            let label = UILabel(frame: CGRect(x: 20, y: 17, width: 33, height: 15))
+            
+            label.text = ["관계", "가족", "커리어"][section]
+            label.font = .spoqaRegular(size: 12)
+            label.textColor = .subGray2
+            label.letterSpacing = -0.36
+            
+            returnedView.addSubview(label)
+            
+            return returnedView
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if parentVC == .yourValue {
+            return 43
+        } else {
+            return 0
+        }
     }
 }

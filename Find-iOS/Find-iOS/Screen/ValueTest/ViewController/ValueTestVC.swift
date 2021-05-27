@@ -52,6 +52,8 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+        
         questionChoiceTableView.dataSource = self
         questionChoiceTableView.delegate = self
         
@@ -90,7 +92,7 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
             visitedFlag = true
         }
         
-        dvc.hidesBottomBarWhenPushed = true
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
