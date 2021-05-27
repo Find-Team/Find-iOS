@@ -44,6 +44,25 @@
 		542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E0D2644315200E69A4D /* UIColor+Additions.swift */; };
 		542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E102644317300E69A4D /* UIView+Extension.swift */; };
 		542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542A1E13264431DE00E69A4D /* UIButton+Extension.swift */; };
+		542B5125265D494700A2006A /* MatchingDibsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542B5123265D494700A2006A /* MatchingDibsCVCell.swift */; };
+		542B5126265D494700A2006A /* MatchingDibsCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542B5124265D494700A2006A /* MatchingDibsCVCell.xib */; };
+		5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5461109B26553E350009B5CF /* MatchingStatus.storyboard */; };
+		5461109E26553E490009B5CF /* MatchingStatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109D26553E490009B5CF /* MatchingStatusVC.swift */; };
+		546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461109F265541450009B5CF /* MatchingStatusNC.swift */; };
+		546110A22655463B0009B5CF /* MatchingStatusCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */; };
+		546110AB265551740009B5CF /* ConnectedTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110A9265551740009B5CF /* ConnectedTVCell.swift */; };
+		546110AC265551740009B5CF /* ConnectedTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110AA265551740009B5CF /* ConnectedTVCell.xib */; };
+		546110B1265551AF0009B5CF /* FeelingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110AF265551AF0009B5CF /* FeelingTVCell.swift */; };
+		546110B2265551AF0009B5CF /* FeelingTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110B0265551AF0009B5CF /* FeelingTVCell.xib */; };
+		546110B5265552F40009B5CF /* DibsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110B3265552F40009B5CF /* DibsTVCell.swift */; };
+		546110B6265552F40009B5CF /* DibsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110B4265552F40009B5CF /* DibsTVCell.xib */; };
+		546110B9265556470009B5CF /* FeelingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110B7265556470009B5CF /* FeelingCVCell.swift */; };
+		546110BA265556470009B5CF /* FeelingCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110B8265556470009B5CF /* FeelingCVCell.xib */; };
+		546110C526575C680009B5CF /* MatchingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110C426575C680009B5CF /* MatchingHeader.swift */; };
+		546110C726575C980009B5CF /* MatchingHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110C626575C980009B5CF /* MatchingHeader.xib */; };
+		546110C926578C310009B5CF /* MatchingFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546110C826578C310009B5CF /* MatchingFooter.xib */; };
+		546110CB26578C420009B5CF /* MatchingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110CA26578C420009B5CF /* MatchingFooter.swift */; };
+		546110CE265A480C0009B5CF /* MatchingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546110CD265A480C0009B5CF /* MatchingData.swift */; };
 		548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548A677B264FF1820014CBE8 /* InterviewPhotoCVCell.swift */; };
 		548A677E264FF95D0014CBE8 /* InterviewQestionCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677D264FF95D0014CBE8 /* InterviewQestionCVCell.xib */; };
 		548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */; };
@@ -65,7 +84,6 @@
 		54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9664C264904660028F1BF /* ProfileWritingVC.swift */; };
 		54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9664E264904780028F1BF /* MyProfileVC.swift */; };
 		54B96651264904800028F1BF /* InterviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B96650264904800028F1BF /* InterviewVC.swift */; };
-		54B966532649048A0028F1BF /* FindFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B966522649048A0028F1BF /* FindFoundVC.swift */; };
 		54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966552649068D0028F1BF /* SpoqaHanSansNeo-Regular.ttf */; };
 		54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966562649068E0028F1BF /* SpoqaHanSansNeo-Medium.ttf */; };
 		54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54B966572649068F0028F1BF /* SpoqaHanSansNeo-Bold.ttf */; };
@@ -80,13 +98,13 @@
 		54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA1F264A84550076C306 /* MyProfileNC.swift */; };
 		54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA21264A84AB0076C306 /* FindFoundNC.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
-		926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */; };
-		926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D1265451D700E8E8FD /* InterviewImgTVC.swift */; };
-		926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */; };
 		920EEFF526578786009F263A /* FoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920EEFF426578786009F263A /* FoundView.xib */; };
 		920EEFF826578795009F263A /* FoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EEFF726578795009F263A /* FoundView.swift */; };
 		920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EF00626579D66009F263A /* FoundProfileCardCVCell.swift */; };
 		920EF00926579D66009F263A /* FoundProfileCardCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920EF00726579D66009F263A /* FoundProfileCardCVCell.xib */; };
+		926314CA2654494A00E8E8FD /* SegueInterviewCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */; };
+		926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D1265451D700E8E8FD /* InterviewImgTVC.swift */; };
+		926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */; };
 		926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314E52656306800E8E8FD /* FindFoundVC.swift */; };
 		926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */; };
 		926314F02656CD0F00E8E8FD /* FindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 926314EF2656CD0E00E8E8FD /* FindView.xib */; };
@@ -137,6 +155,25 @@
 		542A1E0D2644315200E69A4D /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		542A1E102644317300E69A4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		542A1E13264431DE00E69A4D /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		542B5123265D494700A2006A /* MatchingDibsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingDibsCVCell.swift; sourceTree = "<group>"; };
+		542B5124265D494700A2006A /* MatchingDibsCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchingDibsCVCell.xib; sourceTree = "<group>"; };
+		5461109B26553E350009B5CF /* MatchingStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingStatus.storyboard; sourceTree = "<group>"; };
+		5461109D26553E490009B5CF /* MatchingStatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStatusVC.swift; sourceTree = "<group>"; };
+		5461109F265541450009B5CF /* MatchingStatusNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatchingStatusNC.swift; path = "Find-iOS/Screen/MatchingStatus/ViewController/MatchingStatusNC.swift"; sourceTree = SOURCE_ROOT; };
+		546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStatusCVCell.swift; sourceTree = "<group>"; };
+		546110A9265551740009B5CF /* ConnectedTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedTVCell.swift; sourceTree = "<group>"; };
+		546110AA265551740009B5CF /* ConnectedTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectedTVCell.xib; sourceTree = "<group>"; };
+		546110AF265551AF0009B5CF /* FeelingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingTVCell.swift; sourceTree = "<group>"; };
+		546110B0265551AF0009B5CF /* FeelingTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingTVCell.xib; sourceTree = "<group>"; };
+		546110B3265552F40009B5CF /* DibsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DibsTVCell.swift; sourceTree = "<group>"; };
+		546110B4265552F40009B5CF /* DibsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DibsTVCell.xib; sourceTree = "<group>"; };
+		546110B7265556470009B5CF /* FeelingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCVCell.swift; sourceTree = "<group>"; };
+		546110B8265556470009B5CF /* FeelingCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCVCell.xib; sourceTree = "<group>"; };
+		546110C426575C680009B5CF /* MatchingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingHeader.swift; sourceTree = "<group>"; };
+		546110C626575C980009B5CF /* MatchingHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchingHeader.xib; sourceTree = "<group>"; };
+		546110C826578C310009B5CF /* MatchingFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchingFooter.xib; sourceTree = "<group>"; };
+		546110CA26578C420009B5CF /* MatchingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingFooter.swift; sourceTree = "<group>"; };
+		546110CD265A480C0009B5CF /* MatchingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingData.swift; sourceTree = "<group>"; };
 		548A677B264FF1820014CBE8 /* InterviewPhotoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewPhotoCVCell.swift; sourceTree = "<group>"; };
 		548A677D264FF95D0014CBE8 /* InterviewQestionCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewQestionCVCell.xib; sourceTree = "<group>"; };
 		548A677F264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewPhotoCVCell.xib; sourceTree = "<group>"; };
@@ -158,7 +195,6 @@
 		54B9664C264904660028F1BF /* ProfileWritingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWritingVC.swift; sourceTree = "<group>"; };
 		54B9664E264904780028F1BF /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		54B96650264904800028F1BF /* InterviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewVC.swift; sourceTree = "<group>"; };
-		54B966522649048A0028F1BF /* FindFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC.swift; sourceTree = "<group>"; };
 		54B966552649068D0028F1BF /* SpoqaHanSansNeo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.ttf"; sourceTree = "<group>"; };
 		54B966562649068E0028F1BF /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
 		54B966572649068F0028F1BF /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
@@ -172,13 +208,13 @@
 		54B9666C2649250B0028F1BF /* FindTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTabBarController.swift; sourceTree = "<group>"; };
 		54E1BA1F264A84550076C306 /* MyProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileNC.swift; sourceTree = "<group>"; };
 		54E1BA21264A84AB0076C306 /* FindFoundNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundNC.swift; sourceTree = "<group>"; };
-		926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegueInterviewCVC.swift; path = "Find-iOS/Screen/YourProfile/ViewController/SegueInterviewCVC.swift"; sourceTree = SOURCE_ROOT; };
-		926314D1265451D700E8E8FD /* InterviewImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewImgTVC.swift; sourceTree = "<group>"; };
-		926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAnswerTVC.swift; sourceTree = "<group>"; };
 		920EEFF426578786009F263A /* FoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundView.xib; sourceTree = "<group>"; };
 		920EEFF726578795009F263A /* FoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundView.swift; sourceTree = "<group>"; };
 		920EF00626579D66009F263A /* FoundProfileCardCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundProfileCardCVCell.swift; sourceTree = "<group>"; };
 		920EF00726579D66009F263A /* FoundProfileCardCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundProfileCardCVCell.xib; sourceTree = "<group>"; };
+		926314C92654494A00E8E8FD /* SegueInterviewCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SegueInterviewCVC.swift; path = "Find-iOS/Screen/YourProfile/ViewController/SegueInterviewCVC.swift"; sourceTree = SOURCE_ROOT; };
+		926314D1265451D700E8E8FD /* InterviewImgTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewImgTVC.swift; sourceTree = "<group>"; };
+		926314D42654523F00E8E8FD /* InterviewAnswerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAnswerTVC.swift; sourceTree = "<group>"; };
 		926314E52656306800E8E8FD /* FindFoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundVC.swift; sourceTree = "<group>"; };
 		926314EC2656C5EA00E8E8FD /* FindFoundSegueCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundSegueCVC.swift; sourceTree = "<group>"; };
 		926314EF2656CD0E00E8E8FD /* FindView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindView.xib; sourceTree = "<group>"; };
@@ -363,6 +399,7 @@
 		542A1E0B2644311F00E69A4D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5461109726553DF80009B5CF /* MatchingStatus */,
 				377C27722644462B003FF385 /* ValueTest */,
 				54B96629264902CF0028F1BF /* YourProfile */,
 				54B96628264902BF0028F1BF /* FindFound */,
@@ -374,6 +411,96 @@
 				542A1DF926442F8B00E69A4D /* Main.storyboard */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		542B5127265D5D3900A2006A /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				546110A12655463B0009B5CF /* MatchingStatusCVCell.swift */,
+				542B5123265D494700A2006A /* MatchingDibsCVCell.swift */,
+				542B5124265D494700A2006A /* MatchingDibsCVCell.xib */,
+			);
+			path = Segue;
+			sourceTree = "<group>";
+		};
+		5461109726553DF80009B5CF /* MatchingStatus */ = {
+			isa = PBXGroup;
+			children = (
+				546110CC265A47F90009B5CF /* Model */,
+				5461109A26553E130009B5CF /* Cell */,
+				5461109926553E0C0009B5CF /* ViewController */,
+				5461109826553E050009B5CF /* Storyboard */,
+			);
+			path = MatchingStatus;
+			sourceTree = "<group>";
+		};
+		5461109826553E050009B5CF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5461109B26553E350009B5CF /* MatchingStatus.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5461109926553E0C0009B5CF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5461109D26553E490009B5CF /* MatchingStatusVC.swift */,
+				5461109F265541450009B5CF /* MatchingStatusNC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5461109A26553E130009B5CF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				542B5127265D5D3900A2006A /* Segue */,
+				546110C126575C040009B5CF /* HeaderFooter */,
+				546110A82655514D0009B5CF /* Dibs */,
+				546110A7265551450009B5CF /* Feeling */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		546110A7265551450009B5CF /* Feeling */ = {
+			isa = PBXGroup;
+			children = (
+				546110A9265551740009B5CF /* ConnectedTVCell.swift */,
+				546110AA265551740009B5CF /* ConnectedTVCell.xib */,
+				546110AF265551AF0009B5CF /* FeelingTVCell.swift */,
+				546110B0265551AF0009B5CF /* FeelingTVCell.xib */,
+				546110B7265556470009B5CF /* FeelingCVCell.swift */,
+				546110B8265556470009B5CF /* FeelingCVCell.xib */,
+			);
+			path = Feeling;
+			sourceTree = "<group>";
+		};
+		546110A82655514D0009B5CF /* Dibs */ = {
+			isa = PBXGroup;
+			children = (
+				546110B3265552F40009B5CF /* DibsTVCell.swift */,
+				546110B4265552F40009B5CF /* DibsTVCell.xib */,
+			);
+			path = Dibs;
+			sourceTree = "<group>";
+		};
+		546110C126575C040009B5CF /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				546110C426575C680009B5CF /* MatchingHeader.swift */,
+				546110C626575C980009B5CF /* MatchingHeader.xib */,
+				546110C826578C310009B5CF /* MatchingFooter.xib */,
+				546110CA26578C420009B5CF /* MatchingFooter.swift */,
+			);
+			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
+		546110CC265A47F90009B5CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				546110CD265A480C0009B5CF /* MatchingData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		54A03862264D20A600EDF78F /* Cell */ = {
@@ -701,10 +828,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546110C926578C310009B5CF /* MatchingFooter.xib in Resources */,
 				377C2777264446FD003FF385 /* ValueTest.storyboard in Resources */,
 				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
+				5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */,
+				546110B6265552F40009B5CF /* DibsTVCell.xib in Resources */,
 				54B96649264904500028F1BF /* TabBar.storyboard in Resources */,
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
+				546110B2265551AF0009B5CF /* FeelingTVCell.xib in Resources */,
 				54B9663F2649040F0028F1BF /* YourProfile.storyboard in Resources */,
 				54B9665B264906900028F1BF /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				37A18C19265402B300E3B67C /* YourValue.storyboard in Resources */,
@@ -712,6 +843,8 @@
 				920EF00926579D66009F263A /* FoundProfileCardCVCell.xib in Resources */,
 				920EEFF526578786009F263A /* FoundView.xib in Resources */,
 				54B96643264904390028F1BF /* Interview.storyboard in Resources */,
+				546110BA265556470009B5CF /* FeelingCVCell.xib in Resources */,
+				546110AC265551740009B5CF /* ConnectedTVCell.xib in Resources */,
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
 				548A6780264FFD2F0014CBE8 /* InterviewPhotoCVCell.xib in Resources */,
@@ -719,15 +852,16 @@
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
 				378E3A1426526ED40023A326 /* MatchingLottie.storyboard in Resources */,
-				36F148E4264AE030005A5C74 /* ProfileCollectionViewCell.xib in Resources */,
 				926314F02656CD0F00E8E8FD /* FindView.xib in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
 				548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */,
 				92B10395264E4C4C003801C8 /* BeforeTestView.xib in Resources */,
+				546110C726575C980009B5CF /* MatchingHeader.xib in Resources */,
 				542A1DFB26442F8B00E69A4D /* Main.storyboard in Resources */,
 				548A677E264FF95D0014CBE8 /* InterviewQestionCVCell.xib in Resources */,
 				377C277A2644470C003FF385 /* ValueList.storyboard in Resources */,
 				54B9665C264906900028F1BF /* SpoqaHanSansNeo-Light.ttf in Resources */,
+				542B5126265D494700A2006A /* MatchingDibsCVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,9 +926,11 @@
 				378E3A10265044190023A326 /* ValueListCVC.swift in Sources */,
 				54B96663264909CA0028F1BF /* APIService.swift in Sources */,
 				542A1E0E2644315200E69A4D /* UIColor+Additions.swift in Sources */,
+				546110A22655463B0009B5CF /* MatchingStatusCVCell.swift in Sources */,
 				378E3A0E26503E910023A326 /* UIViewController+Extension.swift in Sources */,
 				54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */,
 				54A0385E264CDFA700EDF78F /* UIDevice+ScreenSize.swift in Sources */,
+				546110CE265A480C0009B5CF /* MatchingData.swift in Sources */,
 				926314E62656306800E8E8FD /* FindFoundVC.swift in Sources */,
 				54B9664F264904780028F1BF /* MyProfileVC.swift in Sources */,
 				920EEFF826578795009F263A /* FoundView.swift in Sources */,
@@ -806,6 +942,7 @@
 				54B96660264909940028F1BF /* GenericResponse.swift in Sources */,
 				36693DAA26564DBC00A27793 /* ProfileCVCell.swift in Sources */,
 				54B9666926490D950028F1BF /* PlainData.swift in Sources */,
+				5461109E26553E490009B5CF /* MatchingStatusVC.swift in Sources */,
 				361B6E512653B4FA00ACF88A /* ProfileImages.swift in Sources */,
 				37F1E0C4265834B300D810BE /* ValueFilterAll.swift in Sources */,
 				377C278826445D84003FF385 /* Questions.swift in Sources */,
@@ -814,31 +951,37 @@
 				361B6EE22655856E00ACF88A /* BasicInfoData.swift in Sources */,
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				377C277D26444750003FF385 /* ValueTestVC.swift in Sources */,
+				546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */,
 				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
 				378E3A1626526EEC0023A326 /* MatchingLottieVC.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				926314F72656CE8A00E8E8FD /* FindView.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
-				36F148E3264AE030005A5C74 /* ProfileCollectionViewCell.swift in Sources */,
 				920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
-				54B9664B2649045B0028F1BF /* TabBarVC.swift in Sources */,
 				37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				548C8C8826502CED007EC128 /* InterviewImages.swift in Sources */,
 				548A6783265009AC0014CBE8 /* photoPreviewCVCell.swift in Sources */,
 				92B10366264D2905003801C8 /* ProfileCardDataModel.swift in Sources */,
 				54B9665E264909510028F1BF /* UILabel+Extension.swift in Sources */,
+				546110CB26578C420009B5CF /* MatchingFooter.swift in Sources */,
 				3618F64E264FBD49006CF618 /* IntroductionVC.swift in Sources */,
 				54B9666726490D510028F1BF /* NetworkResult.swift in Sources */,
+				546110C526575C680009B5CF /* MatchingHeader.swift in Sources */,
 				54A0386F264D6A0100EDF78F /* InterviewData.swift in Sources */,
 				54A03873264D73CC00EDF78F /* UITextField+Extension.swift in Sources */,
 				37A18C1B265402C300E3B67C /* YourValueVC.swift in Sources */,
+				546110B5265552F40009B5CF /* DibsTVCell.swift in Sources */,
 				54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */,
 				548A677C264FF1820014CBE8 /* InterviewPhotoCVCell.swift in Sources */,
 				377C278026444761003FF385 /* ValueListVC.swift in Sources */,
 				373E1EE7265CEFE000516B47 /* ParentVC.swift in Sources */,
 				542A1E14264431DE00E69A4D /* UIButton+Extension.swift in Sources */,
+				546110AB265551740009B5CF /* ConnectedTVCell.swift in Sources */,
+				542B5125265D494700A2006A /* MatchingDibsCVCell.swift in Sources */,
+				546110B9265556470009B5CF /* FeelingCVCell.swift in Sources */,
+				546110B1265551AF0009B5CF /* FeelingTVCell.swift in Sources */,
 				36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */,
 				3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */,
 				377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */,
@@ -991,13 +1134,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92QJ4K4KU;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1011,13 +1154,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92QJ4K4KU;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
