@@ -122,8 +122,8 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rso-xS-JID">
-                                <rect key="frame" x="15" y="83" width="15.5" height="22"/>
-                                <state key="normal" image="restart" catalog="system"/>
+                                <rect key="frame" x="15" y="74" width="40" height="40"/>
+                                <state key="normal" image="backBtn"/>
                                 <connections>
                                     <action selector="backBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="NCz-L6-CvA"/>
                                 </connections>
@@ -314,7 +314,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="restart" catalog="system" width="120" height="128"/>
+        <image name="backBtn" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

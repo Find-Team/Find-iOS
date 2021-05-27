@@ -79,7 +79,7 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
     
     /// 뒤로가기 버튼 클릭
     @IBAction func backBtnDidTap(_ sender: Any) {
-        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func finishBtnDidTap(_ sender: Any) {
