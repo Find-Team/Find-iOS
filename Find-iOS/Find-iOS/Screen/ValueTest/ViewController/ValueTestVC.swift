@@ -90,7 +90,7 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
             visitedFlag = true
         }
         
-        
+        dvc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     

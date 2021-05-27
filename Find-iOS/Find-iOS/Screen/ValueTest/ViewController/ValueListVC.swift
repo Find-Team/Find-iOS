@@ -49,6 +49,10 @@ class ValueListVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(finishBtnState(_:)), name: NSNotification.Name("FinishBtnStateChanged"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.showToastPurple(message: "상대가 나와 같았으면 하는 문답 5개를 선택해주세요.")
+    }
+    
     
     //MARK: - IBActions
     
