@@ -21,7 +21,7 @@
         <!--FindFoundVC-->
         <scene sceneID="1sU-u7-Onk">
             <objects>
-                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CmP-Gj-BC3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,7 +114,7 @@
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cM-xV-ZaM">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="subGray6"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -156,6 +156,7 @@
                             <constraint firstItem="bI9-Re-VzZ" firstAttribute="top" secondItem="Djm-0q-3nk" secondAttribute="bottom" id="wTp-i3-SUZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hhf-dJ-Lqw"/>
                     <connections>
                         <outlet property="myCollectionView" destination="QwU-VO-kLZ" id="QLn-6w-dKn"/>
                         <outlet property="segueBtnStackView" destination="bI9-Re-VzZ" id="LqN-Mu-91N"/>
@@ -169,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6o-OE-OjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.8" y="469.95073891625617"/>
+            <point key="canvasLocation" x="2023" y="470"/>
         </scene>
         <!--Find FoundNC-->
         <scene sceneID="xaR-6m-sqx">
@@ -180,10 +181,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gQc-Nb-lez" kind="relationship" relationship="rootViewController" id="Ss4-Sj-z4U"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8K-UP-gaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.637681159420293" y="99.776785714285708"/>
+            <point key="canvasLocation" x="1014" y="470"/>
         </scene>
     </scenes>
     <resources>
@@ -201,6 +205,9 @@
         </namedColor>
         <namedColor name="subGray3">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray6">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

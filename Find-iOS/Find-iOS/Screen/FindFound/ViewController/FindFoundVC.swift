@@ -18,8 +18,7 @@ enum FindFoundCategory {
 class FindFoundVC: UIViewController {
     
     var currentCategory: FindFoundCategory = .find
-    var checkFindCell: Int = 0
-    var checkFoundCell: Int = 0
+    var findCheckIndex: Int = 0
     
     // MARK: - IBOutlet
 
@@ -36,9 +35,15 @@ class FindFoundVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSegueStyle()
-        findSelected()
+        switch findCheckIndex {
+            case 0: findSelected()
+            case 1: foundSelected()
+            default: findSelected()
+        }
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        
+        print(findCheckIndex)
         // Do any additional setup after loading the view.
     }
 
@@ -72,8 +77,8 @@ extension FindFoundVC {
     func findSelected() {
         print("findselected")
         currentCategory = .find
+        self.tabBarController?.tabBar.isHidden = false
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
-        
         if segueIndicatorView.count == 2 {
             segueIndicatorView[0].backgroundColor = .find_DarkPurple
             segueIndicatorView[1].backgroundColor = .subGray1
@@ -89,6 +94,7 @@ extension FindFoundVC {
     func foundSelected() {
         print("foundSelected")
         currentCategory = .found
+        self.tabBarController?.tabBar.isHidden = true
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
         
         if segueIndicatorView.count == 2 {
@@ -115,27 +121,20 @@ extension FindFoundVC: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
         cell.currentCategory = currentCategory
         
+        let findView = FindView(frame: cell.myFindView.frame)
+        let foundView = FoundView(frame: cell.myFoundView.frame)
+        
         if cell.currentCategory == .find {
-            let findView = FindView(frame: cell.myFindView.frame)
             cell.myFindView.addSubview(findView)
-//            if checkFindCell == 0 {
-//                let findView = FindView(frame: cell.myFindView.frame)
-//                cell.myFindView.addSubview(findView)
-//                checkFindCell = 1
-//            }
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
+            foundView.removeFromSuperview()
         }
         else {
-            let foundView = FoundView(frame: cell.myFoundView.frame)
             cell.myFoundView.addSubview(foundView)
-//            if checkFoundCell == 0 {
-//                let foundView = FoundView(frame: cell.myFoundView.frame)
-//                cell.myFoundView.addSubview(foundView)
-//                checkFoundCell = 1
-//            }
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
+            findView.removeFromSuperview()
         }
         return cell
     }

@@ -32,6 +32,7 @@ class FindView: UIView {
         
         setView()
         setButton()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,13 +57,11 @@ class FindView: UIView {
         differentBtn.makeRounded(cornerRadius: differentBtn.frame.width/2)
     
         findBtn.makeRounded(cornerRadius: 25)
-        findBtn.isEnabled = false
-
     }
-
 
     @IBAction func similarBtnClicked(_ sender: Any) {
         if self.similarBtn.isSelected == false {
+            // similarBtn 눌렸을 때
             self.similarBtn.isSelected = true
             self.checkSimilarActive = true
             similarView.backgroundColor = .find_Mint
@@ -70,18 +69,19 @@ class FindView: UIView {
         }
         
         else {
+            // similarBtn 해제됐을 때
             self.similarBtn.isSelected = false
             self.checkSimilarActive = false
             similarView.backgroundColor = .white
             if checkDifferentActive == false {
                 findBtn.backgroundColor = .subGray4
-                findBtn.isEnabled = false
             }
         }
     }
     
     @IBAction func differentBtnClicked(_ sender: Any) {
         if self.differentBtn.isSelected == false {
+            // differentBtn 눌렸을 때
             self.differentBtn.isSelected = true
             self.checkDifferentActive = true
             differentView.backgroundColor = .find_Mint
@@ -94,7 +94,32 @@ class FindView: UIView {
             differentView.backgroundColor = .white
             if checkSimilarActive == false {
                 findBtn.backgroundColor = .subGray4
-                findBtn.isEnabled = false
+            }
+
+        }
+    }
+    
+    @IBAction func findBtnClicked(_ sender: Any) {
+        
+        // found Segue로 이동
+        print("actionaction")
+        let parentViewController: UIViewController = self.parentViewController!
+        
+        let lottieStoryBoard = UIStoryboard(name: "MatchingLottie", bundle: nil)
+        let findFoundStoryBoard = UIStoryboard(name: "FindFound", bundle: nil)
+        
+        guard let loadingVC = lottieStoryBoard.instantiateViewController(identifier: "MatchingLottieVC") as? MatchingLottieVC else { return }
+        guard let dvc = findFoundStoryBoard.instantiateViewController(identifier: "FindFoundVC") as? FindFoundVC else { return }
+        
+        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.tabBarController?.tabBar.isHidden = true
+
+        parentViewController.present(loadingVC, animated: false, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            parentViewController.dismiss(animated: false) {
+                dvc.findCheckIndex = 1
+                parentViewController.navigationController?.pushViewController(dvc, animated: true)
             }
         }
     }
