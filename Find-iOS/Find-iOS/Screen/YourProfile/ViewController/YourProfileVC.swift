@@ -55,6 +55,10 @@ class YourProfileVC: UIViewController {
     
     // MARK: - IBAction
 
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func starBtnClicked(_ sender: Any) {
         if self.starBtn.isSelected == false {
             self.starBtn.isSelected = true

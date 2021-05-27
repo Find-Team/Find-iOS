@@ -95,7 +95,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-kA-xq6">
                             <rect key="frame" x="195" y="60" width="160" height="160"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
                                     <rect key="frame" x="5" y="5" width="150" height="150"/>
                                     <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
@@ -137,13 +137,15 @@
                             <state key="normal" title="FIND!">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="findBtnClicked:" destination="-1" eventType="touchUpInside" id="gS5-Lk-suy"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="bottom" secondItem="1bf-9G-7mb" secondAttribute="bottom" id="2WK-5t-NAa"/>
                         <constraint firstAttribute="trailing" secondItem="hSV-kA-xq6" secondAttribute="trailing" constant="20" id="3N3-n6-H2u"/>
-                        <constraint firstAttribute="bottom" secondItem="UWD-79-b4i" secondAttribute="bottom" constant="24" id="4rO-eq-eB5"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="top" secondItem="wWs-Fs-w0c" secondAttribute="top" constant="19" id="LF6-Ny-8AK"/>
                         <constraint firstItem="1bf-9G-7mb" firstAttribute="top" secondItem="5bp-1n-lVa" secondAttribute="bottom" constant="18" id="OlS-8e-GuB"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="SpG-Rj-VYc"/>
@@ -151,6 +153,7 @@
                         <constraint firstItem="UWD-79-b4i" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="a2h-Av-MSu"/>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="top" id="dl6-nV-HnC"/>
                         <constraint firstItem="1bf-9G-7mb" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="20" id="mbm-hd-7hk"/>
+                        <constraint firstItem="UWD-79-b4i" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="bottom" constant="29" id="qmv-59-r6I"/>
                     </constraints>
                 </view>
             </subviews>
