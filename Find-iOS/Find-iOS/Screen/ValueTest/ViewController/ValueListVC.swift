@@ -39,7 +39,7 @@ class ValueListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.tabBar.hidden = true
+        self.tabBarController?.tabBar.isHidden = true
         
         setSegueStyle()
         RelationshipSelected()
