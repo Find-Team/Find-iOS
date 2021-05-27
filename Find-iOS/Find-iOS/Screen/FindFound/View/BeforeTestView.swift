@@ -52,6 +52,7 @@ class BeforeTestView: UIView {
         let storyBoard = UIStoryboard(name: "ValueTest", bundle: nil)
         let dvc = storyBoard.instantiateViewController(identifier: "ValueTestVC")
         let currentController = self.getSuperViewController()
+        currentController?.hidesBottomBarWhenPushed = true
         currentController?.navigationController?.pushViewController(dvc, animated: true)
     }
 }
