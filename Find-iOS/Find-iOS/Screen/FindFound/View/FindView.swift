@@ -15,9 +15,11 @@ class FindView: UIView {
     @IBOutlet weak var differentView: UIView!
     @IBOutlet weak var differentBtn: UIButton!
     @IBOutlet weak var findBtn: UIButton!
+    @IBOutlet weak var matchingBtnTop: NSLayoutConstraint!
     
     var checkSimilarActive: Bool = false
     var checkDifferentActive: Bool = false
+    var screenWidth = UIScreen.main.bounds.width
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,6 +42,9 @@ class FindView: UIView {
     }
     
     func setView() {
+        if screenWidth == 390 {
+            matchingBtnTop.constant = 48
+        }
         similarView.makeRounded(cornerRadius: similarView.frame.width/2)
         differentView.makeRounded(cornerRadius: differentView.frame.width/2)
         similarView.backgroundColor = .white

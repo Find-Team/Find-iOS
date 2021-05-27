@@ -51,12 +51,12 @@ class FindFoundVC: UIViewController {
     
     @IBAction func findBtnClicked(_ sender: Any) {
         findSelected()
-        myCollectionView.reloadData()
+//        myCollectionView.reloadData()
     }
     
     @IBAction func foundBtnClicked(_ sender: Any) {
         foundSelected()
-        myCollectionView.reloadData()
+//        myCollectionView.reloadData()
     }
 }
 
@@ -119,24 +119,26 @@ extension FindFoundVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
-        cell.currentCategory = currentCategory
         
         let findView = FindView(frame: cell.myFindView.frame)
         let foundView = FoundView(frame: cell.myFoundView.frame)
         
-        if cell.currentCategory == .find {
+        if indexPath.row == 0 {
+            cell.currentCategory = currentCategory
             cell.myFindView.addSubview(findView)
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
             foundView.removeFromSuperview()
-        }
-        else {
+            return cell
+        } else if indexPath.row == 1 {
+            cell.currentCategory = currentCategory
             cell.myFoundView.addSubview(foundView)
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
             findView.removeFromSuperview()
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
 }
 
@@ -170,9 +172,10 @@ extension FindFoundVC: UICollectionViewDelegateFlowLayout {
         case 1:
             foundSelected()
             print("case1")
+            
         default:
             break
         }
-        myCollectionView.reloadData()
+//        myCollectionView.reloadData()
     }
 }

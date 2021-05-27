@@ -6,9 +6,6 @@
 
 import UIKit
 
-//enum InterviewCategory {
-//    case pros, love, taste, life
-//}
 enum ProfileCategory {
     case pros, love, taste, life
 }
@@ -16,6 +13,8 @@ enum ProfileCategory {
 class YourProfileVC: UIViewController {
     
     var currentCategory: ProfileCategory = .pros
+    
+    var screenWidth = UIScreen.main.bounds.width
 
     @IBOutlet weak var fulllScrollView: UIScrollView!
     @IBOutlet weak var imageScrollView: UIScrollView!
@@ -40,7 +39,8 @@ class YourProfileVC: UIViewController {
     @IBOutlet var segueIndicator: [UIView]!
     @IBOutlet weak var segueInterviewCollectionView: UICollectionView!
     @IBOutlet weak var floatingLikeBtn: UIButton!
-    
+    @IBOutlet weak var floatingLikeBtnTop: NSLayoutConstraint!
+    @IBOutlet weak var fullScrollViewWidth: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -72,6 +72,12 @@ class YourProfileVC: UIViewController {
         }
     }
     
+    @IBAction func moveToYourValue(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "YourValue", bundle: nil)
+        let dvc = storyBoard.instantiateViewController(identifier: "YourValueVC")
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
     @IBAction func prosBtnClicked(_ sender: Any) {
         prosSelected()
         segueInterviewCollectionView.reloadData()
@@ -100,6 +106,7 @@ class YourProfileVC: UIViewController {
 
 extension YourProfileVC {
     func setView() {
+        fullScrollViewWidth.constant = screenWidth
         introductionContentView.makeRounded(cornerRadius: 10)
     }
     
