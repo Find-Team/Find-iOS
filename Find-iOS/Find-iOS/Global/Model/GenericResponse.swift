@@ -11,13 +11,13 @@ struct GenericResponse<T: Codable>: Codable {
     
     let status: Int
     let returnCode: String
-    let returmMessage: String
+    let returnMessage: String
     let info: T?
     
     enum CodingKeys: String, CodingKey {
         case status = "status"
         case returnCode = "returnCode"
-        case returmMessage = "returmMessage"
+        case returnMessage = "returnMessage"
         case info = "info"
     }
     
@@ -25,7 +25,7 @@ struct GenericResponse<T: Codable>: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
         returnCode = (try? values.decode(String.self, forKey: .returnCode)) ?? ""
-        returmMessage = (try? values.decode(String.self, forKey: .returmMessage)) ?? ""
+        returnMessage = (try? values.decode(String.self, forKey: .returnMessage)) ?? ""
         info = (try? values.decode(T.self, forKey: .info)) ?? nil
     }
     

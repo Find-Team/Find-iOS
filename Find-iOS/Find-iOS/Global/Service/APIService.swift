@@ -15,8 +15,13 @@ struct APIService {
     
     // 이런식으로 쭉쭉 이어나가면 됨
     func getMyMatching(userSequence: Int, completion: @escaping (NetworkResult<GetMyMatchingData>)->(Void)) {
-        let target: APITarget = .getMyMatching(userSequence: userSequence)
+        let target: APITarget = .getMyMatching(userSequence)
         judgeObject(target, completion: completion)
+    }
+    
+    func matchingRequest(fromUserSequence: Int, matchingStatus: String, toUserSequence: Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
+        let target: APITarget = .requestMatching(fromUserSequence, matchingStatus, toUserSequence)
+        judgeSimpleObject(target, completion: completion)
     }
 }
 
