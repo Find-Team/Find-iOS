@@ -14,12 +14,12 @@ struct APIService {
     let provider = MoyaProvider<APITarget>() // MoyaProvider 인스턴스 생성(요청을 보낼 때 사용해야함)
     
     // 이런식으로 쭉쭉 이어나가면 됨
-    func getMyMatching(userSequence: Int, completion: @escaping (NetworkResult<GetMyMatchingData>)->(Void)) {
+    func getMyMatching(_ userSequence: Int, completion: @escaping (NetworkResult<GetMyMatchingData>)->(Void)) {
         let target: APITarget = .getMyMatching(userSequence)
         judgeObject(target, completion: completion)
     }
     
-    func matchingRequest(fromUserSequence: Int, matchingStatus: String, toUserSequence: Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
+    func matchingRequest(_ fromUserSequence: Int, _ matchingStatus: String, _ toUserSequence: Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
         let target: APITarget = .requestMatching(fromUserSequence, matchingStatus, toUserSequence)
         judgeSimpleObject(target, completion: completion)
     }

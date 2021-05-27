@@ -11,6 +11,7 @@ import UIKit
 class FeelingTVCell: UITableViewCell {
     static let identifier = "FeelingTVCell"
     var cellCategory: feelingCell?
+    var receivedData, sendData: [Connected]? // 받은 호감, 보낸 호감 데이터
     
     @IBOutlet weak var kindOfFeelingLabel: UILabel!
     @IBOutlet weak var feelingCV: UICollectionView! {
@@ -44,9 +45,13 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch cellCategory {
         case .received:
-            return receivedFeelings.count
+            if let receivedFeelings = receivedData {
+                return receivedFeelings.count
+            }
         case .send:
-            return sendedFeelings.count
+            if let sendedFeelings = sendData {
+                return sendedFeelings.count
+            }
         default:
             return 0
         }
@@ -58,10 +63,14 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         switch cellCategory {
         case .received:
             cell.descriptionLabel.isHidden = true
-            cell.setCell(feelingDatas: receivedFeelings[indexPath.row])
+            if let receivedFeelings = receivedData {
+                cell.setCell(feelingDatas: receivedFeelings[indexPath.row])
+            }
         case .send:
             cell.acceptBtn.isHidden = true
-            cell.setCell(feelingDatas: sendedFeelings[indexPath.row])
+            if let sendedFeelings = sendData {
+                cell.setCell(feelingDatas: sendedFeelings[indexPath.row])
+            }
         default:
             return UICollectionViewCell()
         }

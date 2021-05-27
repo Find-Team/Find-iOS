@@ -33,19 +33,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-og-e1g">
-                        <rect key="frame" x="116" y="15" width="34.5" height="16.5"/>
+                        <rect key="frame" x="116" y="15" width="38" height="18"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                         <color key="textColor" name="subGray5"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa6-du-mOZ">
-                        <rect key="frame" x="116" y="37.5" width="29.5" height="14"/>
+                        <rect key="frame" x="116" y="39" width="31" height="15.5"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                         <color key="textColor" name="subGray1"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-0D-Kqe">
-                        <rect key="frame" x="116" y="57.5" width="91" height="25"/>
+                        <rect key="frame" x="116" y="60.5" width="91" height="26"/>
                         <color key="backgroundColor" name="find_Purple"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="91" id="Mze-f5-qdc"/>
@@ -59,12 +59,15 @@
                                 <real key="value" value="-0.29999999999999999"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="sendBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dOs-Rc-DVr"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgZ-fE-sIn">
-                        <rect key="frame" x="215" y="57.5" width="60" height="25"/>
+                        <rect key="frame" x="215" y="60.5" width="60" height="26"/>
                         <color key="backgroundColor" name="find_Mint"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
-                        <state key="normal" title=" 찜" image="iconStarMint">
+                        <state key="normal" title=" 찜" image="iconStarWhite">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
@@ -72,10 +75,16 @@
                                 <real key="value" value="-0.29999999999999999"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="dibsBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="q4m-cA-Ian"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-7B-Goc">
                         <rect key="frame" x="345" y="8" width="38" height="38"/>
                         <state key="normal" image="btnCancleStar"/>
+                        <connections>
+                            <action selector="deleteBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JCZ-yi-9Tr"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -99,6 +108,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteBtn" destination="EHf-7B-Goc" id="JOB-85-eff"/>
                 <outlet property="dibsBtn" destination="wgZ-fE-sIn" id="g4w-XC-GNU"/>
                 <outlet property="dibsImageView" destination="Z20-F6-FyF" id="ZVd-Wx-4Ud"/>
                 <outlet property="dibsInfoLabel" destination="wa6-du-mOZ" id="t0F-Dh-pUc"/>
@@ -111,7 +121,7 @@
     </objects>
     <resources>
         <image name="btnCancleStar" width="38" height="38"/>
-        <image name="iconStarMint" width="14" height="14.5"/>
+        <image name="iconStarWhite" width="14" height="14"/>
         <namedColor name="find_DarkPurple">
             <color red="0.49000000953674316" green="0.37299999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

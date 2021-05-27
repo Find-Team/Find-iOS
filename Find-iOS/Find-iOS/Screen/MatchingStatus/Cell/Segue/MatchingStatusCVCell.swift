@@ -16,7 +16,9 @@ enum feelingCell {
 class MatchingStatusCVCell: UICollectionViewCell {
     static let identifier = "MatchingStatusCVCell"
     var idxPaths = [IndexPath]()
-    var isExpandable = false
+    var isExpandable = false // 섹션 확장된 상태인지 확인하기 위한 Bool값
+    var connectedData, receivedData, sendData: [Connected]? // 연결된 상대, 받은 호감, 보낸 호감 데이터
+    var connectedDataExp: [ExpandableSection] = [] // 섹션 확장을 위한 구조체
     
     @IBOutlet weak var innerTV: UITableView! {
         didSet {
@@ -33,18 +35,26 @@ class MatchingStatusCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setExpandable()
+        setNoti()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     static func nib() -> UINib {
         return UINib(nibName: "MatchingStatusCVCell", bundle: nil)
     }
     
-    // 더보기 안눌렀을 때에는 보여지는 cell 3개
+    // 더보기 안눌렀을 때에는 보여지는 cell 최대 3개
     func setExpandable() {
-        for i in 0...2 {
-            connectedDatas[i].isExpanded = true
-            receivedDibs[i].isExpanded = true
+        if let cntdData = connectedData {
+            for i in 0..<cntdData.count {
+                connectedDataExp.append(ExpandableSection(isExpanded: false, data: cntdData[i]))
+            }
+            for i in 0..<(cntdData.count % 4) {
+                connectedDataExp[i].isExpanded = true
+            }
         }
     }
 }
@@ -54,11 +64,13 @@ extension MatchingStatusCVCell: ShowMoreFooter {
     
     // Do it
     func showMoreTapped(iam: WhereShowMore) {
-        connectedDatas = doExpand(str: connectedDatas, section: 0)
-        if isExpandable {
-            doInsert(tableView: innerTV, indexPaths: idxPaths, section: nil, str: nil)
-        } else {
-            doDelete(tableView: innerTV, indexPaths: idxPaths, section: 0,str: nil)
+        if connectedDataExp.count > 3 {
+            connectedDataExp = doExpand(str: connectedDataExp, section: 0)
+            if isExpandable {
+                doInsert(tableView: innerTV, indexPaths: idxPaths, section: nil, str: nil)
+            } else {
+                doDelete(tableView: innerTV, indexPaths: idxPaths, section: 0,str: nil)
+            }
         }
     }
     
@@ -97,6 +109,18 @@ extension MatchingStatusCVCell: ShowMoreFooter {
         tableView.layoutIfNeeded()
         tableView.scrollToRow(at: IndexPath(row: 0, section: section ?? 0), at: .middle, animated: true)
     }
+    
+    func setNoti() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changingData), name: NSNotification.Name("needToReloadFeeling"), object: nil)
+    }
+    
+    // 데이터 변화에 대응하기 위한 Noti
+    @objc func changingData(noti: Notification) {
+        if let sec = noti.object as? [Int] {
+            NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil)
+            innerTV.reloadSections(IndexSet(sec[0]...sec[1]), with: .fade)
+        }
+    }
 }
 
 // MARK: - Protocols
@@ -110,7 +134,12 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 데이터가 0개일 때 분기처리 필요
         if (section == 0) {
-            return connectedDatas.filter{$0.isExpanded ?? false}.count
+            if !connectedDataExp.isEmpty {
+                print(connectedDataExp.filter{$0.isExpanded ?? false}.count)
+                return connectedDataExp.filter{$0.isExpanded ?? false}.count
+            } else {
+                return 1
+            }
         } else if (section == 1) || (section == 2) {
             return 1
         }
@@ -119,21 +148,27 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     
     // 섹션 별 셀 지정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // 데이터가 0개일 때 분기처리 필요
         if (indexPath.section == 0) {
-            guard let cntdCell = tableView.dequeueReusableCell(withIdentifier: "ConnectedTVCell", for: indexPath) as? ConnectedTVCell else { return UITableViewCell() }
-            cntdCell.selectionStyle = .none
-            cntdCell.setCell(cntdDatas: connectedDatas[indexPath.row])
-            return cntdCell
+            if !connectedDataExp.isEmpty {
+                guard let cntdCell = tableView.dequeueReusableCell(withIdentifier: "ConnectedTVCell", for: indexPath) as? ConnectedTVCell else { return UITableViewCell() }
+                cntdCell.selectionStyle = .none
+                cntdCell.setCell(cntdDatas: connectedDataExp[indexPath.row])
+                return cntdCell
+            } else {
+                // 데이터가 0개일 때 분기처리 필요
+                return UITableViewCell()
+            }
         } else {
             guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
             feelCell.selectionStyle = .none
             if (indexPath.section == 1) {
                 feelCell.kindOfFeelingLabel.text = "받은호감"
                 feelCell.cellCategory = .received
+                feelCell.receivedData = receivedData
             } else {
                 feelCell.kindOfFeelingLabel.text = "보낸호감"
                 feelCell.cellCategory = .send
+                feelCell.sendData = sendData
             }
             return feelCell
         }
@@ -171,10 +206,14 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     // Footer 뷰 지정
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if (section == 0) {
-            guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
-            footer.whereSM = .feelings
-            footer.delegate = self
-            return footer
+            if !connectedDataExp.isEmpty {
+                guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
+                footer.whereSM = .feelings
+                footer.delegate = self
+                return footer
+            } else {
+                return nil
+            }
         } else {
             return nil
         }

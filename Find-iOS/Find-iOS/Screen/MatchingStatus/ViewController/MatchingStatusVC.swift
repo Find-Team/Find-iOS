@@ -25,9 +25,14 @@ class MatchingStatusVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSegueStyle()
+        setNoti()
         whatSelected(idx: 0)
-        getMyMatchingData(1)
+        getMyMatchingData()
         // Do any additional setup after loading the view.
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func feelingsTapped(_ sender: Any) {
@@ -62,58 +67,46 @@ class MatchingStatusVC: UIViewController {
 
 extension MatchingStatusVC {
     
-    func getMyMatchingData(_ userSequence: Int) {
-        APIService.shared.getMyMatching(userSequence: userSequence) { [self] result in
+    // MARK: - Get My Matching Data(API)
+    @objc func getMyMatchingData() {
+        APIService.shared.getMyMatching(1) { [self] result in
             switch result {
             case .success(let data):
                 self.matchingData = data
-                print("데이터 받아왔습니다. \(matchingData)")
+                matchingCV.reloadSections(IndexSet(integer: 0))
+                print("데이터 받아왔습니다.")
             case .failure(let error):
                 print("데이터 못받아왔습니다.")
                 print(error)
             }
         }
     }
-//    func uploadGroupFeed(_ token: String, _ groupid: Int) {
-//        APIService.shared.groupFeed(token: token, groupid: groupid) { [self] result in
-//            switch result {
-//            case .success(let data):
-//                self.groupFeedData = data
-//                if let feed = groupFeedData {
-//                    if feed.count == 0 { // 그룹에 글이 없어요
-//                        makeBlankViewa()
-//                    } else { // 그룹에 글이 있어요
-//                        groupFeedCollectionView.reloadData()
-//                    }
-//                }
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-// MARK: - Segue Styles
-func setSegueStyle() {
-    segueBtns[0].setTitle("호감", for: .normal)
-    segueBtns[0].setTitleColor(.subGray2, for: .normal)
-    
-    segueBtns[1].setTitle("찜", for: .normal)
-    segueBtns[1].setTitleColor(.subGray2, for: .normal)
-}
-
-// MARK: - Remind Selected Segue
-func whatSelected(idx: Int){
-    for i in 0..<2{
-        if i == idx{
-            segIndicators[i].backgroundColor = .find_Purple
-            segueBtns[i].setTitleColor(.find_Purple, for: .normal)
-        }else{
-            segIndicators[i].backgroundColor = .subGray1
-            segueBtns[i].setTitleColor(.subGray2, for: .normal)
-        }
+    // MARK: - Segue Styles
+    func setSegueStyle() {
+        segueBtns[0].setTitle("호감", for: .normal)
+        segueBtns[0].setTitleColor(.subGray2, for: .normal)
+        
+        segueBtns[1].setTitle("찜", for: .normal)
+        segueBtns[1].setTitleColor(.subGray2, for: .normal)
     }
-    matchingCV.selectItem(at: IndexPath(item: idx, section: 0), animated: true, scrollPosition: .left)
-}
+    
+    func setNoti() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getMyMatchingData), name: NSNotification.Name("updateMatchingData"), object: nil)
+    }
+    
+    // MARK: - Remind Selected Segue
+    func whatSelected(idx: Int){
+        for i in 0..<2{
+            if i == idx{
+                segIndicators[i].backgroundColor = .find_Purple
+                segueBtns[i].setTitleColor(.find_Purple, for: .normal)
+            }else{
+                segIndicators[i].backgroundColor = .subGray1
+                segueBtns[i].setTitleColor(.subGray2, for: .normal)
+            }
+        }
+        matchingCV.selectItem(at: IndexPath(item: idx, section: 0), animated: true, scrollPosition: .left)
+    }
 }
 
 extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -124,9 +117,16 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchingStatusCVCell.identifier, for: indexPath) as? MatchingStatusCVCell else { return UICollectionViewCell() }
+            cell.connectedData = matchingData?.connected
+            cell.receivedData = matchingData?.receivedFeeling
+            cell.sendData = matchingData?.sendFeeling
+            cell.setExpandable()
             return cell
         } else if indexPath.row == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchingDibsCVCell.identifier, for: indexPath) as? MatchingDibsCVCell else { return UICollectionViewCell() }
+            cell.receivedDibs = matchingData?.receivedDibs
+            cell.sendDibs = matchingData?.sendDibs
+            cell.setExpandable()
             return cell
         }
         return UICollectionViewCell()
@@ -162,7 +162,6 @@ extension MatchingStatusVC: UIScrollViewDelegate{
             let indexOfMajorCell = self.indexOfMajorCell()
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             matchingCV.collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            
             switch indexOfMajorCell {
             case 0:
                 whatSelected(idx: 0)
