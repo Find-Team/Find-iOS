@@ -51,6 +51,17 @@ class ValueListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.showToastPurple(message: "상대가 나와 같았으면 하는 문답 5개를 선택해주세요.")
+        
+        valueListCollectionView.reloadData()
+        
+        switch currentCategory {
+        case .relationship:
+            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+        case .family:
+            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: false)
+        case .career:
+            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 2, section: 0) as IndexPath, at: .left, animated: false)
+        }
     }
     
     
