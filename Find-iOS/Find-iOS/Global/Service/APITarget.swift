@@ -10,33 +10,28 @@ import Moya
 
 //MARK: -API Lists
 enum APITarget {
-    case example_post(token: String, first: String, second: String)
-    case example_get
+    case getMyMatching(userSequence: Int)
 }
 
 extension APITarget: TargetType {
     
     //MARK: -baseURL
     var baseURL: URL {
-        return URL(string: "http://~")!
+        return URL(string: "http://15.164.213.118:8080")!
     }
     
     //MARK: -path
     var path: String {
         switch self {
-        case .example_post:
-            return "/user/one"
-        case .example_get:
-            return "/user/two"
+        case .getMyMatching(let userSequence):
+            return "/match/\(userSequence)"
         }
     }
     
     //MARK: -HTTP Method (get, post, put, delete...)
     var method: Moya.Method {
         switch self {
-        case .example_post:
-            return .post
-        case .example_get:
+        case .getMyMatching:
             return .get
         }
     }
@@ -52,12 +47,10 @@ extension APITarget: TargetType {
         // 파라미터가 없다: .requestPlain
         // 파라미터가 있다: .requestParameters(parameters: [~], encoding: JSONEncoding.default)
         switch self {
-        case .example_post(_, let email, let password):
-            return .requestParameters(parameters: ["email" : email, "password": password], encoding: JSONEncoding.default)
-        case .example_get:
-            return .requestPlain
+        case .getMyMatching:
+            // query로 추가
+            return .requestParameters(parameters: ["offset" : 0], encoding: URLEncoding.queryString)
         }
-        
     }
     
     //MARK: -Response Type
@@ -68,9 +61,7 @@ extension APITarget: TargetType {
     //MARK: -HTTP header
     var headers: [String : String]? {
         switch self {
-        case .example_post(let token, _, _):
-            return ["Content-Type" : "application/json", "token": token]
-        case .example_get:
+        case .getMyMatching(_):
             return ["Content-Type" : "application/json"]
         }
     }
