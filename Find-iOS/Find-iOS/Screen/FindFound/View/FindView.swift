@@ -112,6 +112,7 @@ class FindView: UIView {
         guard let dvc = findFoundStoryBoard.instantiateViewController(identifier: "FindFoundVC") as? FindFoundVC else { return }
         
         loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.tabBarController?.tabBar.isHidden = true
 
         parentViewController.present(loadingVC, animated: false, completion: nil)
         
