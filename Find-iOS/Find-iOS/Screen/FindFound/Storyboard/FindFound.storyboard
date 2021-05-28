@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQc-Nb-lez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQc-Nb-lez">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -21,16 +21,16 @@
         <!--FindFoundVC-->
         <scene sceneID="1sU-u7-Onk">
             <objects>
-                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CmP-Gj-BC3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djm-0q-3nk">
-                                <rect key="frame" x="0.0" y="44" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-3U-gD5">
-                                        <rect key="frame" x="16" y="12.999999999999998" width="75" height="23.333333333333329"/>
+                                        <rect key="frame" x="16" y="12.999999999999998" width="78.333333333333329" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
                                         <color key="textColor" name="subGray3"/>
                                         <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bI9-Re-VzZ">
-                                <rect key="frame" x="0.0" y="90" width="375" height="37"/>
+                                <rect key="frame" x="0.0" y="90" width="390" height="37"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t13-gY-ViP">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="VPt-VI-fhO"/>
                                         </constraints>
@@ -60,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-IE-42a">
-                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="37"/>
+                                        <rect key="frame" x="195" y="0.0" width="195" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="o1H-j3-ZQI"/>
                                         </constraints>
@@ -75,14 +75,14 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h7D-jR-TH5">
-                                <rect key="frame" x="0.0" y="127" width="375" height="3"/>
+                                <rect key="frame" x="0.0" y="127" width="390" height="3"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izg-Vc-r3J">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="3"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="3"/>
                                         <color key="backgroundColor" name="subGray2"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-Qe-e8C">
-                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="3"/>
+                                        <rect key="frame" x="195" y="0.0" width="195" height="3"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     </view>
                                 </subviews>
@@ -92,43 +92,43 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-VO-kLZ">
-                                <rect key="frame" x="0.0" y="130" width="375" height="682"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="130" width="390" height="714"/>
+                                <color key="backgroundColor" name="subGray6"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AsY-DM-pK8">
-                                    <size key="itemSize" width="375" height="682"/>
+                                    <size key="itemSize" width="390" height="682"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindFoundSegueCVC" id="CJG-KW-pLn" customClass="FindFoundSegueCVC" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
+                                        <rect key="frame" x="0.0" y="16" width="390" height="682"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="men-9H-5eA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="682"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1W-id-42i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="682"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cM-xV-ZaM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="682"/>
+                                                    <color key="backgroundColor" name="subGray6"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1cM-xV-ZaM" secondAttribute="trailing" id="Sgd-bu-9gr"/>
+                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="top" secondItem="men-9H-5eA" secondAttribute="top" id="25v-8q-cGP"/>
+                                                <constraint firstAttribute="bottom" secondItem="1cM-xV-ZaM" secondAttribute="bottom" id="5fd-CF-Wcy"/>
+                                                <constraint firstAttribute="trailing" secondItem="1cM-xV-ZaM" secondAttribute="trailing" id="9LI-cD-AG7"/>
                                                 <constraint firstAttribute="trailing" secondItem="M1W-id-42i" secondAttribute="trailing" id="Vas-AL-rPb"/>
-                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="top" secondItem="men-9H-5eA" secondAttribute="top" id="W9D-wq-CFU"/>
-                                                <constraint firstAttribute="bottom" secondItem="1cM-xV-ZaM" secondAttribute="bottom" id="byH-5y-D5u"/>
+                                                <constraint firstAttribute="bottom" secondItem="M1W-id-42i" secondAttribute="bottom" id="bFK-ZD-GMz"/>
+                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="leading" secondItem="men-9H-5eA" secondAttribute="leading" id="lhc-bq-6Qh"/>
                                                 <constraint firstItem="M1W-id-42i" firstAttribute="top" secondItem="men-9H-5eA" secondAttribute="top" id="lnn-wP-tPt"/>
                                                 <constraint firstItem="M1W-id-42i" firstAttribute="leading" secondItem="men-9H-5eA" secondAttribute="leading" id="n06-PV-ABD"/>
-                                                <constraint firstAttribute="bottom" secondItem="M1W-id-42i" secondAttribute="bottom" constant="83" id="ubq-o8-xZG"/>
-                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="leading" secondItem="men-9H-5eA" secondAttribute="leading" id="yyT-vH-nu5"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="375" height="682"/>
+                                        <size key="customSize" width="390" height="682"/>
                                         <connections>
                                             <outlet property="myContentView" destination="men-9H-5eA" id="emR-oQ-1qH"/>
                                             <outlet property="myFindView" destination="M1W-id-42i" id="9MD-M0-qff"/>
@@ -156,6 +156,7 @@
                             <constraint firstItem="bI9-Re-VzZ" firstAttribute="top" secondItem="Djm-0q-3nk" secondAttribute="bottom" id="wTp-i3-SUZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hhf-dJ-Lqw"/>
                     <connections>
                         <outlet property="myCollectionView" destination="QwU-VO-kLZ" id="QLn-6w-dKn"/>
                         <outlet property="segueBtnStackView" destination="bI9-Re-VzZ" id="LqN-Mu-91N"/>
@@ -169,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6o-OE-OjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.8" y="469.95073891625617"/>
+            <point key="canvasLocation" x="2021.5384615384614" y="469.90521327014216"/>
         </scene>
         <!--Find FoundNC-->
         <scene sceneID="xaR-6m-sqx">
@@ -181,12 +182,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="aeY-Gh-hFs"/>
+                        <segue destination="gQc-Nb-lez" kind="relationship" relationship="rootViewController" id="Ss4-Sj-z4U"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8K-UP-gaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.637681159420293" y="99.776785714285708"/>
+            <point key="canvasLocation" x="1014" y="470"/>
         </scene>
     </scenes>
     <resources>
@@ -204,6 +205,9 @@
         </namedColor>
         <namedColor name="subGray3">
             <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray6">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

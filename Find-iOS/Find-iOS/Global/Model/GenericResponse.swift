@@ -10,23 +10,23 @@ import Foundation
 struct GenericResponse<T: Codable>: Codable {
     
     let status: Int
-    let success: Bool
-    let message: String
-    let data: T?
+    let returnCode: String
+    let returnMessage: String
+    let info: T?
     
     enum CodingKeys: String, CodingKey {
         case status = "status"
-        case success = "success"
-        case message = "message"
-        case data = "data"
+        case returnCode = "returnCode"
+        case returnMessage = "returnMessage"
+        case info = "info"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
-        success = (try? values.decode(Bool.self, forKey: .success)) ?? false
-        message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode(T.self, forKey: .data)) ?? nil
+        returnCode = (try? values.decode(String.self, forKey: .returnCode)) ?? ""
+        returnMessage = (try? values.decode(String.self, forKey: .returnMessage)) ?? ""
+        info = (try? values.decode(T.self, forKey: .info)) ?? nil
     }
     
 }

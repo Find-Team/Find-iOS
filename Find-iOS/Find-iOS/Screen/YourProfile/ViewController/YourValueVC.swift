@@ -151,9 +151,9 @@ extension YourValueVC: UICollectionViewDelegateFlowLayout {
         else if indexPath.row == 1 {
             var height: Float = 0
             if currentSegue == .same {
-                height = Float(sameQuestionCount) * 113.5
+                height = Float(sameQuestions.count) * 113.5 + 43 * 3
             } else {
-                height = Float(differentQustionCount) * 113.5
+                height = Float(differentQuestions.count) * 113.5 + 43 * 3
             }
             
             return CGSize(width: collectionView.frame.width, height: CGFloat(height))

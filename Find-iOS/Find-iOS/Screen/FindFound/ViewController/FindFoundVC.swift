@@ -18,8 +18,7 @@ enum FindFoundCategory {
 class FindFoundVC: UIViewController {
     
     var currentCategory: FindFoundCategory = .find
-    var checkFindCell: Int = 0
-    var checkFoundCell: Int = 0
+    var findCheckIndex: Int = 0
     
     // MARK: - IBOutlet
 
@@ -36,9 +35,17 @@ class FindFoundVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSegueStyle()
-        findSelected()
+        switch findCheckIndex {
+            case 0: findSelected()
+            case 1:
+                foundSelected()
+                myCollectionView.reloadData()
+            default: findSelected()
+        }
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
+        
+        print(findCheckIndex)
         // Do any additional setup after loading the view.
     }
 
@@ -46,12 +53,10 @@ class FindFoundVC: UIViewController {
     
     @IBAction func findBtnClicked(_ sender: Any) {
         findSelected()
-        myCollectionView.reloadData()
     }
     
     @IBAction func foundBtnClicked(_ sender: Any) {
         foundSelected()
-        myCollectionView.reloadData()
     }
 }
 
@@ -72,8 +77,8 @@ extension FindFoundVC {
     func findSelected() {
         print("findselected")
         currentCategory = .find
+        self.tabBarController?.tabBar.isHidden = false
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
-        
         if segueIndicatorView.count == 2 {
             segueIndicatorView[0].backgroundColor = .find_DarkPurple
             segueIndicatorView[1].backgroundColor = .subGray1
@@ -82,13 +87,13 @@ extension FindFoundVC {
         segueFindBtn.setTitle("FIND", for: .normal)
         segueFindBtn.setTitleColor(.find_DarkPurple, for: .normal)
         segueFindBtn.titleLabel?.font = .spoqaRegular(size: 14)
-        
         segueFoundBtn.setTitleColor(.subGray1, for: .normal)
     }
     
     func foundSelected() {
         print("foundSelected")
         currentCategory = .found
+        self.tabBarController?.tabBar.isHidden = true
         self.myCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
         
         if segueIndicatorView.count == 2 {
@@ -113,31 +118,26 @@ extension FindFoundVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
-        cell.currentCategory = currentCategory
         
-        if cell.currentCategory == .find {
-            let findView = FindView(frame: cell.myFindView.frame)
+        let findView = FindView(frame: cell.myFindView.frame)
+        let foundView = FoundView(frame: cell.myFoundView.frame)
+        
+        if indexPath.row == 0 {
+            cell.currentCategory = currentCategory
             cell.myFindView.addSubview(findView)
-//            if checkFindCell == 0 {
-//                let findView = FindView(frame: cell.myFindView.frame)
-//                cell.myFindView.addSubview(findView)
-//                checkFindCell = 1
-//            }
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
-        }
-        else {
-            let foundView = FoundView(frame: cell.myFoundView.frame)
+            foundView.removeFromSuperview()
+            return cell
+        } else if indexPath.row == 1 {
+            cell.currentCategory = currentCategory
             cell.myFoundView.addSubview(foundView)
-//            if checkFoundCell == 0 {
-//                let foundView = FoundView(frame: cell.myFoundView.frame)
-//                cell.myFoundView.addSubview(foundView)
-//                checkFoundCell = 1
-//            }
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
+            findView.removeFromSuperview()
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
 }
 
@@ -171,9 +171,9 @@ extension FindFoundVC: UICollectionViewDelegateFlowLayout {
         case 1:
             foundSelected()
             print("case1")
+            
         default:
             break
         }
-        myCollectionView.reloadData()
     }
 }

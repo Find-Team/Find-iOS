@@ -8,20 +8,20 @@
 import Foundation
 
 struct PlainData: Codable {
-    var status: Int
-    var success: Bool
-    var message: String
+    let status: Int
+    let returnCode: String
+    let returnMessage: String
     
     enum CodingKeys: String, CodingKey {
         case status = "status"
-        case success = "success"
-        case message = "message"
+        case returnCode = "returnCode"
+        case returnMessage = "returnMessage"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
-        success = (try? values.decode(Bool.self, forKey: .success)) ?? false
-        message = (try? values.decode(String.self, forKey: .message)) ?? ""
+        returnCode = (try? values.decode(String.self, forKey: .returnCode)) ?? ""
+        returnMessage = (try? values.decode(String.self, forKey: .returnMessage)) ?? ""
     }
 }

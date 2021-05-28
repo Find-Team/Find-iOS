@@ -6,9 +6,6 @@
 
 import UIKit
 
-//enum InterviewCategory {
-//    case pros, love, taste, life
-//}
 enum ProfileCategory {
     case pros, love, taste, life
 }
@@ -16,6 +13,8 @@ enum ProfileCategory {
 class YourProfileVC: UIViewController {
     
     var currentCategory: ProfileCategory = .pros
+    
+    var screenWidth = UIScreen.main.bounds.width
 
     @IBOutlet weak var fulllScrollView: UIScrollView!
     @IBOutlet weak var imageScrollView: UIScrollView!
@@ -40,7 +39,8 @@ class YourProfileVC: UIViewController {
     @IBOutlet var segueIndicator: [UIView]!
     @IBOutlet weak var segueInterviewCollectionView: UICollectionView!
     @IBOutlet weak var floatingLikeBtn: UIButton!
-    
+    @IBOutlet weak var floatingLikeBtnTop: NSLayoutConstraint!
+    @IBOutlet weak var fullScrollViewWidth: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -55,47 +55,59 @@ class YourProfileVC: UIViewController {
     
     // MARK: - IBAction
 
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func starBtnClicked(_ sender: Any) {
         if self.starBtn.isSelected == false {
             self.starBtn.isSelected = true
             self.starBtn.setImage(UIImage(named: "btnFoundStarMint"), for: .normal)
-            showToast(message: "상대를 찜했습니다")
+            showToastPurple(message: "상대를 찜했습니다.")
         }
         else {
             self.starBtn.isSelected = false
             self.starBtn.setImage(UIImage(named: "btnFoundStarMintLine"), for: .normal)
-            showToast(message: "찜을 취소했습니다")
         }
+    }
+    
+    @IBAction func moveToYourValue(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "YourValue", bundle: nil)
+        let dvc = storyBoard.instantiateViewController(identifier: "YourValueVC")
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     @IBAction func prosBtnClicked(_ sender: Any) {
         prosSelected()
-        segueInterviewCollectionView.reloadData()
+//        segueInterviewCollectionView.reloadData()
     }
     
     @IBAction func loveBtnClicked(_ sender: Any) {
         loveSelected()
-        segueInterviewCollectionView.reloadData()
+//        segueInterviewCollectionView.reloadData()
     }
     
     @IBAction func tasteBtnClicked(_ sender: Any) {
         tasteSelected()
-        segueInterviewCollectionView.reloadData()
+//        segueInterviewCollectionView.reloadData()
     }
     
     @IBAction func lifeBtnClicked(_ sender: Any) {
         lifeSelected()
-        segueInterviewCollectionView.reloadData()
+//        segueInterviewCollectionView.reloadData()
     }
     
     @IBAction func floatingLikeBtnClicked(_ sender: Any) {
+        floatingLikeBtn.backgroundColor = UIColor(red: 183/255, green: 168/255, blue: 248/255, alpha: 1.0)
         floatingLikeBtn.setTitle("호감 보냄", for: .normal)
+        showToastPurple(message: "상대에게 호감을 보냈습니다.")
         floatingLikeBtn.isEnabled = false
     }
 }
 
 extension YourProfileVC {
     func setView() {
+        fullScrollViewWidth.constant = screenWidth
         introductionContentView.makeRounded(cornerRadius: 10)
     }
     
@@ -105,20 +117,6 @@ extension YourProfileVC {
         floatingLikeBtn.setTitle("호감 보내기", for: .normal)
         floatingLikeBtn.setTitleColor(.white, for: .normal)
         floatingLikeBtn.titleLabel?.font = .spoqaMedium(size: 16)
-    }
-    
-    func showToast(message : String, font: UIFont = UIFont.spoqaRegular(size: 14)) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 145, height: 35))
-        toastLabel.backgroundColor = UIColor.find_DarkPurple.withAlphaComponent(0.5)
-        toastLabel.textColor = UIColor.white
-        toastLabel.font = font
-        toastLabel.textAlignment = .center;
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 15;
-        toastLabel.clipsToBounds = true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() })
     }
     
     func setSegueStyle() {
@@ -139,7 +137,6 @@ extension YourProfileVC {
         segueLifeBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
         if segueIndicator.count == 4 {
-            print("찍히나요?")
             segueIndicator[0].backgroundColor = .subGray1
             segueIndicator[1].backgroundColor = .subGray1
             segueIndicator[2].backgroundColor = .subGray1
@@ -151,6 +148,8 @@ extension YourProfileVC {
     func prosSelected() {
         currentCategory = .pros
         self.segueInterviewCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
+        
+//        segueInterviewCollectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
         
         if segueIndicator.count == 4 {
             segueIndicator[0].backgroundColor = .find_Purple
@@ -171,6 +170,8 @@ extension YourProfileVC {
     func loveSelected() {
         currentCategory = .love
         self.segueInterviewCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
+        
+//        segueInterviewCollectionView.reloadItems(at: [IndexPath(item: 1, section: 0)])
         
         if segueIndicator.count == 4 {
             segueIndicator[0].backgroundColor = .subGray1
@@ -236,8 +237,25 @@ extension YourProfileVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SegueInterviewCVC.identifier, for: indexPath) as? SegueInterviewCVC else { return UICollectionViewCell() }
-        cell.currentCategory = currentCategory
-        return cell
+        
+        if indexPath.item == 0 {
+            cell.currentCategory = .pros
+            cell.cellIndex = 0
+            return cell
+        } else if indexPath.item == 1 {
+            cell.currentCategory = .love
+            cell.cellIndex = 1
+            return cell
+        } else if indexPath.item == 2 {
+            cell.currentCategory = .taste
+            cell.cellIndex = 2
+            return cell
+        } else if indexPath.item == 3 {
+            cell.currentCategory = .life
+            cell.cellIndex = 3
+            return cell
+        }
+        return UICollectionViewCell()
     }
 }
 
@@ -267,16 +285,20 @@ extension YourProfileVC: UICollectionViewDelegateFlowLayout {
         switch currentIndex {
         case 0:
             prosSelected()
+            segueInterviewCollectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
         case 1:
             loveSelected()
+            segueInterviewCollectionView.reloadItems(at: [IndexPath(item: 1, section: 0)])
         case 2:
             tasteSelected()
+            segueInterviewCollectionView.reloadItems(at: [IndexPath(item: 2, section: 0)])
         case 3:
             lifeSelected()
+            segueInterviewCollectionView.reloadItems(at: [IndexPath(item: 3, section: 0)])
         default:
             break
         }
-        segueInterviewCollectionView.reloadData()
+//        segueInterviewCollectionView.reloadData()
     }
 
 }
