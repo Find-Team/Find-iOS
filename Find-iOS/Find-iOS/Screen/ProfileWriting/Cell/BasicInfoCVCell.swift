@@ -26,15 +26,14 @@ class BasicInfoCVCell: UICollectionViewCell, UITextFieldDelegate, UIPickerViewDa
     // 피커에 들어가는 자료
     let school = ["고등학교", "전문대", "대학교", "대학원", "석사", "박사", "기타"]
     let mbti = ["ENTJ", "ENTP", "INTJ", "INTP", "ESTJ", "ESFJ", "ISTJ", "ISFJ", "ENFJ", "ENFP", "INFJ", "INFP", "ESTP", "ESFP", "ISTP", "ISFP"]
-    let height = ["145~190  (처음 켰을때 170에 커서 가있음)"]
-    let bodyShape = ["마른", "슬림", "보통", "근육질", "통통", "우람"]
+    let height = Array<Int>(145...190)
+    let bodyShape = ["마른", "슬림", "보통", "통통", "다소 볼륨", "글래머"]
     let smoking = ["절대 안 핌", "사교적 흡연가", "자주 핌"]
     let religion = ["종교없음", "개신교", "천주교", "불교", "원불교", "기타"]
     let marriage = ["미혼", "재혼"]
     let drinking = ["마시지 않음", "사교적 음주가", "어느정도 즐기는편", "술자리를 즐김"]
     
     var basicInfoData : [BasicInfoData] = []
-
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var infoTextField: UITextField!
@@ -86,7 +85,7 @@ class BasicInfoCVCell: UICollectionViewCell, UITextFieldDelegate, UIPickerViewDa
         case .mbti:
             return mbti[row]
         case .height:
-            return height[row]
+            return String(height[row])
         case .bodyShpe:
             return bodyShape[row]
         case .smoking:
@@ -109,7 +108,7 @@ class BasicInfoCVCell: UICollectionViewCell, UITextFieldDelegate, UIPickerViewDa
         case .mbti:
              infoTextField.text = mbti[row]
         case .height:
-             infoTextField.text = height[row]
+             infoTextField.text = String(height[row])
         case .bodyShpe:
              infoTextField.text = bodyShape[row]
         case .smoking:
