@@ -52,6 +52,8 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+        
         questionChoiceTableView.dataSource = self
         questionChoiceTableView.delegate = self
         
@@ -79,7 +81,7 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
     
     /// 뒤로가기 버튼 클릭
     @IBAction func backBtnDidTap(_ sender: Any) {
-        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func finishBtnDidTap(_ sender: Any) {
@@ -90,7 +92,7 @@ class ValueTestVC: UIViewController, UICollectionViewDelegate {
             visitedFlag = true
         }
         
-        
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     
