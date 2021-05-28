@@ -25,5 +25,11 @@ class InterviewAnswerTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setInterviewData(index: Int, question: String, answer: String) {
+        self.questionNumberLabel.text = "Q. \(index)"
+        self.questionLabel.text = question
+        self.answerTextView.text = answer
+    }
 
 }
