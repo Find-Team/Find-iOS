@@ -212,7 +212,6 @@ extension ProfileWritingVC {
         identityVerify.textColor = UIColor.subGray3
         identityVerify.letterSpacing = -1.1
         
-        
         verifyBtn.clipsToBounds = true
         verifyBtn.layer.cornerRadius = 10
         verifyBtn.layer.borderWidth = 1.0
