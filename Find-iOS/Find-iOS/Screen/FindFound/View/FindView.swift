@@ -62,12 +62,14 @@ class FindView: UIView {
         differentBtn.makeRounded(cornerRadius: differentBtn.frame.width/2)
     
         findBtn.makeRounded(cornerRadius: 25)
+        findBtn.isEnabled = false
     }
 
     @IBAction func similarBtnClicked(_ sender: Any) {
         if self.similarBtn.isSelected == false {
             // similarBtn 눌렸을 때
             self.similarBtn.isSelected = true
+            findBtn.isEnabled = true
             self.checkSimilarActive = true
             similarView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
@@ -88,6 +90,7 @@ class FindView: UIView {
         if self.differentBtn.isSelected == false {
             // differentBtn 눌렸을 때
             self.differentBtn.isSelected = true
+            findBtn.isEnabled = true
             self.checkDifferentActive = true
             differentView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
@@ -107,7 +110,6 @@ class FindView: UIView {
     @IBAction func findBtnClicked(_ sender: Any) {
         
         // found Segue로 이동
-        print("actionaction")
         let parentViewController: UIViewController = self.parentViewController!
         
         let lottieStoryBoard = UIStoryboard(name: "MatchingLottie", bundle: nil)
@@ -118,12 +120,19 @@ class FindView: UIView {
         
         loadingVC.modalPresentationStyle = .overCurrentContext
         loadingVC.tabBarController?.tabBar.isHidden = true
-
+        
+        if checkDifferentActive {
+            loadingVC.matchingType = .oppositePerson
+        }
+        
         parentViewController.present(loadingVC, animated: false, completion: nil)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             parentViewController.dismiss(animated: false) {
                 dvc.findCheckIndex = 1
+                
+                print(dvc.findCheckIndex)
+            
                 parentViewController.navigationController?.pushViewController(dvc, animated: true)
             }
         }

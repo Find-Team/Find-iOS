@@ -37,7 +37,9 @@ class FindFoundVC: UIViewController {
         setSegueStyle()
         switch findCheckIndex {
             case 0: findSelected()
-            case 1: foundSelected()
+            case 1:
+                foundSelected()
+                myCollectionView.reloadData()
             default: findSelected()
         }
         myCollectionView.delegate = self
