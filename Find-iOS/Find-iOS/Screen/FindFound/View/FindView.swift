@@ -98,6 +98,10 @@ class FindView: UIView {
             self.similarBtn.isSelected = true
             findBtn.isEnabled = true
             self.checkSimilarActive = true
+            
+            similarBtn.setTitleColor(.subGray3, for: .highlighted)
+            similarBtn.setTitleColor(.subGray3, for: .selected)
+            
             similarView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
         }
@@ -119,6 +123,10 @@ class FindView: UIView {
             self.differentBtn.isSelected = true
             findBtn.isEnabled = true
             self.checkDifferentActive = true
+            
+            differentBtn.setTitleColor(.subGray3, for: .highlighted)
+            differentBtn.setTitleColor(.subGray3, for: .selected)
+            
             differentView.backgroundColor = .find_Mint
             findBtn.backgroundColor = .find_Mint
         }
