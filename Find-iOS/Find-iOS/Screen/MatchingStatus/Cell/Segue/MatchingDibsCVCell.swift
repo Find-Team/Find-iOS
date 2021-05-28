@@ -212,11 +212,11 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0) {
             if !receivedDataExp.isEmpty {
-                return 116
+                return 117
             }
         } else {
             if !sendDataExp.isEmpty {
-                return 116
+                return 117
             }
         }
         return (tableView.frame.height - 86) / 3

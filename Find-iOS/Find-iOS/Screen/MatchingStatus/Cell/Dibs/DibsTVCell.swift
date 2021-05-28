@@ -57,7 +57,7 @@ class DibsTVCell: UITableViewCell {
     }
     
     @IBAction func dibsBtnTapped(_ sender: Any) {
-        if dibsBtn.backgroundColor == .white {
+        if dibsBtn.backgroundColor == .find_Mint {
             APIService.shared.matchingRequest(1, "DIBS", sequenceNum ?? 0) { result in
                 switch result {
                 case .success(_):
@@ -87,7 +87,7 @@ class DibsTVCell: UITableViewCell {
             switch result {
             case .success(_):
                 print("찜 리스트에서 제거하기 성공")
-                self.parentViewController?.showToastPurple(message: "상대가  리스트에서 제거됐습니다")
+                self.parentViewController?.showToastPurple(message: "상대가 리스트에서 제거됐습니다")
                 NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
             case .failure(let error):
                 print(error)
@@ -115,11 +115,13 @@ extension DibsTVCell {
         switch dibsCategory {
         case .whoLikeMe:
             dibsBtn.backgroundColor = .find_Mint
-            dibsBtn.tintColor = .white
+            dibsBtn.setImage(UIImage(named: "iconStarWhite"), for: .normal)
+            dibsBtn.titleLabel?.textColor = .white
             deleteBtn.isHidden = false
         case .whoILike:
             dibsBtn.backgroundColor = .white
-            dibsBtn.tintColor = .find_Mint
+            dibsBtn.setImage(UIImage(named: "iconStarMint"), for: .normal)
+            dibsBtn.titleLabel?.textColor = .find_Mint
             deleteBtn.isHidden = true
         case .none:
             return

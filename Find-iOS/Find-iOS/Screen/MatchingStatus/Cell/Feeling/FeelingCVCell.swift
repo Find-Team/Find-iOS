@@ -11,6 +11,7 @@ import UIKit
 class FeelingCVCell: UICollectionViewCell {
     static let identifier = "FeelingCVCell"
     var sequenceNum: Int?
+    var feelingCategory: feelingCell?
     
     @IBOutlet weak var feelingImageView: UIImageView!
     @IBOutlet weak var feelingView: UIView!
@@ -48,15 +49,32 @@ class FeelingCVCell: UICollectionViewCell {
     }
     
     @IBAction func deleteBtnTapped(_ sender: Any) {
-        APIService.shared.matchingRequest(1, "DISCONNECTED_DIBS", sequenceNum ?? 0) { result in
-            switch result {
-            case .success(_):
-                print("받은 호감 리스트에서 제거 성공")
-                self.parentViewController?.showToastPurple(message: "리스트에서 제거 됐습니다")
-                // 받은 호감 리스트(섹션1)에서 삭제. 데이터 업데이트
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [1,1])
-            case .failure(let error):
-                print(error)
+        var disconnectMessage: String?
+        var idx: [Int]?
+        
+        switch feelingCategory {
+        case .received:
+            disconnectMessage = "DISCONNECTED_RECEIVED_FEELING"
+            idx = [1,1]
+        case .send:
+            disconnectMessage = "DISCONNECTED_SEND_FEELING"
+            idx = [2,2]
+        default:
+            return
+        }
+        
+        if let disconMessage = disconnectMessage {
+            APIService.shared.matchingRequest(1, disconMessage, sequenceNum ?? 0) { result in
+                switch result {
+                case .success(_):
+                    print("\(disconMessage) 호감 리스트에서 제거 성공")
+                    self.parentViewController?.showToastPurple(message: "리스트에서 제거 됐습니다")
+
+                    // 받은 호감 리스트(섹션1)에서 삭제. 데이터 업데이트
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: idx)
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }

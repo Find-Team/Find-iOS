@@ -118,6 +118,7 @@ extension MatchingStatusCVCell: ShowMoreFooter {
     // 데이터 변화에 대응하기 위한 Noti
     @objc func changingConnected(noti: Notification) {
         if let sec = noti.object as? [Int] {
+            print("이제 왔다")
             NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil)
             innerTV.reloadSections(IndexSet(sec[0]...sec[1]), with: .fade)
         }
@@ -231,11 +232,11 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
             return header
         } else if (section == 1) {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
-            header.headerLabel.text = "보낸 호감"
+            header.headerLabel.text = "받은 호감"
             return header
         } else if (section == 2) {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
-            header.headerLabel.text = "받은 호감"
+            header.headerLabel.text = "보낸 호감"
             return header
         } else {
             return nil

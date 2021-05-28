@@ -117,6 +117,7 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchingStatusCVCell.identifier, for: indexPath) as? MatchingStatusCVCell else { return UICollectionViewCell() }
+            print(matchingData)
             cell.connectedData = matchingData?.connected
             cell.receivedData = matchingData?.receivedFeeling
             cell.sendData = matchingData?.sendFeeling

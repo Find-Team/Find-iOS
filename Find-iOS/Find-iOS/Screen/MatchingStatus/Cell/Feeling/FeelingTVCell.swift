@@ -64,11 +64,13 @@ extension FeelingTVCell: UICollectionViewDelegate, UICollectionViewDataSource, U
             cell.descriptionLabel.isHidden = true
             if let receivedFeelings = receivedData {
                 cell.setCell(feelingDatas: receivedFeelings[indexPath.row])
+                cell.feelingCategory = .received
             }
         case .send:
             cell.acceptBtn.isHidden = true
             if let sendedFeelings = sendData {
                 cell.setCell(feelingDatas: sendedFeelings[indexPath.row])
+                cell.feelingCategory = .send
             }
         default:
             return UICollectionViewCell()
