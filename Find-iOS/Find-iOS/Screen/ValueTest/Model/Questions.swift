@@ -85,3 +85,45 @@ var yourValueQuestions: [Question] = [
     Question(id: 29, question: "사회생활 중 유흥업소 출입", choice: [QuestionChoice(choiceContent: "사회생활이라 불가피, 이해가능"), QuestionChoice(choiceContent: "어떠한 이유에서도 가지 않는게 맞음")], userChoice: 2),
     Question(id: 30, question: "사랑하는 이의 부채", choice: [QuestionChoice(choiceContent: "결혼 전의 부채는 스스로"), QuestionChoice(choiceContent: "불가피한 상황이라면 함께 부담")], userChoice: 2)
 ]
+
+struct DummyQuestions {
+    let id: Int
+    let question: String
+    let answer: String
+}
+
+var sameQuestions: [DummyQuestions] = [
+    DummyQuestions(id: 1, question: "연인관계를 주변에 알리고 공개하는 것", answer: "당당하게 행동"),
+    DummyQuestions(id: 2, question: "연인과의 사생활 공유", answer: "사생활이나 비밀은 지켜주기"),
+    DummyQuestions(id: 3, question: "이상적인 연애비용분담", answer: "적당히 번갈아가며 (6:4)"),
+    DummyQuestions(id: 4, question: "연애중 연락빈도", answer: "바쁘더라도 최대한 자주"),
+    DummyQuestions(id: 5, question: "애인이 다른 이성친구와 단둘이 만난다면", answer: "왜 단둘이 만나?"),
+    DummyQuestions(id: 8, question: "사귈 때 스킨십에 대한 생각", answer: "스킨십도 연애의 중요한 요소"),
+    DummyQuestions(id: 1, question: "시간 약속", answer: "간혹 약속을 지키지 못해도 이해가능"),
+    DummyQuestions(id: 2, question: "주말에 필요한 개인적인 시간", answer: "하루 정도는 나만의 시간필요"),
+    DummyQuestions(id: 8, question: "평소 운동", answer: "규칙적으로 함"),
+    DummyQuestions(id: 9, question: "종교의 중요성", answer: "정도를 지킨다면 괜찮아요"),
+    DummyQuestions(id: 10, question: "정치성향", answer: "보수에 가까워요"),
+    DummyQuestions(id: 2, question: "나중에 아이가 있었으면 하나요?", answer: "1~2 명의 아이"),
+    DummyQuestions(id: 3, question: "미래에 부모님을 모실 수 있나요?", answer: "상황에 따라 가능"),
+    DummyQuestions(id: 5, question: "결혼 후 자산관리", answer: "부부 공동으로 관리"),
+    DummyQuestions(id: 6, question: "맞벌이 부부의 가사분담", answer: "정해진 남녀 역할구분이 없다고봄"),
+    DummyQuestions(id: 7, question: "반려동물", answer: "키우고 싶어요"),
+    DummyQuestions(id: 8, question: "배우자의 종교생활", answer: "각자의 종교활동은 존중 해야함"),
+    DummyQuestions(id: 9, question: "사회생활 중 유흥업소 출입", answer: "어떠한 이유에서도 가지 않는게 맞음")
+]
+
+var differentQuestions: [DummyQuestions] = [
+    DummyQuestions(id: 6, question: "관계에서의 우선순위", answer: "연인이 가장 우선순위에요"),
+    DummyQuestions(id: 7, question: "연인과의 갈등", answer: "시간을 좀 갖고 진정된 후 풀기"),
+    DummyQuestions(id: 9, question: "SNS에 연인과의 사진 포스팅", answer: "공개적으로 올리는건 부담"),
+    DummyQuestions(id: 10, question: "장거리 연애, 주말 부부", answer: "장기적으로는 분명 어려움"),
+    DummyQuestions(id: 3, question: "직업 선택시 중요한 요소", answer: "안정적인 생활이 먼저"),
+    DummyQuestions(id: 4, question: "자기계발", answer: "일이 바빠 아직은 힘듬"),
+    DummyQuestions(id: 5, question: "행복한 삶을 위해 필요한 경제력", answer: "보통수준 이상의 경제력이 필수"),
+    DummyQuestions(id: 6, question: "평소 생활리듬", answer: "아침형"),
+    DummyQuestions(id: 7, question: "20~30대 소비습관", answer: "부족하더라도 미래를 위해 절약"),
+    DummyQuestions(id: 1, question: "사랑하는 사람이 생긴다면 결혼은?", answer: "1~2 년 이내라도 고려"),
+    DummyQuestions(id: 4, question: "결혼 전 경제력", answer: "함께 살림 차릴 정도면 가능"),
+    DummyQuestions(id: 10, question: "사랑하는 이의 부채", answer: "결혼전의 부채는 스스로")
+]
