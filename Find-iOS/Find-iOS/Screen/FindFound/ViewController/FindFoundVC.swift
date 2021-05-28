@@ -37,7 +37,9 @@ class FindFoundVC: UIViewController {
         setSegueStyle()
         switch findCheckIndex {
             case 0: findSelected()
-            case 1: foundSelected()
+            case 1:
+                foundSelected()
+                myCollectionView.reloadData()
             default: findSelected()
         }
         myCollectionView.delegate = self
@@ -51,12 +53,10 @@ class FindFoundVC: UIViewController {
     
     @IBAction func findBtnClicked(_ sender: Any) {
         findSelected()
-        myCollectionView.reloadData()
     }
     
     @IBAction func foundBtnClicked(_ sender: Any) {
         foundSelected()
-        myCollectionView.reloadData()
     }
 }
 
@@ -87,7 +87,6 @@ extension FindFoundVC {
         segueFindBtn.setTitle("FIND", for: .normal)
         segueFindBtn.setTitleColor(.find_DarkPurple, for: .normal)
         segueFindBtn.titleLabel?.font = .spoqaRegular(size: 14)
-        
         segueFoundBtn.setTitleColor(.subGray1, for: .normal)
     }
     
@@ -119,24 +118,26 @@ extension FindFoundVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindFoundSegueCVC.identifier, for: indexPath) as? FindFoundSegueCVC else { return UICollectionViewCell() }
-        cell.currentCategory = currentCategory
         
         let findView = FindView(frame: cell.myFindView.frame)
         let foundView = FoundView(frame: cell.myFoundView.frame)
         
-        if cell.currentCategory == .find {
+        if indexPath.row == 0 {
+            cell.currentCategory = currentCategory
             cell.myFindView.addSubview(findView)
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
             foundView.removeFromSuperview()
-        }
-        else {
+            return cell
+        } else if indexPath.row == 1 {
+            cell.currentCategory = currentCategory
             cell.myFoundView.addSubview(foundView)
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
             findView.removeFromSuperview()
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
 }
 
@@ -170,9 +171,9 @@ extension FindFoundVC: UICollectionViewDelegateFlowLayout {
         case 1:
             foundSelected()
             print("case1")
+            
         default:
             break
         }
-        myCollectionView.reloadData()
     }
 }

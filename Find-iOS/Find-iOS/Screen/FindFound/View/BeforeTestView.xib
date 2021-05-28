@@ -23,11 +23,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeforeTestView" customModule="Find_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="testBtn" destination="afz-PJ-3ki" id="ohb-tq-aWp"/>
+                <outlet property="valueLabel" destination="mIW-xM-g25" id="SER-Zk-MfX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BeforeTestView" customModule="Find_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="294"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="294"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 가치관은?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gof-YL-6Rq">
@@ -40,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIW-xM-g25">
-                    <rect key="frame" x="81" y="94" width="213" height="44"/>
+                    <rect key="frame" x="88.666666666666686" y="94" width="213" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="UQM-0D-kGg"/>
                     </constraints>
@@ -51,7 +52,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afz-PJ-3ki">
-                    <rect key="frame" x="79" y="157" width="217" height="44"/>
+                    <rect key="frame" x="79" y="157" width="232" height="47"/>
                     <color key="backgroundColor" name="find_Purple"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="afz-PJ-3ki" secondAttribute="height" multiplier="217:44" id="NOi-jr-7OF"/>

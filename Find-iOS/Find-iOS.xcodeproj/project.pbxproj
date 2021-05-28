@@ -117,6 +117,8 @@
 		92B10366264D2905003801C8 /* ProfileCardDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10365264D2905003801C8 /* ProfileCardDataModel.swift */; };
 		92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B10390264E4C2A003801C8 /* BeforeTestView.swift */; };
 		92B10395264E4C4C003801C8 /* BeforeTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B10394264E4C4C003801C8 /* BeforeTestView.xib */; };
+		92F8DF9F2660B3880029C325 /* InterviewQAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DF9E2660B3870029C325 /* InterviewQAData.swift */; };
+		92F8DFA22660C5770029C325 /* FoundProfileCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DFA12660C5760029C325 /* FoundProfileCardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +234,8 @@
 		92B10365264D2905003801C8 /* ProfileCardDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardDataModel.swift; sourceTree = "<group>"; };
 		92B10390264E4C2A003801C8 /* BeforeTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTestView.swift; sourceTree = "<group>"; };
 		92B10394264E4C4C003801C8 /* BeforeTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeforeTestView.xib; sourceTree = "<group>"; };
+		92F8DF9E2660B3870029C325 /* InterviewQAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewQAData.swift; sourceTree = "<group>"; };
+		92F8DFA12660C5760029C325 /* FoundProfileCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundProfileCardData.swift; sourceTree = "<group>"; };
 		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -318,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				37A18C162653F29B00E3B67C /* 10649-gradient-loading.json */,
+				92F8DFA12660C5760029C325 /* FoundProfileCardData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			children = (
 				37F1E0C1265828D900D810BE /* ValueFilter.swift */,
 				37F1E0C3265834B300D810BE /* ValueFilterAll.swift */,
+				92F8DF9E2660B3870029C325 /* InterviewQAData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -980,6 +986,7 @@
 				546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */,
 				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
 				378E3A1626526EEC0023A326 /* MatchingLottieVC.swift in Sources */,
+				92F8DFA22660C5770029C325 /* FoundProfileCardData.swift in Sources */,
 				542A1DF626442F8B00E69A4D /* SceneDelegate.swift in Sources */,
 				926314F72656CE8A00E8E8FD /* FindView.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
@@ -987,6 +994,7 @@
 				54BA2448266095C00084D35A /* noDataTVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */,
+				92F8DF9F2660B3880029C325 /* InterviewQAData.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
 				548C8C8826502CED007EC128 /* InterviewImages.swift in Sources */,
 				548A6783265009AC0014CBE8 /* photoPreviewCVCell.swift in Sources */,
@@ -1163,13 +1171,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N8FDQCW52Q;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1185,13 +1193,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N8FDQCW52Q;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "wonseok.Find-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

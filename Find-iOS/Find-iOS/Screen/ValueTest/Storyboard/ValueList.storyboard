@@ -122,8 +122,8 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rso-xS-JID">
-                                <rect key="frame" x="15" y="83" width="15.5" height="22"/>
-                                <state key="normal" image="restart" catalog="system"/>
+                                <rect key="frame" x="15" y="74" width="40" height="40"/>
+                                <state key="normal" image="backBtn"/>
                                 <connections>
                                     <action selector="backBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="NCz-L6-CvA"/>
                                 </connections>
@@ -136,7 +136,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oug-s9-WOy">
-                                <rect key="frame" x="0.0" y="164.5" width="414" height="697.5"/>
+                                <rect key="frame" x="0.0" y="164.5" width="414" height="731.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lkz-82-hzH">
                                     <size key="itemSize" width="414" height="711"/>
@@ -146,7 +146,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ValueListCVC" id="jnR-bh-pkK" customClass="ValueListCVC" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-7" width="414" height="711"/>
+                                        <rect key="frame" x="0.0" y="10.5" width="414" height="711"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6yQ-oL-WQY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
@@ -286,7 +286,7 @@
                             <constraint firstItem="H7H-am-s3L" firstAttribute="leading" secondItem="vkl-20-vFJ" secondAttribute="leading" id="JBe-IL-Sxl"/>
                             <constraint firstItem="oug-s9-WOy" firstAttribute="leading" secondItem="O8W-7H-dOX" secondAttribute="leading" id="Lgj-Gc-spd"/>
                             <constraint firstItem="oug-s9-WOy" firstAttribute="trailing" secondItem="O8W-7H-dOX" secondAttribute="trailing" id="SbB-90-UVu"/>
-                            <constraint firstItem="oug-s9-WOy" firstAttribute="bottom" secondItem="O8W-7H-dOX" secondAttribute="bottom" id="X0t-zR-SGT"/>
+                            <constraint firstItem="oug-s9-WOy" firstAttribute="bottom" secondItem="vkl-20-vFJ" secondAttribute="bottom" id="X0t-zR-SGT"/>
                             <constraint firstItem="Rso-xS-JID" firstAttribute="leading" secondItem="vkl-20-vFJ" secondAttribute="leading" constant="15" id="gvR-NN-XdP"/>
                             <constraint firstItem="SSH-ds-kgY" firstAttribute="centerX" secondItem="vkl-20-vFJ" secondAttribute="centerX" id="jlk-O9-d2N"/>
                             <constraint firstItem="oug-s9-WOy" firstAttribute="top" secondItem="H7H-am-s3L" secondAttribute="bottom" id="lkJ-qo-Py5"/>
@@ -314,7 +314,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="restart" catalog="system" width="120" height="128"/>
+        <image name="backBtn" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

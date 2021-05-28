@@ -11,5 +11,5 @@ class InterviewImgCVCell: UICollectionViewCell {
     static let identifier = "InterviewImgCVCell"
     @IBOutlet weak var myContentView: UIView!
     @IBOutlet weak var interviewImgView: UIImageView!
-    
+
 }

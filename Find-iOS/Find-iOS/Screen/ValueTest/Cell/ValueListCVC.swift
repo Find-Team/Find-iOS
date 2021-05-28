@@ -17,6 +17,7 @@ class ValueListCVC: UICollectionViewCell {
     var currentCategory: Category = .relationship
     var parentVC: ParentVC = .valueList
     var currentSegue: ValueFilterAll = .same
+    var CVCIndexPath: Int = 0
     
     //MARK: - IBOutlets
     
@@ -194,20 +195,35 @@ extension ValueListCVC: UITableViewDataSource {
         cell.questionLabel.font = .spoqaRegular(size: 13)
         cell.questionLabel.textColor = .subGray3
         
-        /// 선택 카테고리에 따른 질문
         var currIndexPath: Int = 0
         
-        switch currentCategory {
-        case .relationship:
+        switch CVCIndexPath {
+        case 0:
             currIndexPath = indexPath.row
-            cell.questionLabel.text = valueQuestions[currIndexPath].question
-        case .family:
+        case 1:
             currIndexPath = indexPath.row + 10
-            cell.questionLabel.text = valueQuestions[currIndexPath].question
-        case .career:
+        case 2:
             currIndexPath = indexPath.row + 20
-            cell.questionLabel.text = valueQuestions[currIndexPath].question
+        default:
+            cell.questionLabel.text = ""
         }
+        
+        cell.questionLabel.text = valueQuestions[currIndexPath].question
+        
+        /// 선택 카테고리에 따른 질문
+//        var currIndexPath: Int = 0
+        
+//        switch currentCategory {
+//        case .relationship:
+//            currIndexPath = indexPath.row
+//            cell.questionLabel.text = valueQuestions[currIndexPath].question
+//        case .family:
+//            currIndexPath = indexPath.row + 10
+//            cell.questionLabel.text = valueQuestions[currIndexPath].question
+//        case .career:
+//            currIndexPath = indexPath.row + 20
+//            cell.questionLabel.text = valueQuestions[currIndexPath].question
+//        }
         
         /// 답변이 있을 때 / 없을 때 분기처리
         if valueQuestions[currIndexPath].userChoice != 0 {
@@ -252,18 +268,30 @@ extension ValueListCVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 43)) //set these values as necessary
-        returnedView.backgroundColor = .white
-        
-        let label = UILabel(frame: CGRect(x: 20, y: 17, width: 33, height: 15))
-        
-        label.text = ["관계", "가족", "커리어"][section]
-        label.font = .spoqaRegular(size: 12)
-        label.textColor = .subGray2
-        label.letterSpacing = -0.36
-        
-        returnedView.addSubview(label)
-        
-        return returnedView
+        if parentVC == .yourValue {
+            let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 43)) //set these values as necessary
+            returnedView.backgroundColor = .white
+            
+            let label = UILabel(frame: CGRect(x: 20, y: 17, width: 33, height: 15))
+            
+            label.text = ["관계", "가족", "커리어"][section]
+            label.font = .spoqaRegular(size: 12)
+            label.textColor = .subGray2
+            label.letterSpacing = -0.36
+            
+            returnedView.addSubview(label)
+            
+            return returnedView
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if parentVC == .yourValue {
+            return 43
+        } else {
+            return 0
+        }
     }
 }

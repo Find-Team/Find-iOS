@@ -14,6 +14,7 @@ class BeforeTestView: UIView {
             testBtn.makeRounded(cornerRadius: 20.0)
         }
     }
+    @IBOutlet weak var valueLabel: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -52,6 +53,8 @@ class BeforeTestView: UIView {
         let storyBoard = UIStoryboard(name: "ValueTest", bundle: nil)
         let dvc = storyBoard.instantiateViewController(identifier: "ValueTestVC")
         let currentController = self.getSuperViewController()
+        currentController?.hidesBottomBarWhenPushed = true
         currentController?.navigationController?.pushViewController(dvc, animated: true)
+        currentController?.hidesBottomBarWhenPushed = false
     }
 }
