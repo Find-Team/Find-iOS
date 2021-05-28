@@ -52,7 +52,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>ProfileGuide</string>
+					<string>ProfileWriting</string>
 				</dict>
 			</array>
 		</dict>

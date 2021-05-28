@@ -74,6 +74,9 @@
                                                 <rect key="frame" x="305" y="48" width="93" height="32"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="프로필 가이드"/>
+                                                <connections>
+                                                    <action selector="gotoProfileGuide:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DDD-fr-DM0"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHS-OJ-rbQ">
                                                 <rect key="frame" x="16" y="65.5" width="41.5" height="20.5"/>

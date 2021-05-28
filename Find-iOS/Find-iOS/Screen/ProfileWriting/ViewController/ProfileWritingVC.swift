@@ -101,6 +101,14 @@ class ProfileWritingVC: UIViewController  {
     }
     
     
+    @IBAction func gotoProfileGuide(_ sender: UIButton) {
+        // IntroductionVC 로 이동
+        let nextStoryboard = UIStoryboard(name: "ProfileGuide", bundle: nil)
+        guard let ProfileGuideVC = nextStoryboard.instantiateViewController(withIdentifier: "ProfileGuideVC") as? ProfileGuideVC else {return}
+        self.navigationController?.pushViewController(ProfileGuideVC, animated: true)
+    }
+    
+    
     @IBAction func editBtnTapped(_ sender: Any) {
         // edit 버튼이 클릭되면
         let alert =  UIAlertController(title: "프로필 사진 변경", message: nil, preferredStyle: .actionSheet)

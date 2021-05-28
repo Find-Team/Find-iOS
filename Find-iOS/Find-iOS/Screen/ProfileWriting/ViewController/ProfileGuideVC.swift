@@ -37,6 +37,12 @@ class ProfileGuideVC: UIViewController {
     @IBOutlet var infoLabel2: UILabel!
     
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        //이전 화면으로 돌아가기
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
