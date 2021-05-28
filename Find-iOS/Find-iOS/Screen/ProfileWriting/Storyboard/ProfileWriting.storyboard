@@ -19,7 +19,7 @@
         <!--ProfileWritingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="ProfileWritingVC" id="Y6W-OH-hqX" customClass="ProfileWritingVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileWritingVC" title="ProfileWritingVC" id="Y6W-OH-hqX" customClass="ProfileWritingVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,10 +34,16 @@
                                             <constraint firstAttribute="width" secondItem="Yw4-eG-qku" secondAttribute="height" multiplier="1:1" id="gcx-qe-Hwt"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="backBtn"/>
+                                        <connections>
+                                            <action selector="gotoMain:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C87-fY-LmS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-A9-w6f">
                                         <rect key="frame" x="353" y="49" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="completeBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ERd-Jt-Vde"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dh-sB-eKG">
                                         <rect key="frame" x="186" y="59" width="42" height="20"/>

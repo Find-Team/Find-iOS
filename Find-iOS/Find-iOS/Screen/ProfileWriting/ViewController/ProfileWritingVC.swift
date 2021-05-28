@@ -17,6 +17,7 @@ class ProfileWritingVC: UIViewController  {
     var basicInfoData : [BasicInfoData] = []
     var imageSelected: UIImage?
     var currentIndexPath: Int?
+    var representImgData : UIImage?
     
     var infoText : String = ""
     
@@ -92,6 +93,22 @@ class ProfileWritingVC: UIViewController  {
     }
     
     // MARK:- IBAction
+    @IBAction func gotoMain(_ sender: UIButton) {
+        //MyProfileVC 로 이동
+//        if inputData != "" {
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "InfoWritten"), object: inputData)
+//        }
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func completeBtnPressed(_ sender: UIButton) {
+        //showToastPurple(message: "저장되었습니다.")
+        if representImgData != nil {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "InfoWritten"), object: representImgData)
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     @IBAction func goToIntroduction(_ sender: UIButton) {
         // IntroductionVC 로 이동
@@ -238,7 +255,7 @@ extension ProfileWritingVC {
         infoWriting.textColor = UIColor.subGray3
         infoWriting.letterSpacing = -1.1
         
-        infoExplain.text = "당신을 소개해주세요! (최소 30자)"
+        infoExplain.text = "당신을 소개해주세요! (최소 10자)"
         infoExplain.font = UIFont.spoqaRegular(size: 12)
         infoExplain.textColor = UIColor.find_DarkPurple
         infoExplain.letterSpacing = -0.36

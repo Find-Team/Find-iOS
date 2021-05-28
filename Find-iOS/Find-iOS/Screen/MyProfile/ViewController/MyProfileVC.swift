@@ -75,9 +75,10 @@ class MyProfileVC: UIViewController {
     }
     
     @objc private func goProfileEdit(_ gesture:UIGestureRecognizer) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "YourProfile", bundle: nil)
-        if let vc = storyBoard.instantiateViewController(identifier: "YourProfileVC") as? InterviewVC {
-            self.navigationController?.pushViewController(vc, animated: true)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileWriting", bundle: nil)
+        if let ProfileWritingVC = storyBoard.instantiateViewController(identifier: "ProfileWritingVC") as? ProfileWritingVC {
+            self.navigationController?.pushViewController(ProfileWritingVC, animated: true)
+            print("아오아와왕오")
         }
     }
     
