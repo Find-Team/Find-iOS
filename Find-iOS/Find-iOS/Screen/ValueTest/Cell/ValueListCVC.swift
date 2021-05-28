@@ -17,6 +17,7 @@ class ValueListCVC: UICollectionViewCell {
     var currentCategory: Category = .relationship
     var parentVC: ParentVC = .valueList
     var currentSegue: ValueFilterAll = .same
+    var CVCIndexPath: Int = 0
     
     //MARK: - IBOutlets
     
@@ -194,20 +195,35 @@ extension ValueListCVC: UITableViewDataSource {
         cell.questionLabel.font = .spoqaRegular(size: 13)
         cell.questionLabel.textColor = .subGray3
         
-        /// 선택 카테고리에 따른 질문
         var currIndexPath: Int = 0
         
-        switch currentCategory {
-        case .relationship:
+        switch CVCIndexPath {
+        case 0:
             currIndexPath = indexPath.row
-            cell.questionLabel.text = valueQuestions[currIndexPath].question
-        case .family:
+        case 1:
             currIndexPath = indexPath.row + 10
-            cell.questionLabel.text = valueQuestions[currIndexPath].question
-        case .career:
+        case 2:
             currIndexPath = indexPath.row + 20
-            cell.questionLabel.text = valueQuestions[currIndexPath].question
+        default:
+            cell.questionLabel.text = ""
         }
+        
+        cell.questionLabel.text = valueQuestions[currIndexPath].question
+        
+        /// 선택 카테고리에 따른 질문
+//        var currIndexPath: Int = 0
+        
+//        switch currentCategory {
+//        case .relationship:
+//            currIndexPath = indexPath.row
+//            cell.questionLabel.text = valueQuestions[currIndexPath].question
+//        case .family:
+//            currIndexPath = indexPath.row + 10
+//            cell.questionLabel.text = valueQuestions[currIndexPath].question
+//        case .career:
+//            currIndexPath = indexPath.row + 20
+//            cell.questionLabel.text = valueQuestions[currIndexPath].question
+//        }
         
         /// 답변이 있을 때 / 없을 때 분기처리
         if valueQuestions[currIndexPath].userChoice != 0 {

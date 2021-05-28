@@ -56,14 +56,14 @@ class ValueListVC: UIViewController {
         
         valueListCollectionView.reloadData()
         
-        switch currentCategory {
-        case .relationship:
-            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
-        case .family:
-            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: false)
-        case .career:
-            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 2, section: 0) as IndexPath, at: .left, animated: false)
-        }
+//        switch currentCategory {
+//        case .relationship:
+//            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: false)
+//        case .family:
+//            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: false)
+//        case .career:
+//            self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 2, section: 0) as IndexPath, at: .left, animated: false)
+//        }
     }
     
     
@@ -84,17 +84,17 @@ class ValueListVC: UIViewController {
     
     @IBAction func relationshipBtnDidTap(_ sender: Any) {
         RelationshipSelected()
-        valueListCollectionView.reloadData()
+//        valueListCollectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
     }
     
     @IBAction func familyBtnDidTap(_ sender: Any) {
         FamilySelected()
-        valueListCollectionView.reloadData()
+//        valueListCollectionView.reloadItems(at: [IndexPath(row: 1, section: 0)])
     }
     
     @IBAction func careerBtnDidTap(_ sender: Any) {
         CareerSelected()
-        valueListCollectionView.reloadData()
+//        valueListCollectionView.reloadItems(at: [IndexPath(row: 2, section: 0)])
     }
     
     
@@ -133,7 +133,7 @@ extension ValueListVC {
     /// 관계 카테고리 선택됐을 때
     func RelationshipSelected() {
         currentCategory = .relationship
-        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
+        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .left, animated: true)
         
         segueIndicator[0].backgroundColor = .find_DarkPurple
         segueIndicator[1].backgroundColor = .subGray1
@@ -150,7 +150,7 @@ extension ValueListVC {
     /// 가족 카테고리 선택됐을 때
     func FamilySelected() {
         currentCategory = .family
-        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
+        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 1, section: 0) as IndexPath, at: .left, animated: true)
         
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .find_DarkPurple
@@ -167,7 +167,7 @@ extension ValueListVC {
     /// 커리어 카테고리 선택됐을 때
     func CareerSelected() {
         currentCategory = .career
-        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 2, section: 0) as IndexPath, at: .left, animated: true) /// 버튼 클릭 시 세그 이동
+        self.valueListCollectionView.scrollToItem(at: NSIndexPath(item: 2, section: 0) as IndexPath, at: .left, animated: true)
         
         segueIndicator[0].backgroundColor = .subGray1
         segueIndicator[1].backgroundColor = .subGray1
@@ -206,6 +206,17 @@ extension ValueListVC: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ValueListCVC", for: indexPath) as? ValueListCVC
         else {
             return UICollectionViewCell()
+        }
+        
+        switch indexPath.row {
+        case 0:
+            cell.CVCIndexPath = 0
+        case 1:
+            cell.CVCIndexPath = 1
+        case 2:
+            cell.CVCIndexPath = 2
+        default:
+            cell.CVCIndexPath = -1
         }
         
         cell.currentCategory = currentCategory
@@ -251,6 +262,8 @@ extension ValueListVC: UICollectionViewDelegateFlowLayout {
             break
         }
         
-        valueListCollectionView.reloadData()
+        print(currentIndex)
+        
+        valueListCollectionView.reloadItems(at: [IndexPath(row: currentIndex, section: 0)])
     }
 }
