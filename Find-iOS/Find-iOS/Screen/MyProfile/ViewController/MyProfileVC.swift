@@ -43,7 +43,7 @@ class MyProfileVC: UIViewController {
     @objc func repImgRecieved(_ noti: Notification) {
         profileImageView.image = noti.object as? UIImage
         profileImageView.contentMode = .scaleAspectFill
-        print("wwwwwwwwww")
+
     }
     
     func setInterviewPercentage() {
@@ -84,10 +84,11 @@ class MyProfileVC: UIViewController {
     
     @objc private func goProfileEdit(_ gesture:UIGestureRecognizer) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "ProfileWriting", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
         if let ProfileWritingVC = storyBoard.instantiateViewController(identifier: "ProfileWritingVC") as? ProfileWritingVC {
             self.navigationController?.pushViewController(ProfileWritingVC, animated: true)
-            print("아오아와왕오")
         }
+        self.hidesBottomBarWhenPushed = false
     }
     
     @objc private func goInterview(_ gesture:UIGestureRecognizer) {

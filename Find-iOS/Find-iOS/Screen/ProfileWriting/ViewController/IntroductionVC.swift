@@ -155,7 +155,7 @@ extension IntroductionVC: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         inputData = textView.text
-        print(inputData)
+        //print(inputData)
     }
     
     // TextView Place Holder
@@ -165,7 +165,7 @@ extension IntroductionVC: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
         } else {
             inputData = textView.text
-            print(inputData)
+            //print(inputData)
         }
     }
     

@@ -110,14 +110,16 @@ class ProfileWritingVC: UIViewController  {
     @IBAction func goToIntroduction(_ sender: UIButton) {
         // IntroductionVC 로 이동
         let nextStoryboard = UIStoryboard(name: "Introduction", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
         guard let IntroductionVC = nextStoryboard.instantiateViewController(withIdentifier: "IntroductionVC") as? IntroductionVC else {return}
         self.navigationController?.pushViewController(IntroductionVC, animated: true)
     }
     
     
     @IBAction func gotoProfileGuide(_ sender: UIButton) {
-        // IntroductionVC 로 이동
+        // ProfileGuideVC 로 이동
         let nextStoryboard = UIStoryboard(name: "ProfileGuide", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
         guard let ProfileGuideVC = nextStoryboard.instantiateViewController(withIdentifier: "ProfileGuideVC") as? ProfileGuideVC else {return}
         self.navigationController?.pushViewController(ProfileGuideVC, animated: true)
     }
