@@ -18,7 +18,7 @@ extension APITarget: TargetType {
     
     //MARK: -baseURL
     var baseURL: URL {
-        return URL(string: "http://15.164.213.118:8080")!
+        return URL(string: "https://findu-i.ga")!
     }
     
     //MARK: -path
