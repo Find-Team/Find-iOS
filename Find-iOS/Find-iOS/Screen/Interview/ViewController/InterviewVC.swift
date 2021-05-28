@@ -56,8 +56,16 @@ class InterviewVC: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    // 저장되었습니다 토스트
     @IBAction func saveBtnTapped(_ sender: Any) {
-        // 저장되었습니다 토스트
+        print("뭐야1")
+        self.showToastPurple(message: "저장되었습니다.") { [self] in
+            print("뭐야2")
+            beforeInterviewData = interviewQuestions
+            beforeInterviewImgs = interviewImgs
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     @IBAction func prosBtnTapped(_ sender: Any) {
         whatSelected(seg: .pros, idx: 0)
