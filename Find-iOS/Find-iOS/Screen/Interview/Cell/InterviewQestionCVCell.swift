@@ -90,7 +90,10 @@ extension InterviewQestionCVCell: UITextViewDelegate{
         if answerTextView.text?.count ?? 0 > 0 {
             interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].isEdit = true
             interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].answer = answerTextView.text
+        } else {
+            interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].isEdit = false
+            interviewQuestions[((Int(String(num[2])) ?? 999)+n)-1].answer = nil
         }
-        print(interviewQuestions)
+        print("입력완료 \(interviewQuestions)")
     }
 }

@@ -12,6 +12,7 @@ class IntroductionVC: UIViewController {
     // MARK:- Variable Part
     
     var placeholderPhrase = "직업이나 전공, 꿈과 목표가 있다면 알려주세요."
+    var inputData: String = ""
    
     @IBOutlet var infoTitle: UILabel!
     @IBOutlet var saveBtn: UIButton!
@@ -29,6 +30,10 @@ class IntroductionVC: UIViewController {
     //뒤로가기
     @IBAction func backBtnPressed(_ sender: Any) {
         //이전 화면으로 돌아가기
+        if inputData != "" {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "InfoWritten"), object: inputData)
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -144,11 +149,19 @@ extension IntroductionVC: UITextViewDelegate {
         }
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        inputData = textView.text
+        print(inputData)
+    }
+    
     // TextView Place Holder
     func textViewDidEndEditing(_ textView: UITextView) {
         if (textView.text == "") {
             textView.text = placeholderPhrase
             textView.textColor = UIColor.lightGray
+        } else {
+            inputData = textView.text
+            print(inputData)
         }
     }
     
