@@ -8,43 +8,36 @@
 import UIKit
 
 class MatchingStatusVC: UIViewController {
+    // 페이징 관련 index 정의 함수
+    private var indexOfCellBeforeDragging = 0
     var matchingData: GetMyMatchingData?
     
     @IBOutlet weak var segueStackView: UIStackView!
     @IBOutlet var segIndicators: [UIView]!
     @IBOutlet var segueBtns: [UIButton]!
-    @IBOutlet weak var matchingCV: UICollectionView! {
-        didSet {
-            matchingCV.delegate = self
-            matchingCV.dataSource = self
-            matchingCV.backgroundColor = .subGray6
-            matchingCV.register(MatchingDibsCVCell.nib(), forCellWithReuseIdentifier: MatchingDibsCVCell.identifier)
-        }
-    }
+    @IBOutlet weak var matchingCV: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getMyMatchingData()
         setSegueStyle()
         setNoti()
-        whatSelected(idx: 0)
-        // Do any additional setup after loading the view.
+        setCV()
+        whatSelected(idx:0)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // Segue - 호감
     @IBAction func feelingsTapped(_ sender: Any) {
         whatSelected(idx: 0)
     }
-    
+    // Segue - 찜
     @IBAction func dibsTapped(_ sender: Any) {
         whatSelected(idx: 1)
     }
-    
-    // 페이징 관련 index 정의 함수
-    private var indexOfCellBeforeDragging = 0
     
     // 오른쪽으로 넘길 때
     private func indexOfMajorCell() -> Int {
@@ -73,7 +66,7 @@ extension MatchingStatusVC {
             switch result {
             case .success(let data):
                 self.matchingData = data
-                matchingCV.reloadSections(IndexSet(integer: 0))
+                matchingCV.reloadItems(at: [IndexPath(item: 0, section: 0),IndexPath(item: 1, section: 0)])
                 print("데이터 받아왔습니다.")
             case .failure(let error):
                 print("데이터 못받아왔습니다.")
@@ -81,7 +74,7 @@ extension MatchingStatusVC {
             }
         }
     }
-    // MARK: - Segue Styles
+    // MARK: - Settings
     func setSegueStyle() {
         segueBtns[0].setTitle("호감", for: .normal)
         segueBtns[0].setTitleColor(.subGray2, for: .normal)
@@ -92,6 +85,13 @@ extension MatchingStatusVC {
     
     func setNoti() {
         NotificationCenter.default.addObserver(self, selector: #selector(getMyMatchingData), name: NSNotification.Name("updateMatchingData"), object: nil)
+    }
+    
+    func setCV() {
+        matchingCV.delegate = self
+        matchingCV.dataSource = self
+        matchingCV.backgroundColor = .subGray6
+        matchingCV.register(MatchingDibsCVCell.nib(), forCellWithReuseIdentifier: MatchingDibsCVCell.identifier)
     }
     
     // MARK: - Remind Selected Segue
@@ -138,7 +138,7 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
 }
 
-// MARK: - collectionView Horizontal Scrolling Magnetic Effect 적용
+// MARK: - CollectionView Horizontal Scrolling Magnetic Effect 적용
 extension MatchingStatusVC: UIScrollViewDelegate{
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

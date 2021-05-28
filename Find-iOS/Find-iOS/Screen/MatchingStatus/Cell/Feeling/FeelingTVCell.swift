@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - 받은 호감, 보낸 호감 틀
+// MARK: - 받은 호감, 보낸 호감을 감싸는 틀 Cell
 class FeelingTVCell: UITableViewCell {
     static let identifier = "FeelingTVCell"
     var cellCategory: feelingCell?

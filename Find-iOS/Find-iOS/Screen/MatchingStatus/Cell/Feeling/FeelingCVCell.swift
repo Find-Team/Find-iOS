@@ -40,7 +40,7 @@ class FeelingCVCell: UICollectionViewCell {
                 print("호감 수락 성공")
                 self.parentViewController?.showToastPurple(message: "상대와 연결 되었습니다")
                 // 연결되면 연결된 상대로 올라가야함. 데이터 업데이트
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadFeeling"), object: [0,1])
+                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [0,1])
             case .failure(let error):
                 print(error)
             }
@@ -53,8 +53,8 @@ class FeelingCVCell: UICollectionViewCell {
             case .success(_):
                 print("받은 호감 리스트에서 제거 성공")
                 self.parentViewController?.showToastPurple(message: "리스트에서 제거 됐습니다")
-                // 리스트에서 삭제. 데이터 업데이트(여기도 받은호감, 보낸호감 나누면 좋을듯)
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadFeeling"), object: [1,2])
+                // 받은 호감 리스트(섹션1)에서 삭제. 데이터 업데이트
+                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [1,1])
             case .failure(let error):
                 print(error)
             }

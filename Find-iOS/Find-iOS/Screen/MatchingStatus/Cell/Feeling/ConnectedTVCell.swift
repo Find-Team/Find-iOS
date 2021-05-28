@@ -46,7 +46,7 @@ class ConnectedTVCell: UITableViewCell {
                 case .success(_):
                     print("연결된 상대 삭제 성공 시퀀스넘버: \(sequenceNum)")
                     self.parentViewController?.showToastPurple(message: "상대와의 연결이 해제되었습니다")
-                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadFeeling"), object: [0,0])
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [0,0])
                 case .failure(let error):
                     print(error)
                 }

@@ -49,7 +49,7 @@ class DibsTVCell: UITableViewCell {
                 print("호감 보내기 성공")
                 self.parentViewController?.showToastPurple(message: "상대에게 호감을 보냈습니다")
                 NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,1])
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadFeeling"), object: [0,2])
+                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [0,2])
             case .failure(let error):
                 print(error)
             }

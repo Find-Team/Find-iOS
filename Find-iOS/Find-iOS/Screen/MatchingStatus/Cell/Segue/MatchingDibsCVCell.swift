@@ -73,7 +73,7 @@ extension MatchingDibsCVCell {
     // 연결되면 연결된 상대로 올라가야함. 데이터 업데이트
     @objc func changingData(noti: Notification) {
         if let sec = noti.object as? [Int] {
-            NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil) // MatchingStatusVC에 존재
             innerTV.reloadSections(IndexSet(sec[0]...sec[1]), with: .fade)
         }
     }
@@ -249,14 +249,15 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     // Footer 뷰 지정
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
+        // 데이터가 4개 이상 있어야 더보기 footer 생성
         if (section == 0) {
-            if !receivedDataExp.isEmpty {
+            if receivedDataExp.count > 3 {
                 footer.whereSM = .dibs1
             } else {
                 return nil
             }
         } else {
-            if !sendDataExp.isEmpty {
+            if sendDataExp.count > 3 {
                 footer.whereSM = .dibs2
             } else {
                 return nil
@@ -268,10 +269,16 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     
     // Footer 높이 지정
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if (section == 0) || (section==1) {
-            return 53
-        } else {
-            return 0
+        // 데이터가 4개 이상 있어야 더보기 footer 생성
+        if (section == 0) {
+            if receivedDataExp.count > 3 {
+                return 53
+            }
+        } else if (section == 1) {
+            if sendDataExp.count > 3 {
+                return 53
+            }
         }
+        return 0
     }
 }

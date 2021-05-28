@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - 받은호감, 보낸호감 셀 분기처리 enum
+// MARK: - 받은호감, 보낸호감 셀 분기처리 열거형
 enum feelingCell {
     case received, send
 }
@@ -112,11 +112,11 @@ extension MatchingStatusCVCell: ShowMoreFooter {
     }
     
     func setNoti() {
-        NotificationCenter.default.addObserver(self, selector: #selector(changingData), name: NSNotification.Name("needToReloadFeeling"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changingConnected), name: NSNotification.Name("needToReloadConnected"), object: nil)
     }
     
     // 데이터 변화에 대응하기 위한 Noti
-    @objc func changingData(noti: Notification) {
+    @objc func changingConnected(noti: Notification) {
         if let sec = noti.object as? [Int] {
             NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil)
             innerTV.reloadSections(IndexSet(sec[0]...sec[1]), with: .fade)
@@ -162,42 +162,43 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
                 noDataCell.selectionStyle = .none
                 return noDataCell
             }
-        } else {
-            if (indexPath.section == 1) {
-                if let rcvData = receivedData {
-                    if !rcvData.isEmpty {
-                        guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
-                        feelCell.selectionStyle = .none
-                        feelCell.cellCategory = .received
-                        feelCell.receivedData = receivedData
-                        return feelCell
-                    } else {
-                        // 데이터가 0개일 때 분기처리
-                        guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
-                        noDataCell.descriptLabel.text = "받은 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
-                        noDataCell.selectionStyle = .none
-                        return noDataCell
-                    }
+        } else if (indexPath.section == 1) {
+            if let rcvData = receivedData {
+                if !rcvData.isEmpty {
+                    guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
+                    feelCell.selectionStyle = .none
+                    feelCell.cellCategory = .received
+                    feelCell.receivedData = receivedData
+                    return feelCell
+                } else {
+                    // 데이터가 0개일 때 분기처리
+                    guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                    noDataCell.descriptLabel.text = "받은 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
+                    noDataCell.selectionStyle = .none
+                    return noDataCell
                 }
-            } else {
-                if let sdData = sendData {
-                    if !sdData.isEmpty {
-                        guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
-                        feelCell.selectionStyle = .none
-                        feelCell.cellCategory = .send
-                        feelCell.sendData = sendData
-                        return feelCell
-                    } else {
-                        // 데이터가 0개일 때 분기처리
-                        guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
-                        noDataCell.descriptLabel.text = "보낸 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
-                        noDataCell.selectionStyle = .none
-                        return noDataCell
-                    }
+            }
+        } else if (indexPath.section == 2) {
+            if let sdData = sendData {
+                if !sdData.isEmpty {
+                    guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
+                    feelCell.selectionStyle = .none
+                    feelCell.cellCategory = .send
+                    feelCell.sendData = sendData
+                    return feelCell
+                } else {
+                    // 데이터가 0개일 때 분기처리
+                    guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                    noDataCell.descriptLabel.text = "보낸 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
+                    noDataCell.selectionStyle = .none
+                    return noDataCell
                 }
             }
         }
-        return UITableViewCell()
+        guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+        noDataCell.descriptLabel.text = "받은 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
+        noDataCell.selectionStyle = .none
+        return noDataCell
     }
     
     // 섹션 별 높이
@@ -249,7 +250,8 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     // Footer 뷰 지정
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if (section == 0) {
-            if !connectedDataExp.isEmpty {
+            // 데이터가 4개 이상 있어야 더보기 footer 생성
+            if connectedDataExp.count > 3 {
                 guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
                 footer.whereSM = .feelings
                 footer.delegate = self
@@ -265,9 +267,11 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     // Footer 높이 지정
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if (section == 0) {
-            return 60
-        } else {
-            return 0
+            // 데이터가 4개 이상 있어야 더보기 footer 생성
+            if connectedDataExp.count > 3 {
+                return 60
+            }
         }
+        return 0
     }
 }

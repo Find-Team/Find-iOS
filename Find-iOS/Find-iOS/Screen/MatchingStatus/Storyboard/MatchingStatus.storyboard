@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xju-OB-GLC">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매칭 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0K-W2-G9d">
-                                <rect key="frame" x="16" y="57.999999999999993" width="70.333333333333329" height="22.666666666666664"/>
+                                <rect key="frame" x="16" y="58" width="67.333333333333329" height="21"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="18"/>
                                 <color key="textColor" name="subGray3"/>
                                 <nil key="highlightedColor"/>
@@ -35,13 +36,13 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-6S-p0n">
-                                <rect key="frame" x="0.0" y="93.666666666666671" width="375" height="40.000000000000014"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyW-df-TOW">
                                         <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQz-2i-zaj">
-                                                <rect key="frame" x="0.0" y="36.999999999999986" width="187.66666666666666" height="3"/>
+                                                <rect key="frame" x="0.0" y="37" width="187.66666666666666" height="3"/>
                                                 <color key="backgroundColor" name="subGray4"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="pkU-cM-U2F"/>
@@ -70,7 +71,7 @@
                                         <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-d0-Jwb">
-                                                <rect key="frame" x="0.0" y="36.999999999999986" width="187.33333333333334" height="3"/>
+                                                <rect key="frame" x="0.0" y="37" width="187.33333333333334" height="3"/>
                                                 <color key="backgroundColor" name="subGray4"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="eQz-xE-zny"/>
@@ -101,7 +102,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-ve-D5I">
-                                <rect key="frame" x="0.0" y="133.66666666666669" width="375" height="678.33333333333326"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="680"/>
                                 <color key="backgroundColor" name="subGray6"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="16" id="1gK-Mv-oN7">
                                     <size key="itemSize" width="378" height="720.33333333333326"/>
@@ -111,7 +112,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MatchingStatusCVCell" id="oGV-2z-k3f" customClass="MatchingStatusCVCell" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-21" width="378" height="720.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="-20" width="378" height="720.33333333333326"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LSA-ve-QGX">
                                             <rect key="frame" x="0.0" y="0.0" width="378" height="720.33333333333326"/>
@@ -123,10 +124,10 @@
                                                 </tableView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Nt5-2m-ebd" secondAttribute="trailing" id="382-Fk-4IR"/>
-                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="leading" secondItem="LSA-ve-QGX" secondAttribute="leading" id="Owp-gq-dIg"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nt5-2m-ebd" secondAttribute="bottom" id="Ybq-je-78Y"/>
-                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="top" secondItem="LSA-ve-QGX" secondAttribute="top" id="yMr-TY-dHa"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nt5-2m-ebd" secondAttribute="bottom" id="KMi-j0-Lrd"/>
+                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="top" secondItem="LSA-ve-QGX" secondAttribute="top" id="pID-V7-NQk"/>
+                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="leading" secondItem="LSA-ve-QGX" secondAttribute="leading" id="tJq-Fe-Rae"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nt5-2m-ebd" secondAttribute="trailing" id="yoN-LC-lpz"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="378" height="720.33333333333326"/>
