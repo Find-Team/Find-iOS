@@ -44,14 +44,21 @@ class FoundProfileCardCVCell: UICollectionViewCell {
 //            self.starBtn.setImage(UIImage(named: "btnFoundStarMint"), for: .normal)
 //        }
     }
+    
+    func setProfileCardData(profileImg: UIImage, name: String, info: String, intro: String) {
+        self.foundProfileImgView.image = profileImg
+        self.nameLabel.text = name
+        self.infoLabel.text = info
+        self.introLabel.text = intro
+    }
 
     @IBAction func starBtnClicked(_ sender: Any) {
         if self.starBtn.isSelected == false {
             self.starBtn.isSelected = true
             self.starBtn.setImage(UIImage(named: "btnFoundStarMint"), for: .normal)
             
-            var currentCategory: UIViewController = getSuperViewController()!
-            currentCategory.showToastPurple(message: "상대를 찜했습니다")
+            var currentVC: UIViewController = getSuperViewController()!
+            currentVC.showToastPurple(message: "상대를 찜했습니다")
 //            checkLike = true
 //            print("아이비액션", checkLike)
         }

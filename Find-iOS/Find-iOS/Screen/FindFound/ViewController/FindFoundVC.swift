@@ -51,12 +51,10 @@ class FindFoundVC: UIViewController {
     
     @IBAction func findBtnClicked(_ sender: Any) {
         findSelected()
-//        myCollectionView.reloadData()
     }
     
     @IBAction func foundBtnClicked(_ sender: Any) {
         foundSelected()
-//        myCollectionView.reloadData()
     }
 }
 
@@ -87,7 +85,6 @@ extension FindFoundVC {
         segueFindBtn.setTitle("FIND", for: .normal)
         segueFindBtn.setTitleColor(.find_DarkPurple, for: .normal)
         segueFindBtn.titleLabel?.font = .spoqaRegular(size: 14)
-        
         segueFoundBtn.setTitleColor(.subGray1, for: .normal)
     }
     
@@ -176,6 +173,5 @@ extension FindFoundVC: UICollectionViewDelegateFlowLayout {
         default:
             break
         }
-//        myCollectionView.reloadData()
     }
 }

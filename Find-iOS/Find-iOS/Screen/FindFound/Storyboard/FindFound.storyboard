@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-3U-gD5">
-                                        <rect key="frame" x="16" y="12.999999999999998" width="78.333333333333329" height="25.333333333333329"/>
+                                        <rect key="frame" x="16" y="12.999999999999998" width="75" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
                                         <color key="textColor" name="subGray3"/>
                                         <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-VO-kLZ">
                                 <rect key="frame" x="0.0" y="130" width="390" height="714"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="subGray6"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AsY-DM-pK8">
                                     <size key="itemSize" width="390" height="682"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -113,19 +113,19 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cM-xV-ZaM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="699"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="682"/>
                                                     <color key="backgroundColor" name="subGray6"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="1cM-xV-ZaM" secondAttribute="trailing" id="EFo-hj-2Ws"/>
-                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="top" secondItem="men-9H-5eA" secondAttribute="top" id="Hyu-Jz-Z63"/>
-                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="leading" secondItem="men-9H-5eA" secondAttribute="leading" id="Qjd-mL-DlQ"/>
+                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="top" secondItem="men-9H-5eA" secondAttribute="top" id="25v-8q-cGP"/>
+                                                <constraint firstAttribute="bottom" secondItem="1cM-xV-ZaM" secondAttribute="bottom" id="5fd-CF-Wcy"/>
+                                                <constraint firstAttribute="trailing" secondItem="1cM-xV-ZaM" secondAttribute="trailing" id="9LI-cD-AG7"/>
                                                 <constraint firstAttribute="trailing" secondItem="M1W-id-42i" secondAttribute="trailing" id="Vas-AL-rPb"/>
                                                 <constraint firstAttribute="bottom" secondItem="M1W-id-42i" secondAttribute="bottom" id="bFK-ZD-GMz"/>
+                                                <constraint firstItem="1cM-xV-ZaM" firstAttribute="leading" secondItem="men-9H-5eA" secondAttribute="leading" id="lhc-bq-6Qh"/>
                                                 <constraint firstItem="M1W-id-42i" firstAttribute="top" secondItem="men-9H-5eA" secondAttribute="top" id="lnn-wP-tPt"/>
                                                 <constraint firstItem="M1W-id-42i" firstAttribute="leading" secondItem="men-9H-5eA" secondAttribute="leading" id="n06-PV-ABD"/>
-                                                <constraint firstAttribute="bottom" secondItem="1cM-xV-ZaM" secondAttribute="bottom" constant="-17" id="whR-Kn-9FR"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="390" height="682"/>
