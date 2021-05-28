@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인터뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-kB-efZ">
-                                        <rect key="frame" x="162.66666666666666" y="11.666666666666666" width="50" height="22.666666666666671"/>
+                                        <rect key="frame" x="164" y="12.666666666666664" width="47" height="21"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="18"/>
                                         <color key="textColor" name="subGray3"/>
                                         <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvT-QY-AE0">
-                                        <rect key="frame" x="325" y="0.0" width="34" height="46"/>
+                                        <rect key="frame" x="327" y="0.0" width="32" height="46"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="18"/>
                                         <state key="normal" title="저장">
                                             <color key="titleColor" name="subGray3"/>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인터뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1J-sA-mcb">
-                                <rect key="frame" x="16" y="132" width="61" height="27.666666666666657"/>
+                                <rect key="frame" x="16.000000000000004" y="132" width="57.333333333333343" height="25.666666666666657"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="22"/>
                                 <color key="textColor" name="subGray3"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대에게 당신을 좀 더 알려주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ang-6w-yL4">
-                                <rect key="frame" x="16" y="165.66666666666666" width="169" height="15.333333333333343"/>
+                                <rect key="frame" x="16" y="163.66666666666666" width="162" height="14"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" name="find_DarkPurple"/>
                                 <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="06d-yu-6M7">
-                                <rect key="frame" x="0.0" y="192" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="188.66666666666666" width="375" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uua-U8-sPX">
                                         <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="40"/>
@@ -224,7 +224,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="enq-5T-gIG">
-                                <rect key="frame" x="0.0" y="232" width="375" height="580"/>
+                                <rect key="frame" x="0.0" y="228.66666666666669" width="375" height="583.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LNe-S2-s7a">
                                     <size key="itemSize" width="375" height="580"/>
@@ -234,7 +234,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterviewCVCell" id="tLC-1F-xbo" customClass="InterviewCVCell" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
+                                        <rect key="frame" x="0.0" y="1.6666666666666667" width="375" height="580"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YRb-hA-rlo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
