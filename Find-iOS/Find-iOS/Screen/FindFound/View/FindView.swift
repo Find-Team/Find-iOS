@@ -21,6 +21,9 @@ class FindView: UIView {
     var checkDifferentActive: Bool = false
     var screenWidth = UIScreen.main.bounds.width
     
+    var answerCount: Int = 0 // 유저가 답변을 했는지
+    var choiceCount: Int = 0 // 5개를 골랐는지
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -52,6 +55,30 @@ class FindView: UIView {
         
         var beforeTestView = BeforeTestView(frame: aboutValueView.frame)
         self.aboutValueView.addSubview(beforeTestView)
+       
+        // 테스트, 필터 설정까지 완료된 후 붙일 뷰
+//        var filteredVeiw =
+        
+        for i in 0...29 {
+            if valueQuestions[i].userChoice != 0 {
+                answerCount += 1
+            }
+            if valueQuestions[i].isChosen {
+                choiceCount += 1
+            }
+        }
+        if answerCount >= 5 {
+            if choiceCount == 5 {
+                // 아예 완료된 뷰
+                beforeTestView.removeFromSuperview()
+                
+            }
+            // 중간까지만 완료된 뷰
+            // 테스트는 완료했으나 ..
+            beforeTestView.valueLabel.text = "상대가 나와 같았으면 하는 가치관 문답\n5개를 선택해주세요"
+            beforeTestView.valueLabel.textAlignment = .center
+            beforeTestView.testBtn.setTitle("가치관 선택하기", for: .normal)
+        }
     }
     
     func setButton() {

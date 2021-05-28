@@ -394,7 +394,7 @@
                                                                                         <color key="textColor" name="find_DarkPurple"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="패션에 관심이 많아서 나중에 같이 쇼핑하러 가요. 여행가는 것도 좋아해요." translatesAutoresizingMaskIntoConstraints="NO" id="39I-eD-z9p">
+                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="패션에 관심이 많아서 나중에 같이 쇼핑하러 가요. 여행가는 것도 좋아해요." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39I-eD-z9p">
                                                                                         <rect key="frame" x="16" y="45" width="358" height="50"/>
                                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                         <constraints>

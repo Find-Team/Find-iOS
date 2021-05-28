@@ -23,6 +23,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeforeTestView" customModule="Find_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="testBtn" destination="afz-PJ-3ki" id="ohb-tq-aWp"/>
+                <outlet property="valueLabel" destination="mIW-xM-g25" id="SER-Zk-MfX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

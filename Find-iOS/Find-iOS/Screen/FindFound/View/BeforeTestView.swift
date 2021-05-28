@@ -14,6 +14,7 @@ class BeforeTestView: UIView {
             testBtn.makeRounded(cornerRadius: 20.0)
         }
     }
+    @IBOutlet weak var valueLabel: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         

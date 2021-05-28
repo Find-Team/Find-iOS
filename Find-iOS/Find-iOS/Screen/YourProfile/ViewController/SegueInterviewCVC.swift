@@ -11,16 +11,12 @@ class SegueInterviewCVC: UICollectionViewCell {
     static let identifier = "SegueInterviewCVC"
     
     var currentCategory = ProfileCategory.pros
+    var cellIndex: Int = -1
     
     var prosList: [InterviewQAData] = []
     var loveList: [InterviewQAData] = []
     var tasteList: [InterviewQAData] = []
     var lifeList: [InterviewQAData] = []
-    
-    var prosImgList: [UIImage] = []
-    var loveImgList: [UIImage] = []
-    var tasteImgList: [UIImage] = []
-    var lifeImgList: [UIImage] = []
     
     @IBOutlet weak var interviewContentsTableView: UITableView!
     override func awakeFromNib() {
@@ -40,9 +36,6 @@ class SegueInterviewCVC: UICollectionViewCell {
             InterviewQAData(index: 3, question: "잘하는 것 & 특기", answer: "자전거, 볼링"),
             InterviewQAData(index: 4, question: "가지고 있는것 & 자랑거리", answer: "눗웃음")
         ])
-        
-        prosImgList.append(UIImage(named: "장점1")!)
-        prosImgList.append(UIImage(named: "장점2")!)
     }
     
     func setLoveList() {
@@ -53,8 +46,6 @@ class SegueInterviewCVC: UICollectionViewCell {
             InterviewQAData(index: 4, question: "나만의 애정표현법", answer: "계속 옆에 있어주기"),
             InterviewQAData(index: 5, question: "이성에게 설레는 포인트", answer: "토끼 같이 처다볼때")
         ])
-        
-        loveImgList.append(UIImage(named: "연애2")!)
     }
     
     func setTasteList() {
@@ -64,8 +55,6 @@ class SegueInterviewCVC: UICollectionViewCell {
             InterviewQAData(index: 3, question: "좋아하는 음식", answer: "삼겹살, 파스타, 디저트"),
             InterviewQAData(index: 4, question: "원하는 것", answer: "세계평화와 마음의 안식")
         ])
-        
-        tasteImgList.append(UIImage(named: "호불호")!)
     }
     
     func setLifeList() {
@@ -76,9 +65,6 @@ class SegueInterviewCVC: UICollectionViewCell {
             InterviewQAData(index: 4, question: "좌우명이나 생활신조", answer: "지금 이순간에 행복하자"),
             InterviewQAData(index: 5, question: "행복을 느끼는 때 ", answer: "이불속에서 귤까먹기, 주말 늦잠")
         ])
-        
-        lifeImgList.append(UIImage(named: "라이프1")!)
-        lifeImgList.append(UIImage(named: "라이프2")!)
     }
 }
 
@@ -91,15 +77,27 @@ extension SegueInterviewCVC: UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            switch currentCategory {
-            case .pros:
+//            switch currentCategory {
+//            case .pros:
+//                return prosList.count
+//            case .love:
+//                return loveList.count
+//            case .taste:
+//                return tasteList.count
+//            case .life:
+//                return lifeList.count
+//            }
+            switch cellIndex {
+            case 0:
                 return prosList.count
-            case .love:
+            case 1:
                 return loveList.count
-            case .taste:
+            case 2:
                 return tasteList.count
-            case .life:
+            case 3:
                 return lifeList.count
+            default:
+                return -1
             }
         }
         return 0
@@ -108,6 +106,13 @@ extension SegueInterviewCVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let imgCell = tableView.dequeueReusableCell(withIdentifier: InterviewImgTVC.identifier, for: indexPath) as? InterviewImgTVC else { return UITableViewCell() }
+            switch cellIndex {
+            case 0: imgCell.segueIndex = 0
+            case 1: imgCell.segueIndex = 1
+            case 2: imgCell.segueIndex = 2
+            case 3: imgCell.segueIndex = 3
+            default: break
+            }
             return imgCell
         }
 

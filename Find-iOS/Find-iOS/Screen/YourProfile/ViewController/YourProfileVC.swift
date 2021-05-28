@@ -240,15 +240,19 @@ extension YourProfileVC: UICollectionViewDataSource {
         
         if indexPath.item == 0 {
             cell.currentCategory = .pros
+            cell.cellIndex = 0
             return cell
         } else if indexPath.item == 1 {
             cell.currentCategory = .love
+            cell.cellIndex = 1
             return cell
         } else if indexPath.item == 2 {
             cell.currentCategory = .taste
+            cell.cellIndex = 2
             return cell
         } else if indexPath.item == 3 {
             cell.currentCategory = .life
+            cell.cellIndex = 3
             return cell
         }
         return UICollectionViewCell()

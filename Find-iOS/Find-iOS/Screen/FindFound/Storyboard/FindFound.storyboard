@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-3U-gD5">
-                                        <rect key="frame" x="16" y="12.999999999999998" width="75" height="23.333333333333329"/>
+                                        <rect key="frame" x="16" y="12.999999999999998" width="78.333333333333329" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
                                         <color key="textColor" name="subGray3"/>
                                         <nil key="highlightedColor"/>
