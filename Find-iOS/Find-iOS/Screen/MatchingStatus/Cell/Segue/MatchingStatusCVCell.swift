@@ -29,6 +29,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
             innerTV.register(FeelingTVCell.nib(), forCellReuseIdentifier: FeelingTVCell.identifier)
             innerTV.register(MatchingHeader.nib(), forHeaderFooterViewReuseIdentifier: "MatchingHeader")
             innerTV.register(MatchingFooter.nib(), forHeaderFooterViewReuseIdentifier: "MatchingFooter")
+            innerTV.register(noDataTVCell.nib(), forCellReuseIdentifier: noDataTVCell.identifier)
             innerTV.separatorStyle = .none
         }
     }
@@ -41,7 +42,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     static func nib() -> UINib {
         return UINib(nibName: "MatchingStatusCVCell", bundle: nil)
     }
@@ -155,32 +156,70 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
                 cntdCell.setCell(cntdDatas: connectedDataExp[indexPath.row])
                 return cntdCell
             } else {
-                // 데이터가 0개일 때 분기처리 필요
-                return UITableViewCell()
+                // 데이터가 0개일 때 분기처리
+                guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                noDataCell.descriptLabel.text = "연결된 상대가 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
+                noDataCell.selectionStyle = .none
+                return noDataCell
             }
         } else {
-            guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
-            feelCell.selectionStyle = .none
             if (indexPath.section == 1) {
-                feelCell.kindOfFeelingLabel.text = "받은호감"
-                feelCell.cellCategory = .received
-                feelCell.receivedData = receivedData
+                if let rcvData = receivedData {
+                    if !rcvData.isEmpty {
+                        guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
+                        feelCell.selectionStyle = .none
+                        feelCell.cellCategory = .received
+                        feelCell.receivedData = receivedData
+                        return feelCell
+                    } else {
+                        // 데이터가 0개일 때 분기처리
+                        guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                        noDataCell.descriptLabel.text = "받은 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
+                        noDataCell.selectionStyle = .none
+                        return noDataCell
+                    }
+                }
             } else {
-                feelCell.kindOfFeelingLabel.text = "보낸호감"
-                feelCell.cellCategory = .send
-                feelCell.sendData = sendData
+                if let sdData = sendData {
+                    if !sdData.isEmpty {
+                        guard let feelCell = tableView.dequeueReusableCell(withIdentifier: "FeelingTVCell", for: indexPath) as? FeelingTVCell else { return UITableViewCell() }
+                        feelCell.selectionStyle = .none
+                        feelCell.cellCategory = .send
+                        feelCell.sendData = sendData
+                        return feelCell
+                    } else {
+                        // 데이터가 0개일 때 분기처리
+                        guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                        noDataCell.descriptLabel.text = "보낸 호감이 아직 없어요!\n마음에 드는 상대에게 호감을 보내세요!"
+                        noDataCell.selectionStyle = .none
+                        return noDataCell
+                    }
+                }
             }
-            return feelCell
         }
+        return UITableViewCell()
     }
     
     // 섹션 별 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0) {
-            return 144
+            if !connectedDataExp.isEmpty {
+                return 144
+            }
+        } else if (indexPath.section == 1) {
+            if let rcvData = receivedData {
+                if !rcvData.isEmpty {
+                    return 291
+                }
+            }
         } else {
-            return 333
+            if let sdData = sendData {
+                if !sdData.isEmpty {
+                    return 291
+                }
+            }
         }
+        return (tableView.frame.height - 129) / 3
     }
     
     // Header 뷰 지정
@@ -189,6 +228,14 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
             header.headerLabel.text = "연결된 상대"
             return header
+        } else if (section == 1) {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
+            header.headerLabel.text = "보낸 호감"
+            return header
+        } else if (section == 2) {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
+            header.headerLabel.text = "받은 호감"
+            return header
         } else {
             return nil
         }
@@ -196,11 +243,7 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
     
     // Header 높이 지정
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0 ) {
-            return 43
-        } else {
-            return 0
-        }
+        return 43
     }
     
     // Footer 뷰 지정

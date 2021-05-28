@@ -24,6 +24,7 @@ class MatchingDibsCVCell: UICollectionViewCell {
             innerTV.register(DibsTVCell.nib(), forCellReuseIdentifier: DibsTVCell.identifier)
             innerTV.register(MatchingHeader.nib(), forHeaderFooterViewReuseIdentifier: "MatchingHeader")
             innerTV.register(MatchingFooter.nib(), forHeaderFooterViewReuseIdentifier: "MatchingFooter")
+            innerTV.register(noDataTVCell.nib(), forCellReuseIdentifier: noDataTVCell.identifier)
             innerTV.separatorStyle = .none
         }
     }
@@ -169,31 +170,56 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
                 return sendDataExp.filter{$0.isExpanded ?? false}.count
             }
         }
-        return 0
+        return 1
     }
     
     // 섹션 별 셀 지정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 데이터가 0개일 때 분기처리 필요
-        guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
-        dibsCell.selectionStyle = .none
         if (indexPath.section == 0) {
             if !receivedDataExp.isEmpty {
+                guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
                 dibsCell.setCell(dibsDatas: receivedDataExp[indexPath.row])
                 dibsCell.dibsCategory = .whoLikeMe
+                dibsCell.selectionStyle = .none
+                return dibsCell
+            } else {
+                // 데이터가 0개일 때 분기처리
+                guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                noDataCell.descriptLabel.text = "나를 찜한 사람이 없어요!"
+                noDataCell.selectionStyle = .none
+                return noDataCell
             }
         } else if (indexPath.section == 1) {
             if !sendDataExp.isEmpty {
+                guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
                 dibsCell.setCell(dibsDatas: sendDataExp[indexPath.row])
                 dibsCell.dibsCategory = .whoILike
+                dibsCell.selectionStyle = .none
+                return dibsCell
+            } else {
+                // 데이터가 0개일 때 분기처리
+                guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                noDataCell.descriptLabel.text = "내가 찜한 사람이 없어요!"
+                noDataCell.selectionStyle = .none
+                return noDataCell
             }
         }
-        return dibsCell
+        return UITableViewCell()
     }
     
     // 섹션 별 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 116
+        if (indexPath.section == 0) {
+            if !receivedDataExp.isEmpty {
+                return 116
+            }
+        } else {
+            if !sendDataExp.isEmpty {
+                return 116
+            }
+        }
+        return (tableView.frame.height - 86) / 3
     }
     
     // Header 뷰 지정

@@ -13,7 +13,6 @@ class FeelingTVCell: UITableViewCell {
     var cellCategory: feelingCell?
     var receivedData, sendData: [Connected]? // 받은 호감, 보낸 호감 데이터
     
-    @IBOutlet weak var kindOfFeelingLabel: UILabel!
     @IBOutlet weak var feelingCV: UICollectionView! {
         didSet {
             feelingCV.delegate = self

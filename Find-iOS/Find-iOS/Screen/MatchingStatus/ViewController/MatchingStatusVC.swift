@@ -24,10 +24,10 @@ class MatchingStatusVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getMyMatchingData()
         setSegueStyle()
         setNoti()
         whatSelected(idx: 0)
-        getMyMatchingData()
         // Do any additional setup after loading the view.
     }
     
@@ -136,17 +136,6 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.width, height: collectionView.frame.height)
     }
-    
-    //    // MARK: - Cell간의 상하간격 지정
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        return 32
-    //    }
-    
-    //    // MARK: - 마진
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
-    //    {
-    //        return UIEdgeInsets(top: -16, left: 0, bottom: 0, right: 0)
-    //    }
 }
 
 // MARK: - collectionView Horizontal Scrolling Magnetic Effect 적용

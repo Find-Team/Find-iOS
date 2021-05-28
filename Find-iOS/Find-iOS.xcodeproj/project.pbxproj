@@ -97,6 +97,8 @@
 		54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666C2649250B0028F1BF /* FindTabBarController.swift */; };
 		54BA2442265F87E70084D35A /* GetMyMatchingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA2441265F87E70084D35A /* GetMyMatchingData.swift */; };
 		54BA2444265FB7700084D35A /* MatchingRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA2443265FB7700084D35A /* MatchingRequestDelegate.swift */; };
+		54BA2448266095C00084D35A /* noDataTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA2446266095C00084D35A /* noDataTVCell.swift */; };
+		54BA2449266095C00084D35A /* noDataTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BA2447266095C00084D35A /* noDataTVCell.xib */; };
 		54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA1F264A84550076C306 /* MyProfileNC.swift */; };
 		54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA21264A84AB0076C306 /* FindFoundNC.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
@@ -211,6 +213,8 @@
 		54B9666C2649250B0028F1BF /* FindTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTabBarController.swift; sourceTree = "<group>"; };
 		54BA2441265F87E70084D35A /* GetMyMatchingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyMatchingData.swift; sourceTree = "<group>"; };
 		54BA2443265FB7700084D35A /* MatchingRequestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingRequestDelegate.swift; sourceTree = "<group>"; };
+		54BA2446266095C00084D35A /* noDataTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noDataTVCell.swift; sourceTree = "<group>"; };
+		54BA2447266095C00084D35A /* noDataTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noDataTVCell.xib; sourceTree = "<group>"; };
 		54E1BA1F264A84550076C306 /* MyProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileNC.swift; sourceTree = "<group>"; };
 		54E1BA21264A84AB0076C306 /* FindFoundNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundNC.swift; sourceTree = "<group>"; };
 		920EEFF426578786009F263A /* FoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundView.xib; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 		5461109A26553E130009B5CF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				54BA2445266095930084D35A /* NoData */,
 				542B5127265D5D3900A2006A /* Segue */,
 				546110C126575C040009B5CF /* HeaderFooter */,
 				546110A82655514D0009B5CF /* Dibs */,
@@ -736,6 +741,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		54BA2445266095930084D35A /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				54BA2446266095C00084D35A /* noDataTVCell.swift */,
+				54BA2447266095C00084D35A /* noDataTVCell.xib */,
+			);
+			path = NoData;
+			sourceTree = "<group>";
+		};
 		926314C8265448FB00E8E8FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +856,7 @@
 				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
 				5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */,
 				546110B6265552F40009B5CF /* DibsTVCell.xib in Resources */,
+				54BA2449266095C00084D35A /* noDataTVCell.xib in Resources */,
 				54B96649264904500028F1BF /* TabBar.storyboard in Resources */,
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				546110B2265551AF0009B5CF /* FeelingTVCell.xib in Resources */,
@@ -969,6 +984,7 @@
 				926314F72656CE8A00E8E8FD /* FindView.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */,
+				54BA2448266095C00084D35A /* noDataTVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */,
 				54B96651264904800028F1BF /* InterviewVC.swift in Sources */,
