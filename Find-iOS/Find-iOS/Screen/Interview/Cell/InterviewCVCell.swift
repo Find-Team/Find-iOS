@@ -55,7 +55,6 @@ extension InterviewCVCell {
     @objc func changeSegue(notification: NSNotification) {
         let changeData = notification.object as? InterviewCategory
         currentCategory = changeData
-        innerInterviewCV.scrollToItem(at: IndexPath(index: 0), at: .top, animated: true)
         innerInterviewCV.reloadSections(IndexSet(0...2))
     }
     

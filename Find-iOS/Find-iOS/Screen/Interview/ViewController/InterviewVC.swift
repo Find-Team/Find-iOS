@@ -56,8 +56,15 @@ class InterviewVC: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    // 저장되었습니다 토스트
     @IBAction func saveBtnTapped(_ sender: Any) {
-        // 저장되었습니다 토스트
+        showToast(message: "저장되었습니다.", font: UIFont.spoqaRegular(size: 14), width: 129, bottomY: (Int(self.view.frame.height)/2) - 33) {
+            [self] in
+            beforeInterviewData = interviewQuestions
+            beforeInterviewImgs = interviewImgs
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     @IBAction func prosBtnTapped(_ sender: Any) {
         whatSelected(seg: .pros, idx: 0)
@@ -138,6 +145,36 @@ extension InterviewVC {
     }
     @objc func tapAction(sender: UITapGestureRecognizer) {
         _ = self.view.endEditing(true)
+    }
+    
+    // 토스트
+    func showToast(message : String, font: UIFont, width: Int, bottomY: Int, completion: @escaping () -> Void) {
+        let guide = view.safeAreaInsets.bottom
+        let y = self.view.frame.size.height-guide
+        
+        let toastLabel = UILabel(
+            frame: CGRect( x: self.view.frame.size.width/2 - CGFloat(width)/2,
+                           y: y-CGFloat(bottomY),
+                           width: CGFloat(width),
+                           height: 33
+            )
+        )
+        
+        toastLabel.backgroundColor = UIColor.find_DarkPurple
+        toastLabel.textColor = UIColor.subGray6
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 15
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+            completion()
+        })
     }
 }
 
