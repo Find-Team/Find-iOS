@@ -95,16 +95,13 @@ class ProfileWritingVC: UIViewController  {
     // MARK:- IBAction
     @IBAction func gotoMain(_ sender: UIButton) {
         //MyProfileVC 로 이동
-//        if inputData != "" {
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "InfoWritten"), object: inputData)
-//        }
         self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func completeBtnPressed(_ sender: UIButton) {
         //showToastPurple(message: "저장되었습니다.")
         if representImgData != nil {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "InfoWritten"), object: representImgData)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ImgRecieved"), object: representImgData)
         }
         self.navigationController?.popViewController(animated: true)
     }
@@ -341,6 +338,9 @@ extension ProfileWritingVC {
         if let indexPath = currentIndexPath {
             profileImages[indexPath].isRep = true
             profileCV.selectItem(at: IndexPath(row: indexPath, section: 0), animated: true, scrollPosition: .init())
+            print(">>>>>>>>")
+            representImgData = profileImages[indexPath].images[0]
+            print(representImgData)
         }
     }
     

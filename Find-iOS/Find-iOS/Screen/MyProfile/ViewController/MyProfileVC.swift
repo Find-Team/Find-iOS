@@ -30,12 +30,20 @@ class MyProfileVC: UIViewController {
         super.viewDidLoad()
         setLayout()
         setGesture()
+        NotificationCenter.default.addObserver(self, selector: #selector(repImgRecieved(_:)), name: NSNotification.Name("ImgRecieved"), object: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
         setInterviewPercentage()
+    }
+    
+    @objc func repImgRecieved(_ noti: Notification) {
+        profileImageView.image = noti.object as? UIImage
+        profileImageView.contentMode = .scaleAspectFill
+        print("wwwwwwwwww")
     }
     
     func setInterviewPercentage() {
