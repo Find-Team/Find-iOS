@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xju-OB-GLC">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -102,7 +103,7 @@
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-ve-D5I">
                                 <rect key="frame" x="0.0" y="132" width="375" height="680"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="subGray6"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="16" id="1gK-Mv-oN7">
                                     <size key="itemSize" width="378" height="720.33333333333326"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -123,10 +124,10 @@
                                                 </tableView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Nt5-2m-ebd" secondAttribute="trailing" id="382-Fk-4IR"/>
-                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="leading" secondItem="LSA-ve-QGX" secondAttribute="leading" id="Owp-gq-dIg"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nt5-2m-ebd" secondAttribute="bottom" id="Ybq-je-78Y"/>
-                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="top" secondItem="LSA-ve-QGX" secondAttribute="top" id="yMr-TY-dHa"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nt5-2m-ebd" secondAttribute="bottom" id="KMi-j0-Lrd"/>
+                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="top" secondItem="LSA-ve-QGX" secondAttribute="top" id="pID-V7-NQk"/>
+                                                <constraint firstItem="Nt5-2m-ebd" firstAttribute="leading" secondItem="LSA-ve-QGX" secondAttribute="leading" id="tJq-Fe-Rae"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nt5-2m-ebd" secondAttribute="trailing" id="yoN-LC-lpz"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="378" height="720.33333333333326"/>
@@ -189,6 +190,9 @@
         </namedColor>
         <namedColor name="subGray4">
             <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subGray6">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

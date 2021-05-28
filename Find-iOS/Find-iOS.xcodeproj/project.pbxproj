@@ -95,6 +95,10 @@
 		54B9666726490D510028F1BF /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666626490D510028F1BF /* NetworkResult.swift */; };
 		54B9666926490D950028F1BF /* PlainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666826490D950028F1BF /* PlainData.swift */; };
 		54B9666D2649250B0028F1BF /* FindTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B9666C2649250B0028F1BF /* FindTabBarController.swift */; };
+		54BA2442265F87E70084D35A /* GetMyMatchingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA2441265F87E70084D35A /* GetMyMatchingData.swift */; };
+		54BA2444265FB7700084D35A /* MatchingRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA2443265FB7700084D35A /* MatchingRequestDelegate.swift */; };
+		54BA2448266095C00084D35A /* noDataTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA2446266095C00084D35A /* noDataTVCell.swift */; };
+		54BA2449266095C00084D35A /* noDataTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54BA2447266095C00084D35A /* noDataTVCell.xib */; };
 		54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA1F264A84550076C306 /* MyProfileNC.swift */; };
 		54E1BA22264A84AB0076C306 /* FindFoundNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1BA21264A84AB0076C306 /* FindFoundNC.swift */; };
 		771060A678E5FEDEED0DBEE0 /* Pods_Find_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */; };
@@ -209,6 +213,10 @@
 		54B9666626490D510028F1BF /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		54B9666826490D950028F1BF /* PlainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainData.swift; sourceTree = "<group>"; };
 		54B9666C2649250B0028F1BF /* FindTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTabBarController.swift; sourceTree = "<group>"; };
+		54BA2441265F87E70084D35A /* GetMyMatchingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMyMatchingData.swift; sourceTree = "<group>"; };
+		54BA2443265FB7700084D35A /* MatchingRequestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingRequestDelegate.swift; sourceTree = "<group>"; };
+		54BA2446266095C00084D35A /* noDataTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noDataTVCell.swift; sourceTree = "<group>"; };
+		54BA2447266095C00084D35A /* noDataTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noDataTVCell.xib; sourceTree = "<group>"; };
 		54E1BA1F264A84550076C306 /* MyProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileNC.swift; sourceTree = "<group>"; };
 		54E1BA21264A84AB0076C306 /* FindFoundNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoundNC.swift; sourceTree = "<group>"; };
 		920EEFF426578786009F263A /* FoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundView.xib; sourceTree = "<group>"; };
@@ -438,6 +446,7 @@
 				5461109A26553E130009B5CF /* Cell */,
 				5461109926553E0C0009B5CF /* ViewController */,
 				5461109826553E050009B5CF /* Storyboard */,
+				54BA2443265FB7700084D35A /* MatchingRequestDelegate.swift */,
 			);
 			path = MatchingStatus;
 			sourceTree = "<group>";
@@ -462,6 +471,7 @@
 		5461109A26553E130009B5CF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				54BA2445266095930084D35A /* NoData */,
 				542B5127265D5D3900A2006A /* Segue */,
 				546110C126575C040009B5CF /* HeaderFooter */,
 				546110A82655514D0009B5CF /* Dibs */,
@@ -722,6 +732,7 @@
 			children = (
 				54B9665F264909940028F1BF /* GenericResponse.swift */,
 				54B9666826490D950028F1BF /* PlainData.swift */,
+				54BA2441265F87E70084D35A /* GetMyMatchingData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -734,6 +745,15 @@
 				54B9666626490D510028F1BF /* NetworkResult.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		54BA2445266095930084D35A /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				54BA2446266095C00084D35A /* noDataTVCell.swift */,
+				54BA2447266095C00084D35A /* noDataTVCell.xib */,
+			);
+			path = NoData;
 			sourceTree = "<group>";
 		};
 		926314C8265448FB00E8E8FD /* Cell */ = {
@@ -842,6 +862,7 @@
 				542A1E0026442F8E00E69A4D /* LaunchScreen.storyboard in Resources */,
 				5461109C26553E350009B5CF /* MatchingStatus.storyboard in Resources */,
 				546110B6265552F40009B5CF /* DibsTVCell.xib in Resources */,
+				54BA2449266095C00084D35A /* noDataTVCell.xib in Resources */,
 				54B96649264904500028F1BF /* TabBar.storyboard in Resources */,
 				54B9665A264906900028F1BF /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				546110B2265551AF0009B5CF /* FeelingTVCell.xib in Resources */,
@@ -957,6 +978,7 @@
 				37F1E0C4265834B300D810BE /* ValueFilterAll.swift in Sources */,
 				377C278826445D84003FF385 /* Questions.swift in Sources */,
 				542A1E112644317300E69A4D /* UIView+Extension.swift in Sources */,
+				54BA2442265F87E70084D35A /* GetMyMatchingData.swift in Sources */,
 				54E1BA20264A84550076C306 /* MyProfileNC.swift in Sources */,
 				361B6EE22655856E00ACF88A /* BasicInfoData.swift in Sources */,
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
@@ -969,6 +991,7 @@
 				926314F72656CE8A00E8E8FD /* FindView.swift in Sources */,
 				54B96665264909F70028F1BF /* APITarget.swift in Sources */,
 				920EF00826579D66009F263A /* FoundProfileCardCVCell.swift in Sources */,
+				54BA2448266095C00084D35A /* noDataTVCell.swift in Sources */,
 				92B10391264E4C2A003801C8 /* BeforeTestView.swift in Sources */,
 				37F1E0BC26581A4700D810BE /* YourValueHeaderCVC.swift in Sources */,
 				92F8DF9F2660B3880029C325 /* InterviewQAData.swift in Sources */,
@@ -996,6 +1019,7 @@
 				546110B1265551AF0009B5CF /* FeelingTVCell.swift in Sources */,
 				36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */,
 				3771675E26457E8000AE3A15 /* ValueTestQuestionTVC.swift in Sources */,
+				54BA2444265FB7700084D35A /* MatchingRequestDelegate.swift in Sources */,
 				377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */,
 				926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */,
 			);
@@ -1074,7 +1098,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1129,7 +1153,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1145,8 +1169,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92QJ4K4KU;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1154,6 +1179,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1165,8 +1191,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92QJ4K4KU;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1174,6 +1201,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "sopt.Find-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

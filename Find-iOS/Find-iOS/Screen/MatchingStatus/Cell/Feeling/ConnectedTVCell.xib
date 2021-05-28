@@ -69,6 +69,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-fL-LDZ">
                         <rect key="frame" x="370" y="8" width="38" height="38"/>
                         <state key="normal" image="btnCancleStar"/>
+                        <connections>
+                            <action selector="deleteBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Un0-yz-MtK"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yve-GR-fCr">
                         <rect key="frame" x="164" y="87" width="210" height="35"/>

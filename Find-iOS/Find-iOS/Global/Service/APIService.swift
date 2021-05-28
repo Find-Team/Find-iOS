@@ -14,10 +14,14 @@ struct APIService {
     let provider = MoyaProvider<APITarget>() // MoyaProvider 인스턴스 생성(요청을 보낼 때 사용해야함)
     
     // 이런식으로 쭉쭉 이어나가면 됨
-    func example_post(_ token: String,_ email: String, _ password: String, completion: @escaping (NetworkResult<PlainData>)->(Void)) {
-        
-        let target: APITarget = .example_post(token: token, first: email, second: password)
+    func getMyMatching(_ userSequence: Int, completion: @escaping (NetworkResult<GetMyMatchingData>)->(Void)) {
+        let target: APITarget = .getMyMatching(userSequence)
         judgeObject(target, completion: completion)
+    }
+    
+    func matchingRequest(_ fromUserSequence: Int, _ matchingStatus: String, _ toUserSequence: Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
+        let target: APITarget = .requestMatching(fromUserSequence, matchingStatus, toUserSequence)
+        judgeSimpleObject(target, completion: completion)
     }
 }
 
@@ -30,7 +34,7 @@ extension APIService {
                 do {
                     let decoder = JSONDecoder()
                     let body = try decoder.decode(GenericResponse<T>.self, from: result.data)
-                    if let data = body.data {
+                    if let data = body.info {
                         completion(.success(data))
                     }
                 } catch {
