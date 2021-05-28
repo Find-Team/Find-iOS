@@ -18,6 +18,8 @@ class ProfileWritingVC: UIViewController  {
     var imageSelected: UIImage?
     var currentIndexPath: Int?
     
+    var infoText : String = ""
+    
     var nicknameData : String = "맹고감자"
     var birthdayData : String = "1998.10.22"
     var genderData : String = "여자"
@@ -54,6 +56,9 @@ class ProfileWritingVC: UIViewController  {
     
     @IBOutlet var infoWriting: UILabel!
     @IBOutlet var infoExplain: UILabel!
+    @IBOutlet var infoView: UIView!
+    @IBOutlet var infoLabel: UILabel!
+    
     @IBOutlet var goToInfoBtn: UIButton!
     
     @IBOutlet var accountWriting: UILabel!
@@ -105,6 +110,7 @@ class ProfileWritingVC: UIViewController  {
             if let indexPath = currentIndexPath {
                 profileImages[indexPath].images.remove(at: 0)
             }
+            previewImageView.image = nil
             profileCV.reloadData()
         }
         
@@ -150,6 +156,8 @@ class ProfileWritingVC: UIViewController  {
                           BasicInfoData(question: "결혼", isEdit: false, answer: nil),
                           BasicInfoData(question: "음주", isEdit: false, answer: nil)
         ]
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(infoReceived(_:)), name: NSNotification.Name("InfoWritten"), object: nil)
     }
 }
 
@@ -238,6 +246,8 @@ extension ProfileWritingVC {
         goToInfoBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
         goToInfoBtn.titleLabel?.letterSpacing = -0.42
         goToInfoBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
+        
+        infoView.isHidden = true
     }
     
     func setAccountInfo() {
@@ -378,6 +388,21 @@ extension ProfileWritingVC {
             break
         }
     }
+    
+    @objc func infoReceived(_ noti: Notification) {
+        goToInfoBtn.isHidden = true
+        infoView.isHidden = false
+        infoView.backgroundColor = .subGray6
+        infoView.makeRounded(cornerRadius: 10)
+        
+        infoText = noti.object as! String
+        infoLabel.text = infoText
+        infoLabel.textColor = .subGray3
+        infoLabel.font = .spoqaRegular(size: 12)
+        infoLabel.letterSpacing = 0.36
+        
+        self.view.layoutIfNeeded()
+    }
 }
 
 // MARK:- UICollectionViewDataSource
@@ -429,11 +454,16 @@ extension ProfileWritingVC: UICollectionViewDataSource {
             cell.layer.backgroundColor = UIColor.subGray6.cgColor
             cell.setStyle()
             cell.setCell(info: basicInfoData[indexPath.row])
+
             
             //indexPath.row 2 이상이면 pickerView
             if indexPath.row >= 2 {
+                cell.infoTextField.placeholder = "선택하세요"
                 cell.createPickerView(idx: indexPath.row)
                 cell.dismissPickerView()
+                cell.infoTextField.tintColor = .clear
+            } else {
+                cell.infoTextField.placeholder = "입력하세요"
             }
             
             return cell
@@ -487,11 +517,11 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if collectionView == profileCV {
             currentIndexPath = indexPath.row
+        
             //사진이 있는 경우
             if profileImages[indexPath.row].images != [] {
                 previewImageView.contentMode = .scaleAspectFill
                 previewImageView.image = profileImages[indexPath.row].images[0]
-                editBtn.isHidden = false
             }
             //사진이 없는 경우
             else {
@@ -503,8 +533,14 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
                 alert.addAction(library)
                 alert.addAction(cancel)
                 self.parent?.present(alert, animated: true, completion: nil)
+            }
+            
+            if previewImageView.image != nil {
+                editBtn.isHidden = false
+            } else {
                 editBtn.isHidden = true
             }
+            
         }
     }
 }
@@ -530,7 +566,6 @@ extension ProfileWritingVC: UIImagePickerControllerDelegate, UINavigationControl
         
         previewImageView.contentMode = .scaleAspectFill
         previewImageView.image = imageSelected
-        //editBtn.isHidden = false
         profileCV.reloadData()
         
         self.parent?.dismiss(animated: true, completion: nil)

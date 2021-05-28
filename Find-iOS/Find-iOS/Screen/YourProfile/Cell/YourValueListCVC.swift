@@ -63,6 +63,12 @@ extension YourValueListCVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        if indexPath.row == 0 {
+            cell.CVCIndexPath = 0
+        } else {
+            cell.CVCIndexPath = 1
+        }
+        
         cell.parentVC = .yourValue
         
         return cell
@@ -104,6 +110,6 @@ extension YourValueListCVC: UICollectionViewDelegateFlowLayout {
         }
         print(">> \(currentIndex) \(currentSegue)")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChangedbyScroll"), object: currentSegue)
-        segueCV.reloadData()
+//        segueCV.reloadData()
     }
 }
