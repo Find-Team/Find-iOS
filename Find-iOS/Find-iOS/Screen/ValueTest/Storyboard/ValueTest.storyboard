@@ -41,8 +41,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-7f-KDp">
-                                <rect key="frame" x="15" y="83" width="15.5" height="22"/>
-                                <state key="normal" image="restart" catalog="system"/>
+                                <rect key="frame" x="15" y="74" width="40" height="40"/>
+                                <state key="normal" image="backBtn"/>
                                 <connections>
                                     <action selector="backBtnDidTap:" destination="19P-Vc-vJJ" eventType="touchUpInside" id="xeG-QW-r59"/>
                                 </connections>
@@ -351,8 +351,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backBtn" width="40" height="40"/>
         <image name="gradientBgImg" width="375" height="812"/>
-        <image name="restart" catalog="system" width="120" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
