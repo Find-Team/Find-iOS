@@ -115,13 +115,17 @@ extension DibsTVCell {
         switch dibsCategory {
         case .whoLikeMe:
             dibsBtn.backgroundColor = .find_Mint
-            dibsBtn.setImage(UIImage(named: "iconStarWhite"), for: .normal)
+            dibsBtn.setAttributedTitle(nil, for: .normal)
+            dibsBtn.setTitle("찜", for: .normal)
             dibsBtn.titleLabel?.textColor = .white
+            dibsBtn.setImage(UIImage(named: "iconStarWhite"), for: .normal)
             deleteBtn.isHidden = false
         case .whoILike:
             dibsBtn.backgroundColor = .white
-            dibsBtn.setImage(UIImage(named: "iconStarMint"), for: .normal)
+            dibsBtn.setAttributedTitle(nil, for: .normal)
+            dibsBtn.setTitle("찜 해제", for: .normal)
             dibsBtn.titleLabel?.textColor = .find_Mint
+            dibsBtn.setImage(UIImage(named: "iconStarMint"), for: .normal)
             deleteBtn.isHidden = true
         case .none:
             return

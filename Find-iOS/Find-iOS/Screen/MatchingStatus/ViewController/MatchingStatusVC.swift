@@ -66,8 +66,9 @@ extension MatchingStatusVC {
             switch result {
             case .success(let data):
                 self.matchingData = data
-                matchingCV.reloadItems(at: [IndexPath(item: 0, section: 0),IndexPath(item: 1, section: 0)])
                 print("데이터 받아왔습니다.")
+                matchingCV.reloadSections(IndexSet(integer: 0))
+                
             case .failure(let error):
                 print("데이터 못받아왔습니다.")
                 print(error)

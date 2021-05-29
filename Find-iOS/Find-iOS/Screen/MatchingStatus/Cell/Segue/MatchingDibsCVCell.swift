@@ -52,16 +52,28 @@ extension MatchingDibsCVCell {
             for i in 0..<rcvData.count {
                 receivedDataExp.append(ExpandableSection(isExpanded: false, data: rcvData[i]))
             }
-            for i in 0..<(rcvData.count % 4) {
-                receivedDataExp[i].isExpanded = true
+            if rcvData.count > 3 {
+                for i in 0..<3 {
+                    receivedDataExp[i].isExpanded = true
+                }
+            } else {
+                for i in 0..<rcvData.count {
+                    receivedDataExp[i].isExpanded = true
+                }
             }
         }
         if let sdData = sendDibs {
             for i in 0..<sdData.count {
                 sendDataExp.append(ExpandableSection(isExpanded: false, data: sdData[i]))
             }
-            for i in 0..<(sdData.count % 4) {
-                sendDataExp[i].isExpanded = true
+            if sdData.count > 3 {
+                for i in 0..<3 {
+                    sendDataExp[i].isExpanded = true
+                }
+            } else {
+                for i in 0..<sdData.count {
+                    sendDataExp[i].isExpanded = true
+                }
             }
         }
     }
