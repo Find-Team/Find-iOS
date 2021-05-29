@@ -10,6 +10,7 @@ import UIKit
 class FoundProfileCardCVCell: UICollectionViewCell {
     
     static let identifier = "FoundProfileCardCVCell"
+    var checkLike : Bool?
 
     @IBOutlet weak var cellContentView: UIView!
     @IBOutlet weak var foundProfileImgView: UIImageView!
@@ -24,14 +25,42 @@ class FoundProfileCardCVCell: UICollectionViewCell {
         // Initialization code
     }
     
-//    func setCellView() {
-//        cellContentView.makeRounded(cornerRadius: 5)
-//    }
+    func getSuperViewController() -> UIViewController? {
+        var viewController: UIViewController? = self.parentViewController
+        return viewController
+    }
+    
+    func makeStarBtn() {
+//        if checkLike == nil {
+//            checkLike = false
+//        }
+//        print("함수 안에서", checkLike)
+//        if checkLike == false {
+//            self.starBtn.isSelected = true
+//            self.starBtn.setImage(UIImage(named: "btnFoundStarMintLine"), for: .normal)
+//        }
+//        else {
+//            self.starBtn.isSelected = false
+//            self.starBtn.setImage(UIImage(named: "btnFoundStarMint"), for: .normal)
+//        }
+    }
+    
+    func setProfileCardData(profileImg: UIImage, name: String, info: String, intro: String) {
+        self.foundProfileImgView.image = profileImg
+        self.nameLabel.text = name
+        self.infoLabel.text = info
+        self.introLabel.text = intro
+    }
 
     @IBAction func starBtnClicked(_ sender: Any) {
         if self.starBtn.isSelected == false {
             self.starBtn.isSelected = true
             self.starBtn.setImage(UIImage(named: "btnFoundStarMint"), for: .normal)
+            
+            var currentVC: UIViewController = getSuperViewController()!
+            currentVC.showToastPurple(message: "상대를 찜했습니다")
+//            checkLike = true
+//            print("아이비액션", checkLike)
         }
         
         else {

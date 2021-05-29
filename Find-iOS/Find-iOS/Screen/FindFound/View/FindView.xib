@@ -22,31 +22,32 @@
                 <outlet property="differentBtn" destination="5Bf-G7-67X" id="JLe-Fo-zrg"/>
                 <outlet property="differentView" destination="hSV-kA-xq6" id="k8l-ro-NVK"/>
                 <outlet property="findBtn" destination="UWD-79-b4i" id="UsG-13-FjZ"/>
+                <outlet property="matchingBtnTop" destination="OlS-8e-GuB" id="oVt-Ec-K24"/>
                 <outlet property="similarBtn" destination="huT-OC-Baj" id="Co8-Ci-3F1"/>
                 <outlet property="similarView" destination="1bf-9G-7mb" id="kEc-fY-GOU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="FindView" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="FindView" customModule="Find_iOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="599"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j19-s1-unH">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="274"/>
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="274"/>
                     <color key="backgroundColor" name="mannerBlur"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="274" id="uEe-8L-W04"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuB-a2-Osl">
-                    <rect key="frame" x="0.0" y="274" width="375" height="2"/>
+                    <rect key="frame" x="0.0" y="274" width="390" height="2"/>
                     <color key="backgroundColor" name="subGray4"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="Nth-XG-jlG"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWs-Fs-w0c">
-                    <rect key="frame" x="0.0" y="276" width="375" height="323"/>
+                    <rect key="frame" x="0.0" y="276" width="390" height="323"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대의 성향은?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-1n-lVa">
                             <rect key="frame" x="16.000000000000007" y="19" width="108.66666666666669" height="23"/>
@@ -68,6 +69,7 @@
                                         <constraint firstAttribute="width" secondItem="huT-OC-Baj" secondAttribute="height" multiplier="1:1" id="see-uy-AxN"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="tintColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal">
                                         <string key="title">나와 
 닮은 점이 
@@ -93,9 +95,9 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-kA-xq6">
-                            <rect key="frame" x="195" y="60" width="160" height="160"/>
+                            <rect key="frame" x="210" y="60" width="160" height="160"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-G7-67X">
                                     <rect key="frame" x="5" y="5" width="150" height="150"/>
                                     <color key="backgroundColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
@@ -103,6 +105,7 @@
                                         <constraint firstAttribute="height" constant="150" id="G0L-RT-Ptc"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="tintColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal">
                                         <string key="title">나와 
 다르기에 매력적인
@@ -128,7 +131,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWD-79-b4i">
-                            <rect key="frame" x="16" y="249" width="343" height="50"/>
+                            <rect key="frame" x="16" y="249" width="358" height="50"/>
                             <color key="backgroundColor" name="subGray4"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="96y-Cw-XE2"/>
@@ -137,20 +140,24 @@
                             <state key="normal" title="FIND!">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="findBtnClicked:" destination="-1" eventType="touchUpInside" id="gS5-Lk-suy"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="bottom" secondItem="1bf-9G-7mb" secondAttribute="bottom" id="2WK-5t-NAa"/>
                         <constraint firstAttribute="trailing" secondItem="hSV-kA-xq6" secondAttribute="trailing" constant="20" id="3N3-n6-H2u"/>
-                        <constraint firstAttribute="bottom" secondItem="UWD-79-b4i" secondAttribute="bottom" constant="24" id="4rO-eq-eB5"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="top" secondItem="wWs-Fs-w0c" secondAttribute="top" constant="19" id="LF6-Ny-8AK"/>
                         <constraint firstItem="1bf-9G-7mb" firstAttribute="top" secondItem="5bp-1n-lVa" secondAttribute="bottom" constant="18" id="OlS-8e-GuB"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="SpG-Rj-VYc"/>
                         <constraint firstAttribute="trailing" secondItem="UWD-79-b4i" secondAttribute="trailing" constant="16" id="W00-BR-vOn"/>
                         <constraint firstItem="UWD-79-b4i" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="a2h-Av-MSu"/>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="top" id="dl6-nV-HnC"/>
+                        <constraint firstItem="UWD-79-b4i" firstAttribute="centerX" secondItem="wWs-Fs-w0c" secondAttribute="centerX" id="lYb-ik-bQg"/>
                         <constraint firstItem="1bf-9G-7mb" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="20" id="mbm-hd-7hk"/>
+                        <constraint firstItem="UWD-79-b4i" firstAttribute="top" secondItem="1bf-9G-7mb" secondAttribute="bottom" constant="29" id="qmv-59-r6I"/>
                     </constraints>
                 </view>
             </subviews>

@@ -73,25 +73,25 @@ class InterviewVC: UIViewController {
     }
     
     // 페이징 관련 index 정의 함수
-        private var indexOfCellBeforeDragging = 0
-        
-        // 오른쪽으로 넘길 때
-        private func indexOfMajorCell() -> Int {
-            let itemWidth = interviewCV.frame.size.width
-            let proportionalOffset = (interviewCV.contentOffset.x / itemWidth)+0.3
-            let index = Int(round(proportionalOffset))
-            let safeIndex = max(0, min(4, index))
-            return safeIndex
-        }
-        
-        // 왼쪽으로 넘길 때
-        private func indexOfBeforCell() -> Int {
-            let itemWidth = interviewCV.frame.size.width
-            let proportionalOffset = (interviewCV.contentOffset.x / itemWidth)
-            let back_index = Int(floor(proportionalOffset))
-            let safeIndex = max(0, min(4, back_index))
-            return safeIndex
-        }
+    private var indexOfCellBeforeDragging = 0
+    
+    // 오른쪽으로 넘길 때
+    private func indexOfMajorCell() -> Int {
+        let itemWidth = interviewCV.frame.size.width
+        let proportionalOffset = (interviewCV.contentOffset.x / itemWidth)+0.3
+        let index = Int(round(proportionalOffset))
+        let safeIndex = max(0, min(4, index))
+        return safeIndex
+    }
+    
+    // 왼쪽으로 넘길 때
+    private func indexOfBeforCell() -> Int {
+        let itemWidth = interviewCV.frame.size.width
+        let proportionalOffset = (interviewCV.contentOffset.x / itemWidth)
+        let back_index = Int(floor(proportionalOffset))
+        let safeIndex = max(0, min(4, back_index))
+        return safeIndex
+    }
 }
 
 
@@ -111,7 +111,7 @@ extension InterviewVC {
         segueBtns[3].setTitleColor(.subGray2, for: .normal)
     }
     
-    // MARK: - Remind Me Selected Segue
+    // MARK: - Remind Selected Segue
     func whatSelected(seg: InterviewCategory, idx: Int){
         if currentCategory != seg {
             currentCategory = seg
@@ -138,7 +138,7 @@ extension InterviewVC {
     }
     @objc func tapAction(sender: UITapGestureRecognizer) {
         _ = self.view.endEditing(true)
-       }
+    }
 }
 
 //MARK: - Protocols

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CwM-YO-OEU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CwM-YO-OEU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Value ListVC-->
+        <!--ValueListVC-->
         <scene sceneID="M43-fy-51x">
             <objects>
-                <viewController restorationIdentifier="ValueListVC" storyboardIdentifier="ValueListVC" id="CwM-YO-OEU" customClass="ValueListVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ValueListVC" storyboardIdentifier="ValueListVC" title="ValueListVC" id="CwM-YO-OEU" customClass="ValueListVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkl-20-vFJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,8 +122,8 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rso-xS-JID">
-                                <rect key="frame" x="15" y="83" width="15.5" height="22"/>
-                                <state key="normal" image="restart" catalog="system"/>
+                                <rect key="frame" x="15" y="74" width="40" height="40"/>
+                                <state key="normal" image="backBtn"/>
                                 <connections>
                                     <action selector="backBtnDidTap:" destination="CwM-YO-OEU" eventType="touchUpInside" id="NCz-L6-CvA"/>
                                 </connections>
@@ -136,7 +136,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oug-s9-WOy">
-                                <rect key="frame" x="0.0" y="164.5" width="414" height="697.5"/>
+                                <rect key="frame" x="0.0" y="164.5" width="414" height="731.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lkz-82-hzH">
                                     <size key="itemSize" width="414" height="711"/>
@@ -146,7 +146,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ValueListCVC" id="jnR-bh-pkK" customClass="ValueListCVC" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-7" width="414" height="711"/>
+                                        <rect key="frame" x="0.0" y="10.5" width="414" height="711"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6yQ-oL-WQY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
@@ -159,7 +159,7 @@
                                                     <color key="separatorColor" systemColor="systemIndigoColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ValueListTVC" id="3Sz-RH-ig0" customClass="ValueListTVC" customModule="Find_iOS" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="24.5" width="414" height="113.5"/>
+                                                            <rect key="frame" x="0.0" y="28" width="414" height="113.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Sz-RH-ig0" id="4uf-mg-RnD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="113.5"/>
@@ -286,7 +286,7 @@
                             <constraint firstItem="H7H-am-s3L" firstAttribute="leading" secondItem="vkl-20-vFJ" secondAttribute="leading" id="JBe-IL-Sxl"/>
                             <constraint firstItem="oug-s9-WOy" firstAttribute="leading" secondItem="O8W-7H-dOX" secondAttribute="leading" id="Lgj-Gc-spd"/>
                             <constraint firstItem="oug-s9-WOy" firstAttribute="trailing" secondItem="O8W-7H-dOX" secondAttribute="trailing" id="SbB-90-UVu"/>
-                            <constraint firstItem="oug-s9-WOy" firstAttribute="bottom" secondItem="O8W-7H-dOX" secondAttribute="bottom" id="X0t-zR-SGT"/>
+                            <constraint firstItem="oug-s9-WOy" firstAttribute="bottom" secondItem="vkl-20-vFJ" secondAttribute="bottom" id="X0t-zR-SGT"/>
                             <constraint firstItem="Rso-xS-JID" firstAttribute="leading" secondItem="vkl-20-vFJ" secondAttribute="leading" constant="15" id="gvR-NN-XdP"/>
                             <constraint firstItem="SSH-ds-kgY" firstAttribute="centerX" secondItem="vkl-20-vFJ" secondAttribute="centerX" id="jlk-O9-d2N"/>
                             <constraint firstItem="oug-s9-WOy" firstAttribute="top" secondItem="H7H-am-s3L" secondAttribute="bottom" id="lkJ-qo-Py5"/>
@@ -314,7 +314,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="restart" catalog="system" width="120" height="128"/>
+        <image name="backBtn" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
