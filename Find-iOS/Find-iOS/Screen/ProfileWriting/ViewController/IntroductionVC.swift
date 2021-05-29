@@ -43,7 +43,11 @@ class IntroductionVC: UIViewController {
         if (bodyTextView.text.isEmpty || bodyTextView.text == placeholderPhrase || bodyTextView.text.count < 10) {
             self.showToast(message: "내용을 입력해주세요.", font: UIFont.spoqaRegular(size: 16), width: 170, bottomY: 181)
         } else if (bodyTextView.text.count >= 10) {
-            self.showToast(message: "저장되었습니다.", font: UIFont.spoqaRegular(size: 16), width: 130, bottomY: 181)
+//            self.showToast(message: "저장되었습니다.", font: UIFont.spoqaRegular(size: 16), width: 130, bottomY: 181)
+            if inputData != "" {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "InfoWritten"), object: inputData)
+            }
+            self.navigationController?.popViewController(animated: true)
         }
         
     }
@@ -151,7 +155,7 @@ extension IntroductionVC: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         inputData = textView.text
-        print(inputData)
+        //print(inputData)
     }
     
     // TextView Place Holder
@@ -161,7 +165,7 @@ extension IntroductionVC: UITextViewDelegate {
             textView.textColor = UIColor.lightGray
         } else {
             inputData = textView.text
-            print(inputData)
+            //print(inputData)
         }
     }
     

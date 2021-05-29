@@ -11,6 +11,8 @@
 		3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3618F65D2650123F006CF618 /* Introduction.storyboard */; };
 		361B6E512653B4FA00ACF88A /* ProfileImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B6E502653B4FA00ACF88A /* ProfileImages.swift */; };
 		361B6EE22655856E00ACF88A /* BasicInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B6EE12655856E00ACF88A /* BasicInfoData.swift */; };
+		365B494D26613D5500713438 /* ProfileGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365B494C26613D5500713438 /* ProfileGuide.storyboard */; };
+		365B495026613F0200713438 /* ProfileGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B494F26613F0200713438 /* ProfileGuideVC.swift */; };
 		36693DAA26564DBC00A27793 /* ProfileCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36693DA926564DBC00A27793 /* ProfileCVCell.swift */; };
 		36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36693DBB2656A65D00A27793 /* BasicInfoCVCell.swift */; };
 		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
@@ -119,6 +121,10 @@
 		92B10395264E4C4C003801C8 /* BeforeTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B10394264E4C4C003801C8 /* BeforeTestView.xib */; };
 		92F8DF9F2660B3880029C325 /* InterviewQAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DF9E2660B3870029C325 /* InterviewQAData.swift */; };
 		92F8DFA22660C5770029C325 /* FoundProfileCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DFA12660C5760029C325 /* FoundProfileCardData.swift */; };
+		92F8DFE1266289DE0029C325 /* BeforeAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F8DFE0266289DE0029C325 /* BeforeAnswerView.xib */; };
+		92F8DFE826628A2F0029C325 /* BeforeAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DFE726628A2F0029C325 /* BeforeAnswerView.swift */; };
+		92F8DFF2266295FA0029C325 /* AfterAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92F8DFF1266295FA0029C325 /* AfterAnswerView.xib */; };
+		92F8DFF5266296070029C325 /* AfterAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DFF4266296070029C325 /* AfterAnswerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +133,8 @@
 		3618F65D2650123F006CF618 /* Introduction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		361B6E502653B4FA00ACF88A /* ProfileImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileImages.swift; path = Model/ProfileImages.swift; sourceTree = "<group>"; };
 		361B6EE12655856E00ACF88A /* BasicInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicInfoData.swift; path = Model/BasicInfoData.swift; sourceTree = "<group>"; };
+		365B494C26613D5500713438 /* ProfileGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileGuide.storyboard; sourceTree = "<group>"; };
+		365B494F26613F0200713438 /* ProfileGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGuideVC.swift; sourceTree = "<group>"; };
 		36693DA926564DBC00A27793 /* ProfileCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCVCell.swift; path = Cell/ProfileCVCell.swift; sourceTree = "<group>"; };
 		36693DBB2656A65D00A27793 /* BasicInfoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicInfoCVCell.swift; path = Cell/BasicInfoCVCell.swift; sourceTree = "<group>"; };
 		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -236,6 +244,10 @@
 		92B10394264E4C4C003801C8 /* BeforeTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeforeTestView.xib; sourceTree = "<group>"; };
 		92F8DF9E2660B3870029C325 /* InterviewQAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewQAData.swift; sourceTree = "<group>"; };
 		92F8DFA12660C5760029C325 /* FoundProfileCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundProfileCardData.swift; sourceTree = "<group>"; };
+		92F8DFE0266289DE0029C325 /* BeforeAnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeforeAnswerView.xib; sourceTree = "<group>"; };
+		92F8DFE726628A2F0029C325 /* BeforeAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAnswerView.swift; sourceTree = "<group>"; };
+		92F8DFF1266295FA0029C325 /* AfterAnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterAnswerView.xib; sourceTree = "<group>"; };
+		92F8DFF4266296070029C325 /* AfterAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterAnswerView.swift; sourceTree = "<group>"; };
 		959D62B832062C303971ED8D /* Pods-Find-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find-iOS.release.xcconfig"; path = "Target Support Files/Pods-Find-iOS/Pods-Find-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9914C355BB51240D7E5B4DC2 /* Pods_Find_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -687,6 +699,7 @@
 			children = (
 				54B9664C264904660028F1BF /* ProfileWritingVC.swift */,
 				3618F64D264FBD49006CF618 /* IntroductionVC.swift */,
+				365B494F26613F0200713438 /* ProfileGuideVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -696,6 +709,7 @@
 			children = (
 				54B96646264904490028F1BF /* ProfileWriting.storyboard */,
 				3618F65D2650123F006CF618 /* Introduction.storyboard */,
+				365B494C26613D5500713438 /* ProfileGuide.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -794,6 +808,10 @@
 				926314F62656CE8A00E8E8FD /* FindView.swift */,
 				920EEFF426578786009F263A /* FoundView.xib */,
 				920EEFF726578795009F263A /* FoundView.swift */,
+				92F8DFE0266289DE0029C325 /* BeforeAnswerView.xib */,
+				92F8DFE726628A2F0029C325 /* BeforeAnswerView.swift */,
+				92F8DFF1266295FA0029C325 /* AfterAnswerView.xib */,
+				92F8DFF4266296070029C325 /* AfterAnswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -872,8 +890,10 @@
 				3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */,
 				920EF00926579D66009F263A /* FoundProfileCardCVCell.xib in Resources */,
 				920EEFF526578786009F263A /* FoundView.xib in Resources */,
+				92F8DFE1266289DE0029C325 /* BeforeAnswerView.xib in Resources */,
 				54B96643264904390028F1BF /* Interview.storyboard in Resources */,
 				546110BA265556470009B5CF /* FeelingCVCell.xib in Resources */,
+				92F8DFF2266295FA0029C325 /* AfterAnswerView.xib in Resources */,
 				546110AC265551740009B5CF /* ConnectedTVCell.xib in Resources */,
 				54B96659264906900028F1BF /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				54B966412649042F0028F1BF /* FindFound.storyboard in Resources */,
@@ -882,6 +902,7 @@
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
 				378E3A1426526ED40023A326 /* MatchingLottie.storyboard in Resources */,
+				365B494D26613D5500713438 /* ProfileGuide.storyboard in Resources */,
 				926314F02656CD0F00E8E8FD /* FindView.xib in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
 				548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */,
@@ -966,6 +987,7 @@
 				920EEFF826578795009F263A /* FoundView.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
 				926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */,
+				365B495026613F0200713438 /* ProfileGuideVC.swift in Sources */,
 				920FD8F5265D1B6700AE9936 /* InterviewImgCVCell.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */,
@@ -984,6 +1006,7 @@
 				54B9663D264904020028F1BF /* YourProfileVC.swift in Sources */,
 				377C277D26444750003FF385 /* ValueTestVC.swift in Sources */,
 				546110A0265541450009B5CF /* MatchingStatusNC.swift in Sources */,
+				92F8DFE826628A2F0029C325 /* BeforeAnswerView.swift in Sources */,
 				3771675C2645791C00AE3A15 /* GetQuestionCategory.swift in Sources */,
 				378E3A1626526EEC0023A326 /* MatchingLottieVC.swift in Sources */,
 				92F8DFA22660C5770029C325 /* FoundProfileCardData.swift in Sources */,
@@ -1022,6 +1045,7 @@
 				54BA2444265FB7700084D35A /* MatchingRequestDelegate.swift in Sources */,
 				377167602645ADAD00AE3A15 /* ValueListTVC.swift in Sources */,
 				926314D52654523F00E8E8FD /* InterviewAnswerTVC.swift in Sources */,
+				92F8DFF5266296070029C325 /* AfterAnswerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,7 +1195,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92QJ4K4KU;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1193,7 +1217,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J92QJ4K4KU;
+				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "Find-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

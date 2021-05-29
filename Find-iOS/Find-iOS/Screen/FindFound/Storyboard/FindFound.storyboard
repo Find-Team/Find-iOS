@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQc-Nb-lez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQc-Nb-lez">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -23,14 +23,14 @@
             <objects>
                 <viewController storyboardIdentifier="FindFoundVC" title="FindFoundVC" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="gQc-Nb-lez" customClass="FindFoundVC" customModule="Find_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CmP-Gj-BC3">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djm-0q-3nk">
-                                <rect key="frame" x="0.0" y="44" width="390" height="46"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-3U-gD5">
-                                        <rect key="frame" x="16" y="12.999999999999998" width="78.333333333333329" height="25.333333333333329"/>
+                                        <rect key="frame" x="16" y="12.999999999999998" width="75" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
                                         <color key="textColor" name="subGray3"/>
                                         <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bI9-Re-VzZ">
-                                <rect key="frame" x="0.0" y="90" width="390" height="37"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="37"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t13-gY-ViP">
-                                        <rect key="frame" x="0.0" y="0.0" width="195" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="VPt-VI-fhO"/>
                                         </constraints>
@@ -60,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-IE-42a">
-                                        <rect key="frame" x="195" y="0.0" width="195" height="37"/>
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="o1H-j3-ZQI"/>
                                         </constraints>
@@ -75,14 +75,14 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h7D-jR-TH5">
-                                <rect key="frame" x="0.0" y="127" width="390" height="3"/>
+                                <rect key="frame" x="0.0" y="127" width="375" height="3"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izg-Vc-r3J">
-                                        <rect key="frame" x="0.0" y="0.0" width="195" height="3"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="3"/>
                                         <color key="backgroundColor" name="subGray2"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-Qe-e8C">
-                                        <rect key="frame" x="195" y="0.0" width="195" height="3"/>
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="3"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     </view>
                                 </subviews>
@@ -92,7 +92,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QwU-VO-kLZ">
-                                <rect key="frame" x="0.0" y="130" width="390" height="714"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="682"/>
                                 <color key="backgroundColor" name="subGray6"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AsY-DM-pK8">
                                     <size key="itemSize" width="390" height="682"/>
@@ -102,7 +102,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindFoundSegueCVC" id="CJG-KW-pLn" customClass="FindFoundSegueCVC" customModule="Find_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="16" width="390" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="682"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="men-9H-5eA">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="682"/>

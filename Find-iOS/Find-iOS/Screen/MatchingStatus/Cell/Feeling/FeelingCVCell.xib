@@ -75,7 +75,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0G8-FA-YqE">
                                 <rect key="frame" x="151" y="8" width="24" height="24"/>
-                                <state key="normal" image="btnCancelHeart"/>
+                                <state key="normal" image="btnCancelBlack"/>
                                 <connections>
                                     <action selector="deleteBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zei-up-fKM"/>
                                 </connections>
@@ -133,7 +133,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="btnCancelHeart" width="24" height="24"/>
+        <image name="btnCancelBlack" width="24" height="24"/>
         <namedColor name="connectedBlur">
             <color red="0.76499998569488525" green="0.6940000057220459" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

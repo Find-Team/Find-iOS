@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -69,6 +70,7 @@
                                         <constraint firstAttribute="width" secondItem="huT-OC-Baj" secondAttribute="height" multiplier="1:1" id="see-uy-AxN"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="tintColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal">
                                         <string key="title">나와 
 닮은 점이 
@@ -104,6 +106,7 @@
                                         <constraint firstAttribute="height" constant="150" id="G0L-RT-Ptc"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="12"/>
+                                    <color key="tintColor" red="0.93750399350000002" green="0.9842374921" blue="0.9882372022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal">
                                         <string key="title">나와 
 다르기에 매력적인

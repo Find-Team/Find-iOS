@@ -17,13 +17,14 @@ class ProfileWritingVC: UIViewController  {
     var basicInfoData : [BasicInfoData] = []
     var imageSelected: UIImage?
     var currentIndexPath: Int?
+    var representImgData : UIImage?
     
     var infoText : String = ""
     
-    var nicknameData : String = "맹고감자"
-    var birthdayData : String = "1998.10.22"
+    var nicknameData : String = "보라"
+    var birthdayData : String = "1996.04.26"
     var genderData : String = "여자"
-    var regionData : String = "서울특별시 성북구"
+    var regionData : String = "서울특별시 강남구"
     
     
     // MARK:- IBOutlet
@@ -92,12 +93,35 @@ class ProfileWritingVC: UIViewController  {
     }
     
     // MARK:- IBAction
+    @IBAction func gotoMain(_ sender: UIButton) {
+        //MyProfileVC 로 이동
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func completeBtnPressed(_ sender: UIButton) {
+        //showToastPurple(message: "저장되었습니다.")
+        if representImgData != nil {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ImgRecieved"), object: representImgData)
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     @IBAction func goToIntroduction(_ sender: UIButton) {
         // IntroductionVC 로 이동
         let nextStoryboard = UIStoryboard(name: "Introduction", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
         guard let IntroductionVC = nextStoryboard.instantiateViewController(withIdentifier: "IntroductionVC") as? IntroductionVC else {return}
         self.navigationController?.pushViewController(IntroductionVC, animated: true)
+    }
+    
+    
+    @IBAction func gotoProfileGuide(_ sender: UIButton) {
+        // ProfileGuideVC 로 이동
+        let nextStoryboard = UIStoryboard(name: "ProfileGuide", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
+        guard let ProfileGuideVC = nextStoryboard.instantiateViewController(withIdentifier: "ProfileGuideVC") as? ProfileGuideVC else {return}
+        self.navigationController?.pushViewController(ProfileGuideVC, animated: true)
     }
     
     
@@ -212,7 +236,6 @@ extension ProfileWritingVC {
         identityVerify.textColor = UIColor.subGray3
         identityVerify.letterSpacing = -1.1
         
-        
         verifyBtn.clipsToBounds = true
         verifyBtn.layer.cornerRadius = 10
         verifyBtn.layer.borderWidth = 1.0
@@ -231,7 +254,7 @@ extension ProfileWritingVC {
         infoWriting.textColor = UIColor.subGray3
         infoWriting.letterSpacing = -1.1
         
-        infoExplain.text = "당신을 소개해주세요! (최소 30자)"
+        infoExplain.text = "당신을 소개해주세요! (최소 10자)"
         infoExplain.font = UIFont.spoqaRegular(size: 12)
         infoExplain.textColor = UIColor.find_DarkPurple
         infoExplain.letterSpacing = -0.36
@@ -317,6 +340,7 @@ extension ProfileWritingVC {
         if let indexPath = currentIndexPath {
             profileImages[indexPath].isRep = true
             profileCV.selectItem(at: IndexPath(row: indexPath, section: 0), animated: true, scrollPosition: .init())
+            representImgData = profileImages[indexPath].images[0]
         }
     }
     

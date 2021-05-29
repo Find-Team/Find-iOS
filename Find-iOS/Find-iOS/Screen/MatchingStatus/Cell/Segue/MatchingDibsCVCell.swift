@@ -15,6 +15,7 @@ class MatchingDibsCVCell: UICollectionViewCell {
     var receivedDibs, sendDibs: [Connected]?
     var receivedDataExp: [ExpandableSection] = []
     var sendDataExp: [ExpandableSection] = []
+    var timer: Timer!
     
     @IBOutlet weak var innerTV: UITableView! {
         didSet {
@@ -32,7 +33,8 @@ class MatchingDibsCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setNoti()
-        // Initialization code
+        getMyDibsData(nil)
+//        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(getMyDibsData), userInfo: nil, repeats: true) // 10초마다 데이터 업데이트
     }
     
     deinit {
@@ -52,31 +54,59 @@ extension MatchingDibsCVCell {
             for i in 0..<rcvData.count {
                 receivedDataExp.append(ExpandableSection(isExpanded: false, data: rcvData[i]))
             }
-            for i in 0..<(rcvData.count % 4) {
-                receivedDataExp[i].isExpanded = true
+            if rcvData.count > 3 {
+                for i in 0..<3 {
+                    receivedDataExp[i].isExpanded = true
+                }
+            } else {
+                for i in 0..<rcvData.count {
+                    receivedDataExp[i].isExpanded = true
+                }
             }
         }
         if let sdData = sendDibs {
             for i in 0..<sdData.count {
                 sendDataExp.append(ExpandableSection(isExpanded: false, data: sdData[i]))
             }
-            for i in 0..<(sdData.count % 4) {
-                sendDataExp[i].isExpanded = true
+            if sdData.count > 3 {
+                for i in 0..<3 {
+                    sendDataExp[i].isExpanded = true
+                }
+            } else {
+                for i in 0..<sdData.count {
+                    sendDataExp[i].isExpanded = true
+                }
             }
         }
     }
     
     func setNoti() {
-        NotificationCenter.default.addObserver(self, selector: #selector(changingData), name: NSNotification.Name("needToReloadDibs"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getMyDibsData), name: NSNotification.Name("needToReloadDibs"), object: nil)
     }
     
-    // 연결되면 연결된 상대로 올라가야함. 데이터 업데이트
-    @objc func changingData(noti: Notification) {
-        if let sec = noti.object as? [Int] {
-            NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil) // MatchingStatusVC에 존재
-            innerTV.reloadSections(IndexSet(sec[0]...sec[1]), with: .fade)
+    @objc func getMyDibsData(_ noti: Notification?) {
+        APIService.shared.getMyMatching(1) { [self] result in
+            switch result {
+            case .success(let data):
+                receivedDataExp = []
+                sendDataExp = []
+                receivedDibs = data.receivedDibs
+                sendDibs = data.sendDibs
+                setExpandable()
+                if let data = noti?.object as? [Int] {
+                    innerTV.reloadSections(IndexSet(data[0]...data[1]), with: .fade)
+                    print("데이터 받아왔습니다.")
+                } else {
+                    innerTV.reloadSections(IndexSet(0...1), with: .fade)
+                }
+                
+            case .failure(let error):
+                print("데이터 못받아왔습니다.")
+                print(error)
+            }
         }
     }
+    
 }
 
 // MARK: - ShowMore Footer Btn
@@ -212,11 +242,11 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0) {
             if !receivedDataExp.isEmpty {
-                return 116
+                return 117
             }
         } else {
             if !sendDataExp.isEmpty {
-                return 116
+                return 117
             }
         }
         return (tableView.frame.height - 86) / 3
@@ -277,6 +307,8 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
         } else if (section == 1) {
             if sendDataExp.count > 3 {
                 return 53
+            } else if sendDataExp.count == 3 {
+                return 20
             }
         }
         return 0

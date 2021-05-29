@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -25,7 +26,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="111"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-F6-FyF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-F6-FyF">
                         <rect key="frame" x="8" y="8" width="95" height="95"/>
                         <color key="backgroundColor" name="find_DarkPurple"/>
                         <constraints>
@@ -33,25 +34,25 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7o-og-e1g">
-                        <rect key="frame" x="116" y="15" width="38" height="18"/>
+                        <rect key="frame" x="116" y="15" width="34.5" height="16.5"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                         <color key="textColor" name="subGray5"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa6-du-mOZ">
-                        <rect key="frame" x="116" y="39" width="31" height="15.5"/>
+                        <rect key="frame" x="116" y="37.5" width="29.5" height="14"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                         <color key="textColor" name="subGray1"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-0D-Kqe">
-                        <rect key="frame" x="116" y="60.5" width="91" height="26"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-0D-Kqe">
+                        <rect key="frame" x="116" y="57.5" width="91" height="41.5"/>
                         <color key="backgroundColor" name="find_Purple"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="91" id="Mze-f5-qdc"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
-                        <state key="normal" title="보내기">
+                        <state key="normal" title=" 보내기" image="iconHeartLineGray">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
@@ -64,11 +65,12 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgZ-fE-sIn">
-                        <rect key="frame" x="215" y="60.5" width="60" height="26"/>
+                        <rect key="frame" x="215" y="57.5" width="60" height="41.5"/>
                         <color key="backgroundColor" name="find_Mint"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                         <state key="normal" title=" 찜" image="iconStarWhite">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
@@ -96,6 +98,7 @@
                     <constraint firstItem="wgZ-fE-sIn" firstAttribute="width" secondItem="0IT-0D-Kqe" secondAttribute="width" multiplier="0.659341" id="HY0-Jo-h2D"/>
                     <constraint firstItem="E7o-og-e1g" firstAttribute="leading" secondItem="Z20-F6-FyF" secondAttribute="trailing" constant="13" id="LZy-8v-ezf"/>
                     <constraint firstAttribute="trailing" secondItem="EHf-7B-Goc" secondAttribute="trailing" constant="8" id="PoI-B1-jPc"/>
+                    <constraint firstItem="0IT-0D-Kqe" firstAttribute="bottom" secondItem="Z20-F6-FyF" secondAttribute="bottom" constant="-4" id="RKz-TP-vrF"/>
                     <constraint firstItem="Z20-F6-FyF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Zoy-bs-iQu"/>
                     <constraint firstItem="wgZ-fE-sIn" firstAttribute="leading" secondItem="0IT-0D-Kqe" secondAttribute="trailing" constant="8" id="bYr-Te-u5U"/>
                     <constraint firstItem="wgZ-fE-sIn" firstAttribute="bottom" secondItem="0IT-0D-Kqe" secondAttribute="bottom" id="i5y-zW-x4t"/>
@@ -110,6 +113,7 @@
             <connections>
                 <outlet property="deleteBtn" destination="EHf-7B-Goc" id="JOB-85-eff"/>
                 <outlet property="dibsBtn" destination="wgZ-fE-sIn" id="g4w-XC-GNU"/>
+                <outlet property="dibsBtnWidth" destination="HY0-Jo-h2D" id="o6a-ri-D0q"/>
                 <outlet property="dibsImageView" destination="Z20-F6-FyF" id="ZVd-Wx-4Ud"/>
                 <outlet property="dibsInfoLabel" destination="wa6-du-mOZ" id="t0F-Dh-pUc"/>
                 <outlet property="dibsNameLabel" destination="E7o-og-e1g" id="5g2-tL-YbQ"/>
@@ -121,6 +125,7 @@
     </objects>
     <resources>
         <image name="btnCancleStar" width="38" height="38"/>
+        <image name="iconHeartLineGray" width="14" height="14"/>
         <image name="iconStarWhite" width="14" height="14"/>
         <namedColor name="find_DarkPurple">
             <color red="0.49000000953674316" green="0.37299999594688416" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
