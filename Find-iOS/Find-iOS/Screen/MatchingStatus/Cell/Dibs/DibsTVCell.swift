@@ -53,13 +53,14 @@ class DibsTVCell: UITableViewCell {
                 case .whoILike:
                     // 나를 찜한 사람에서 호감보내기
                     NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: nil)
                 case .whoLikeMe:
                     // 내가 찜한 사람에서 호감보내기
                     NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [1,1])
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: nil)
                 default:
                     return
                 }
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: nil)
                 // here
             case .failure(let error):
                 print(error)
@@ -68,19 +69,9 @@ class DibsTVCell: UITableViewCell {
     }
     
     @IBAction func dibsBtnTapped(_ sender: Any) {
-        if dibsBtn.backgroundColor == .find_Mint {
-            APIService.shared.matchingRequest(1, "DIBS", sequenceNum ?? 0) { result in
-                switch result {
-                case .success(_):
-                    print("찜 하기 성공")
-                    self.parentViewController?.showToastPurple(message: "상대를 찜했습니다")
-                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
-                   // here
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        } else {
+        switch dibsCategory {
+        case .whoILike:
+            // 내가 찜한 사람 찜 취소하기
             APIService.shared.matchingRequest(1, "DISCONNECTED_DIBS", sequenceNum ?? 0) { result in
                 switch result {
                 case .success(_):
@@ -92,6 +83,21 @@ class DibsTVCell: UITableViewCell {
                     print(error)
                 }
             }
+        case .whoLikeMe:
+            // 나를 찜한 사람에서 나도 찜 하기
+            APIService.shared.matchingRequest(1, "DIBS", sequenceNum ?? 0) { result in
+                switch result {
+                case .success(_):
+                    print("찜 하기 성공")
+                    self.parentViewController?.showToastPurple(message: "상대를 찜했습니다")
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
+                   // here
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        default:
+            return
         }
     }
     
