@@ -39,6 +39,7 @@ class YourProfileVC: UIViewController {
     @IBOutlet weak var floatingLikeBtn: UIButton!
     @IBOutlet weak var floatingLikeBtnTop: NSLayoutConstraint!
     @IBOutlet weak var fullScrollViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var bannerImgWidth: NSLayoutConstraint!
     
     @IBOutlet weak var heightTag: UIView!
     @IBOutlet weak var bodyTag: UIView!
@@ -118,6 +119,8 @@ extension YourProfileVC {
     func setView() {
         fullScrollViewWidth.constant = screenWidth
         introductionContentView.makeRounded(cornerRadius: 10)
+        
+        bannerImgWidth.constant = screenWidth
         
         heightTag.makeRounded(cornerRadius: 12)
         bodyTag.makeRounded(cornerRadius: 12)

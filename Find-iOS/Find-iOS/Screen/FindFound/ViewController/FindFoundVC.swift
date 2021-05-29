@@ -35,6 +35,7 @@ class FindFoundVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSegueStyle()
+        print("index", findCheckIndex)
         switch findCheckIndex {
             case 0: findSelected()
             case 1:
@@ -49,18 +50,20 @@ class FindFoundVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        myCollectionView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        myCollectionView.reloadData()
+//    }
 
     // MARK: - IBAction
     
     @IBAction func findBtnClicked(_ sender: Any) {
         findSelected()
+        myCollectionView.reloadData()
     }
     
     @IBAction func foundBtnClicked(_ sender: Any) {
         foundSelected()
+        myCollectionView.reloadData()
     }
 }
 
@@ -110,6 +113,8 @@ extension FindFoundVC {
         segueFoundBtn.titleLabel?.font = .spoqaRegular(size: 14)
         
         segueFindBtn.setTitleColor(.subGray1, for: .normal)
+        
+        myCollectionView.reloadData()
     }
 }
 
@@ -127,6 +132,7 @@ extension FindFoundVC: UICollectionViewDataSource {
         let foundView = FoundView(frame: cell.myFoundView.frame)
         
         if indexPath.row == 0 {
+            print("indexpath.row == 0")
             cell.currentCategory = currentCategory
             cell.myFindView.addSubview(findView)
             cell.myFoundView.isHidden = true
@@ -134,11 +140,13 @@ extension FindFoundVC: UICollectionViewDataSource {
             foundView.removeFromSuperview()
             return cell
         } else if indexPath.row == 1 {
+            print("indexpath.row == 1")
             cell.currentCategory = currentCategory
             cell.myFoundView.addSubview(foundView)
             cell.myFindView.isHidden = true
             cell.myFoundView.isHidden = false
             findView.removeFromSuperview()
+            
             return cell
         }
         return UICollectionViewCell()
@@ -179,5 +187,6 @@ extension FindFoundVC: UICollectionViewDelegateFlowLayout {
         default:
             break
         }
+        myCollectionView.reloadData()
     }
 }
