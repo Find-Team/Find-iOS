@@ -24,6 +24,7 @@ class DibsTVCell: UITableViewCell {
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var dibsBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var dibsBtnWidth: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,13 +44,23 @@ class DibsTVCell: UITableViewCell {
     }
     
     @IBAction func sendBtnTapped(_ sender: Any) {
-        APIService.shared.matchingRequest(1, "FEELING", sequenceNum ?? 0) { result in
+        APIService.shared.matchingRequest(1, "FEELING", sequenceNum ?? 0) { [self] result in
             switch result {
             case .success(_):
                 print("호감 보내기 성공")
                 self.parentViewController?.showToastPurple(message: "상대에게 호감을 보냈습니다")
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,1])
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [0,2])
+                switch dibsCategory {
+                case .whoILike:
+                    // 나를 찜한 사람에서 호감보내기
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
+                case .whoLikeMe:
+                    // 내가 찜한 사람에서 호감보내기
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [1,1])
+                default:
+                    return
+                }
+                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: nil)
+                // here
             case .failure(let error):
                 print(error)
             }
@@ -63,7 +74,8 @@ class DibsTVCell: UITableViewCell {
                 case .success(_):
                     print("찜 하기 성공")
                     self.parentViewController?.showToastPurple(message: "상대를 찜했습니다")
-                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,1])
+                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
+                   // here
                 case .failure(let error):
                     print(error)
                 }
@@ -75,6 +87,7 @@ class DibsTVCell: UITableViewCell {
                     print("찜 취소하기 성공")
                     self.parentViewController?.showToastPurple(message: "찜을 취소했습니다")
                     NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [1,1])
+                    // here
                 case .failure(let error):
                     print(error)
                 }
@@ -89,6 +102,7 @@ class DibsTVCell: UITableViewCell {
                 print("찜 리스트에서 제거하기 성공")
                 self.parentViewController?.showToastPurple(message: "상대가 리스트에서 제거됐습니다")
                 NotificationCenter.default.post(name: NSNotification.Name("needToReloadDibs"), object: [0,0])
+                // here
             case .failure(let error):
                 print(error)
             }
@@ -125,6 +139,7 @@ extension DibsTVCell {
             dibsBtn.setAttributedTitle(nil, for: .normal)
             dibsBtn.setTitle("찜 해제", for: .normal)
             dibsBtn.titleLabel?.textColor = .find_Mint
+            dibsBtnWidth.constant = 10
             dibsBtn.setImage(UIImage(named: "iconStarMint"), for: .normal)
             deleteBtn.isHidden = true
         case .none:

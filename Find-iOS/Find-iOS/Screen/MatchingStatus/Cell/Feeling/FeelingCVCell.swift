@@ -41,7 +41,8 @@ class FeelingCVCell: UICollectionViewCell {
                 print("호감 수락 성공")
                 self.parentViewController?.showToastPurple(message: "상대와 연결 되었습니다")
                 // 연결되면 연결된 상대로 올라가야함. 데이터 업데이트
-                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [0,1])
+                NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: nil)
+                // here
             case .failure(let error):
                 print(error)
             }
@@ -64,14 +65,22 @@ class FeelingCVCell: UICollectionViewCell {
         }
         
         if let disconMessage = disconnectMessage {
-            APIService.shared.matchingRequest(1, disconMessage, sequenceNum ?? 0) { result in
+            APIService.shared.matchingRequest(1, disconMessage, sequenceNum ?? 0) { [self] result in
                 switch result {
                 case .success(_):
                     print("\(disconMessage) 호감 리스트에서 제거 성공")
                     self.parentViewController?.showToastPurple(message: "리스트에서 제거 됐습니다")
-
-                    // 받은 호감 리스트(섹션1)에서 삭제. 데이터 업데이트
-                    NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: idx)
+                    switch feelingCategory {
+                    case .received:
+                        // 받은 호감 리스트(섹션1)에서 삭제. 데이터 업데이트
+                        NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [1,1])
+                    case .send:
+                        // 보낸 호감 리스트(섹션2)에서 삭제. 데이터 업데이트
+                        NotificationCenter.default.post(name: NSNotification.Name("needToReloadConnected"), object: [2,2])
+                    default:
+                        return
+                    }
+                    // here
                 case .failure(let error):
                     print(error)
                 }
@@ -84,7 +93,7 @@ extension FeelingCVCell {
     func setStyle() {
         feelingImageView.roundCorners(cornerRadius: 5, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
         feelingView.makeRounded(cornerRadius: 5)
-        feelingView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.05, radius: 8)
+        self.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.05, radius: 8)
         acceptBtn.makeRounded(cornerRadius: nil)
         acceptBtn.layer.borderWidth = 1
         acceptBtn.layer.borderColor = UIColor.find_Purple.cgColor

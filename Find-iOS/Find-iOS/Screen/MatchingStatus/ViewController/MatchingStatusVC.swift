@@ -10,8 +10,6 @@ import UIKit
 class MatchingStatusVC: UIViewController {
     // 페이징 관련 index 정의 함수
     private var indexOfCellBeforeDragging = 0
-    var matchingData: GetMyMatchingData?
-    
     @IBOutlet weak var segueStackView: UIStackView!
     @IBOutlet var segIndicators: [UIView]!
     @IBOutlet var segueBtns: [UIButton]!
@@ -19,17 +17,11 @@ class MatchingStatusVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMyMatchingData()
         setSegueStyle()
-        setNoti()
         setCV()
         whatSelected(idx:0)
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
+
     // Segue - 호감
     @IBAction func feelingsTapped(_ sender: Any) {
         whatSelected(idx: 0)
@@ -59,22 +51,7 @@ class MatchingStatusVC: UIViewController {
 }
 
 extension MatchingStatusVC {
-    
-    // MARK: - Get My Matching Data(API)
-    @objc func getMyMatchingData() {
-        APIService.shared.getMyMatching(1) { [self] result in
-            switch result {
-            case .success(let data):
-                self.matchingData = data
-                print("데이터 받아왔습니다.")
-                matchingCV.reloadSections(IndexSet(integer: 0))
-                
-            case .failure(let error):
-                print("데이터 못받아왔습니다.")
-                print(error)
-            }
-        }
-    }
+
     // MARK: - Settings
     func setSegueStyle() {
         segueBtns[0].setTitle("호감", for: .normal)
@@ -82,10 +59,6 @@ extension MatchingStatusVC {
         
         segueBtns[1].setTitle("찜", for: .normal)
         segueBtns[1].setTitleColor(.subGray2, for: .normal)
-    }
-    
-    func setNoti() {
-        NotificationCenter.default.addObserver(self, selector: #selector(getMyMatchingData), name: NSNotification.Name("updateMatchingData"), object: nil)
     }
     
     func setCV() {
@@ -118,17 +91,9 @@ extension MatchingStatusVC: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchingStatusCVCell.identifier, for: indexPath) as? MatchingStatusCVCell else { return UICollectionViewCell() }
-            print(matchingData)
-            cell.connectedData = matchingData?.connected
-            cell.receivedData = matchingData?.receivedFeeling
-            cell.sendData = matchingData?.sendFeeling
-            cell.setExpandable()
             return cell
         } else if indexPath.row == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MatchingDibsCVCell.identifier, for: indexPath) as? MatchingDibsCVCell else { return UICollectionViewCell() }
-            cell.receivedDibs = matchingData?.receivedDibs
-            cell.sendDibs = matchingData?.sendDibs
-            cell.setExpandable()
             return cell
         }
         return UICollectionViewCell()
