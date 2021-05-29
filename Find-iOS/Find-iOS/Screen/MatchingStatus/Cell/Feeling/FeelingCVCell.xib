@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -43,7 +44,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한글_8자_옹야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED9-So-FWO">
-                                <rect key="frame" x="11" y="161" width="82.5" height="16.5"/>
+                                <rect key="frame" x="11" y="161" width="89" height="18"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                                 <color key="textColor" name="subGray5"/>
                                 <nil key="highlightedColor"/>
@@ -62,19 +63,25 @@
                                         <real key="value" value="-0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="acceptDibsTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="R1z-5d-7dE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26살 | 대학생 | 서울" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-XY-qCs">
-                                <rect key="frame" x="11" y="182.5" width="71" height="10.5"/>
+                                <rect key="frame" x="11" y="184" width="73" height="11.5"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="9"/>
                                 <color key="textColor" name="subGray2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0G8-FA-YqE">
                                 <rect key="frame" x="151" y="8" width="24" height="24"/>
-                                <state key="normal" image="btnCancelHeart"/>
+                                <state key="normal" image="btnCancelBlack"/>
+                                <connections>
+                                    <action selector="deleteBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zei-up-fKM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요. 나는 누군데에 말이죠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2r-ig-Lsb">
-                                <rect key="frame" x="11" y="201" width="159" height="14"/>
+                                <rect key="frame" x="11" y="203.5" width="160" height="15.5"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" name="subGray2"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +133,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="btnCancelHeart" width="24" height="24"/>
+        <image name="btnCancelBlack" width="24" height="24"/>
         <namedColor name="connectedBlur">
             <color red="0.76499998569488525" green="0.6940000057220459" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -94,6 +94,7 @@ extension ValueListCVC {
         cell.answerView.layer.borderColor = UIColor.find_DarkPurple.cgColor
         
         cell.answerLabel.textColor = .find_DarkPurple
+        cell.answerLabel.font = .spoqaRegular(size: 12)
         cell.answerLabel.text = valueQuestions[indexPath].choice[valueQuestions[indexPath].userChoice - 1].choiceContent
     }
     
@@ -161,10 +162,29 @@ extension ValueListCVC: UITableViewDataSource {
         if parentVC == .valueList {
             return 10
         } else {
-            if section == 1 {
-                return 0
+            if CVCIndexPath == 0 {
+                switch section {
+                case 0:
+                    return 6
+                case 1:
+                    return 5
+                case 2:
+                    return 7
+                default:
+                    return 0
+                }
+            } else {
+                switch section {
+                case 0:
+                    return 4
+                case 1:
+                    return 5
+                case 2:
+                    return 3
+                default:
+                    return 0
+                }
             }
-            return 4 // 여기 숫자 바꾸기 (해당 카테고리 같은/다른 문항 개수)
         }
     }
     
@@ -175,6 +195,13 @@ extension ValueListCVC: UITableViewDataSource {
         else {
             return UITableViewCell()
         }
+        
+        /// 질문 뷰 스타일
+        cell.questionNumberLabel.font = .spoqaRegular(size: 16)
+        cell.questionNumberLabel.textColor = .subGray3
+        
+        cell.questionLabel.font = .spoqaRegular(size: 13)
+        cell.questionLabel.textColor = .subGray3
         
         /// 상대 가치관 문답 보기에서 넘어왔을 때는 버튼 제거
         if parentVC == .yourValue {
@@ -187,61 +214,90 @@ extension ValueListCVC: UITableViewDataSource {
             cell.parentVC = .valueList
         }
         
-        /// 질문 뷰 스타일
-        cell.questionNumberLabel.text = "Q \(indexPath.row + 1)"
-        cell.questionNumberLabel.font = .spoqaRegular(size: 16)
-        cell.questionNumberLabel.textColor = .subGray3
-        
-        cell.questionLabel.font = .spoqaRegular(size: 13)
-        cell.questionLabel.textColor = .subGray3
-        
-        var currIndexPath: Int = 0
-        
-        switch CVCIndexPath {
-        case 0:
-            currIndexPath = indexPath.row
-        case 1:
-            currIndexPath = indexPath.row + 10
-        case 2:
-            currIndexPath = indexPath.row + 20
-        default:
-            cell.questionLabel.text = ""
-        }
-        
-        cell.questionLabel.text = valueQuestions[currIndexPath].question
-        
-        /// 선택 카테고리에 따른 질문
-//        var currIndexPath: Int = 0
-        
-//        switch currentCategory {
-//        case .relationship:
-//            currIndexPath = indexPath.row
-//            cell.questionLabel.text = valueQuestions[currIndexPath].question
-//        case .family:
-//            currIndexPath = indexPath.row + 10
-//            cell.questionLabel.text = valueQuestions[currIndexPath].question
-//        case .career:
-//            currIndexPath = indexPath.row + 20
-//            cell.questionLabel.text = valueQuestions[currIndexPath].question
-//        }
-        
-        /// 답변이 있을 때 / 없을 때 분기처리
-        if valueQuestions[currIndexPath].userChoice != 0 {
-            answerFilled(cell: cell, indexPath: currIndexPath)
-        } else {
-            answerUnfilled(cell: cell)
-        }
+        if parentVC == .valueList {
+            
+            cell.questionNumberLabel.text = "Q \(indexPath.row + 1)"
+            
+            var currIndexPath: Int = 0
+            
+            switch CVCIndexPath {
+            case 0:
+                currIndexPath = indexPath.row
+            case 1:
+                currIndexPath = indexPath.row + 10
+            case 2:
+                currIndexPath = indexPath.row + 20
+            default:
+                cell.questionLabel.text = ""
+            }
+            
+            cell.questionLabel.text = valueQuestions[currIndexPath].question
+            
+            /// 답변이 있을 때 / 없을 때 분기처리
+            if valueQuestions[currIndexPath].userChoice != 0 {
+                answerFilled(cell: cell, indexPath: currIndexPath)
+            } else {
+                answerUnfilled(cell: cell)
+            }
 
-        
-        /// 선택이 된 답변 / 안 된 답변 분기처리
-        if valueQuestions[currIndexPath].isChosen {
-            selectedQuestion(cell: cell, currIndexPath: currIndexPath)
+            
+            /// 선택이 된 답변 / 안 된 답변 분기처리
+            if valueQuestions[currIndexPath].isChosen {
+                selectedQuestion(cell: cell, currIndexPath: currIndexPath)
+            } else {
+                unselectedQuestion(cell: cell)
+            }
+            
+            cell.selectedBtn.tag = indexPath.row
+            cell.selectedBtn.addTarget(self, action: #selector(selectBtnDidTap), for: .touchUpInside)
+            
+            
         } else {
-            unselectedQuestion(cell: cell)
+            cell.answerView.makeRounded(cornerRadius: 16.5)
+            cell.answerView.backgroundColor = .white
+            cell.answerView.layer.borderWidth = 1
+            cell.answerView.layer.borderColor = UIColor.find_DarkPurple.cgColor
+            
+            cell.answerLabel.textColor = .find_DarkPurple
+            cell.answerLabel.font = .spoqaRegular(size: 12)
+            
+            if CVCIndexPath == 0 {
+                
+                var currIndexPath = 0
+                
+                switch indexPath.section {
+                case 0:
+                    currIndexPath = indexPath.row
+                case 1:
+                    currIndexPath = indexPath.row + 6
+                case 2:
+                    currIndexPath = indexPath.row + 11
+                default:
+                    currIndexPath = -1
+                }
+                
+                cell.questionNumberLabel.text = "Q \(sameQuestions[currIndexPath].id)"
+                cell.questionLabel.text = sameQuestions[currIndexPath].question
+                cell.answerLabel.text = sameQuestions[currIndexPath].answer
+            } else {
+                var currIndexPath = 0
+                
+                switch indexPath.section {
+                case 0:
+                    currIndexPath = indexPath.row
+                case 1:
+                    currIndexPath = indexPath.row + 4
+                case 2:
+                    currIndexPath = indexPath.row + 9
+                default:
+                    currIndexPath = -1
+                }
+                
+                cell.questionNumberLabel.text = "Q \(differentQuestions[currIndexPath].id)"
+                cell.questionLabel.text = differentQuestions[currIndexPath].question
+                cell.answerLabel.text = differentQuestions[currIndexPath].answer
+            }
         }
-        
-        cell.selectedBtn.tag = indexPath.row
-        cell.selectedBtn.addTarget(self, action: #selector(selectBtnDidTap), for: .touchUpInside)
         
         return cell
     }

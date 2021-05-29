@@ -57,9 +57,7 @@ class FindView: UIView {
         var beforeAnswerView = BeforeAnswerView(frame: aboutValueView.frame)
         var afterAnswerView = AfterAnswerView(frame: aboutValueView.frame)
         
-//        self.aboutValueView.addSubview(beforeTestView)
-        
-        self.aboutValueView.addSubview(afterAnswerView)
+        self.aboutValueView.addSubview(beforeTestView)
         
        
         // 테스트, 필터 설정까지 완료된 후 붙일 뷰

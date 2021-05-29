@@ -12,6 +12,10 @@ class MatchingDibsCVCell: UICollectionViewCell {
     
     var idxPaths = [IndexPath]()
     var isExpandable = false
+    var receivedDibs, sendDibs: [Connected]?
+    var receivedDataExp: [ExpandableSection] = []
+    var sendDataExp: [ExpandableSection] = []
+    var timer: Timer!
     
     @IBOutlet weak var innerTV: UITableView! {
         didSet {
@@ -21,89 +25,88 @@ class MatchingDibsCVCell: UICollectionViewCell {
             innerTV.register(DibsTVCell.nib(), forCellReuseIdentifier: DibsTVCell.identifier)
             innerTV.register(MatchingHeader.nib(), forHeaderFooterViewReuseIdentifier: "MatchingHeader")
             innerTV.register(MatchingFooter.nib(), forHeaderFooterViewReuseIdentifier: "MatchingFooter")
+            innerTV.register(noDataTVCell.nib(), forCellReuseIdentifier: noDataTVCell.identifier)
             innerTV.separatorStyle = .none
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setExpandable()
-        // Initialization code
+        setNoti()
+        getMyDibsData(nil)
+//        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(getMyDibsData), userInfo: nil, repeats: true) // 10초마다 데이터 업데이트
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "MatchingDibsCVCell", bundle: nil)
     }
+}
+
+extension MatchingDibsCVCell {
     
-    // 더보기 안눌렀을 때에는 보여지는 cell 3개
+    // 더보기 안눌렀을 때에는 보여지는 cell 최대 3개
     func setExpandable() {
-        for i in 0...2 {
-            connectedDatas[i].isExpanded = true
-            receivedDibs[i].isExpanded = true
-            sendedDibs[i].isExpanded = true
+        if let rcvData = receivedDibs {
+            for i in 0..<rcvData.count {
+                receivedDataExp.append(ExpandableSection(isExpanded: false, data: rcvData[i]))
+            }
+            if rcvData.count > 3 {
+                for i in 0..<3 {
+                    receivedDataExp[i].isExpanded = true
+                }
+            } else {
+                for i in 0..<rcvData.count {
+                    receivedDataExp[i].isExpanded = true
+                }
+            }
+        }
+        if let sdData = sendDibs {
+            for i in 0..<sdData.count {
+                sendDataExp.append(ExpandableSection(isExpanded: false, data: sdData[i]))
+            }
+            if sdData.count > 3 {
+                for i in 0..<3 {
+                    sendDataExp[i].isExpanded = true
+                }
+            } else {
+                for i in 0..<sdData.count {
+                    sendDataExp[i].isExpanded = true
+                }
+            }
         }
     }
     
-//    // Noti 등록
-//    func setNoti() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(showMore), name: NSNotification.Name(rawValue:"dibsShowMore"), object: nil)
-//    }
-//
-//    // 더보기
-//    @objc func showMore(notification: NSNotification) {
-//        guard var whereShowMore = notification.object as? [ExpandableSection] else { return }
-//        var indexPaths = [IndexPath]()
-//        let section = whereShowMore[0].data.section!
-//        var isExpandable = false
-//
-//        if section == 0 {
-//            receivedDibs = doExpand(str: &whereShowMore)
-//            if isExpandable { doInsert(section, receivedDibs) } else { doDelete(section, receivedDibs) }
-//        } else {
-//            sendedDibs = doExpand(str: &whereShowMore)
-//            if isExpandable { doInsert(section, sendedDibs) } else { doDelete(section, sendedDibs) }
-//        }
-//
-//        func doExpand(str: inout [ExpandableSection]) -> [ExpandableSection]{
-//            // Ready to Expand
-//            if str[3].isExpanded ?? false {
-//                isExpandable = false
-//                for row in 3..<str.count {
-//                    let indexPath = IndexPath(row: row, section: section)
-//                    indexPaths.append(indexPath)
-//                    str[row].isExpanded = false
-//                }
-//            } else {
-//                // Ready to Collapse
-//                isExpandable = true
-//                for row in 3..<str.count {
-//                    let indexPath = IndexPath(row: row, section: section)
-//                    indexPaths.append(indexPath)
-//                    str[row].isExpanded = true
-//                }
-//            }
-//            return str
-//        }
-//
-//        // Expandable
-//        func doInsert(_ sec: Int, _ obj: [ExpandableSection]) {
-//            if sec != 1 {
-//                innerTV.insertRows(at: indexPaths, with: .fade)
-//                innerTV.layoutIfNeeded()
-//            } else {
-//                innerTV.insertRows(at: indexPaths, with: .fade)
-//                innerTV.layoutIfNeeded()
-//                innerTV.scrollToRow(at: IndexPath(row: obj.count-1, section: section), at: .top, animated: true)
-//            }
-//        }
-//
-//        // Collapsable
-//        func doDelete(_ sec: Int, _ obj: [ExpandableSection]) {
-//            innerTV.deleteRows(at: indexPaths, with: .fade)
-//            innerTV.layoutIfNeeded()
-//            innerTV.scrollToRow(at: IndexPath(row: 0, section: section), at: .none, animated: true)
-//        }
-//    }
+    func setNoti() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getMyDibsData), name: NSNotification.Name("needToReloadDibs"), object: nil)
+    }
+    
+    @objc func getMyDibsData(_ noti: Notification?) {
+        APIService.shared.getMyMatching(1) { [self] result in
+            switch result {
+            case .success(let data):
+                receivedDataExp = []
+                sendDataExp = []
+                receivedDibs = data.receivedDibs
+                sendDibs = data.sendDibs
+                setExpandable()
+                if let data = noti?.object as? [Int] {
+                    innerTV.reloadSections(IndexSet(data[0]...data[1]), with: .fade)
+                    print("데이터 받아왔습니다.")
+                } else {
+                    innerTV.reloadSections(IndexSet(0...1), with: .fade)
+                }
+                
+            case .failure(let error):
+                print("데이터 못받아왔습니다.")
+                print(error)
+            }
+        }
+    }
+    
 }
 
 // MARK: - ShowMore Footer Btn
@@ -115,24 +118,28 @@ extension MatchingDibsCVCell: ShowMoreFooter {
         idxPaths = [IndexPath]()
         switch iam {
         case .dibs1:
-            receivedDibs = doExpand(str: receivedDibs, section: 0)
-            if isExpandable {
-                doInsert(tableView: innerTV, indexPaths: idxPaths, section: 0, str: receivedDibs)
-            } else {
-                doDelete(tableView: innerTV, indexPaths: idxPaths, section: 0, str: receivedDibs)
+            if receivedDataExp.count > 3 {
+                receivedDataExp = doExpand(str: receivedDataExp, section: 0)
+                if isExpandable {
+                    doInsert(tableView: innerTV, indexPaths: idxPaths, section: 0, str: receivedDataExp)
+                } else {
+                    doDelete(tableView: innerTV, indexPaths: idxPaths, section: 0, str: receivedDataExp)
+                }
             }
         case .dibs2:
-            sendedDibs = doExpand(str: sendedDibs, section: 1)
-            if isExpandable {
-                doInsert(tableView: innerTV, indexPaths: idxPaths, section: 1, str: sendedDibs)
-            } else {
-                doDelete(tableView: innerTV, indexPaths: idxPaths, section: 1, str: sendedDibs)
+            if sendDataExp.count > 3 {
+                sendDataExp = doExpand(str: sendDataExp, section: 1)
+                if isExpandable {
+                    doInsert(tableView: innerTV, indexPaths: idxPaths, section: 1, str: sendDataExp)
+                } else {
+                    doDelete(tableView: innerTV, indexPaths: idxPaths, section: 1, str: sendDataExp)
+                }
             }
         default:
             return
         }
     }
-
+    
     // Expand? Collapse?
     func doExpand(str: [ExpandableSection], section: Int) -> [ExpandableSection] {
         // Ready to Expand
@@ -185,29 +192,64 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 데이터가 0개일 때 분기처리 필요
         if (section == 0) {
-            return receivedDibs.filter{$0.isExpanded ?? false}.count
+            if !receivedDataExp.isEmpty {
+                return receivedDataExp.filter{$0.isExpanded ?? false}.count
+            }
         } else if (section == 1) {
-            return sendedDibs.filter{$0.isExpanded ?? false}.count
+            if !sendDataExp.isEmpty {
+                return sendDataExp.filter{$0.isExpanded ?? false}.count
+            }
         }
-        return 0
+        return 1
     }
     
     // 섹션 별 셀 지정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 데이터가 0개일 때 분기처리 필요
-        guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
-        dibsCell.selectionStyle = .none
         if (indexPath.section == 0) {
-            dibsCell.setCell(dibsDatas: receivedDibs[indexPath.row])
+            if !receivedDataExp.isEmpty {
+                guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
+                dibsCell.setCell(dibsDatas: receivedDataExp[indexPath.row])
+                dibsCell.dibsCategory = .whoLikeMe
+                dibsCell.selectionStyle = .none
+                return dibsCell
+            } else {
+                // 데이터가 0개일 때 분기처리
+                guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                noDataCell.descriptLabel.text = "나를 찜한 사람이 없어요!"
+                noDataCell.selectionStyle = .none
+                return noDataCell
+            }
         } else if (indexPath.section == 1) {
-            dibsCell.setCell(dibsDatas: sendedDibs[indexPath.row])
+            if !sendDataExp.isEmpty {
+                guard let dibsCell = tableView.dequeueReusableCell(withIdentifier: "DibsTVCell", for: indexPath) as? DibsTVCell else { return UITableViewCell() }
+                dibsCell.setCell(dibsDatas: sendDataExp[indexPath.row])
+                dibsCell.dibsCategory = .whoILike
+                dibsCell.selectionStyle = .none
+                return dibsCell
+            } else {
+                // 데이터가 0개일 때 분기처리
+                guard let noDataCell = tableView.dequeueReusableCell(withIdentifier: "noDataTVCell", for: indexPath) as? noDataTVCell else { return UITableViewCell() }
+                noDataCell.descriptLabel.text = "내가 찜한 사람이 없어요!"
+                noDataCell.selectionStyle = .none
+                return noDataCell
+            }
         }
-        return dibsCell
+        return UITableViewCell()
     }
     
     // 섹션 별 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 116
+        if (indexPath.section == 0) {
+            if !receivedDataExp.isEmpty {
+                return 117
+            }
+        } else {
+            if !sendDataExp.isEmpty {
+                return 117
+            }
+        }
+        return (tableView.frame.height - 86) / 3
     }
     
     // Header 뷰 지정
@@ -237,10 +279,19 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     // Footer 뷰 지정
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingFooter") as? MatchingFooter else { return UIView() }
+        // 데이터가 4개 이상 있어야 더보기 footer 생성
         if (section == 0) {
-            footer.whereSM = .dibs1
+            if receivedDataExp.count > 3 {
+                footer.whereSM = .dibs1
+            } else {
+                return nil
+            }
         } else {
-            footer.whereSM = .dibs2
+            if sendDataExp.count > 3 {
+                footer.whereSM = .dibs2
+            } else {
+                return nil
+            }
         }
         footer.delegate = self
         return footer
@@ -248,10 +299,18 @@ extension MatchingDibsCVCell: UITableViewDelegate, UITableViewDataSource {
     
     // Footer 높이 지정
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if (section == 0) || (section==1) {
-            return 53
-        } else {
-            return 0
+        // 데이터가 4개 이상 있어야 더보기 footer 생성
+        if (section == 0) {
+            if receivedDataExp.count > 3 {
+                return 53
+            }
+        } else if (section == 1) {
+            if sendDataExp.count > 3 {
+                return 53
+            } else if sendDataExp.count == 3 {
+                return 20
+            }
         }
+        return 0
     }
 }

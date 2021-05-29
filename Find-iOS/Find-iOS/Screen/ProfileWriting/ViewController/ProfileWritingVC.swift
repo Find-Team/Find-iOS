@@ -17,6 +17,9 @@ class ProfileWritingVC: UIViewController  {
     var basicInfoData : [BasicInfoData] = []
     var imageSelected: UIImage?
     var currentIndexPath: Int?
+    var representImgData : UIImage?
+    
+    var infoText : String = ""
     
     var nicknameData : String = "맹고감자"
     var birthdayData : String = "1998.10.22"
@@ -54,6 +57,9 @@ class ProfileWritingVC: UIViewController  {
     
     @IBOutlet var infoWriting: UILabel!
     @IBOutlet var infoExplain: UILabel!
+    @IBOutlet var infoView: UIView!
+    @IBOutlet var infoLabel: UILabel!
+    
     @IBOutlet var goToInfoBtn: UIButton!
     
     @IBOutlet var accountWriting: UILabel!
@@ -87,12 +93,35 @@ class ProfileWritingVC: UIViewController  {
     }
     
     // MARK:- IBAction
+    @IBAction func gotoMain(_ sender: UIButton) {
+        //MyProfileVC 로 이동
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func completeBtnPressed(_ sender: UIButton) {
+        //showToastPurple(message: "저장되었습니다.")
+        if representImgData != nil {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ImgRecieved"), object: representImgData)
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+
     
     @IBAction func goToIntroduction(_ sender: UIButton) {
         // IntroductionVC 로 이동
         let nextStoryboard = UIStoryboard(name: "Introduction", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
         guard let IntroductionVC = nextStoryboard.instantiateViewController(withIdentifier: "IntroductionVC") as? IntroductionVC else {return}
         self.navigationController?.pushViewController(IntroductionVC, animated: true)
+    }
+    
+    
+    @IBAction func gotoProfileGuide(_ sender: UIButton) {
+        // ProfileGuideVC 로 이동
+        let nextStoryboard = UIStoryboard(name: "ProfileGuide", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
+        guard let ProfileGuideVC = nextStoryboard.instantiateViewController(withIdentifier: "ProfileGuideVC") as? ProfileGuideVC else {return}
+        self.navigationController?.pushViewController(ProfileGuideVC, animated: true)
     }
     
     
@@ -105,6 +134,7 @@ class ProfileWritingVC: UIViewController  {
             if let indexPath = currentIndexPath {
                 profileImages[indexPath].images.remove(at: 0)
             }
+            previewImageView.image = nil
             profileCV.reloadData()
         }
         
@@ -150,6 +180,8 @@ class ProfileWritingVC: UIViewController  {
                           BasicInfoData(question: "결혼", isEdit: false, answer: nil),
                           BasicInfoData(question: "음주", isEdit: false, answer: nil)
         ]
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(infoReceived(_:)), name: NSNotification.Name("InfoWritten"), object: nil)
     }
 }
 
@@ -204,7 +236,6 @@ extension ProfileWritingVC {
         identityVerify.textColor = UIColor.subGray3
         identityVerify.letterSpacing = -1.1
         
-        
         verifyBtn.clipsToBounds = true
         verifyBtn.layer.cornerRadius = 10
         verifyBtn.layer.borderWidth = 1.0
@@ -223,7 +254,7 @@ extension ProfileWritingVC {
         infoWriting.textColor = UIColor.subGray3
         infoWriting.letterSpacing = -1.1
         
-        infoExplain.text = "당신을 소개해주세요! (최소 30자)"
+        infoExplain.text = "당신을 소개해주세요! (최소 10자)"
         infoExplain.font = UIFont.spoqaRegular(size: 12)
         infoExplain.textColor = UIColor.find_DarkPurple
         infoExplain.letterSpacing = -0.36
@@ -238,6 +269,8 @@ extension ProfileWritingVC {
         goToInfoBtn.titleLabel?.font = UIFont.spoqaMedium(size: 14)
         goToInfoBtn.titleLabel?.letterSpacing = -0.42
         goToInfoBtn.setTitleColor(UIColor.find_DarkPurple, for: .normal)
+        
+        infoView.isHidden = true
     }
     
     func setAccountInfo() {
@@ -307,6 +340,9 @@ extension ProfileWritingVC {
         if let indexPath = currentIndexPath {
             profileImages[indexPath].isRep = true
             profileCV.selectItem(at: IndexPath(row: indexPath, section: 0), animated: true, scrollPosition: .init())
+            print(">>>>>>>>")
+            representImgData = profileImages[indexPath].images[0]
+            print(representImgData)
         }
     }
     
@@ -378,6 +414,21 @@ extension ProfileWritingVC {
             break
         }
     }
+    
+    @objc func infoReceived(_ noti: Notification) {
+        goToInfoBtn.isHidden = true
+        infoView.isHidden = false
+        infoView.backgroundColor = .subGray6
+        infoView.makeRounded(cornerRadius: 10)
+        
+        infoText = noti.object as! String
+        infoLabel.text = infoText
+        infoLabel.textColor = .subGray3
+        infoLabel.font = .spoqaRegular(size: 12)
+        infoLabel.letterSpacing = 0.36
+        
+        self.view.layoutIfNeeded()
+    }
 }
 
 // MARK:- UICollectionViewDataSource
@@ -429,11 +480,16 @@ extension ProfileWritingVC: UICollectionViewDataSource {
             cell.layer.backgroundColor = UIColor.subGray6.cgColor
             cell.setStyle()
             cell.setCell(info: basicInfoData[indexPath.row])
+
             
             //indexPath.row 2 이상이면 pickerView
             if indexPath.row >= 2 {
+                cell.infoTextField.placeholder = "선택하세요"
                 cell.createPickerView(idx: indexPath.row)
                 cell.dismissPickerView()
+                cell.infoTextField.tintColor = .clear
+            } else {
+                cell.infoTextField.placeholder = "입력하세요"
             }
             
             return cell
@@ -487,11 +543,11 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if collectionView == profileCV {
             currentIndexPath = indexPath.row
+        
             //사진이 있는 경우
             if profileImages[indexPath.row].images != [] {
                 previewImageView.contentMode = .scaleAspectFill
                 previewImageView.image = profileImages[indexPath.row].images[0]
-                editBtn.isHidden = false
             }
             //사진이 없는 경우
             else {
@@ -503,8 +559,14 @@ extension ProfileWritingVC: UICollectionViewDelegateFlowLayout {
                 alert.addAction(library)
                 alert.addAction(cancel)
                 self.parent?.present(alert, animated: true, completion: nil)
+            }
+            
+            if previewImageView.image != nil {
+                editBtn.isHidden = false
+            } else {
                 editBtn.isHidden = true
             }
+            
         }
     }
 }
@@ -530,7 +592,6 @@ extension ProfileWritingVC: UIImagePickerControllerDelegate, UINavigationControl
         
         previewImageView.contentMode = .scaleAspectFill
         previewImageView.image = imageSelected
-        //editBtn.isHidden = false
         profileCV.reloadData()
         
         self.parent?.dismiss(animated: true, completion: nil)
