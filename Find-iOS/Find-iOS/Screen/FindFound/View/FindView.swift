@@ -75,8 +75,8 @@ class FindView: UIView {
             }
             // 중간까지만 완료된 뷰
             // 테스트는 완료했으나 ..
-            beforeTestView.valueLabel.text = "상대가 나와 같았으면 하는 가치관 문답\n5개를 선택해주세요"
-            beforeTestView.valueLabel.textAlignment = .center
+//            beforeTestView.valueLabel.text = "상대가 나와 같았으면 하는 가치관 문답\n5개를 선택해주세요"
+//            beforeTestView.valueLabel.textAlignment = .center
             beforeTestView.testBtn.setTitle("가치관 선택하기", for: .normal)
         }
     }
@@ -145,8 +145,10 @@ class FindView: UIView {
         guard let loadingVC = lottieStoryBoard.instantiateViewController(identifier: "MatchingLottieVC") as? MatchingLottieVC else { return }
         guard let dvc = findFoundStoryBoard.instantiateViewController(identifier: "FindFoundVC") as? FindFoundVC else { return }
         
-        loadingVC.modalPresentationStyle = .overCurrentContext
+        self.parentViewController?.hidesBottomBarWhenPushed = true
+        loadingVC.modalPresentationStyle = .fullScreen
         loadingVC.tabBarController?.tabBar.isHidden = true
+        self.parentViewController?.hidesBottomBarWhenPushed = false
         
         if checkDifferentActive {
             loadingVC.matchingType = .oppositePerson

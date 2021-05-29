@@ -12,8 +12,8 @@ class YourValueHeaderCVC: UICollectionViewCell {
     //MARK: - custom variables
     static let identifier = "YourValueHeaderCVC"
     
-    var nickname: String = "다나"
-    var sameValueCount: Int = 0
+    var nickname: String = "쿄호젤리"
+    var sameValueCount: Int = 4
     
     var currentSegue: ValueFilterAll = .same
     
