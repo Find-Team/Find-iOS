@@ -19,6 +19,7 @@ class MatchingStatusCVCell: UICollectionViewCell {
     var isExpandable = false // 섹션 확장된 상태인지 확인하기 위한 Bool값
     var connectedData, receivedData, sendData: [Connected]? // 연결된 상대, 받은 호감, 보낸 호감 데이터
     var connectedDataExp: [ExpandableSection] = [] // 섹션 확장을 위한 구조체
+    var timer : Timer!
     
     @IBOutlet weak var innerTV: UITableView! {
         didSet {
@@ -37,6 +38,8 @@ class MatchingStatusCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setNoti()
+//        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(getMyFeelingData), userInfo: nil, repeats: true) // 10초마다 데이터 업데이트
+        getMyFeelingData(nil)
     }
     
     deinit {
@@ -112,14 +115,29 @@ extension MatchingStatusCVCell: ShowMoreFooter {
     }
     
     func setNoti() {
-        NotificationCenter.default.addObserver(self, selector: #selector(changingConnected), name: NSNotification.Name("needToReloadConnected"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getMyFeelingData), name: NSNotification.Name("needToReloadConnected"), object: nil)
     }
     
-    // 데이터 변화에 대응하기 위한 Noti
-    @objc func changingConnected(noti: Notification) {
-        if let sec = noti.object as? [Int] {
-            NotificationCenter.default.post(name: NSNotification.Name("updateMatchingData"), object: nil)
-            innerTV.reloadSections(IndexSet(sec[0]...sec[1]), with: .fade)
+    @objc func getMyFeelingData(_ noti: Notification?) {
+        APIService.shared.getMyMatching(1) { [self] result in
+            switch result {
+            case .success(let data):
+                connectedDataExp = []
+                connectedData = data.connected
+                receivedData = data.receivedFeeling
+                sendData = data.sendFeeling
+                setExpandable()
+                if let data = noti?.object as? [Int] {
+                    innerTV.reloadSections(IndexSet(data[0]...data[1]), with: .fade)
+                } else {
+                    innerTV.reloadSections(IndexSet(0...2), with: .fade)
+                }
+                print("데이터 받아왔습니다.")
+                
+            case .failure(let error):
+                print("데이터 못받아왔습니다.")
+                print(error)
+            }
         }
     }
 }
@@ -231,11 +249,11 @@ extension MatchingStatusCVCell: UITableViewDelegate, UITableViewDataSource {
             return header
         } else if (section == 1) {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
-            header.headerLabel.text = "보낸 호감"
+            header.headerLabel.text = "받은 호감"
             return header
         } else if (section == 2) {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MatchingHeader") as? MatchingHeader else { return UIView() }
-            header.headerLabel.text = "받은 호감"
+            header.headerLabel.text = "보낸 호감"
             return header
         } else {
             return nil
