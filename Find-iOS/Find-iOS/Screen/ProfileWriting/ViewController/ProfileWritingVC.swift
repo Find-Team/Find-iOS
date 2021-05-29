@@ -21,10 +21,10 @@ class ProfileWritingVC: UIViewController  {
     
     var infoText : String = ""
     
-    var nicknameData : String = "맹고감자"
-    var birthdayData : String = "1998.10.22"
+    var nicknameData : String = "보라"
+    var birthdayData : String = "1996.04.26"
     var genderData : String = "여자"
-    var regionData : String = "서울특별시 성북구"
+    var regionData : String = "서울특별시 강남구"
     
     
     // MARK:- IBOutlet
@@ -340,9 +340,7 @@ extension ProfileWritingVC {
         if let indexPath = currentIndexPath {
             profileImages[indexPath].isRep = true
             profileCV.selectItem(at: IndexPath(row: indexPath, section: 0), animated: true, scrollPosition: .init())
-            print(">>>>>>>>")
             representImgData = profileImages[indexPath].images[0]
-            print(representImgData)
         }
     }
     
