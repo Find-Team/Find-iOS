@@ -11,6 +11,8 @@
 		3618F65E2650123F006CF618 /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3618F65D2650123F006CF618 /* Introduction.storyboard */; };
 		361B6E512653B4FA00ACF88A /* ProfileImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B6E502653B4FA00ACF88A /* ProfileImages.swift */; };
 		361B6EE22655856E00ACF88A /* BasicInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B6EE12655856E00ACF88A /* BasicInfoData.swift */; };
+		365B494D26613D5500713438 /* ProfileGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365B494C26613D5500713438 /* ProfileGuide.storyboard */; };
+		365B495026613F0200713438 /* ProfileGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B494F26613F0200713438 /* ProfileGuideVC.swift */; };
 		36693DAA26564DBC00A27793 /* ProfileCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36693DA926564DBC00A27793 /* ProfileCVCell.swift */; };
 		36693DBC2656A65D00A27793 /* BasicInfoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36693DBB2656A65D00A27793 /* BasicInfoCVCell.swift */; };
 		36AE56D22649A56C00D4B9DE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */; };
@@ -127,6 +129,8 @@
 		3618F65D2650123F006CF618 /* Introduction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		361B6E502653B4FA00ACF88A /* ProfileImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileImages.swift; path = Model/ProfileImages.swift; sourceTree = "<group>"; };
 		361B6EE12655856E00ACF88A /* BasicInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicInfoData.swift; path = Model/BasicInfoData.swift; sourceTree = "<group>"; };
+		365B494C26613D5500713438 /* ProfileGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileGuide.storyboard; sourceTree = "<group>"; };
+		365B494F26613F0200713438 /* ProfileGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGuideVC.swift; sourceTree = "<group>"; };
 		36693DA926564DBC00A27793 /* ProfileCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileCVCell.swift; path = Cell/ProfileCVCell.swift; sourceTree = "<group>"; };
 		36693DBB2656A65D00A27793 /* BasicInfoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicInfoCVCell.swift; path = Cell/BasicInfoCVCell.swift; sourceTree = "<group>"; };
 		36AE56D12649A56C00D4B9DE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -687,6 +691,7 @@
 			children = (
 				54B9664C264904660028F1BF /* ProfileWritingVC.swift */,
 				3618F64D264FBD49006CF618 /* IntroductionVC.swift */,
+				365B494F26613F0200713438 /* ProfileGuideVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 			children = (
 				54B96646264904490028F1BF /* ProfileWriting.storyboard */,
 				3618F65D2650123F006CF618 /* Introduction.storyboard */,
+				365B494C26613D5500713438 /* ProfileGuide.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -882,6 +888,7 @@
 				54B96645264904400028F1BF /* MyProfile.storyboard in Resources */,
 				54B96647264904490028F1BF /* ProfileWriting.storyboard in Resources */,
 				378E3A1426526ED40023A326 /* MatchingLottie.storyboard in Resources */,
+				365B494D26613D5500713438 /* ProfileGuide.storyboard in Resources */,
 				926314F02656CD0F00E8E8FD /* FindView.xib in Resources */,
 				542A1DFD26442F8E00E69A4D /* Assets.xcassets in Resources */,
 				548A6784265009AC0014CBE8 /* photoPreviewCVCell.xib in Resources */,
@@ -966,6 +973,7 @@
 				920EEFF826578795009F263A /* FoundView.swift in Sources */,
 				54B9664D264904660028F1BF /* ProfileWritingVC.swift in Sources */,
 				926314ED2656C5EA00E8E8FD /* FindFoundSegueCVC.swift in Sources */,
+				365B495026613F0200713438 /* ProfileGuideVC.swift in Sources */,
 				920FD8F5265D1B6700AE9936 /* InterviewImgCVCell.swift in Sources */,
 				542A1DF426442F8B00E69A4D /* AppDelegate.swift in Sources */,
 				926314D2265451D700E8E8FD /* InterviewImgTVC.swift in Sources */,
