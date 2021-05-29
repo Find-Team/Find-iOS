@@ -17,8 +17,6 @@ class YourProfileVC: UIViewController {
     var screenWidth = UIScreen.main.bounds.width
 
     @IBOutlet weak var fulllScrollView: UIScrollView!
-    @IBOutlet weak var imageScrollView: UIScrollView!
-    @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var starBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var imageView: UIView!
@@ -41,8 +39,19 @@ class YourProfileVC: UIViewController {
     @IBOutlet weak var floatingLikeBtn: UIButton!
     @IBOutlet weak var floatingLikeBtnTop: NSLayoutConstraint!
     @IBOutlet weak var fullScrollViewWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var heightTag: UIView!
+    @IBOutlet weak var bodyTag: UIView!
+    @IBOutlet weak var mbtiTag: UIView!
+    @IBOutlet weak var smokeTag: UIView!
+    @IBOutlet weak var marriedTag: UIView!
+    @IBOutlet weak var drinkTag: UIView!
+    @IBOutlet weak var religionTag: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        backBtn.isEnabled = true
+        starBtn.isEnabled = true
         setView()
         setButton()
         setSegueStyle()
@@ -109,6 +118,14 @@ extension YourProfileVC {
     func setView() {
         fullScrollViewWidth.constant = screenWidth
         introductionContentView.makeRounded(cornerRadius: 10)
+        
+        heightTag.makeRounded(cornerRadius: 12)
+        bodyTag.makeRounded(cornerRadius: 12)
+        mbtiTag.makeRounded(cornerRadius: 12)
+        smokeTag.makeRounded(cornerRadius: 12)
+        marriedTag.makeRounded(cornerRadius: 12)
+        drinkTag.makeRounded(cornerRadius: 12)
+        religionTag.makeRounded(cornerRadius: 12)
     }
     
     func setButton() {
@@ -117,6 +134,9 @@ extension YourProfileVC {
         floatingLikeBtn.setTitle("호감 보내기", for: .normal)
         floatingLikeBtn.setTitleColor(.white, for: .normal)
         floatingLikeBtn.titleLabel?.font = .spoqaMedium(size: 16)
+        
+        backBtn.layer.zPosition = 1000
+        starBtn.layer.zPosition = 1000
     }
     
     func setSegueStyle() {

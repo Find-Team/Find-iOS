@@ -153,23 +153,26 @@ class FindView: UIView {
         guard let loadingVC = lottieStoryBoard.instantiateViewController(identifier: "MatchingLottieVC") as? MatchingLottieVC else { return }
         guard let dvc = findFoundStoryBoard.instantiateViewController(identifier: "FindFoundVC") as? FindFoundVC else { return }
         
-        loadingVC.modalPresentationStyle = .overCurrentContext
+        loadingVC.modalPresentationStyle = .fullScreen
         loadingVC.tabBarController?.tabBar.isHidden = true
+//        loadingVC.hidesBottomBarWhenPushed = true
         
         if checkDifferentActive {
             loadingVC.matchingType = .oppositePerson
         }
         
         parentViewController.present(loadingVC, animated: false, completion: nil)
+//        parentViewController.navigationController?.pushViewController(loadingVC, animated: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             parentViewController.dismiss(animated: false) {
                 dvc.findCheckIndex = 1
-                
+
                 print(dvc.findCheckIndex)
-            
+
                 parentViewController.navigationController?.pushViewController(dvc, animated: true)
             }
         }
+
     }
 }

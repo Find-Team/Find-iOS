@@ -39,7 +39,7 @@ class FindFoundVC: UIViewController {
             case 0: findSelected()
             case 1:
                 foundSelected()
-                myCollectionView.reloadData()
+//                myCollectionView.reloadData()
             default: findSelected()
         }
         myCollectionView.delegate = self
@@ -47,6 +47,10 @@ class FindFoundVC: UIViewController {
         
         print(findCheckIndex)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        myCollectionView.reloadData()
     }
 
     // MARK: - IBAction
