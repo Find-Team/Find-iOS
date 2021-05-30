@@ -55,10 +55,6 @@ class YourValueVC: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SegueChanged"), object: currentSegue)
     }
     
-    @IBAction func dismissBtnClicked(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
-    }
-    
 }
 
 extension YourValueVC {
