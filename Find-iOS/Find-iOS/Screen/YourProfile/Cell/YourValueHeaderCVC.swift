@@ -22,7 +22,7 @@ class YourValueHeaderCVC: UICollectionViewCell {
     @IBOutlet var dismissBtn: UIButton!
     @IBOutlet var headerSubTitleLabel: UILabel! {
         didSet {
-            headerSubTitleLabel.text = "당신과 다르기에 더욱 매력적인"
+            headerSubTitleLabel.text = "당신과 비슷해서 더욱 매력적인"
             headerSubTitleLabel.textColor = .subGray6
             headerSubTitleLabel.font = .spoqaLight(size: 14)
             headerSubTitleLabel.letterSpacing = -0.42
@@ -104,7 +104,7 @@ class YourValueHeaderCVC: UICollectionViewCell {
     //MARK: - IBActions
     
     @IBAction func dismissBtnDidTap(_ sender: Any) {
-        self.parentViewController?.dismiss(animated: true)
+        self.parentViewController?.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func sameQuestionBtnDidTap(_ sender: Any) {
