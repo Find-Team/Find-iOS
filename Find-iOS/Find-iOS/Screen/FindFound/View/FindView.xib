@@ -51,7 +51,7 @@
                     <rect key="frame" x="0.0" y="276" width="390" height="323"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대의 성향은?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bp-1n-lVa">
-                            <rect key="frame" x="16.000000000000007" y="19" width="108.66666666666669" height="23"/>
+                            <rect key="frame" x="16.000000000000007" y="24" width="108.66666666666669" height="23"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="23" id="qSX-2c-CoJ"/>
                             </constraints>
@@ -150,8 +150,8 @@
                     <constraints>
                         <constraint firstItem="hSV-kA-xq6" firstAttribute="bottom" secondItem="1bf-9G-7mb" secondAttribute="bottom" id="2WK-5t-NAa"/>
                         <constraint firstAttribute="trailing" secondItem="hSV-kA-xq6" secondAttribute="trailing" constant="20" id="3N3-n6-H2u"/>
-                        <constraint firstItem="5bp-1n-lVa" firstAttribute="top" secondItem="wWs-Fs-w0c" secondAttribute="top" constant="19" id="LF6-Ny-8AK"/>
-                        <constraint firstItem="1bf-9G-7mb" firstAttribute="top" secondItem="5bp-1n-lVa" secondAttribute="bottom" constant="18" id="OlS-8e-GuB"/>
+                        <constraint firstItem="5bp-1n-lVa" firstAttribute="top" secondItem="wWs-Fs-w0c" secondAttribute="top" constant="24" id="LF6-Ny-8AK"/>
+                        <constraint firstItem="1bf-9G-7mb" firstAttribute="top" secondItem="5bp-1n-lVa" secondAttribute="bottom" constant="13" id="OlS-8e-GuB"/>
                         <constraint firstItem="5bp-1n-lVa" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="SpG-Rj-VYc"/>
                         <constraint firstAttribute="trailing" secondItem="UWD-79-b4i" secondAttribute="trailing" constant="16" id="W00-BR-vOn"/>
                         <constraint firstItem="UWD-79-b4i" firstAttribute="leading" secondItem="wWs-Fs-w0c" secondAttribute="leading" constant="16" id="a2h-Av-MSu"/>
