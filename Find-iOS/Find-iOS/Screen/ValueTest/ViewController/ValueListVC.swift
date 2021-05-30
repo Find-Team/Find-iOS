@@ -77,6 +77,7 @@ class ValueListVC: UIViewController {
         if finishState {
             // 서버 연결
             // 뷰 연결
+            self.navigationController?.popToRootViewController(animated: false)
         } else {
             self.showToastGray(message: "5개를 선택해야 합니다.")
         }

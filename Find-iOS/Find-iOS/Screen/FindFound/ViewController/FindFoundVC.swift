@@ -47,12 +47,14 @@ class FindFoundVC: UIViewController {
         myCollectionView.dataSource = self
         
         print(findCheckIndex)
+        
         // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        myCollectionView.reloadData()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+        myCollectionView.reloadData()
+    }
 
     // MARK: - IBAction
     
@@ -138,6 +140,7 @@ extension FindFoundVC: UICollectionViewDataSource {
             cell.myFoundView.isHidden = true
             cell.myFindView.isHidden = false
             foundView.removeFromSuperview()
+            cell.reloadInputViews()
             return cell
         } else if indexPath.row == 1 {
             print("indexpath.row == 1")

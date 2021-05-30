@@ -35,14 +35,18 @@ class FindView: UIView {
         xibView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(xibView)
         
+        print("setView")
+        
         setView()
         setButton()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
+
+    
     
     func setView() {
         if screenWidth == 390 {
@@ -57,10 +61,8 @@ class FindView: UIView {
         var beforeAnswerView = BeforeAnswerView(frame: aboutValueView.frame)
         var afterAnswerView = AfterAnswerView(frame: aboutValueView.frame)
         
-//        self.aboutValueView.addSubview(beforeTestView)
-        self.aboutValueView.addSubview(afterAnswerView)
+        self.aboutValueView.addSubview(beforeTestView)
         
-       
         // 테스트, 필터 설정까지 완료된 후 붙일 뷰
         
         for i in 0...29 {
@@ -71,13 +73,20 @@ class FindView: UIView {
                 choiceCount += 1
             }
         }
+        
+        print(answerCount)
+        print(choiceCount)
+        
         if answerCount >= 5 {
             if choiceCount == 5 {
                 // 아예 완료된 뷰
+                print("필터까지 완료")
                 self.aboutValueView.addSubview(afterAnswerView)
+            } else {
+                // 중간까지만 완료된 뷰
+                print("중간까지 완료")
+                self.aboutValueView.addSubview(beforeAnswerView)
             }
-            // 중간까지만 완료된 뷰
-            self.aboutValueView.addSubview(beforeAnswerView)
         }
     }
     
