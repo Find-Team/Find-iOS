@@ -127,10 +127,11 @@
   
 <br/>
 
-### 🎈 시연 영상
-  
-[link]  
+### 🎈 시연 영상  
 
+[![Video Label](http://img.youtube.com/vi/5wzF8uC-HsQ/sddefault.jpg)](https://youtu.be/5wzF8uC-HsQ)  
+  
+  
 <br/>
 
 ### 👀 뷰 소개  
