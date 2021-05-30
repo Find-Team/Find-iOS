@@ -111,12 +111,12 @@
 
 <br />
 
-### 👨‍👩‍👧‍👧 클라이언트 개발자 소개
+### 👨‍👩‍👧‍👧 Find iOS 개발자 소개
 
 | 사진 |<img src="" width=200>|<img src="" width=200>|<img src="" width=200>|<img src="" width=200>|
 |:---:|:---:|:---:|:---:|:---:|
 | 이름 |박세은|이다은|이원석|장서현|
-| gitHub ID |<a href=""><a>|<a href="https://github.com/Daeun-Danna-Lee">Daeun-Danna-Lee<a>|<a href=""><a>|<a href=""><a>||
+| gitHub ID |<a href="https://github.com/pk33n">pk33n<a>|<a href="https://github.com/Daeun-Danna-Lee">Daeun-Danna-Lee<a>|<a href="https://github.com/snowedev">snowedev<a>|<a href="https://github.com/seohyun-106">seohyun-106<a>|
   
 <br/>
   
@@ -132,7 +132,7 @@
 
 <br/>
 
-### 👀 페이지 소개  
+### 👀 뷰 소개  
 
 **뷰 이름**  
 \- 설명  
