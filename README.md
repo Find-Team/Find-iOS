@@ -50,11 +50,14 @@
  ┣ 🗂 Screen
  ┃ ┣ 🗂 FindFound
  ┃ ┃ ┣ 🗂 Cell
- ┃ ┃ ┃ ┗ 📑 CardListCell.swift
+ ┃ ┃ ┃ ┗ 📑 FindFoundSegueCVC.swift
  ┃ ┃ ┣ 🗂 Storyboard
- ┃ ┃ ┃ ┗ 📑 Home.storyboard
+ ┃ ┃ ┃ ┗ 📑 FindFound.storyboard
  ┃ ┃ ┗ 🗂 ViewController
- ┃ ┃ ┃ ┗ 📑 HomeVC.swift
+ ┃ ┃ ┃ ┗ 📑 FindFoundVC.swift
+ ┃ ┃ ┗ 🗂 View
+ ┃ ┃ ┃ ┗ 📑 FindView.xib
+ ┃ ┃ ┃ ┗ 📑 FindView.swift
  ┃ ┃ ┗ 🗂 Model
  ┃ ┃ ┃ ┗ 📑 ProfileCardDataModel.swift
  ┃ ┣ 🗂 MatchingStatus
